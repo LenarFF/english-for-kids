@@ -87,12 +87,12 @@ let mouseDown = false;
 function clickHandler(event) {
   mouseDown = true;
   giveAudio(event);
-  event.target.classList.add("piano-key-active");  
+  event.target.classList.add("piano-key-active");
 }
 
 document
-    .querySelector(".piano")
-    .addEventListener("pointerover", (event) => addClassWhenMouseRun(event));
+  .querySelector(".piano")
+  .addEventListener("pointerover", (event) => addClassWhenMouseRun(event));
 
 /**
  * добавляет классы при движении мыши и музычку
@@ -101,9 +101,14 @@ function addClassWhenMouseRun(event) {
   if (mouseDown) {
     giveAudio(event);
     event.target.classList.add("piano-key-active");
-    console.log("addClassWhenMouseRun");
+    document
+    .querySelector(".piano")
+    .addEventListener("click", () => console.log('click'))
+    
+    }
   }
-}
+
+  
 
 /**
  * Даёт музычку
@@ -111,19 +116,19 @@ function addClassWhenMouseRun(event) {
  */
 function giveAudio(event) {
   let audio = new Audio();
-  if ( !(event.target.dataset.note in pianoSounds) ) return;
+  if (!(event.target.dataset.note in pianoSounds)) return;
   audio.src = pianoSounds[event.target.dataset.note];
   audio.currentTime = 0;
-  audio.play(); 
+  audio.play();
 }
 
 document
   .querySelector(".piano")
-  .addEventListener("click", (event) => takeAwayClassWhenMouseNotActive(event));
+  .addEventListener("click", (event) => removeClassWhenMouseNotActive(event));
 
 document
   .querySelector(".piano")
-  .addEventListener("mouseout", (event) => takeAwayClassWhenMouseOut(event));
+  .addEventListener("mouseout", (event) => removeClassWhenMouseOut(event));
 
 document.addEventListener("click", () => getMouseCondition());
 /**
@@ -137,10 +142,10 @@ function getMouseCondition() {
  * убирает класс активной кнопки
  * @param {*} event
  */
-function takeAwayClassWhenMouseNotActive(event) {
+function removeClassWhenMouseNotActive(event) {
   event.target.classList.remove("piano-key-active");
 }
-function takeAwayClassWhenMouseOut(event) {
+function removeClassWhenMouseOut(event) {
   event.target.classList.remove("piano-key-active");
 }
 

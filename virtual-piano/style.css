@@ -181,6 +181,9 @@ body {
 .piano-key-active::before {
 	color: #00b4a4;
 }
+.piano-key-active:hover::before {
+	color: #00b4a4;
+}
 
 .piano-key-active:active::before {
 	color: #00b4a4;
