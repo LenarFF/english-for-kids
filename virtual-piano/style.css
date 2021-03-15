@@ -182,6 +182,10 @@ body {
 	color: #00b4a4;
 }
 
+.piano-key-active:active::before {
+	color: #00b4a4;
+}
+
 .fullscreen {
 	position: fixed;
 	top: 120px;
