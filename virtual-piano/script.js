@@ -100,15 +100,14 @@ document
 function addClassWhenMouseRun(event) {
   if (mouseDown) {
     giveAudio(event);
-    event.target.classList.add("piano-key-active");
+    event.target.classList.add("piano-key-active");    
     document
-    .querySelector(".piano")
-    .addEventListener("click", () => console.log('click'))
-    
-    }
+      .querySelector(".piano")
+      .addEventListener("mouseup", (event) =>
+        removeClassWhenMouseNotActive(event)
+      );
   }
-
-  
+}
 
 /**
  * Даёт музычку
