@@ -1,0 +1,33 @@
+
+.page-wrapper {
+  min-width: 1920px;
+  margin: 0 auto;
+}
+.page-wrapper__content{
+  width: 1800px;
+  margin: 0 auto;
+}
+.header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu__list {
+  display: flex;
+  flex-flow: row nowrap;
+  list-style: none;
+  width: 800px;
+  justify-content: space-between;
+  margin-right: 672px;
+}
+.menu__items {
+  font-family: Rubik;  
+  font-size: 18px;
+  color: #080029;
+  text-decoration: none;
+  fill: solid;
+}
+.bold {
+  font-weight: 600;
+}
