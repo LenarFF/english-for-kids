@@ -6,6 +6,7 @@
 .page-wrapper__content{
   width: 1800px;
   margin: 0 auto;
+  padding-top: 44px;
 }
 .header {
   display: flex;
@@ -21,13 +22,35 @@
   justify-content: space-between;
   margin-right: 672px;
 }
-.menu__items {
+.menu__item {
   font-family: Rubik;  
   font-size: 18px;
   color: #080029;
   text-decoration: none;
   fill: solid;
 }
-.bold {
+.menu__item_bold {
   font-weight: 600;
+}
+
+.aside-links {
+  position: fixed;
+  height: 635px;
+  width: 52px;
+  z-index: 1;
+  top: 50px;
+  display: flex;
+  display: flex;  
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.aside-links__list {
+  list-style: none;
+  padding: 0;
+  display: flex;  
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 172px;
 }
