@@ -7,17 +7,20 @@
     <link rel="stylesheet" href="../normalize/normalize.css">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Rubik:wght@500&display=swap" rel="stylesheet">   
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
     <title>Online-zoo</title>
   </head>
   <body>
     <div class="page-wrapper">
       <div class="page-wrapper__content">      
         <header class="header">
-          <div class="logo">
+          <div class="logo logo_hidden">
             <a href="#">
               <img src="../../assets/icons/logo.svg" alt="logo">
             </a>
+            <h1 class="main-heading">Online Zoo</h1>
           </div>
           <nav class="menu">
             <ul class="menu__list">
@@ -35,33 +38,46 @@
           </div>
         </header>
         <main>
-          <aside class="aside-links">
+          <aside class="sidebar">
             <div class="logo">
               <a href="#">
                 <img src="../../assets/icons/logo.svg" alt="logo">
               </a>
             </div>
-            <ul class="aside-links__list">
+            <ul class="sidebar__list">
               <li>
-                <a href="https://www.instagram.com/" target="_blank" class="aside-links__link">
+                <a href="https://www.instagram.com/" target="_blank" class="sidebar__link">
                   <img src="../../assets/icons/instagram_logo_icon_173753 1.svg" alt="instagram log">
                 </a>
               </li>
               <li>
-                <a href="https://www.facebook.com/" target="_blank" class="aside-links__link">
+                <a href="https://www.facebook.com/" target="_blank" class="sidebar__link">
                   <img src="../../assets/icons/FB_icon-icons.com_65534 1.svg" alt="facebook logo">
                 </a>
               </li>
               <li>
-                <a href="https://twitter.com/" target="_blank" class="aside-links__link">
+                <a href="https://twitter.com/" target="_blank" class="sidebar__link">
                  <img src="../../assets/icons/TWITTER_icon-icons.com_65486 1.svg" alt="twitter logo">
                 </a>
               </li>
             </ul>              
-            <a href="#" class="aside-links__link">
+            <a href="#" class="sidebar__link">
               <img src="../../assets/icons/go_up.svg" alt="page up">
             </a>           
           </aside>
+          <section class="wild-park">
+            <div class="wild-park__text">
+              <h2 class="wild-park__header">Wild park</h2>
+              <p class="wild-park__offer">Watch your favorite animal online</p>
+              <div class="wild-park__buttons">
+                <button class="wild-park__choose-button">Choose zoo</button>
+                <button class="wild-park__watch-button">Watch online</button>
+              </div>
+            </div>
+            <div class="wild-park__img">
+              <img src="../../assets/images/main panda.jpg" alt="panda">
+            </div>
+          </section>
         </main>
         <footer>
           footer

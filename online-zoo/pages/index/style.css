@@ -1,4 +1,6 @@
-
+body {
+  height: 3000px;
+}
 .page-wrapper {
   min-width: 1920px;
   margin: 0 auto;
@@ -8,11 +10,20 @@
   margin: 0 auto;
   padding-top: 44px;
 }
+.logo_hidden {
+  visibility: hidden;
+}
 .header {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
+  padding-right: 92px;  
+}
+.main-heading {
+  visibility: hidden;
+  position: absolute;
+  z-index: -1;
 }
 .menu__list {
   display: flex;
@@ -30,10 +41,10 @@
   fill: solid;
 }
 .menu__item_bold {
-  font-weight: 600;
+  font-weight: 500;
 }
 
-.aside-links {
+.sidebar {
   position: fixed;
   height: 635px;
   width: 52px;
@@ -45,7 +56,7 @@
   justify-content: space-between;
   align-items: center;
 }
-.aside-links__list {
+.sidebar__list {
   list-style: none;
   padding: 0;
   display: flex;  
@@ -53,4 +64,55 @@
   justify-content: space-between;
   align-items: center;
   height: 172px;
+}
+
+.wild-park {
+  display: flex;  
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 84px 184px 0px 182px;
+}
+.wild-park__header {
+  font-family: Rubik; 
+  font-size: 22px;
+  line-height: 26px;
+  line-height: 100%;  
+  letter-spacing: 11.5%;
+  font-weight: 400; 
+  color: #626262;
+  ;
+}
+.wild-park__offer {
+  font-family: Merriweather;
+  font-style: Bold;
+  font-size: 84px;
+  line-height: 106px;
+  line-height: 100%;
+  color: #080029;
+  ;
+}
+.wild-park__choose-button {
+  width: 250px;
+  height: 61px;
+  border-radius: 5px;
+  background-color: #080029;  
+  font-family: Rubik;
+  font-size: 18px;  
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: white;
+  margin-right: 62px;
+}
+.wild-park__watch-button {
+  width: 267px;
+  height: 61px;
+  border-radius: 5px;
+  font-family: Rubik;
+  font-size: 18px; 
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: 0em;
+  text-align: center;
 }
