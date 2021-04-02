@@ -1,0 +1,34 @@
+.header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 110px;  
+  width: 1681px;
+  margin: auto;
+}
+.main-heading {
+  visibility: hidden;
+  position: absolute;
+  z-index: -1;
+}
+.menu__list {
+  display: flex;
+  flex-flow: row nowrap;
+  list-style: none;
+  width: 800px;
+  justify-content: space-between;
+  margin-right: 672px;
+  margin-left: 111px;
+  padding: 0;
+}
+.menu__item {
+  font-family: Rubik;  
+  font-size: 18px;
+  color: #080029;
+  text-decoration: none;
+  fill: solid;
+}
+.menu__item_bold {
+  font-weight: 500;
+}
