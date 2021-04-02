@@ -48,7 +48,7 @@
 }
 
 .sidebar {
-  position: fixed;
+  position: sticky;
   height: 638px;
   width: 52px;
   z-index: 1;
@@ -59,6 +59,8 @@
   justify-content: space-between;
   align-items: center;
   margin-left: 53px;
+  margin-top: -52px;
+  background-color: #fcfcfc;
 }
 .sidebar__list {
   list-style: none;
@@ -86,6 +88,7 @@
 .wild-park {
   padding-top: 71px;
   padding-right: 128px;
+  margin-top: -587px;
 }
 .wild-park__text {
   padding-top: 61px;
@@ -479,6 +482,9 @@
   letter-spacing: 0.115em;
   text-align: left;
   color: #000
+}
+.zoogeography__card-img {
+  border-radius: 5px;
 }
 .zoogeography__card-title {  
   font-family: Merriweather;
