@@ -27,8 +27,8 @@
               <li><a class="menu__item menu__item_bold" href="#">About</a></li>
               <li><a class="menu__item" href="../Zoos-map/Zoos-map.html">Map</a></li>
               <li><a class="menu__item" href="../Zoos-translation/zoos/panda.html">Zoos</a></li>
-              <li><a class="menu__item" href="#">Contact us</a></li>
-              <li><a class="menu__item" href="#">Design</a></li>
+              <li><a class="menu__item" href="../404/404.html">Contact us</a></li>
+              <li><a class="menu__item" href="https://www.figma.com/file/74wXlorl9mZQP0uhqDg83j/Online-Zoo">Design</a></li>
             </ul>
           </nav>
           <div class="profile-icon">
@@ -70,8 +70,16 @@
               <h2 class="wild-park__header">Wild park</h2>
               <p class="wild-park__offer">Watch your favorite animal online</p>
               <div class="wild-park__buttons">
-                <button class="wild-park__choose-button">Choose zoo</button>
-                <button class="wild-park__watch-button">Watch online</button>
+                <a href="../Zoos-map/Zoos-map.html" class="wild-park__link">
+                  <div class="wild-park__choose-button">
+                    <p class="wild-park__button-text">Choose zoo</p>
+                  </div>
+                </a>
+                <a href="../Zoos-translation/zoos/panda.html" class="wild-park__link">
+                  <div class="wild-park__watch-button">
+                    <p class="wild-park__button-text wild-park__button-text_color">Watch online</p>
+                  </div>
+                </a>
               </div>
             </div>
             <div class="wild-park__img-wrap">
@@ -89,7 +97,11 @@
               <p class="how-works__second-info">Zoo Online is a web application with which
                  you can watch live cages of different animals in nature reserves and zoos
                   online and, if you wish, donate to the needs of the animal you like</p> 
-              <button class="how-works__button">Try now</button>      
+              <a href="../Zoos-translation/zoos/panda.html" class="how-works__link">
+                <div class="how-works__button">
+                  <p class="how-works__button-text">Try now</p>
+                </div>
+              </a>      
             </div>
           </section>
           <section class="famous-pets">
@@ -99,28 +111,127 @@
                 <p class="famous-pets__info">You can choose any animal <br> 
                   you like</p>
                 <div class="famous-pets__buttons">
-                  <img src="../../assets/icons/slide_left.svg" alt="arrow left" class="famous-pets__arrow">
-                  <img src="../../assets/icons/slide_right.svg" alt="arrow right" class="famous-pets__arrow">
+                  <a href="#" class="famous-pets__left">
+                    <img src="../../assets/icons/slide_left.svg" alt="arrow left" class="famous-pets__arrow">
+                  </a>
+                  <a href="#" class="famous-pets__right">
+                    <img src="../../assets/icons/slide_right.svg" alt="arrow right" class="famous-pets__arrow">
+                  </a>
                 </div>
               </div>
-              <div class="famous-pets__images-wrap">
+              <div class="famous-pets__images-wrap">                
                 <div class="famous-pets__image-wrap">
-                  <img src="../../assets/images/little-panda.png" alt="little panda" class="famous-pets__image">
+                  <div class="famous-pets__image-inner-wrap">
+                    <img src="../../assets/images/little-panda.png" alt="little panda"
+                       class="famous-pets__image">
+                    <div class="famous-pets__image-inscription">
+                      <div class="famous-pets__image-circle">
+                        <img src="../../assets/icons/cross.svg" alt="#"
+                          class="famous-pets__image-cross">
+                      </div>
+                      <p class="famous-pets__image-text">Little panda</p>
+                    </div>
+                    <div class="famous-pets__image-hidden-text">
+                      <p class="famous-pets__image-hidden-habitat">China, East Asia</p>
+                      <p class="famous-pets__image-hidden-follow">Follow</p>
+                      <img class="famous-pets__image-hidden-arrow" src="../../assets/icons/card-arrow.svg" alt="">
+                    </div>
+                  </div>
                 </div>
                 <div class="famous-pets__image-wrap">
-                  <img src="../../assets/images/penguin.png" alt="penguin" class="famous-pets__image">
+                  <div class="famous-pets__image-inner-wrap">
+                    <img src="../../assets/images/penguin.png" alt="penguin" 
+                        class="famous-pets__image">
+                    <div class="famous-pets__image-inscription">
+                      <div class="famous-pets__image-circle">
+                        <img src="../../assets/icons/cross.svg" alt="#"
+                          class="famous-pets__image-cross">
+                      </div>                      
+                      <p class="famous-pets__image-text">Penguin</p>
+                    </div> 
+                    <div class="famous-pets__image-hidden-text">
+                      <p class="famous-pets__image-hidden-habitat">In the sea of
+                         the Southern Hemisphere, Antarctic waters</p>
+                      <p class="famous-pets__image-hidden-follow">Follow</p>
+                      <img class="famous-pets__image-hidden-arrow" src="../../assets/icons/card-arrow.svg" alt="">
+                    </div>   
+                  </div>
+                  </div>
+                <div class="famous-pets__image-wrap">
+                  <div class="famous-pets__image-inner-wrap">
+                    <img src="../../assets/images/squirrel.png" alt="squirrel"
+                       class="famous-pets__image">
+                    <div class="famous-pets__image-inscription">
+                      <div class="famous-pets__image-circle">
+                        <img src="../../assets/icons/cross.svg" alt="#"
+                            class="famous-pets__image-cross"> 
+                      </div>
+                      
+                      <p class="famous-pets__image-text">Squirrel</p>
+                    </div>
+                    <div class="famous-pets__image-hidden-text">
+                      <p class="famous-pets__image-hidden-habitat">Russia, forests
+                         in the Orenburg region,</p>
+                      <p class="famous-pets__image-hidden-follow">Follow</p>
+                      <img class="famous-pets__image-hidden-arrow" src="../../assets/icons/card-arrow.svg" alt="">
+                    </div>   
+                  </div>                  
                 </div>
                 <div class="famous-pets__image-wrap">
-                  <img src="../../assets/images/squirrel.png" alt="squirrel" class="famous-pets__image">
+                  <div class="famous-pets__image-inner-wrap">
+                    <img src="../../assets/images/panda.png" alt="panda" 
+                      class="famous-pets__image">
+                    <div class="famous-pets__image-inscription">
+                      <div class="famous-pets__image-circle">
+                        <img src="../../assets/icons/cross.svg" alt="#"
+                          class="famous-pets__image-cross">
+                      </div>                      
+                      <p class="famous-pets__image-text">Panda</p>
+                    </div> 
+                    <div class="famous-pets__image-hidden-text">
+                      <p class="famous-pets__image-hidden-habitat">Western central China</p>
+                      <p class="famous-pets__image-hidden-follow">Follow</p>
+                      <img class="famous-pets__image-hidden-arrow" src="../../assets/icons/card-arrow.svg" alt="">
+                    </div>   
+                  </div>                  
                 </div>
                 <div class="famous-pets__image-wrap">
-                  <img src="../../assets/images/panda.png" alt="panda" class="famous-pets__image">
+                  <div class="famous-pets__image-inner-wrap">
+                    <img src="../../assets/images/eagle.png" alt="eagle" 
+                      class="famous-pets__image">
+                    <div class="famous-pets__image-inscription">
+                      <div class="famous-pets__image-circle">
+                        <img src="../../assets/icons/cross.svg" alt="#"
+                         class="famous-pets__image-cross">
+                      </div>                      
+                      <p class="famous-pets__image-text">Eagle</p>
+                    </div>
+                    <div class="famous-pets__image-hidden-text">
+                      <p class="famous-pets__image-hidden-habitat">North America, islands near
+                         Los Angeles</p>
+                      <p class="famous-pets__image-hidden-follow">Follow</p>
+                      <img class="famous-pets__image-hidden-arrow" src="../../assets/icons/card-arrow.svg" alt="">
+                    </div>      
+                  </div>                  
                 </div>
                 <div class="famous-pets__image-wrap">
-                  <img src="../../assets/images/eagle.png" alt="eagle" class="famous-pets__image">
-                </div>
-                <div class="famous-pets__image-wrap">
-                  <img src="../../assets/images/gorilla.png" alt="gorilla" class="famous-pets__image">
+                  <div class="famous-pets__image-inner-wrap">
+                    <img src="../../assets/images/gorilla.png" alt="gorilla" 
+                      class="famous-pets__image">
+                    <div class="famous-pets__image-inscription">
+                      <div class="famous-pets__image-circle">
+                        <img src="../../assets/icons/cross.svg" alt="#"
+                         class="famous-pets__image-cross">
+                      </div>                      
+                      <p class="famous-pets__image-text">Gorilla</p>
+                    </div>
+                    <div class="famous-pets__image-hidden-text">
+                      <p class="famous-pets__image-hidden-habitat">Equatorial forests of
+                         western and central Africa</p>
+                      <p class="famous-pets__image-hidden-follow">Follow</p>
+                      <img class="famous-pets__image-hidden-arrow" src="../../assets/icons/card-arrow.svg" alt="">
+                    </div>
+                  </div>                  
                 </div>
               </div>
             </div>

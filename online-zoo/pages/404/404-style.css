@@ -29,6 +29,9 @@
   text-decoration: none;
   fill: solid;
 }
+.menu__item:hover {
+  text-decoration: underline;  
+}
 .menu__item_bold {
   font-weight: 500;
 }
