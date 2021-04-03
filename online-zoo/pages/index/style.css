@@ -40,10 +40,11 @@
   font-size: 18px;
   color: #080029;
   text-decoration: none;
-  fill: solid;
+  fill: solid;  
 }
 .menu__item:hover {
   text-decoration: underline;
+  
 }
 .menu__item_bold {
   font-weight: 500;
@@ -95,6 +96,19 @@
 .wild-park__text {
   padding-top: 61px;
   padding-left: 92px;
+}
+.wild-park__text-ı {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.wild-park__text-i {
+  display: inline-block; 
+}
+.wild-park__text-dot {  
+  display: block;
+  line-height: 0;
+  color: rgb(255, 0, 21);
 }
 .wild-park__header {
   font-family: Rubik;
@@ -244,7 +258,7 @@
 .famous-pets {
   background-color: #d9e8ff;
   padding-top: 79px;
-  padding-bottom: 79px;
+  padding-bottom: 86px;
 }
 .famous-pets__text {
   padding-top: 217px;
@@ -516,6 +530,9 @@
   color: #fcfcfc;
   margin-bottom: 62px;
 }
+.testimonials__feedback-link {
+  text-decoration: none;
+}
 .testimonials__feedback-button {
   height: 61px;
   width: 286px;
@@ -533,7 +550,13 @@
   text-align: center;
   color: #fcfcfc;
 }
+.testimonials__feedback-button:hover {
+  background:#0F0049;
+}
+.testimonials__feedback-button:active {
+  background: #150068;
 
+}
 .testimonials__see-more-button {
   font-family: Rubik;
   font-size: 18px;
@@ -544,6 +567,9 @@
   text-decoration: none;
   color: #fcfcfc;
   margin-left: 35px;
+}
+.testimonials__see-more-button:hover {
+  text-decoration: underline;
 }
 .testimonials__see-more-arrow {
   margin-left: 4px;
@@ -597,7 +623,9 @@
   margin-left: 35px;
   width: 149px;
 }
-
+.testimonials__arrow:hover {
+  opacity: 0.5;
+}
 .zoogeography {
   padding-top: 53px;
   padding-left: 60px;
@@ -670,25 +698,57 @@
   width: 1216px;
   height: 698px;
 }
-.zoogeography__eagle-marker {
+.zoogeography__marker {
+  transition: 0.5s;  
+}
+
+.zoogeography__marker {
   position: absolute;
-  top: 155px;
-  left: 105px;
+  width: 73px;
+  height: 73px;
+  border-radius:77% 77% 0% 111% / 77% 134% 0% 77%;
+  transform: rotate(45deg);
+  background-color: white;
+  top: 0;
+  border: 1px solid #fff;
+}
+.zoogeography__marker-img {
+  transform: rotate(-45deg);
+  margin-left: 17px;
+  margin-top: 13px;  
+  
+}
+.zoogeography__eagle-marker {
+  top: 162px;
+  left: 144px;
+  transform: rotate(45deg) scale(1.5);
+  border: 1px solid #609FFF;
+}
+
+.zoogeography__marker:hover {
+  transform: rotate(45deg) scale(1.5);
+  border: 1px solid #609FFF;
+}
+
+.tiny-eagle {
+  height: 49px;
 }
 .zoogeography__alligator-marker {
-  position: absolute;
-  top: 206px;
-  left: 249px;
+  top: 217px;
+  left: 271px; 
 }
+
 .zoogeography__gorilla-marker {
-  position: absolute;
-  top: 333px;
-  left: 569px;
+  top: 341px;
+  left: 586px;
 }
 .zoogeography__panda-marker {
-  position: absolute;
-  top: 193px;
-  left: 887px;
+  left: 904px;
+  top: 204px;
+}
+.panda-cmn {
+  margin-left: 16px;
+  margin-top: 20px;
 }
 
 .footer {
@@ -707,6 +767,20 @@
 .logos {
   display: flex;
   flex-direction: column;
+  position: relative;
+}
+.logos__yd-title {
+  position: absolute;
+  top: 310px;
+  width: 123px;
+  height: 64px;
+}
+.logos__rss-title {
+  position: absolute;
+  width: 148px;
+  height: 59px;
+  top: 312px;
+  left: 163px;
 }
 .logos__other-logo-img {
   margin-top: 189px;
@@ -716,6 +790,7 @@
 }
 .footer-nav__list {
   margin-top: 0;
+  list-style-type: none;
 }
 .footer-nav__header {
   font-family: Rubik;
@@ -730,6 +805,7 @@
 .footer-nav__elem {
   margin-bottom: 31px;
 }
+
 .footer-nav__items {
   font-family: Rubik;
   font-size: 18px;
@@ -742,7 +818,9 @@
   color: #bcbcbc;
   margin-bottom: 40px;
 }
-
+.footer-nav__items:hover {
+  text-decoration: underline;
+}
 .support {
   width: 345px;
   padding-right: 75px;
@@ -770,6 +848,9 @@
   margin-top: 45px;
   margin-bottom: 41px;
 }
+.support__donate-link {
+  text-decoration: none;
+}
 .support__donate-button {
   height: 61px;
   width: 339px;
@@ -781,11 +862,16 @@
   font-style: normal;
   font-weight: 500;
   line-height: 21px;
-  letter-spacing: 0em;
-  text-align: center;
+  letter-spacing: 0em;  
   color: #fcfcfc;
   background: #0b0b0b;
   margin-bottom: 83px;
+}
+.support__donate-button:hover {
+  opacity: 0.5;
+}
+.support__donate-text {
+  text-align: center;
 }
 .support__socials {
   display: flex;
@@ -800,6 +886,10 @@
   line-height: 24px;
   letter-spacing: 0em;
   color: #bcbcbc;
+  text-decoration: none;
+}
+.support__socials-link:hover {
+  opacity: 0.5;
 }
 .footer__horizontal {
   width: 1432px;

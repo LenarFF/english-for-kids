@@ -65,10 +65,15 @@
               <img src="../../assets/icons/go_up.svg" alt="page up">
             </a>           
           </aside>
-          <section class="wild-park">
+          <section class="wild-park" id="watch-online">
             <div class="wild-park__text">
-              <h2 class="wild-park__header">Wild park</h2>
-              <p class="wild-park__offer">Watch your favorite animal online</p>
+              <h2 class="wild-park__header" >Wild park</h2>
+              <p class="wild-park__offer">Watch your favorite animal onl<!--This comment is required to remove whitespace created by inline-block elements.
+              --><span class="wild-park__text-i">
+                  <span class="wild-park__text-dot">.</span>
+                  <span class="wild-park__text-ı">ı</span>
+                </span><!--This comment is required to remove whitespace created by inline-block elements.
+                -->ne</p>
               <div class="wild-park__buttons">
                 <a href="../Zoos-map/Zoos-map.html" class="wild-park__link">
                   <div class="wild-park__choose-button">
@@ -86,7 +91,7 @@
               <img src="../../assets/images/main-panda.jpg" alt="panda" class="wild-park__img">
             </div>
           </section>
-          <section class="how-works">
+          <section class="how-works" id="how-it-works">
             <div class="how-works__img-wrap">
               <img src="../../assets/images/lion.png" alt="lion cub" class="how-works__img">
             </div>
@@ -104,7 +109,7 @@
               </a>      
             </div>
           </section>
-          <section class="famous-pets">
+          <section class="famous-pets" id="famous-pets">
             <div class="famous-pets__wrapper">
               <div class="famous-pets__text">
                 <h2 class="famous-pets__header">Famous pets</h2>
@@ -236,7 +241,7 @@
               </div>
             </div>
           </section>
-          <section class="pay-feed">
+          <section class="pay-feed" id="pay-and-feed">
             <h2 class="pay-feed__header">Pay & feed</h2>
             <div class="pay-feed__wrapper">
               <div class="pay-feed__safe">
@@ -274,15 +279,19 @@
               </div>              
             </div>
           </section>
-          <section class="testimonials">
+          <section class="testimonials" id="testimonials">
             <div class="testimonials__wrapper">
               <div class="testimonials__text">
                 <h2 class="testimonials__header">Testimonials</h2>
                 <h3 class="testimonials__subtitle">You can make us smile</h3>
                 <p class="testimonials__info">We want to make animal observation
                   and interaction accessible. You can leave your wishes on how
-                    to make the service more convenient, and most importantly, more interesting for you.</p>
-                <button class="testimonials__feedback-button">Leave feedback</button>    
+                    to. make the service more convenient, and most importantly, more interesting for you.</p>
+                <a href="#" class="testimonials__feedback-link">   
+                  <div class="testimonials__feedback-button">
+                    <p class="testimonials__feedback-text">Leave feedback</p>
+                  </div> 
+                </a>   
               </div>
               <div class="testimonials__reviews-wrapper">              
                 <a href="#" class="testimonials__see-more-button">See more reviews
@@ -310,12 +319,16 @@
                 
               </div>
               <div class="testimonials__arrows-wrapper">
-                <img src="../../assets/icons/slide_left_testimonials.svg" alt="left arrow" class="testimonials__arrow">
-                <img src="../../assets/icons/slide_right_testimonials.svg" alt="tight arrow" class="testimonials__arrow">
+                <a href="" class="testimonials__link-left">
+                  <img src="../../assets/icons/slide_left_testimonials.svg" alt="left arrow" class="testimonials__arrow">
+                </a>
+                <a href="" class="testimonials__link-right">
+                  <img src="../../assets/icons/slide_right_testimonials.svg" alt="tight arrow" class="testimonials__arrow">
+                </a>
               </div>
             </div>
           </section>
-          <section class="zoogeography">
+          <section class="zoogeography" id="zoogeography">
             <div class="zoogeography__description">            
               <h2 class="zoogeography__header">Zoogeography</h2>
               <div class="zoogeography__card">
@@ -323,7 +336,7 @@
                 <h3 class="zoogeography__card-title">Eagle</h3>
                 <p class="zoogeography__card-text">The broadcast is from an island near Los Angeles.
                   Watch their real life.</p>
-                <a href="#" class="zoogeography__watch-button">Watch now
+                <a href="../Zoos-translation/zoos/eagle.html" class="zoogeography__watch-button">Watch now
                   <img src="../../assets/icons/zoogeography__watch-arrow.svg" alt="right arrow"
                   class="zoogeography__watch-arrow">
                 </a>
@@ -332,14 +345,22 @@
             <div class="zoogeography__map">
               <img src="../../assets/icons/world.svg" alt="world map"
                 class="zoogeography__map-img"> 
-              <img src="../../assets/icons/eagle_marker.svg" alt="eagle marker"
-                class="zoogeography__marker zoogeography__eagle-marker">
-              <img src="../../assets/icons/alligator_marker.svg" alt="alligator marker"
-                 class="zoogeography__marker zoogeography__alligator-marker">
-              <img src="../../assets/icons/gorilla_marker.svg" alt="gorilla marker"
-                class="zoogeography__marker zoogeography__gorilla-marker">
-              <img src="../../assets/icons/panda_marker.svg" alt="panda marker"
-                 class="zoogeography__marker zoogeography__panda-marker">            
+              <div class="zoogeography__marker zoogeography__eagle-marker">
+                <img src="../../assets/icons/noun_Bird_626069.svg" alt="eagle marker"
+                    class="zoogeography__marker-img tiny-eagle">
+              </div>
+                <div class="zoogeography__marker zoogeography__alligator-marker">
+                  <img src="../../assets/icons/noun_Crocodile_627894.svg" alt="alligator marker"
+                        class="zoogeography__marker-img">
+              </div>
+              <div class="zoogeography__marker zoogeography__gorilla-marker">
+                <img src="../../assets/icons/noun_Gorilla_627896.svg" alt="gorilla marker"
+                    class="zoogeography__marker-img">
+              </div>
+              <div class="zoogeography__marker zoogeography__panda-marker">
+                <img src="../../assets/icons/noun_Panda_626051.svg" alt="panda marker"
+                    class="zoogeography__marker-img panda-cmn">  
+              </div>  
             </div>
           </section>
         </main>
@@ -347,31 +368,37 @@
           <div class="footer-wrapper">
             <div class="footer-top-wrapper">
               <div class="logos">
-                <a href="#" class="logos__main-logo">
+                <a href="../index/index.html" class="logos__main-logo">
                   <img src="../../assets/icons/footer_logo.svg" alt="logo" class="logos__main-logo-img">
                 </a>
                 <img src="../../assets/icons/footer_logos.svg" alt="logos" class="logos__other-logo-img">
+                <div class="logos__yd-title" title="Yem Digital"></div>
+                <div class="logos__rss-title" title="Rolling Scopes School"></div>
               </div>
               <nav class="footer-nav">
                 <ul class="footer-nav__list">
                   <li class="footer-nav__header">Navigation</li>
-                  <li class="footer-nav__elem"><a class="footer-nav__items" href="#">Watch online</a></li>
-                  <li class="footer-nav__elem"><a class="footer-nav__items" href="#">How it works</a></liclass=>
-                  <li class="footer-nav__elem"><a class="footer-nav__items" href="#">Famous pets</a></li>
-                  <li class="footer-nav__elem"><a class="footer-nav__items" href="#">Pay & feed</a></li>
-                  <li class="footer-nav__elem"><a class="footer-nav__items" href="#">Testimonials</a></li>
-                  <li class="footer-nav__elem"><a class="footer-nav__items" href="#">Zoogeography</a></li>
+                  <li class="footer-nav__elem"><a class="footer-nav__items" href="#watch-online">Watch online</a></li>
+                  <li class="footer-nav__elem"><a class="footer-nav__items" href="#how-it-works">How it works</a></liclass=>
+                  <li class="footer-nav__elem"><a class="footer-nav__items" href="#famous-pets">Famous pets</a></li>
+                  <li class="footer-nav__elem"><a class="footer-nav__items" href="#pay-and-feed">Pay & feed</a></li>
+                  <li class="footer-nav__elem"><a class="footer-nav__items" href="#testimonials">Testimonials</a></li>
+                  <li class="footer-nav__elem"><a class="footer-nav__items" href="#zoogeography">Zoogeography</a></li>
                 </ul>
               </nav>
               <div class="support">
                 <h3 class="support__header">Support of volunteers</h3>
                 <p class="support__text">You can thank the volunteers
                   for their work. For example, caring for animals and sincere love for them.</p>
-                <button class="support__donate-button">Donate for volunteers </button>
+                <a href="" class="support__donate-link">
+                  <div class="support__donate-button">
+                    <p class="support__donate-text">Donate for volunteers</p>
+                  </div>
+                </a>
                 <div class="support__socials">
-                  <a src="#"  class="support__socials-link">Instagram</a>
-                  <a src="#" class="support__socials-link">Facebook</a>
-                  <a src="#" class="support__socials-link">Twitter</a>
+                  <a href="https://www.instagram.com/" target="_blank"  class="support__socials-link">Instagram</a>
+                  <a href="https://www.facebook.com/" target="_blank" class="support__socials-link">Facebook</a>
+                  <a href="https://twitter.com/" target="_blank" class="support__socials-link">Twitter</a>
                 </div>
               </div>
             </div>
