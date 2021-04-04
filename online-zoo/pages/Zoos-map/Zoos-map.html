@@ -1,119 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../normalize/normalize.css">
-  <link rel="stylesheet" href="Zoos-map_style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet"> 
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Rubik:wght@500&display=swap" rel="stylesheet">   
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
-  <title>Zoos map</title>
-</head>
-<body>
-  <div class="page-wrapper">
-    <header class="header">
-      <div class="logo logo_hidden">
-        <a href="#">
-          <img src="../../assets/icons/logo.svg" alt="logo">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../normalize/normalize.css" />
+    <link rel="stylesheet" href="Zoos-map_style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Rubik:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Zoos map</title>
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <header class="header">
+        <div class="logo logo_hidden">
+          <a href="../index/index.html">
+            <img src="../../assets/icons/logo.svg" alt="logo" />
+          </a>
+          <h1 class="main-heading">Online Zoo</h1>
+        </div>
+        <nav class="menu">
+          <ul class="menu__list">
+            <li><a class="menu__item" href="../index/index.html">About</a></li>
+            <li>
+              <span
+                class="menu__item menu__item_bold"                
+                >Map</span
+              >
+            </li>
+            <li>
+              <a class="menu__item" href="../Zoos-translation/zoos/panda.html"
+                >Zoos</a
+              >
+            </li>
+            <li><a class="menu__item" href="../404/404.html">Contact us</a></li>
+            <li>
+              <a
+                class="menu__item"
+                href="https://www.figma.com/file/74wXlorl9mZQP0uhqDg83j/Online-Zoo"
+                >Design</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <div class="profile-icon">
+          <a href="#">
+            <img src="../../assets/icons/profile.svg" alt="profile icon" />
+          </a>
+        </div>
+      </header>
+      <aside class="sidebar">
+        <div class="logo">
+          <a href="../index/index.html">
+            <img src="../../assets/icons/logo.svg" alt="logo" />
+          </a>
+        </div>
+        <a href="https://www.instagram.com/" class="sidebar__link">
+          <img src="../../assets/icons/up.svg" alt="up" class="sidebar__up" />
         </a>
-        <h1 class="main-heading">Online Zoo</h1>
-      </div>
-      <nav class="menu">
-        <ul class="menu__list">
-          <li><a class="menu__item" href="../index/index.html">About</a></li>
-          <li><a class="menu__item menu__item_bold" href="../Zoos-map/Zoos-map.html">Map</a></li>
-          <li><a class="menu__item" href="../Zoos-translation/zoos/panda.html">Zoos</a></li>
-          <li><a class="menu__item" href="../404/404.html">Contact us</a></li>
-          <li><a class="menu__item" href="https://www.figma.com/file/74wXlorl9mZQP0uhqDg83j/Online-Zoo">Design</a></li>
+        <ul class="sidebar__list">
+          <li>
+            <div class="sidebar__circle">
+              <a
+                href="../Zoos-translation/zoos/panda.html"
+                class="sidebar__link"
+              >
+                <img
+                  src="../../assets/icons/noun_Panda_adide.svg"
+                  class="aside-img"
+                  alt="panda"
+                />
+              </a>
+            </div>
+          </li>
+          <li>
+            <div class="sidebar__circle">
+              <a
+                href="../Zoos-translation/zoos/alligator.html"
+                class="sidebar__link"
+              >
+                <img
+                  src="../../assets/icons/noun_Crocodile_adide.svg"
+                  class="aside-img"
+                  alt="alligator"
+                />
+              </a>
+            </div>
+          </li>
+          <li>
+            <div class="sidebar__circle">
+              <a
+                href="../Zoos-translation/zoos/eagle.html"
+                class="sidebar__link"
+              >
+                <img
+                  src="../../assets/icons/noun_Bird_adide.svg"
+                  class="aside-img"
+                  alt="eagle"
+                />
+              </a>
+            </div>
+          </li>
+          <li>
+            <div class="sidebar__circle">
+              <a
+                href="../Zoos-translation/zoos/gorilla.html"
+                class="sidebar__link"
+              >
+                <img
+                  src="../../assets/icons/noun_Gorilla_adide.svg"
+                  class="aside-img"
+                  alt="gorilla"
+                />
+              </a>
+            </div>
+          </li>
         </ul>
-      </nav>
-      <div class="profile-icon">
-        <a href="#">
-          <img src="../../assets/icons/profile.svg" alt="profile icon">
+        <a href="#" class="sidebar__link">
+          <img
+            src="../../assets/icons/down.svg"
+            alt="down"
+            class="sidebar__down"
+          />
         </a>
-      </div>
-    </header>
-    <aside class="sidebar">
-      <div class="logo">
-        
-        <a href="#">
-          <img src="../../assets/icons/logo.svg" alt="logo">
-        </a>             
-      </div>
-      <a href="https://www.instagram.com/" class="sidebar__link">
-        <img src="../../assets/icons/up.svg" alt="up" class="sidebar__up">
-      </a>
-      <ul class="sidebar__list">        
-        <li>
-          <div class="sidebar__circle">
-            <a href="../Zoos-translation/zoos/panda.html" class="sidebar__link">
-              <img src="../../assets/icons/noun_Panda_adide.svg"
-               class="aside-img" alt="panda">
-            </a>
-        </div>
-        </li>
-        <li>
-          <div class="sidebar__circle">
-            <a href="../Zoos-translation/zoos/alligator.html" class="sidebar__link">
-              <img src="../../assets/icons/noun_Crocodile_adide.svg"
-               class="aside-img" alt="alligator">
-            </a>
+      </aside>
+      <main>
+        <div class="map-wrapper">
+          <img src="../../assets/images/map.png" alt="world map" class="map" />
+          <div class="zoogeography__marker zoogeography__alligator-marker">
+            <img
+              src="../../assets/icons/noun_Crocodile_627894.svg"
+              alt="alligator marker"
+              class="zoogeography__marker-img"
+            />
           </div>
-        </li>
-        <li>
-          <div class="sidebar__circle">
-            <a href="../Zoos-translation/zoos/eagle.html" class="sidebar__link">
-            <img src="../../assets/icons/noun_Bird_adide.svg"
-             class="aside-img" alt="eagle">
-            </a>
+          <div class="zoogeography__marker zoogeography__gorilla-marker">
+            <img
+              src="../../assets/icons/noun_Gorilla_627896.svg"
+              alt="gorilla marker"
+              class="zoogeography__marker-img"
+            />
           </div>
-        </li>
-        <li>
-          <div class="sidebar__circle">
-            <a href="../Zoos-translation/zoos/gorilla.html" class="sidebar__link">
-            <img src="../../assets/icons/noun_Gorilla_adide.svg" class="aside-img" alt="gorilla">
-            </a>
+          <div class="zoogeography__marker zoogeography__panda-marker">
+            <img
+              src="../../assets/icons/noun_Panda_626051.svg"
+              alt="panda marker"
+              class="zoogeography__marker-img panda-cmn"
+            />
           </div>
-        </li>        
-      </ul> 
-      <a href="#" class="sidebar__link">
-        <img src="../../assets/icons/down.svg" alt="down">
-      </a>        
-    </aside>
-    <main>
-      <div class="map-wrapper">
-        <img src="../../assets/images/map.png" alt="world map" class="map">        
-        <div class="zoogeography__marker zoogeography__alligator-marker">
-          <img src="../../assets/icons/noun_Crocodile_627894.svg" alt="alligator marker"
-              class="zoogeography__marker-img">
-        </div>
-        <div class="zoogeography__marker zoogeography__gorilla-marker">
-          <img src="../../assets/icons/noun_Gorilla_627896.svg" alt="gorilla marker"
-              class="zoogeography__marker-img">
-        </div>
-        <div class="zoogeography__marker zoogeography__panda-marker">
-          <img src="../../assets/icons/noun_Panda_626051.svg" alt="panda marker"
-              class="zoogeography__marker-img panda-cmn">  
-        </div>
-        <div class="animal-card">
-          <img src="../../assets/images/gorilla-card.png" alt="gorilla"
-             class="animal-card__img">
-          <h2 class="animal-card__title">Gorilla</h2>
-          <p class="animal-card__text">The broadcast comes from the Democratic
-             Republic of the<br> Congo in a forest area. Watch<br> their life and life together</p>
-          <div class="animal-card__button">
-            <a href="../Zoos-translation/zoos/gorilla.html"
-             class="animal-card__link">
-              <p class="animal-card__link-text">Watch now</p>
-              <img src="../../assets/icons/card-arrow-blue.svg" alt="right" 
-              class="animal-card__link-arrow">
-            </a>
+          <div class="animal-card">
+            <img
+              src="../../assets/images/gorilla-card.png"
+              alt="gorilla"
+              class="animal-card__img"
+            />
+            <h2 class="animal-card__title">Gorilla</h2>
+            <p class="animal-card__text">
+              The broadcast comes from the Democratic Republic of the<br />
+              Congo in a forest area. Watch<br />
+              their life and life together
+            </p>
+            <div class="animal-card__button">
+              <a
+                href="../Zoos-translation/zoos/gorilla.html"
+                class="animal-card__link"
+              >
+                <p class="animal-card__link-text">Watch now</p>
+                <img
+                  src="../../assets/icons/card-arrow-blue.svg"
+                  alt="right"
+                  class="animal-card__link-arrow"
+                />
+              </a>
+            </div>
           </div>
-        </div> 
-      </div>
-    </main>
-  </div>
-</body>
+        </div>
+      </main>
+    </div>
+  </body>
 </html>

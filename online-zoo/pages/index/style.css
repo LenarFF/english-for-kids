@@ -19,6 +19,7 @@
   padding-right: 110px;
   width: 1681px;
   margin: auto;
+  border: 2px solid #f0f0f0;
 }
 .main-heading {
   visibility: hidden;
@@ -40,14 +41,16 @@
   font-size: 18px;
   color: #080029;
   text-decoration: none;
-  fill: solid;  
+  fill: solid;
 }
 .menu__item:hover {
   text-decoration: underline;
-  
 }
 .menu__item_bold {
   font-weight: 500;
+}
+.menu__item_bold:hover {
+  text-decoration: none;
 }
 
 .sidebar {
@@ -64,6 +67,7 @@
   margin-left: 53px;
   margin-top: -52px;
   background-color: #fcfcfc;
+  border: 1px solid #f0f0f0;
 }
 .sidebar__list {
   list-style: none;
@@ -74,6 +78,12 @@
   align-items: center;
   height: 176px;
   margin-top: 190px;
+}
+.sidebar__img {
+  transition: 0.5s;
+}
+.sidebar__img:hover {
+  transform: scale(1.5);
 }
 
 .wild-park,
@@ -103,9 +113,9 @@
   margin-bottom: 0;
 }
 .wild-park__text-i {
-  display: inline-block; 
+  display: inline-block;
 }
-.wild-park__text-dot {  
+.wild-park__text-dot {
   display: block;
   line-height: 0;
   color: rgb(255, 0, 21);
@@ -138,11 +148,11 @@
   width: 250px;
   height: 56px;
   border-radius: 5px;
-  background-color: #080029;
+  background-color: #0f0049;
   display: flex;
 }
 .wild-park__choose-button:hover {
-  background: #0f0049;
+  background: #080029;
 }
 .wild-park__choose-button:active {
   background: #150068;
@@ -292,6 +302,10 @@
 .famous-pets__arrow {
   margin-right: 15px;
 }
+.famous-pets__arrow:hover {
+  opacity: 0.8;
+}
+
 .famous-pets__image-wrap {
   padding: 18px 19px;
   width: 328px;
@@ -551,11 +565,10 @@
   color: #fcfcfc;
 }
 .testimonials__feedback-button:hover {
-  background:#0F0049;
+  background: #0f0049;
 }
 .testimonials__feedback-button:active {
   background: #150068;
-
 }
 .testimonials__see-more-button {
   font-family: Rubik;
@@ -699,14 +712,14 @@
   height: 698px;
 }
 .zoogeography__marker {
-  transition: 0.5s;  
+  transition: 0.5s;
 }
 
 .zoogeography__marker {
   position: absolute;
   width: 73px;
   height: 73px;
-  border-radius:77% 77% 0% 111% / 77% 134% 0% 77%;
+  border-radius: 77% 77% 0% 111% / 77% 134% 0% 77%;
   transform: rotate(45deg);
   background-color: white;
   top: 0;
@@ -715,19 +728,18 @@
 .zoogeography__marker-img {
   transform: rotate(-45deg);
   margin-left: 17px;
-  margin-top: 13px;  
-  
+  margin-top: 13px;
 }
 .zoogeography__eagle-marker {
   top: 162px;
   left: 144px;
   transform: rotate(45deg) scale(1.5);
-  border: 1px solid #609FFF;
+  border: 1px solid #609fff;
 }
 
 .zoogeography__marker:hover {
   transform: rotate(45deg) scale(1.5);
-  border: 1px solid #609FFF;
+  border: 1px solid #609fff;
 }
 
 .tiny-eagle {
@@ -735,7 +747,7 @@
 }
 .zoogeography__alligator-marker {
   top: 217px;
-  left: 271px; 
+  left: 271px;
 }
 
 .zoogeography__gorilla-marker {
@@ -862,7 +874,7 @@
   font-style: normal;
   font-weight: 500;
   line-height: 21px;
-  letter-spacing: 0em;  
+  letter-spacing: 0em;
   color: #fcfcfc;
   background: #0b0b0b;
   margin-bottom: 83px;
