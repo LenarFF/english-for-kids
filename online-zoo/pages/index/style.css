@@ -1,0 +1,927 @@
+.page-wrapper {
+  margin: 0 auto;
+  padding: 0;
+  background-color: #fcfcfc;
+  box-sizing: border-box;
+}
+.page-wrapper__content {
+  margin: 0 auto;
+  padding-top: 44px;
+}
+.logo_hidden {
+  visibility: hidden;
+}
+.header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 110px;
+  width: 1681px;
+  margin: auto;
+  border: 2px solid #f0f0f0;
+}
+.main-heading {
+  visibility: hidden;
+  position: absolute;
+  z-index: -1;
+}
+.menu__list {
+  display: flex;
+  flex-flow: row nowrap;
+  list-style: none;
+  width: 800px;
+  justify-content: space-between;
+  margin-right: 672px;
+  margin-left: 111px;
+  padding: 0;
+}
+.menu__item {
+  font-family: Rubik;
+  font-size: 18px;
+  color: #080029;
+  text-decoration: none;
+  fill: solid;
+}
+.menu__item:hover {
+  text-decoration: underline;
+}
+.menu__item_bold {
+  font-weight: 500;
+}
+.menu__item_bold:hover {
+  text-decoration: none;
+}
+
+.sidebar {
+  position: sticky;
+  height: 638px;
+  width: 52px;
+  z-index: 1;
+  top: 50px;
+  display: flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 53px;
+  margin-top: -52px;
+  background-color: #fcfcfc;
+  border: 1px solid #f0f0f0;
+}
+.sidebar__list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 176px;
+  margin-top: 190px;
+}
+.sidebar__img {
+  transition: 0.5s;
+}
+.sidebar__img:hover {
+  transform: scale(1.5);
+}
+
+.wild-park,
+.how-works,
+.pay-feed__wrapper,
+.famous-pets__wrapper,
+.zoogeography,
+.testimonials__wrapper,
+.footer-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 1524px;
+}
+.wild-park {
+  padding-top: 71px;
+  padding-right: 128px;
+  margin-top: -587px;
+}
+.wild-park__text {
+  padding-top: 61px;
+  padding-left: 92px;
+}
+.wild-park__text-ı {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.wild-park__text-i {
+  display: inline-block;
+}
+.wild-park__text-dot {
+  display: block;
+  line-height: 0;
+  color: rgb(255, 0, 21);
+}
+.wild-park__header {
+  font-family: Rubik;
+  font-size: 22px;
+  line-height: 26px;
+  letter-spacing: 3px;
+  font-weight: 400;
+  color: #626262;
+  margin: 0;
+  margin-top: 16px;
+}
+.wild-park__offer {
+  font-family: Merriweather;
+  font-style: Bold;
+  font-size: 84px;
+  line-height: 106px;
+  color: #080029;
+  margin-top: 25px;
+  margin-bottom: 61px;
+}
+.wild-park__buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 573px;
+}
+.wild-park__choose-button {
+  width: 250px;
+  height: 56px;
+  border-radius: 5px;
+  background-color: #0f0049;
+  display: flex;
+}
+.wild-park__choose-button:hover {
+  background: #080029;
+}
+.wild-park__choose-button:active {
+  background: #150068;
+}
+.wild-park__watch-button {
+  width: 259px;
+  height: 56px;
+  border: 2px solid #080029;
+  border-radius: 5px;
+  display: flex;
+}
+.wild-park__watch-button:hover {
+  border-color: #0f0049;
+}
+.wild-park__watch-button:active {
+  border-color: #3888ff;
+}
+.wild-park__link {
+  text-decoration: none;
+}
+.wild-park__button-text {
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: 0em;
+  margin: auto;
+  color: white;
+  text-decoration: none;
+  font-family: Rubik;
+  font-size: 18px;
+}
+.wild-park__button-text_color {
+  color: #080029;
+}
+.wild-park__img-wrap {
+  height: 673px;
+  width: 696px;
+}
+.wild-park__img {
+  border-radius: 5px;
+}
+.how-works {
+  padding-top: 137px;
+  padding-left: 55px;
+  padding-bottom: 111px;
+}
+.how-works__img-wrap {
+  height: 760px;
+  width: 512px;
+}
+.how-works__img {
+  border-radius: 5px;
+}
+.how-works__info {
+  width: 696px;
+  padding-top: 122px;
+  padding-right: 90px;
+}
+.how-works__header {
+  font-family: Rubik;
+  font-size: 22px;
+  line-height: 26px;
+  letter-spacing: 0.115em;
+  color: #0b0b0b;
+  font-style: normal;
+  font-weight: normal;
+}
+.how-works__first-info {
+  font-family: Merriweather;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 145%;
+  color: #080029;
+  margin-top: 50px;
+}
+.how-works__second-info {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 154%;
+  color: #747474;
+  margin-top: 41px;
+  margin-bottom: 61px;
+}
+.how-works__link {
+  text-decoration: none;
+}
+.how-works__button {
+  width: 218px;
+  height: 61px;
+  background: #0f0049;
+  border-radius: 5px;
+  display: flex;
+}
+.how-works__button:hover {
+  background: #080029;
+}
+.how-works__button:active {
+  background: #150068;
+}
+.how-works__button-text {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  color: #fcfcfc;
+  margin: auto;
+}
+
+.famous-pets {
+  background-color: #d9e8ff;
+  padding-top: 79px;
+  padding-bottom: 86px;
+}
+.famous-pets__text {
+  padding-top: 217px;
+  padding-left: 31px;
+  width: 668px;
+}
+.famous-pets__images-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.famous-pets__header {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 26px;
+  letter-spacing: 0.115em;
+  color: #0b0b0b;
+}
+.famous-pets__info {
+  font-family: Merriweather;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 145%;
+  color: #080029;
+  margin-top: 50px;
+  margin-bottom: 54px;
+}
+.famous-pets__arrow {
+  margin-right: 15px;
+}
+.famous-pets__arrow:hover {
+  opacity: 0.8;
+}
+
+.famous-pets__image-wrap {
+  padding: 18px 19px;
+  width: 328px;
+  height: 328px;
+}
+.famous-pets__image-inner-wrap {
+  background-color: black;
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+}
+.famous-pets__image {
+  border-radius: 5px;
+  width: 100%;
+  transition: 1s;
+  display: block;
+}
+
+.famous-pets__image-inner-wrap:hover .famous-pets__image {
+  transform: scale(1.2);
+  opacity: 0.8;
+  filter: blur(1px);
+}
+
+.famous-pets__image-inscription {
+  position: absolute;
+  top: 163px;
+  left: 109px;
+  transition: 0.5s;
+}
+.famous-pets__image-text {
+  font-family: Rubik;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #fcfcfc;
+  margin-top: 42px;
+  transition: 0.4s;
+}
+.famous-pets__image-inner-wrap:hover .famous-pets__image-text {
+  opacity: 0;
+}
+.famous-pets__image-circle {
+  width: 72px;
+  height: 72px;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  margin-left: 14px;
+  transition: 0.5s;
+}
+.famous-pets__image-inner-wrap:hover .famous-pets__image-circle {
+  transform: scale(3.2) translateY(-15px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.famous-pets__image-cross {
+  padding-left: 16px;
+  transition: 0.5s;
+  margin-top: 23px;
+  margin-left: 9px;
+}
+.famous-pets__image-inner-wrap:hover .famous-pets__image-cross {
+  opacity: 0;
+}
+.famous-pets__image-hidden-text {
+  position: absolute;
+  text-align: center;
+  top: 111px;
+  left: 67px;
+  width: 199px;
+  opacity: 0;
+  transition: 0.5s;
+}
+.famous-pets__image-inner-wrap:hover .famous-pets__image-hidden-text {
+  opacity: 1;
+}
+.famous-pets__image-hidden-habitat {
+  font-family: Rubik;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0em;
+  color: #fcfcfc;
+}
+.famous-pets__image-hidden-follow {
+  font-family: Rubik;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: 0em;
+  color: #fcfcfc;
+  display: inline-block;
+  position: absolute;
+  top: 155px;
+  left: 59px;
+}
+.famous-pets__image-hidden-arrow {
+  margin-left: 16px;
+  position: absolute;
+  top: 176px;
+  left: 116px;
+}
+
+.pay-feed {
+  padding-top: 81px;
+  margin: 0 auto;
+  width: 1524px;
+}
+.pay-feed__wrapper {
+  display: flex;
+  width: 1480px;
+  justify-content: flex-start;
+  padding-left: 231px;
+}
+.pay-feed__safe {
+  padding-top: 63px;
+}
+.pay-feed__header {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 26px;
+  letter-spacing: 0.115em;
+  color: #0b0b0b;
+  margin-left: 213px;
+  padding-top: 3px;
+}
+.pay-feed__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 32px;
+  margin-left: 72px;
+}
+.pay-feed__subtitle {
+  font-family: Merriweather;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 145%;
+  color: #0f0049;
+  margin-bottom: 10px;
+}
+.pay-feed__text {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 154%;
+  color: #747474;
+  width: 449px;
+  margin-bottom: 38px;
+}
+.pay-feed__text_margin {
+  margin-top: 30px;
+}
+.pay-feed__wavy-arrow {
+  width: 207px;
+  margin-left: 104px;
+}
+.pay-feed__curled-arrow {
+  padding-top: 159px;
+  padding-left: 265px;
+}
+.pay-feed__parcel {
+  margin-left: 26px;
+  padding-top: 14px;
+}
+.pay-feed__delivery-text {
+  padding-top: 84px;
+  margin-left: 57px;
+}
+.happy-animals {
+  display: flex;
+  padding-top: 14px;
+  padding-left: 30px;
+  padding-bottom: 97px;
+}
+.happy-animals__tea-drinking-text {
+  padding-top: 6px;
+  margin-left: 55px;
+  width: 514px;
+}
+.happy-animals__text_margin {
+  margin-top: 30px;
+  width: 461px;
+}
+.testimonials {
+  background-color: #080029;
+  display: flex;
+  padding-top: 81px;
+  padding-left: 55px;
+  padding-bottom: 99px;
+}
+.testimonials__wrapper {
+  width: 1704px;
+}
+.testimonials__text {
+  width: 483px;
+  padding-left: 90px;
+}
+.testimonials__reviews-wrapper {
+  padding-top: 21px;
+}
+.testimonials__header {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 26px;
+  letter-spacing: 0.115em;
+  color: #fcfcfc;
+}
+.testimonials__subtitle {
+  font-family: Merriweather;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 145%;
+  color: #fcfcfc;
+  margin-top: 64px;
+  margin-bottom: 42px;
+}
+.testimonials__info {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 154%;
+  color: #fcfcfc;
+  margin-bottom: 62px;
+}
+.testimonials__feedback-link {
+  text-decoration: none;
+}
+.testimonials__feedback-button {
+  height: 61px;
+  width: 286px;
+  border-radius: 5px;
+  border: 2px solid #fcfcfc;
+  box-sizing: border-box;
+  background-color: #fff;
+  background: #080029;
+  font-family: Rubik;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #fcfcfc;
+}
+.testimonials__feedback-button:hover {
+  background: #0f0049;
+}
+.testimonials__feedback-button:active {
+  background: #150068;
+}
+.testimonials__see-more-button {
+  font-family: Rubik;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: 0em;
+  text-decoration: none;
+  color: #fcfcfc;
+  margin-left: 35px;
+}
+.testimonials__see-more-button:hover {
+  text-decoration: underline;
+}
+.testimonials__see-more-arrow {
+  margin-left: 4px;
+}
+.testimonials__reviews {
+  display: flex;
+  margin-top: 25px;
+}
+.testimonials__review {
+  height: 273px;
+  width: 512px;
+  border-radius: 15px;
+  background-color: #fcfcfc;
+  margin-left: 36px;
+}
+.testimonials__review-heading {
+  display: flex;
+  padding-left: 38px;
+  padding-top: 14px;
+}
+.testimonials__review-avatar {
+  margin-right: 17px;
+}
+.testimonials__review-name {
+  font-family: Rubik;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 32px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #0b0b0b;
+}
+.testimonials__review-text {
+  font-family: Rubik;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #181818;
+  margin-top: 6px;
+  padding-left: 37px;
+  padding-right: 44px;
+}
+.testimonials__arrows-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 28px;
+  margin-left: 35px;
+  width: 149px;
+}
+.testimonials__arrow:hover {
+  opacity: 0.5;
+}
+.zoogeography {
+  padding-top: 53px;
+  padding-left: 60px;
+  padding-bottom: 110px;
+}
+.zoogeography__description {
+  padding-top: 33px;
+}
+.zoogeography__card {
+  padding-top: 42px;
+}
+.zoogeography__header {
+  font-family: Rubik;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: 0.115em;
+  text-align: left;
+  color: #000;
+}
+.zoogeography__card-img {
+  border-radius: 5px;
+}
+.zoogeography__card-title {
+  font-family: Merriweather;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 52px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #080029;
+  margin-top: 17px;
+  margin-bottom: 13px;
+}
+.zoogeography__card-text {
+  font-family: Rubik;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #747474;
+  padding-left: 39px;
+  width: 267px;
+  margin-bottom: 55px;
+}
+.zoogeography__watch-button {
+  font-family: Rubik;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #3888ff;
+  text-decoration: none;
+  padding-left: 113px;
+}
+.zoogeography__watch-arrow {
+  padding-left: 6px;
+}
+.zoogeography__map {
+  margin-left: 24px;
+  position: relative;
+}
+.zoogeography__map-img {
+  width: 1216px;
+  height: 698px;
+}
+.zoogeography__marker {
+  transition: 0.5s;
+}
+
+.zoogeography__marker {
+  position: absolute;
+  width: 73px;
+  height: 73px;
+  border-radius: 77% 77% 0% 111% / 77% 134% 0% 77%;
+  transform: rotate(45deg);
+  background-color: white;
+  top: 0;
+  border: 1px solid #fff;
+}
+.zoogeography__marker-img {
+  transform: rotate(-45deg);
+  margin-left: 17px;
+  margin-top: 13px;
+}
+.zoogeography__eagle-marker {
+  top: 162px;
+  left: 144px;
+  transform: rotate(45deg) scale(1.5);
+  border: 1px solid #609fff;
+}
+
+.zoogeography__marker:hover {
+  transform: rotate(45deg) scale(1.5);
+  border: 1px solid #609fff;
+}
+
+.tiny-eagle {
+  height: 49px;
+}
+.zoogeography__alligator-marker {
+  top: 217px;
+  left: 271px;
+}
+
+.zoogeography__gorilla-marker {
+  top: 341px;
+  left: 586px;
+}
+.zoogeography__panda-marker {
+  left: 904px;
+  top: 204px;
+}
+.panda-cmn {
+  margin-left: 16px;
+  margin-top: 20px;
+}
+
+.footer {
+  background-color: #0b0b0b;
+  height: 766px;
+}
+.footer-wrapper {
+  flex-direction: column;
+  padding-top: 100px;
+  padding-left: 57px;
+}
+.footer-top-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.logos {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.logos__yd-title {
+  position: absolute;
+  top: 310px;
+  width: 123px;
+  height: 64px;
+}
+.logos__rss-title {
+  position: absolute;
+  width: 148px;
+  height: 59px;
+  top: 312px;
+  left: 163px;
+}
+.logos__other-logo-img {
+  margin-top: 189px;
+}
+.footer-nav {
+  margin-right: 207px;
+}
+.footer-nav__list {
+  margin-top: 0;
+  list-style-type: none;
+}
+.footer-nav__header {
+  font-family: Rubik;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: 0.115em;
+  color: #fcfcfc;
+  margin-bottom: 40px;
+}
+.footer-nav__elem {
+  margin-bottom: 31px;
+}
+
+.footer-nav__items {
+  font-family: Rubik;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0em;
+  text-align: left;
+  text-decoration: none;
+  color: #bcbcbc;
+  margin-bottom: 40px;
+}
+.footer-nav__items:hover {
+  text-decoration: underline;
+}
+.support {
+  width: 345px;
+  padding-right: 75px;
+}
+.support__header {
+  font-family: Rubik;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: 0.115em;
+  text-align: left;
+  color: #fcfcfc;
+  margin-top: 1px;
+}
+.support__text {
+  font-family: Rubik;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #bcbcbc;
+  margin-top: 45px;
+  margin-bottom: 41px;
+}
+.support__donate-link {
+  text-decoration: none;
+}
+.support__donate-button {
+  height: 61px;
+  width: 339px;
+  border-radius: 5px;
+  border: 2px solid #fcfcfc;
+  box-sizing: border-box;
+  font-family: Rubik;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: 0em;
+  color: #fcfcfc;
+  background: #0b0b0b;
+  margin-bottom: 83px;
+}
+.support__donate-button:hover {
+  opacity: 0.5;
+}
+.support__donate-text {
+  text-align: center;
+}
+.support__socials {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 355px;
+}
+.support__socials-link {
+  font-family: Rubik;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0em;
+  color: #bcbcbc;
+  text-decoration: none;
+}
+.support__socials-link:hover {
+  opacity: 0.5;
+}
+.footer__horizontal {
+  width: 1432px;
+  height: 1px;
+  background-color: #747474;
+  margin-top: 112px;
+  margin-bottom: 35px;
+}
+.copyrights {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 92px;
+}
+.copyrights__copy,
+.copyrights__designed {
+  font-family: Rubik;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 23px;
+  letter-spacing: 0em;
+  color: #bcbcbc;
+}

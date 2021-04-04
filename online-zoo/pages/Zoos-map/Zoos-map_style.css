@@ -1,0 +1,234 @@
+.page-wrapper {
+  width: 1920px;
+  margin: 0 auto;
+  padding: 0;
+  background-color: #fcfcfc;
+  box-sizing: border-box;
+  position: relative;
+}
+.logo_hidden {
+  visibility: hidden;
+}
+.header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 110px;
+  width: 1681px;
+  margin: auto;
+  position: absolute;
+  background-color: white;
+  left: 78px;
+  top: 24px;
+  height: 91px;
+  border: 1px solid #f0f0f0;
+}
+
+.main-heading {
+  visibility: hidden;
+  position: absolute;
+  z-index: -1;
+}
+.menu__list {
+  display: flex;
+  flex-flow: row nowrap;
+  list-style: none;
+  width: 800px;
+  justify-content: space-between;
+  margin-right: 672px;
+  margin-left: 111px;
+  padding: 0;
+}
+.menu__item {
+  font-family: Rubik;
+  font-size: 18px;
+  color: #080029;
+  text-decoration: none;
+  fill: solid;
+}
+.menu__item:hover {
+  text-decoration: underline;
+}
+.menu__item_bold {
+  font-weight: 500;
+  text-decoration: none;
+}
+.menu__item_bold:hover {
+  text-decoration: none;
+}
+.profile-icon {
+  margin-left: 8px;
+}
+
+.sidebar {
+  position: fixed;
+  top: 50px;
+  margin-left: 61px;
+  width: 88px;
+  height: 735px;
+  background-color: #fcfcfc;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #f0f0f0;
+}
+
+.logo {
+  text-align: center;
+}
+.sidebar__list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 485px;
+  margin-top: 27px;
+  margin-bottom: 25px;
+}
+.sidebar__up {
+  margin-top: 20px;
+}
+.sidebar__circle {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: 1px solid #d9e8ff;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  transition: 0.5s;
+}
+.sidebar__circle:hover {
+  border: 1px solid #609fff;
+}
+
+.aside-img {
+  margin: auto;
+}
+.sidebar__down,
+.sidebar__up {
+  transition: 0.5s;
+}
+.sidebar__down:hover,
+.sidebar__up:hover {
+  transform: scale(0.8);
+}
+
+.zoogeography__marker {
+  transition: 0.5s;
+}
+
+.zoogeography__marker {
+  position: absolute;
+  width: 77px;
+  height: 77px;
+  border-radius: 77% 77% 0% 111% / 77% 134% 0% 77%;
+  transform: rotate(45deg);
+  background-color: white;
+  top: 0;
+  border: 1px solid #fff;
+}
+.zoogeography__marker-img {
+  transform: rotate(-45deg);
+  margin-left: 17px;
+  margin-top: 13px;
+}
+.zoogeography__eagle-marker {
+  top: 162px;
+  left: 144px;
+  transform: rotate(45deg) scale(1.5);
+  border: 1px solid #609fff;
+}
+
+.zoogeography__marker:hover {
+  transform: rotate(45deg) scale(1.3);
+  border: 1px solid #609fff;
+}
+
+.tiny-eagle {
+  height: 49px;
+}
+.zoogeography__alligator-marker {
+  top: 205px;
+  left: 255px;
+}
+
+.zoogeography__gorilla-marker {
+  top: 448px;
+  left: 951px;
+  transform: rotate(45deg) scale(1.3);
+  border: 1px solid #609fff;
+}
+.zoogeography__panda-marker {
+  left: 1633px;
+  top: 244px;
+}
+
+.zoogeography__marker-img {
+  height: 53px;
+}
+.panda-cmn {
+  margin-left: 16px;
+  margin-top: 20px;
+  height: 44px;
+}
+.animal-card {
+  position: absolute;
+  width: 344px;
+  height: 512px;
+  border-radius: 15px;
+  background-color: white;
+  top: 240px;
+  left: 581px;
+}
+.animal-card__img {
+  border-radius: 15px 15px 0 0;
+}
+
+.animal-card__title {
+  font-family: Merriweather;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 52px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #0f0049;
+  margin-top: 15px;
+  margin-bottom: 1px;
+}
+.animal-card__text {
+  font-family: Rubik;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0em;
+  text-align: center;
+  margin-bottom: 7px;
+}
+.animal-card__button {
+  margin-left: 11px;
+}
+.animal-card__link {
+  font-family: Rubik;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: 0em;
+  text-align: center;
+  text-decoration: none;
+  color: #3888ff;
+  display: flex;
+  justify-content: center;
+}
+.animal-card__link:hover {
+  text-decoration: underline;
+}
+.animal-card__link-arrow {
+  margin-left: 12px;
+}
