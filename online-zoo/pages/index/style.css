@@ -642,7 +642,7 @@
 .zoogeography {
   padding-top: 53px;
   padding-left: 60px;
-  padding-bottom: 110px;
+  padding-bottom: 105px;
 }
 .zoogeography__description {
   padding-top: 33px;
@@ -731,14 +731,14 @@
   margin-top: 13px;
 }
 .zoogeography__eagle-marker {
-  top: 162px;
-  left: 144px;
-  transform: rotate(45deg) scale(1.5);
+  top: 172px;
+  left: 137px;
+  transform: rotate(45deg) scale(1.4);
   border: 1px solid #609fff;
 }
 
 .zoogeography__marker:hover {
-  transform: rotate(45deg) scale(1.5);
+  transform: rotate(45deg) scale(1.4);
   border: 1px solid #609fff;
 }
 
@@ -746,17 +746,17 @@
   height: 49px;
 }
 .zoogeography__alligator-marker {
-  top: 217px;
+  top: 208px;
   left: 271px;
 }
 
 .zoogeography__gorilla-marker {
-  top: 341px;
+  top: 336px;
   left: 586px;
 }
 .zoogeography__panda-marker {
   left: 904px;
-  top: 204px;
+  top: 193px;
 }
 .panda-cmn {
   margin-left: 16px;
