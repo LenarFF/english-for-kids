@@ -16,7 +16,7 @@
     <div class="page-wrapper">
       <div class="page-wrapper__content">      
         <header class="header">
-          <div class="logo logo_hidden">
+          <div class="logo_hidden">
             <a href="../index/index.html">
               <img src="../../assets/icons/logo.svg" alt="logo">
             </a>
@@ -44,6 +44,9 @@
             <a href="#">
               <img src="../../assets/icons/profile.svg" alt="profile icon" class="profile-icon__img">
             </a>
+          </div>
+          <div class="burger-menu">
+            <img src="../../assets/icons/burger_menu.svg" alt="menu" class="burger-menu__img">
           </div>
         </header>
         <main>
@@ -77,12 +80,15 @@
           <section class="wild-park" id="watch-online">
             <div class="wild-park__text">
               <h2 class="wild-park__header" >Wild park</h2>
-              <p class="wild-park__offer">Watch your favorite animal <span class="wild-park__online">onl<!--This comment is required to remove whitespace created by inline-block elements.
+              <p class="wild-park__offer">Watch your favorite animal 
+                <span class="wild-park__online">onl<!--This comment is required to remove whitespace created by inline-block elements.
               --><span class="wild-park__text-i">
                   <span class="wild-park__text-dot">.</span>
                   <span class="wild-park__text-ı">ı</span>
                 </span><!--This comment is required to remove whitespace created by inline-block elements.
-                -->ne</span></p>
+                -->ne
+                </span>
+              </p>
               <div class="wild-park__buttons">
                 <a href="../Zoos-map/Zoos-map.html" class="wild-park__link wild-park__link-choose">
                   <div class="wild-park__choose-button">
@@ -107,6 +113,7 @@
           <section class="how-works" id="how-it-works">
             <div class="how-works__img-wrap">
               <picture>
+                <source srcset="../../assets/images/landing__lion_640px.png" media="(max-width: 768px)">
                 <source srcset="../../assets/images/landing__lion_1200px.png" media="(max-width: 1200px)">
                 <img src="../../assets/images/lion.png" alt="lion cub" class="how-works__img">
               </picture>
@@ -243,7 +250,7 @@
                     <img src="../../assets/images/gorilla.png" alt="gorilla" 
                       class="famous-pets__image">
                     <div class="famous-pets__image-inscription">
-                      <div class="famous-pets__image-circle">
+                      <div class="famous-pets__image-circle famous-pets__image-circle_big">
                         <img src="../../assets/icons/cross.svg" alt="#"
                          class="famous-pets__image-cross">
                       </div>                      
@@ -269,7 +276,7 @@
               <div class="pay-feed__info">
                 <h3 class="pay-feed__subtitle">Pay with VISA card</h3>
                 <p class="pay-feed__text">On the payment page, you need to enter the details
-                  of your "Visa" card and make a transfer. The operation will not take more
+                  of your "Visa" card and make a transfer.<br class="pay-feed__text_br">The operation will not take more
                     than ~2 minutes.</p>
                 <img src="../../assets/icons/wavy-arrow.svg" alt="arrow down" class="pay-feed__wavy-arrow">
               </div>
@@ -283,7 +290,7 @@
               </div>
               <div class="pay-feed__delivery-text">
                 <h3 class="pay-feed__subtitle">Payment goes to the zoo</h3>
-                <p class="pay-feed__text pay-feed__text_margin">Payment goes to the account of the zoo and volunteers
+                <p class="pay-feed__text pay-feed__text_margin">Payment goes to the account of the zoo <br class="pay-feed__text_br">and volunteers
                    with employees receive a notification about the donation.</p>
               </div>
             </div>
@@ -292,9 +299,9 @@
                 <img src="../../assets/icons/tea-drinking.svg" alt="animals drink tea" class="happy-animals__tea-drinking-img">
               </div>
               <div class="happy-animals__tea-drinking-text ">
-                <h3 class="pay-feed__subtitle">The selected animal receives a treat</h3>
+                <h3 class="pay-feed__subtitle pay-feed__subtitle_last">The selected animal receives a treat</h3>
                 <p class="pay-feed__text happy-animals__text_margin">The staff takes the food you need for your
-                   chosen animal and delivers it to the animal. With your help, the animal is happy!</p>
+                   chosen animal and delivers it to the animal. <br class="pay-feed__text_br">With your help, the animal is happy!</p>
               </div>              
             </div>
           </section>
@@ -304,8 +311,8 @@
                 <h2 class="testimonials__header">Testimonials</h2>
                 <h3 class="testimonials__subtitle">You can make us smile</h3>
                 <p class="testimonials__info">We want to make animal observation
-                  and interaction accessible. You can leave your wishes <br class="testimonials__br">on how
-                    to make the service more convenient, <br class="testimonials__br">and most importantly, more interesting for you.</p>
+                  and interaction accessible. You can leave your wishes <br class="testimonials__br">on how<br class="testimonials__br_640">
+                    to make the service more convenient, <br class="testimonials__br_640"><br class="testimonials__br">and most importantly, more interesting for you.</p>
                 <a href="#" class="testimonials__feedback-link">   
                   <div class="testimonials__feedback-button">
                     <p class="testimonials__feedback-text">Leave feedback</p>
@@ -353,6 +360,7 @@
               <h2 class="zoogeography__header">Zoogeography</h2>
               <div class="zoogeography__card">
                 <picture>
+                  <source srcset="../../assets/images/landing__eagle_640px.png" media="(max-width: 1199px)">
                   <source srcset="../../assets/images/card__eagle_1200px.png" media="(max-width: 1480px)">
                   <img src="../../assets/images/eagle-card.png" alt="eagle" class="zoogeography__card-img">
                 </picture>
@@ -394,7 +402,8 @@
                 <a href="../index/index.html" class="logos__main-logo">
                   <img src="../../assets/icons/footer_logo.svg" alt="logo" class="logos__main-logo-img">
                 </a>
-                <picture>
+                <picture class="logos__schools">
+                  <source srcset="../../assets/icons/logos_640px.svg">
                   <source srcset="../../assets/icons/logos__1200px.svg" media="(max-width: 1480px)">
                   <img src="../../assets/icons/footer_logos.svg" alt="logos"      class="logos__other-logo-img">
                 </picture>
