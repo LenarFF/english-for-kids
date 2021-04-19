@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="../normalize/normalize.css">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -42,7 +42,7 @@
           </nav>
           <div class="profile-icon">
             <a href="#">
-              <img src="../../assets/icons/profile.svg" alt="profile icon">
+              <img src="../../assets/icons/profile.svg" alt="profile icon" class="profile-icon__img">
             </a>
           </div>
         </header>
@@ -50,7 +50,7 @@
           <aside class="sidebar">
             <div class="logo">
               <a href="../index/index.html">
-                <img src="../../assets/icons/logo.svg" alt="logo">
+                <img src="../../assets/icons/logo.svg" alt="logo" class="logo__img">
               </a>
             </div>
             <ul class="sidebar__list">
@@ -71,25 +71,25 @@
               </li>
             </ul>              
             <a href="#" class="sidebar__link">
-              <img src="../../assets/icons/go_up.svg" alt="page up" class="sidebar__img">
+              <img src="../../assets/icons/go_up.svg" alt="page up" class="sidebar__img sidebar__arrow">
             </a>           
           </aside>
           <section class="wild-park" id="watch-online">
             <div class="wild-park__text">
               <h2 class="wild-park__header" >Wild park</h2>
-              <p class="wild-park__offer">Watch your favorite animal onl<!--This comment is required to remove whitespace created by inline-block elements.
+              <p class="wild-park__offer">Watch your favorite animal <span class="wild-park__online">onl<!--This comment is required to remove whitespace created by inline-block elements.
               --><span class="wild-park__text-i">
                   <span class="wild-park__text-dot">.</span>
                   <span class="wild-park__text-ı">ı</span>
                 </span><!--This comment is required to remove whitespace created by inline-block elements.
-                -->ne</p>
+                -->ne</span></p>
               <div class="wild-park__buttons">
-                <a href="../Zoos-map/Zoos-map.html" class="wild-park__link">
+                <a href="../Zoos-map/Zoos-map.html" class="wild-park__link wild-park__link-choose">
                   <div class="wild-park__choose-button">
                     <p class="wild-park__button-text">Choose zoo</p>
                   </div>
                 </a>
-                <a href="../Zoos-translation/zoos/panda.html" class="wild-park__link">
+                <a href="../Zoos-translation/zoos/panda.html" class="wild-park__link wild-park__link-watch">
                   <div class="wild-park__watch-button">
                     <p class="wild-park__button-text wild-park__button-text_color">Watch online</p>
                   </div>
@@ -97,12 +97,19 @@
               </div>
             </div>
             <div class="wild-park__img-wrap">
-              <img src="../../assets/images/main-panda.jpg" alt="panda" class="wild-park__img">
+              <picture>
+                <source srcset="../../assets/images/panda-landing_full.png" media="(max-width: 1480px)">
+                <source srcset="../../assets/images/main-panda_640px" media="(max-width: 640px)">
+                <img src="../../assets/images/main-panda.jpg" alt="panda" class="wild-park__img">              
+              </picture>
             </div>
           </section>
           <section class="how-works" id="how-it-works">
             <div class="how-works__img-wrap">
-              <img src="../../assets/images/lion.png" alt="lion cub" class="how-works__img">
+              <picture>
+                <source srcset="../../assets/images/landing__lion_1200px.png" media="(max-width: 1200px)">
+                <img src="../../assets/images/lion.png" alt="lion cub" class="how-works__img">
+              </picture>
             </div>
             <div class="how-works__info">
               <h2 class="how-works__header">How Zoo online works</h2>
@@ -134,7 +141,7 @@
                 </div>
               </div>
               <div class="famous-pets__images-wrap">                
-                <div class="famous-pets__image-wrap">
+                <div class="famous-pets__image-wrap famous-pets__image-wrap-1">
                   <div class="famous-pets__image-inner-wrap">
                     <img src="../../assets/images/little-panda.png" alt="little panda"
                        class="famous-pets__image">
@@ -152,7 +159,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="famous-pets__image-wrap">
+                <div class="famous-pets__image-wrap famous-pets__image-wrap-2">
                   <div class="famous-pets__image-inner-wrap">
                     <img src="../../assets/images/penguin.png" alt="penguin" 
                         class="famous-pets__image">
@@ -164,14 +171,17 @@
                       <p class="famous-pets__image-text">Penguin</p>
                     </div> 
                     <div class="famous-pets__image-hidden-text">
-                      <p class="famous-pets__image-hidden-habitat">In the sea of
+                      <p class="famous-pets__image-hidden-habitat famous-pets__image-hidden-habitat_none">In the sea of
                          the Southern Hemisphere, Antarctic waters</p>
-                      <p class="famous-pets__image-hidden-follow">Follow</p>
-                      <img class="famous-pets__image-hidden-arrow" src="../../assets/icons/card-arrow.svg" alt="">
+                      <p class="famous-pets__image-hidden-habitat famous-pets__image-hidden_new">
+                        South Sea, Antarctic waters
+                      </p>
+                      <p class="famous-pets__image-hidden-follow famous-pets__image-hidden-follow_penguin">Follow</p>
+                      <img class="famous-pets__image-hidden-arrow famous-pets__image-hidden-arrow_penguin" src="../../assets/icons/card-arrow.svg" alt="">
                     </div>   
                   </div>
                   </div>
-                <div class="famous-pets__image-wrap">
+                <div class="famous-pets__image-wrap famous-pets__image-wrap-3">
                   <div class="famous-pets__image-inner-wrap">
                     <img src="../../assets/images/squirrel.png" alt="squirrel"
                        class="famous-pets__image">
@@ -191,7 +201,7 @@
                     </div>   
                   </div>                  
                 </div>
-                <div class="famous-pets__image-wrap">
+                <div class="famous-pets__image-wrap famous-pets__image-wrap-4">
                   <div class="famous-pets__image-inner-wrap">
                     <img src="../../assets/images/panda.png" alt="panda" 
                       class="famous-pets__image">
@@ -209,7 +219,7 @@
                     </div>   
                   </div>                  
                 </div>
-                <div class="famous-pets__image-wrap">
+                <div class="famous-pets__image-wrap famous-pets__image-wrap-5">
                   <div class="famous-pets__image-inner-wrap">
                     <img src="../../assets/images/eagle.png" alt="eagle" 
                       class="famous-pets__image">
@@ -223,12 +233,12 @@
                     <div class="famous-pets__image-hidden-text">
                       <p class="famous-pets__image-hidden-habitat">North America, islands near
                          Los Angeles</p>
-                      <p class="famous-pets__image-hidden-follow">Follow</p>
-                      <img class="famous-pets__image-hidden-arrow" src="../../assets/icons/card-arrow.svg" alt="">
+                      <p class="famous-pets__image-hidden-follow famous-pets__image-hidden-follow_eagle">Follow</p>
+                      <img class="famous-pets__image-hidden-arrow famous-pets__image-hidden-arrow_eagle" src="../../assets/icons/card-arrow.svg" alt="">
                     </div>      
                   </div>                  
                 </div>
-                <div class="famous-pets__image-wrap">
+                <div class="famous-pets__image-wrap famous-pets__image-wrap-6">
                   <div class="famous-pets__image-inner-wrap">
                     <img src="../../assets/images/gorilla.png" alt="gorilla" 
                       class="famous-pets__image">
@@ -252,9 +262,9 @@
           </section>
           <section class="pay-feed" id="pay-and-feed">
             <h2 class="pay-feed__header">Pay & feed</h2>
-            <div class="pay-feed__wrapper">
+            <div class="pay-feed__wrapper-1">
               <div class="pay-feed__safe">
-                <img src="../../assets/icons/safe.svg" alt="safe">
+                <img src="../../assets/icons/safe.svg" alt="safe" class="pay-feed__safe-img">
               </div>
               <div class="pay-feed__info">
                 <h3 class="pay-feed__subtitle">Pay with VISA card</h3>
@@ -264,7 +274,7 @@
                 <img src="../../assets/icons/wavy-arrow.svg" alt="arrow down" class="pay-feed__wavy-arrow">
               </div>
             </div>
-            <div class="pay-feed__wrapper">
+            <div class="pay-feed__wrapper-2">
               <div class="pay-feed__curled-arrow">
                 <img src="../../assets/icons/curled-arrow.svg" alt="arrow down" class="pay-feed__curled-arrow-img">
               </div>
@@ -294,8 +304,8 @@
                 <h2 class="testimonials__header">Testimonials</h2>
                 <h3 class="testimonials__subtitle">You can make us smile</h3>
                 <p class="testimonials__info">We want to make animal observation
-                  and interaction accessible. You can leave your wishes on how
-                    to. make the service more convenient, and most importantly, more interesting for you.</p>
+                  and interaction accessible. You can leave your wishes <br class="testimonials__br">on how
+                    to make the service more convenient, <br class="testimonials__br">and most importantly, more interesting for you.</p>
                 <a href="#" class="testimonials__feedback-link">   
                   <div class="testimonials__feedback-button">
                     <p class="testimonials__feedback-text">Leave feedback</p>
@@ -308,7 +318,7 @@
                   class="testimonials__see-more-arrow">
                 </a>
                 <div class="testimonials__reviews">
-                  <div class="testimonials__review">
+                  <div class="testimonials__review testimonials__review_margin">
                     <div class="testimonials__review-heading">
                       <img src="../../assets/icons/alena-avatar.svg" alt="Alena Andreeva" class="testimonials__review-avatar">
                       <h4 class="testimonials__review-name">Alena Andreeva</h4>
@@ -317,7 +327,7 @@
                       pandas happy with delicious treats. I think I will use your service more than once, thanks!”</p>
                     
                   </div>
-                  <div class="testimonials__review">
+                  <div class="testimonials__review testimonials__review_none">
                     <div class="testimonials__review-heading">
                       <img src="../../assets/icons/joe-avatar.svg" alt="Joe Brown" class="testimonials__review-avatar">
                       <h4 class="testimonials__review-name">Joe Brown</h4>
@@ -342,7 +352,10 @@
             <div class="zoogeography__description">            
               <h2 class="zoogeography__header">Zoogeography</h2>
               <div class="zoogeography__card">
-                <img src="../../assets/images/eagle-card.png" alt="eagle" class="zoogeography__card-img">
+                <picture>
+                  <source srcset="../../assets/images/card__eagle_1200px.png" media="(max-width: 1480px)">
+                  <img src="../../assets/images/eagle-card.png" alt="eagle" class="zoogeography__card-img">
+                </picture>
                 <h3 class="zoogeography__card-title">Eagle</h3>
                 <p class="zoogeography__card-text">The broadcast is from an island near Los Angeles.
                   Watch their real life.</p>
@@ -381,7 +394,10 @@
                 <a href="../index/index.html" class="logos__main-logo">
                   <img src="../../assets/icons/footer_logo.svg" alt="logo" class="logos__main-logo-img">
                 </a>
-                <img src="../../assets/icons/footer_logos.svg" alt="logos" class="logos__other-logo-img">
+                <picture>
+                  <source srcset="../../assets/icons/logos__1200px.svg" media="(max-width: 1480px)">
+                  <img src="../../assets/icons/footer_logos.svg" alt="logos"      class="logos__other-logo-img">
+                </picture>
                 <div class="logos__yd-title" title="Yem Digital"></div>
                 <div class="logos__rss-title" title="Rolling Scopes School"></div>
               </div>
