@@ -18,7 +18,7 @@
         <header class="header">
           <div class="logo_hidden">
             <a href="../index/index.html">
-              <img src="../../assets/icons/logo.svg" alt="logo">
+              <img src="../../assets/icons/logo.svg" alt="logo" class="logo_hidden-img">
             </a>
             <h1 class="main-heading">Online Zoo</h1>
           </div>
@@ -113,6 +113,7 @@
           <section class="how-works" id="how-it-works">
             <div class="how-works__img-wrap">
               <picture>
+                <source srcset="../../assets/images/landing__lion_320px.png" media="(max-width: 639px)">
                 <source srcset="../../assets/images/landing__lion_640px.png" media="(max-width: 768px)">
                 <source srcset="../../assets/images/landing__lion_1200px.png" media="(max-width: 1200px)">
                 <img src="../../assets/images/lion.png" alt="lion cub" class="how-works__img">
@@ -124,7 +125,7 @@
                  experience of observing and interacting with animals remotely</p>
               <p class="how-works__second-info">Zoo Online is a web application with which
                  you can watch live cages of different animals in nature reserves and zoos
-                  online and, if you wish, donate to the needs of the animal you like</p> 
+                  online and, <br class="how-works__br">if you wish, donate to the needs <br class="how-works__br">of the animal you like</p> 
               <a href="../Zoos-translation/zoos/panda.html" class="how-works__link">
                 <div class="how-works__button">
                   <p class="how-works__button-text">Try now</p>
@@ -160,7 +161,7 @@
                       <p class="famous-pets__image-text">Little panda</p>
                     </div>
                     <div class="famous-pets__image-hidden-text">
-                      <p class="famous-pets__image-hidden-habitat">China, East Asia</p>
+                      <p class="famous-pets__image-hidden-habitat">China, <br>East Asia</p>
                       <p class="famous-pets__image-hidden-follow">Follow</p>
                       <img class="famous-pets__image-hidden-arrow" src="../../assets/icons/card-arrow.svg" alt="">
                     </div>
@@ -276,7 +277,7 @@
               <div class="pay-feed__info">
                 <h3 class="pay-feed__subtitle">Pay with VISA card</h3>
                 <p class="pay-feed__text">On the payment page, you need to enter the details
-                  of your "Visa" card and make a transfer.<br class="pay-feed__text_br">The operation will not take more
+                  of your "Visa" card and make <br class="pay-feed__text_br-360">a transfer.<br class="pay-feed__text_br">The operation will not take more
                     than ~2 minutes.</p>
                 <img src="../../assets/icons/wavy-arrow.svg" alt="arrow down" class="pay-feed__wavy-arrow">
               </div>
@@ -311,8 +312,8 @@
                 <h2 class="testimonials__header">Testimonials</h2>
                 <h3 class="testimonials__subtitle">You can make us smile</h3>
                 <p class="testimonials__info">We want to make animal observation
-                  and interaction accessible. You can leave your wishes <br class="testimonials__br">on how<br class="testimonials__br_640">
-                    to make the service more convenient, <br class="testimonials__br_640"><br class="testimonials__br">and most importantly, more interesting for you.</p>
+                  <br class="testimonials__br_360">and interaction accessible. You can leave your wishes <br class="testimonials__br">on how<br class="testimonials__br_640">
+                    to make the service more convenient, <br class="testimonials__br_640"><br class="testimonials__br">and most importantly, <br class="testimonials__br_360">more interesting for you.</p>
                 <a href="#" class="testimonials__feedback-link">   
                   <div class="testimonials__feedback-button">
                     <p class="testimonials__feedback-text">Leave feedback</p>
@@ -393,6 +394,47 @@
                     class="zoogeography__marker-img panda-cmn">  
               </div>  
             </div>
+            <div class="zoogeography__slider">
+              <a href="#" class="sidebar__link">
+                <img src="../../assets/icons/left_slide.svg" alt="up" class="sidebar__up">
+              </a>
+              <ul class="sidebar__list">        
+                <li>
+                  <div class="sidebar__circle">
+                    <a href="../Zoos-translation/zoos/panda.html" class="sidebar__link">
+                      <img src="../../assets/icons/noun_Panda_adide.svg"
+                       class="sidebar-img" alt="panda">
+                    </a>
+                </div>
+                </li>
+                <li>
+                  <div class="sidebar__circle">
+                    <a href="../Zoos-translation/zoos/alligator.html" class="sidebar__link">
+                      <img src="../../assets/icons/noun_Crocodile_adide.svg"
+                       class="sidebar-img" alt="alligator">
+                    </a>
+                  </div>
+                </li>
+                <li>
+                  <div class="sidebar__circle sidebar__circle-active">
+                    <a href="../Zoos-translation/zoos/eagle.html" class="sidebar__link">
+                    <img src="../../assets/icons/noun_Bird_adide.svg"
+                     class="sidebar-img" alt="eagle">
+                    </a>
+                  </div>
+                </li>
+                <li>
+                  <div class="sidebar__circle">
+                    <a href="../Zoos-translation/zoos/gorilla.html" class="sidebar__link">
+                    <img src="../../assets/icons/noun_Gorilla_adide.svg" class="sidebar-img" alt="gorilla">
+                    </a>
+                  </div>
+                </li>       
+              </ul> 
+              <a href="#" class="sidebar__link">
+                <img src="../../assets/icons/right_slide.svg" alt="down">
+              </a>
+            </div>
           </section>
         </main>
         <footer class="footer">
@@ -403,7 +445,8 @@
                   <img src="../../assets/icons/footer_logo.svg" alt="logo" class="logos__main-logo-img">
                 </a>
                 <picture class="logos__schools">
-                  <source srcset="../../assets/icons/logos_640px.svg">
+                  <source srcset="../../assets/icons/logos_320.svg" media="(max-width: 639px)">
+                  <source srcset="../../assets/icons/logos_640px.svg" media="(max-width: 1199px)">
                   <source srcset="../../assets/icons/logos__1200px.svg" media="(max-width: 1480px)">
                   <img src="../../assets/icons/footer_logos.svg" alt="logos"      class="logos__other-logo-img">
                 </picture>
