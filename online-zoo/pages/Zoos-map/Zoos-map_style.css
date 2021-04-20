@@ -1,5 +1,8 @@
+* {
+  box-sizing: border-box;
+}
 .page-wrapper {
-  width: 1920px;
+  max-width: 1920px;
   margin: 0 auto;
   padding: 0;
   background-color: #fcfcfc;
@@ -8,14 +11,14 @@
 }
 .logo_hidden {
   visibility: hidden;
+  width: 53px;
 }
 .header {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-between;
   align-items: center;
-  padding-right: 110px;
-  width: 1681px;
+  max-width: 1800px;
+  width: 88.4%;
   margin: auto;
   position: absolute;
   background-color: white;
@@ -25,19 +28,22 @@
   border: 1px solid #f0f0f0;
 }
 
+
 .main-heading {
   visibility: hidden;
   position: absolute;
   z-index: -1;
 }
+.menu {
+  margin-left: 6.6%;
+  width: 800px;
+}
 .menu__list {
   display: flex;
   flex-flow: row nowrap;
   list-style: none;
-  width: 800px;
-  justify-content: space-between;
-  margin-right: 672px;
-  margin-left: 111px;
+  width: 100%;
+  justify-content: space-between;  
   padding: 0;
 }
 .menu__item {
@@ -58,7 +64,69 @@
   text-decoration: none;
 }
 .profile-icon {
-  margin-left: 8px;
+  flex-grow: 2;
+  display: flex;
+  justify-content: flex-end;
+  margin-left: 10px;
+}
+.burger-menu {
+  display: none;
+}
+@media (max-width: 1919px) {
+
+  .header {
+    top: 23px;
+    left: 41px;
+    height: 70px;
+    max-width: 1120px;
+    width: 93%;
+  }
+
+  .logo__img {
+    width: 42px;
+  }
+  .menu {
+    margin-left: 8%;
+    width: 678px;
+  }
+  .profile-icon {
+    padding-right: 6.5%;
+
+  }
+  .profile__img {
+    width: 40px;
+  }
+
+}
+@media (max-width: 768px) {
+
+  .header {
+    background-color: transparent;
+    border: none;
+    justify-content: space-between;
+    top: 7px;
+    left: 13px;
+    width: 94%;
+  }
+  .burger-menu {
+    display: flex;
+  }
+  .profile-icon {
+    display: none;
+  }
+  .menu {
+    display: none;
+  }
+  .logo_hidden {
+    visibility: visible;
+    width: 58px;
+    height: auto;
+  }
+  .logo__img {
+    width: 49px;
+  }
+
+
 }
 
 .sidebar {
@@ -116,11 +184,59 @@
 .sidebar__up:hover {
   transform: scale(0.8);
 }
+@media (max-width: 1919px) {
+  .sidebar {
+    margin-left: 40px;
+    top: 23px;
+    width: 70px;
+    height: 620px;
+  }
+  .sidebar__link {
+    display: flex;
+    width: 100%;
+    height: 66px;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  .sidebar__circle {
+    width: 45px;
+    height: 45px;
+  }
+  .logo {
+    height: 70px;
+  }
+  .logo__img {
+    margin: auto;
+    height: 100%;
+  }
+  .sidebar__up {
+    margin-top: 0;
+    width: 66px;
+  }
+  .sidebar__down  {
+    width: 100%;
+  }
+  .sidebar__list {
+    height: 416px;
+    margin: 0;
+  }
+}
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+}
 
+.map {
+  max-width: 100%;
+}
 .zoogeography__marker {
   transition: 0.5s;
 }
-
+.tiny-eagle {
+  height: 49px;
+}
 .zoogeography__marker {
   position: absolute;
   width: 77px;
@@ -137,10 +253,10 @@
   margin-top: 13px;
 }
 .zoogeography__eagle-marker {
-  top: 162px;
-  left: 144px;
-  transform: rotate(45deg) scale(1.5);
-  border: 1px solid #609fff;
+  top: 24%;
+  left: 13.3%;
+  transform: rotate(45deg); 
+  display: none; 
 }
 
 .zoogeography__marker:hover {
@@ -157,14 +273,14 @@
 }
 
 .zoogeography__gorilla-marker {
-  top: 448px;
-  left: 951px;
+  top: 51.5%;
+  left: 49.5%;
   transform: rotate(45deg) scale(1.3);
   border: 1px solid #609fff;
 }
 .zoogeography__panda-marker {
-  left: 1633px;
-  top: 244px;
+  left: 85%;
+  top: 28%;
 }
 
 .zoogeography__marker-img {
@@ -181,8 +297,8 @@
   height: 512px;
   border-radius: 15px;
   background-color: white;
-  top: 240px;
-  left: 581px;
+  top: 28%;
+  left: 30.3%;
 }
 .animal-card__img {
   border-radius: 15px 15px 0 0;
@@ -231,4 +347,173 @@
 }
 .animal-card__link-arrow {
   margin-left: 12px;
+}
+.zoogeography__slider {
+  display: none;
+}
+
+@media (max-width: 1919px) {
+
+  .map {
+    width: 100%;
+  }
+  .animal-card {
+    width: 292px;
+    height: 448px;
+    top: 29%;
+  }
+  .animal-card__title {
+    font-size: 28px;
+    line-height: 41px;
+  }
+  .animal-card__text {
+    font-size: 16px;
+    line-height: 25px;
+    width: 271px;
+    margin: 17px auto 3px;
+  }
+  .animal-card__link-text {
+    font-size: 16px;
+    line-height: 19px;
+  }
+  .animal-card__br {
+    display: none;
+  }
+  .zoogeography__marker {
+    height: 53px;
+    width: 53px;
+  }
+  .zoogeography__marker-img {
+    height: 38px;
+    margin-left: 10px;
+    margin-top: 7px;
+  }
+  .zoogeography__eagle-marker {
+    display: block;
+    top: 13%;
+    left: 0%;
+  }
+  .zoogeography__alligator-marker {
+    top: 36%;
+    left: 18.8%;
+
+  }
+  .zoogeography__gorilla-marker {
+    top: 56%;
+    left: 56.2%;
+  }
+  .zoogeography__panda-marker {
+    top: 40%;
+    left: 92%;
+  }
+  .panda-cmn {
+    height: 30px;
+    margin-left: 7px;
+    margin-top: 11px;
+}
+  }
+
+@media (max-width: 768px) {
+
+  .animal-card {
+    width: 250px;
+    height: 390px;
+    left: 10%;
+  }
+  .zoogeography__eagle-marker,
+  .zoogeography__alligator-marker,
+  .zoogeography__panda-marker {
+    display: none;
+  }
+  .zoogeography__gorilla-marker {
+    top: 49.2%;
+    left: 52%;
+  }
+  .animal-card__title {
+    font-size: 24px;
+    line-height: 35px;
+  }
+  .animal-card__text {
+    font-size: 14px;
+    line-height: 22px;
+    width: 201px;
+    margin-top: 22px;
+  }
+  .zoogeography__slider {
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    margin: 26px auto;
+    width: 94%;
+    justify-content: space-between;
+    position: absolute;
+    top: 86.2%;
+    border-radius: 15px;
+    height: 80px;
+    margin: 0;
+    align-items: center;
+    left: 3%;
+    background-color: #fff;
+  }
+  .sidebar__list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    margin: 0;
+    width: 100%;
+  }
+  .sidebar__up {
+    margin: 0;
+    margin-right: -18px;
+  }
+  .slider__right {
+    margin-right: 24px;
+  }
+  .sidebar__up,
+  .sidebar__down {
+    transition: 0.5;
+    width: 20px;
+  }
+  .sidebar__up:hover,
+  .sidebar__down:hover {
+    transform: scale(0.8);
+  }
+
+  .sidebar__circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #d9e8ff;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    transition: 0.5s;
+  }
+  .sidebar__circle:hover {
+    border: 1px solid #609fff;
+  }
+  .sidebar__circle-active {
+    border: 1px solid #609fff;
+  }
+  .sidebar-img {
+    margin: auto;
+  }
+  .sidebar__link {
+    text-decoration: none;
+    max-width: 66px;
+  }
+  .sidebar__question {
+    font-family: Rubik;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0em;
+    color: #0f0049;
+  }
+
 }
