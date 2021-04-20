@@ -412,7 +412,14 @@
     margin-top: 11px;
 }
   }
+@media (max-width: 1199px) {
 
+  .animal-card {
+
+    left: 16%;
+  }
+
+} 
 @media (max-width: 768px) {
 
   .animal-card {
@@ -514,6 +521,48 @@
     line-height: 28px;
     letter-spacing: 0em;
     color: #0f0049;
+  }
+
+}
+
+@media (max-width: 639px) {
+
+  .header {
+    height: 59px;
+    top: 0;
+    left: 0;
+    width: 97%;
+  }
+  .logo_hidden {
+    height: 59px;
+  }
+  .logo__img {
+    width: 38px;
+  }
+  .burger-menu__img {
+    width: 35px;
+  }
+  .animal-card {
+    display: none;
+  }
+  .zoogeography__marker {
+    height: 35px;
+    width: 35px;
+    top: 47%;
+    left: 62%;
+  }
+  .zoogeography__marker-img {
+    height: 23px;
+    margin-top: 6px;
+    margin-left: 7px;
+  }
+  .zoogeography__slider {
+    height: 75px;
+    top: 80%;
+  }
+  .sidebar__link {
+    max-width: 31px;
+    margin: 0;
   }
 
 }
