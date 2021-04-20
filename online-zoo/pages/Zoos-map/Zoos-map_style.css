@@ -69,13 +69,16 @@
   justify-content: flex-end;
   margin-left: 10px;
 }
+.burger-menu {
+  display: none;
+}
 @media (max-width: 1919px) {
 
   .header {
     top: 23px;
     left: 41px;
     height: 70px;
-    min-width: 1120px;
+    max-width: 1120px;
     width: 93%;
   }
 
@@ -93,6 +96,37 @@
   .profile__img {
     width: 40px;
   }
+
+}
+@media (max-width: 768px) {
+
+  .header {
+    background-color: transparent;
+    border: none;
+    justify-content: space-between;
+    top: 7px;
+    left: 13px;
+    width: 94%;
+  }
+  .burger-menu {
+    display: flex;
+  }
+  .profile-icon {
+    display: none;
+  }
+  .menu {
+    display: none;
+  }
+  .logo_hidden {
+    visibility: visible;
+    width: 58px;
+    height: auto;
+  }
+  .logo__img {
+    width: 49px;
+  }
+
+
 }
 
 .sidebar {
@@ -186,6 +220,11 @@
   .sidebar__list {
     height: 416px;
     margin: 0;
+  }
+}
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
   }
 }
 
@@ -309,6 +348,9 @@
 .animal-card__link-arrow {
   margin-left: 12px;
 }
+.zoogeography__slider {
+  display: none;
+}
 
 @media (max-width: 1919px) {
 
@@ -371,5 +413,107 @@
 }
   }
 
+@media (max-width: 768px) {
+
+  .animal-card {
+    width: 250px;
+    height: 390px;
+    left: 10%;
+  }
+  .zoogeography__eagle-marker,
+  .zoogeography__alligator-marker,
+  .zoogeography__panda-marker {
+    display: none;
+  }
+  .zoogeography__gorilla-marker {
+    top: 49.2%;
+    left: 52%;
+  }
+  .animal-card__title {
+    font-size: 24px;
+    line-height: 35px;
+  }
+  .animal-card__text {
+    font-size: 14px;
+    line-height: 22px;
+    width: 201px;
+    margin-top: 22px;
+  }
+  .zoogeography__slider {
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    margin: 26px auto;
+    width: 94%;
+    justify-content: space-between;
+    position: absolute;
+    top: 86.2%;
+    border-radius: 15px;
+    height: 80px;
+    margin: 0;
+    align-items: center;
+    left: 3%;
+    background-color: #fff;
+  }
+  .sidebar__list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    margin: 0;
+    width: 100%;
+  }
+  .sidebar__up {
+    margin: 0;
+    margin-right: -18px;
+  }
+  .slider__right {
+    margin-right: 24px;
+  }
+  .sidebar__up,
+  .sidebar__down {
+    transition: 0.5;
+    width: 20px;
+  }
+  .sidebar__up:hover,
+  .sidebar__down:hover {
+    transform: scale(0.8);
+  }
+
+  .sidebar__circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #d9e8ff;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    transition: 0.5s;
+  }
+  .sidebar__circle:hover {
+    border: 1px solid #609fff;
+  }
+  .sidebar__circle-active {
+    border: 1px solid #609fff;
+  }
+  .sidebar-img {
+    margin: auto;
+  }
+  .sidebar__link {
+    text-decoration: none;
+    max-width: 66px;
+  }
+  .sidebar__question {
+    font-family: Rubik;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0em;
+    color: #0f0049;
+  }
 
 }
