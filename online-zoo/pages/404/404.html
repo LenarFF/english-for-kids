@@ -14,25 +14,37 @@
 </head>
 <body>
   <header class="header">
-    <div class="logo logo_hidden">
+    <div class="logo_hidden">
       <a href="../index/index.html">
-        <img src="../../assets/icons/logo.svg" alt="logo">
+        <img src="../../assets/icons/logo.svg" alt="logo" class="logo_hidden-img">
       </a>
       <h1 class="main-heading">Online Zoo</h1>
     </div>
     <nav class="menu">
       <ul class="menu__list">
-        <li><a class="menu__item" href="../index/index.html">About</a></li>
-        <li><a class="menu__item" href="../Zoos-map/Zoos-map.html">Map</a></li>
-        <li><a class="menu__item" href="../Zoos-translation/zoos/panda.html">Zoos</a></li>
-        <li><span class="menu__item menu__item_bold">Contact us</span></li>
-        <li><a class="menu__item" href="https://www.figma.com/file/74wXlorl9mZQP0uhqDg83j/Online-Zoo">Design</a></li>
+        <li>
+          <span class="menu__item menu__item_bold">About</span>
+        </li>
+        <li>
+          <a class="menu__item" href="../Zoos-map/Zoos-map.html">Map</a>
+        </li>
+        <li>
+          <a class="menu__item" href="../Zoos-translation/zoos/panda.html">Zoos</a>
+        </li>
+        <li>
+          <a class="menu__item" href="../404/404.html">Contact us</a>
+        </li>
+        <li>
+          <a class="menu__item" href="https://www.figma.com/file/74wXlorl9mZQP0uhqDg83j/Online-Zoo">Design</a></li>
       </ul>
     </nav>
     <div class="profile-icon">
       <a href="#">
-        <img src="../../assets/icons/profile.svg" alt="profile icon">
+        <img src="../../assets/icons/profile.svg" alt="profile icon" class="profile-icon__img">
       </a>
+    </div>
+    <div class="burger-menu">
+      <img src="../../assets/icons/burger_menu.svg" alt="menu" class="burger-menu__img">
     </div>
   </header>
   <main class="wrapper">
@@ -69,7 +81,12 @@
           <a href="../index/index.html" class="logos__main-logo">
             <img src="../../assets/icons/footer_logo.svg" alt="logo" class="logos__main-logo-img">
           </a>
-          <img src="../../assets/icons/footer_logos.svg" alt="logos" class="logos__other-logo-img">
+          <picture class="logos__schools">
+            <source srcset="../../assets/icons/logos_320.svg" media="(max-width: 639px)">
+            <source srcset="../../assets/icons/logos_640px.svg" media="(max-width: 1199px)">
+            <source srcset="../../assets/icons/logos__1200px.svg" media="(max-width: 1480px)">
+            <img src="../../assets/icons/footer_logos.svg" alt="logos"      class="logos__other-logo-img">
+          </picture>
           <div class="logos__yd-title" title="Yem Digital"></div>
           <div class="logos__rss-title" title="Rolling Scopes School"></div>
         </div>
@@ -77,22 +94,23 @@
           <ul class="footer-nav__list">
             <li class="footer-nav__header">Navigation</li>
             <li class="footer-nav__elem">
-              <a class="footer-nav__items" href="../index/index.html#watch-online">Main page</a>
+              <a class="footer-nav__items" href="#watch-online">Watch online</a>
             </li>
             <li class="footer-nav__elem">
-              <a class="footer-nav__items" href="../index/index.html#how-it-works">About us</a>
+              <a class="footer-nav__items" href="#how-it-works">How it works</a>
             </li>
             <li class="footer-nav__elem">
-              <a class="footer-nav__items" href="../index/index.html#famous-pets">Pets i zoo</a>
+              <a class="footer-nav__items" href="#famous-pets">Famous pets</a>
             </li>
             <li class="footer-nav__elem">
-              <a class="footer-nav__items" href="../index/index.html#pay-and-feed">Instruction</a>
+              <a class="footer-nav__items" href="#pay-and-feed">Pay & feed</a>
             </li>
             <li class="footer-nav__elem">
-              <a class="footer-nav__items" href="../index/index.html#testimonials">Testimonials</a>
+              <a class="footer-nav__items" href="#testimonials">Testimonials</a>
             </li>
             <li class="footer-nav__elem">
-              <a class="footer-nav__items" href="../index/index.html#zoogeography">Animal map</a>
+              <a class="footer-nav__items" href="#zoogeography">Zoogeography                      
+              </a>
             </li>
           </ul>
         </nav>
