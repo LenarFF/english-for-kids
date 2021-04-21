@@ -72,7 +72,7 @@
 .burger-menu {
   display: none;
 }
-@media (max-width: 1919px) {
+@media (max-width: 1200px) {
 
   .header {
     top: 23px;
@@ -184,7 +184,7 @@
 .sidebar__up:hover {
   transform: scale(0.8);
 }
-@media (max-width: 1919px) {
+@media (max-width: 1200px) {
   .sidebar {
     margin-left: 40px;
     top: 23px;
