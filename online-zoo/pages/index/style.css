@@ -153,10 +153,12 @@
   display: flex;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
-  margin-left: 71px;
-  margin-top: -67px;
+  width: 90px;
+  height: 760px;
+  margin-left: 60px;
+  margin-top: -96px;
+  top: 27px;
   background-color: #fcfcfc;
   border: 1px solid #f0f0f0;
 }
@@ -168,14 +170,26 @@
   justify-content: space-between;
   align-items: center;
   height: 176px;
-  margin-top: 190px;
+  margin-top: 248px;
+}
+.logo {
+  height: 90px;
+  padding-top: 23px;
+  width: 90px;
+  border-bottom: 2px solid #f0f0f0;;
 }
 .logo__img {
-  width: 100%;
+  width: 52px;
+  margin-left: 19px;
+}
+.sidebar__arrow {
+  margin-top: 81px;
 }
 @media (max-width: 1480px) {
   .sidebar {
-    height: 566px;
+    height: 586px;
+    top: 26px;
+    width: 70px;
     margin-left: 41px;
   }
   .sidebar__list {
@@ -183,7 +197,13 @@
     margin-top: 165px;
   }
   .logo {
-    width: 42px;    
+    width: 70px;
+    height: 70px;
+    padding-top: 15px;    
+  }
+  .logo__img {
+    margin-left: 12px;
+    width: 42px;
   }
   .sidebar__img {
     width: 18px;
@@ -191,6 +211,7 @@
   .sidebar__arrow {
     width: 42px;
     margin-bottom: 55px;
+    margin-top: 53px;
   }
 }
 
@@ -230,7 +251,7 @@
 }
 .wild-park {
   padding-top: 68px;  
-  margin-top: -587px;
+  margin-top: -679px;
   max-width: 1920px;
   justify-content: left;
   padding-left: 12.6%;
@@ -355,7 +376,7 @@
 @media (max-width: 1480px) {
 
   .wild-park {
-    margin-top: -507px;
+    margin-top: -498px;
     padding-right: 40px;
     padding-left: 185px;
   }
