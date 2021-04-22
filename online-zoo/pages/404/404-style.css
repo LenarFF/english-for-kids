@@ -272,7 +272,7 @@
   }
 
 }
-@media (max-width: 640px) {
+@media (max-width: 600px) {
 
   .oops__header {
     font-size: 20px;
@@ -380,17 +380,20 @@
 @media (max-width: 640px) {
 
   .wrapper {
-    padding-bottom: 26px;
+    padding-bottom: 44px;
   }
   .support-404__text {
     margin-top: 41px;
     font-size: 14px;
     line-height: 22px;
   }
+  .support-404 {
+    margin-top: 42px;
+  }
   
 
 }
-@media (max-width: 640px) {
+@media (max-width: 600px) {
 
   .support-404 {
     margin-top: 0;    
