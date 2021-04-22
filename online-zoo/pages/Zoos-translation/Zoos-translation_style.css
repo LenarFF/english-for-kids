@@ -97,7 +97,7 @@
   }
 
 }
-@media (max-width: 980px) {
+@media (max-width: 1119px) {
   .logo_hidden {
     visibility: visible;
     width: 58px;
@@ -271,7 +271,7 @@
     margin: 0;
   }
 }
-@media (max-width: 980px) {
+@media (max-width: 1119px) {
   .sidebar {
     display: none;
   }
@@ -675,7 +675,7 @@ main-cam__donate-wrap {
  
 
 }
-@media (max-width: 980px) {
+@media (max-width: 1119px) {
 
 
   .cams {
@@ -854,6 +854,9 @@ main-cam__donate-wrap {
   }
   .main-cam__donate-button {
     width: 175px;
+  }
+  .other-cams__hidden-content {
+    padding-left: 0;
   }
 
 }
@@ -1687,6 +1690,10 @@ line-height: 22px;
 
 }
 @media (max-width: 1199px) {
+
+  .footer {
+    height: 759px;
+  }
   .footer-wrapper {
     padding-top: 80px;
     padding-left: 2.8%;
