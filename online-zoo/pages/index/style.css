@@ -738,6 +738,10 @@
 .famous-pets__arrow:hover {
   opacity: 0.8;
 }
+.famous-pets__left,
+.famous-pets__right {
+  text-decoration: none;
+}
 
 .famous-pets__image-wrap {
   margin: auto;
