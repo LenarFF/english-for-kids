@@ -505,7 +505,7 @@
 
 .how-works {
   padding-top: 137px;  
-  padding-bottom: 111px;
+  padding-bottom: 122px;
   padding-left: 12.7%;
   padding-right: 12%;
 }
@@ -711,19 +711,62 @@
   padding-bottom: 82px;  
 }
 .famous-pets__wrapper {
-  padding-left: 8.5%;
-  padding-right: 11.8%;
+  padding-left: 8.3%;
+  padding-right: 11.5%;
 }
 .famous-pets__text {
   padding-top: 217px;
-  padding-left: 5.2%;
+  padding-left: 6%;
   width: 25%;
+}
+.famous-pets__slider {
+  width: 72%;
+  overflow: hidden;
+  padding-left: 25px;
+  position: relative;
+  left: 36%;
+  transform: translateX(-50%);
 }
 .famous-pets__images-wrap {
   display: flex;
-  flex-wrap: wrap;
-  width: 72%;
+  width: 100%;
   height: 733px;
+  justify-content: space-between;
+  overflow: hidden;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.moreWidth {
+  width: 1442px;
+}
+.famous-pets__col {
+  position: relative;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  animation: 0.5s ease-in-out;
+}
+.active,
+.next {
+  display: flex;  
+}
+.next {
+  position: relative;
+}
+.to-left {
+  animation-name: left;
+}
+.to-right {
+  animation-name: right;
+  animation-direction: reverse;
+}
+.from-left {
+  animation-name: left;
+  animation-direction: reverse;
+}
+.from-right {
+  animation-name: right;
 }
 
 .famous-pets__header {
@@ -745,15 +788,48 @@
   margin-top: 50px;
   margin-bottom: 54px;
 }
-.famous-pets__arrow {
-  margin-right: 15px;
-}
-.famous-pets__arrow:hover {
-  opacity: 0.8;
+
+
+.famous-pets__buttons {
+  display: flex;
+  width: 146px;
+  justify-content: space-between;
 }
 .famous-pets__left,
 .famous-pets__right {
-  text-decoration: none;
+  width: 65px;
+  height: 65px;  
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+.famous-pets__left:hover,
+.famous-pets__right:hover {
+  opacity: 0.8;
+}
+.famous-pets__left {
+  background-image: url("../../assets/icons/slide_left.svg");
+
+}
+.famous-pets__right {
+  background-image: url("../../assets/icons/slide_right.svg");
+}
+
+@keyframes left {
+  from {
+    left: 13%;
+  }
+  to {
+    left: -13%
+  }
+}
+@keyframes right {
+  from {
+    left: 13%;
+  }
+  to {
+    left: -13%;
+  }
 }
 
 .famous-pets__image-wrap {
@@ -761,6 +837,9 @@
   width: 328px;
   height: 328px;
   overflow: hidden;
+}
+.famous-pets__display_none {
+  display: none;
 }
 .famous-pets__image-inner-wrap {
   background-color: black;
