@@ -205,3 +205,68 @@ alligatorMarker.addEventListener("click", () =>
   alligatorMarker.classList.add('scale');
 })
 
+
+
+
+// Testimonials
+
+
+
+
+const carousel = document.querySelector('.testimonials__reviews');
+const next = document.querySelector('.testimonials__arrow-right');
+const prev = document.querySelector(".testimonials__arrow-left");
+const gap = 40;
+let slideNumber = 0;
+let moveTimeout = null;
+
+let width = carousel.offsetWidth;
+let imgWidth = document.querySelector('.testimonials__review').offsetWidth;
+window.addEventListener('resize', (e) => {
+  width = carousel.offsetWidth;
+  imgWidth = document.querySelector('.testimonials__review').offsetWidth;
+});
+
+
+next.addEventListener('click', e => {
+  timeDelay();
+  slideNumber++;
+  if (slideNumber > 6) {
+    slideNumber = 0
+  }
+  carousel.scrollTo((imgWidth + gap) * slideNumber, 0);
+
+});
+
+prev.addEventListener('click', e => {
+  timeDelay();
+  slideNumber--;
+  if (slideNumber < 0) {
+    slideNumber = 6
+  }
+  carousel.scrollTo((imgWidth + gap) * slideNumber, 0);
+});
+
+const moveSlides = () => {
+  slideNumber++;
+  if (slideNumber> 6) {    
+      slideNumber= 0;    
+  }
+  carousel.scrollTo((imgWidth + gap) * slideNumber, 0);
+}
+
+let moveInterval = setInterval(moveSlides, 10000);
+
+
+const timeDelay = () => {
+  clearTimeout(moveTimeout);
+  clearInterval(moveInterval);
+  moveInterval = null;
+
+  moveTimeout = setTimeout(() => {
+    clearInterval(moveInterval);
+    moveInterval = setInterval(moveSlides, 10000);
+  }, 10000);
+}
+carousel.addEventListener('click', timeDelay);
+
