@@ -547,6 +547,7 @@ main-cam__donate-wrap {
   padding-left: 5px;
   opacity: 0;
   transition: 0.5s;
+  cursor: pointer;
 }
 .other-cams__video-wrap:hover .other-cams__hidden-content {
   opacity: 1;
@@ -582,6 +583,9 @@ main-cam__donate-wrap {
   margin: 0 auto;
   justify-content: center;
   padding-right: 11px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 .other-cams__hidden-link-text {
   font-family: Rubik;
@@ -598,6 +602,7 @@ main-cam__donate-wrap {
 }
 .other-cams__hidden-arrow {
   margin-left: 10px;
+  margin-top: 20px;
 }
 .main-cam__br {
   display: none;
