@@ -1982,6 +1982,8 @@
 }
 .zoogeography__card-img {
   border-radius: 15px 15px 0 0;
+  width: 344px;
+  height: 218px;
 }
 .zoogeography__card-title {
   font-family: Merriweather;
@@ -2052,8 +2054,11 @@
 .zoogeography__eagle-marker {
   top: 25%;
   left: 11.5%;
+  transform: rotate(45deg);
+}
+.scale {
   transform: rotate(45deg) scale(1.4);
-  border: 1px solid #609fff;
+  border: 1px solid #609fff
 }
 
 .zoogeography__marker:hover {
