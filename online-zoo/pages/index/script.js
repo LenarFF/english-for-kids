@@ -87,3 +87,66 @@ document.querySelector(".famous-pets__left").addEventListener("click", function(
     nextItem();
   }
 })
+
+
+
+// Форма
+const feedbackButton = document.querySelector(".testimonials__feedback-button");
+const cover = document.querySelector(".cover");
+const form = document.querySelector(".feedback-wrapper");
+const userName = document.getElementById('name');
+const email = document.getElementById('email');
+const review = document.getElementById('text-feedback');
+const sendButton = document.getElementById('send');
+
+
+function validateForm() {
+  if (
+    userName.validity.valid &&
+    email.validity.valid &&
+    review.value.length <= 280 &&
+    review.value.length > 0
+  ) {
+    sendButton.classList.remove('invalid');
+  } else {
+    sendButton.classList.add('invalid');
+  }
+}
+
+
+feedbackButton.addEventListener('click', () => {  
+  cover.classList.remove('hidden');
+  form.classList.remove('hidden');
+  document.body.classList.add('notScrollable');
+});
+
+cover.addEventListener('click', () => {
+  cover.classList.add('hidden');
+  form.classList.add('hidden');  
+  document.body.classList.remove('notScrollable');
+});
+
+sendButton.addEventListener('click', (e) => {  
+  e.preventDefault();
+  if (sendButton.classList.contains('invalid')) return;
+  cover.classList.add('hidden');
+  form.classList.add('hidden');  
+  document.body.classList.remove('notScrollable');
+});
+
+userName.addEventListener('input', () => {
+  validateForm();
+});
+
+email.addEventListener('input', () => {
+  validateForm();
+});
+
+review.addEventListener('input', () => {
+  validateForm();   
+});
+
+
+
+
+

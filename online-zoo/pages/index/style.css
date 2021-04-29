@@ -952,10 +952,33 @@
   .famous-pets__image-wrap-6 {
     display: none;
   }
+  .famous-pets__slider {
+    left: 33%;
+    width: 70%;
+  }
+  .famous-pets__images-wrap {
+    width: 100%;
+    left: 46%;
+  }
 
 }
 @media (max-width: 1200px) {
 
+  .famous-pets__buttons {
+    width: 132px;
+    height: 56px;   
+  }
+  .famous-pets__left,
+  .famous-pets__right {
+    width: 56px;
+    height: 56px;
+  }
+  .famous-pets__left {
+    background-image: url(../../assets/icons/slide_left_1200.svg);
+  }
+  .famous-pets__right {
+    background-image: url(../../assets/icons/slide_right_1200.svg);
+  }
   .famous-pets__wrapper {
     padding-right: 14%;
   }
@@ -1632,9 +1655,7 @@
 .testimonials__br_360 {
   display: none;
 }
-.testimonials__feedback-link {
-  text-decoration: none;
-}
+
 .testimonials__feedback-button {
   height: 61px;
   width: 286px;
@@ -1651,6 +1672,7 @@
   letter-spacing: 0em;
   text-align: center;
   color: #fcfcfc;
+  cursor: pointer;
 }
 .testimonials__feedback-button:hover {
   background: #0f0049;
@@ -1737,6 +1759,7 @@
     padding-top: 91px;
     padding-left: 8%;
     padding-bottom: 80px;
+    text-align: center;
   }
   .testimonials__text {
     width: 53%;
@@ -2681,4 +2704,112 @@
   }
 
 
+}
+
+
+.cover {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 10;
+}
+
+.hidden {
+  display: none;
+}
+.notScrollable {
+  overflow: hidden;
+}
+
+.feedback-wrapper {
+  position: fixed;
+  top: calc(50vh - 299px);
+  left: calc(50vw - 240px);
+  width: 479px;
+  height: 598px;
+  border-radius: 15px;
+  z-index: 100;
+  background-color: white;
+  padding: 30px 40px 40px;
+}
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+.feedback-form__header {
+  font-family: Merriweather;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 52px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin: 0;
+}
+.feedback-form__label {
+  font-family: Rubik;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 23px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #7B7B7B;
+  margin-bottom: -24px;
+}
+.feedback-form__input {
+ border: none;
+ border-bottom: 2px solid #D3D3D3;
+ font-family: Rubik;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: black;
+}
+
+.feedback-form__input:focus,
+.feedback-form__textarea:focus {
+  outline: none;
+}
+.feedback-form__button {
+  width: 399px;
+  height: 66px;
+  border-radius: 5px;
+  background-color: #0F0049;
+  font-family: Rubik;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.invalid {
+  cursor: auto;
+  background-color: #D3D3D3;
+}
+.feedback-form__textarea {
+  border-color: #D3D3D3;
+  width: 399px;
+  height: 100px;  
+  font-family: Rubik;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: 0em;
+  text-align: left;
+  color:  black;
 }

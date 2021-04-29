@@ -360,12 +360,11 @@
                 <h3 class="testimonials__subtitle">You can make us smile</h3>
                 <p class="testimonials__info">We want to make animal observation
                   <br class="testimonials__br_360">and interaction accessible. You can leave your wishes <br class="testimonials__br">on how<br class="testimonials__br_640">
-                    to make the service more convenient, <br class="testimonials__br_640"><br class="testimonials__br">and most importantly, <br class="testimonials__br_360">more interesting for you.</p>
-                <a href="#" class="testimonials__feedback-link">   
-                  <div class="testimonials__feedback-button">
+                    to make the service more convenient, <br class="testimonials__br_640"><br class="testimonials__br">and most importantly, <br class="testimonials__br_360">more interesting for you.</p>                   
+                  <button class="testimonials__feedback-button">
                     <p class="testimonials__feedback-text">Leave feedback</p>
-                  </div> 
-                </a>   
+                  </button> 
+                   
               </div>
               <div class="testimonials__reviews-wrapper">              
                 <a href="#" class="testimonials__see-more-button">See more reviews
@@ -548,6 +547,19 @@
           </div>
         </footer>        
       </div>
+    </div>
+    <div class="cover hidden"></div>
+    <div class="feedback-wrapper hidden">
+      <form action class="feedback-form">
+        <h3 class="feedback-form__header">Your feedback</h3>
+        <label for="name" class="feedback-form__label">Your name:</label>
+        <input type="text" id="name" class="feedback-form__input" placeholder="Ellie Coward" required>
+        <label for="email"  class="feedback-form__label">Your e-mail:</label>
+        <input type="email" class="feedback-form__input" id="email" placeholder="example@gmail.com" required>
+        <label for="text-feedback"  class="feedback-form__label">Your review:</label>
+        <textarea type="text-feedback" class="feedback-form__textarea" id="text-feedback" required></textarea>
+        <button class="feedback-form__button invalid" id="send" type="submit">Send for moderation</button>
+      </form>
     </div>
     <script src="script.js"></script>
   </body>
