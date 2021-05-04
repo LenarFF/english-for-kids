@@ -26,6 +26,7 @@
   top: 24px;
   height: 91px;
   border: 1px solid #f0f0f0;
+  z-index: 1;
 }
 
 
@@ -140,6 +141,7 @@
   flex-direction: column;
   justify-content: space-between;
   border: 1px solid #f0f0f0;
+  z-index: 1;
 }
 
 .logo {
@@ -275,8 +277,6 @@
 .zoogeography__gorilla-marker {
   top: 51.5%;
   left: 49.5%;
-  transform: rotate(45deg) scale(1.3);
-  border: 1px solid #609fff;
 }
 .zoogeography__panda-marker {
   left: 85%;
@@ -302,6 +302,8 @@
 }
 .animal-card__img {
   border-radius: 15px 15px 0 0;
+  width: 344px;
+  height: 218px;
 }
 
 .animal-card__title {
@@ -348,6 +350,16 @@
 .animal-card__link-arrow {
   margin-left: 12px;
 }
+.panda {
+  left: 66%;
+}
+.alligator {
+  left: 18%;
+}
+.scale {
+  transform: rotate(45deg) scale(1.4);
+  border: 1px solid #609fff
+}
 .zoogeography__slider {
   display: none;
 }
@@ -365,6 +377,10 @@
   .animal-card__title {
     font-size: 28px;
     line-height: 41px;
+  }
+  .animal-card__img {
+    width: 292px;
+    height: 194px;
   }
   .animal-card__text {
     font-size: 16px;
@@ -412,6 +428,19 @@
     margin-top: 11px;
 }
   }
+.hidden {
+  display: none;
+}
+@media (max-width: 1200px) {
+  .alligator {
+    left: 24%
+  }
+  .eagle {
+    left: 26%;
+    top: 20%;
+  }
+}
+
 @media (max-width: 1199px) {
 
   .animal-card {
