@@ -1,94 +1,58 @@
-let items = document.querySelectorAll(".famous-pets__col");
-const parent = document.querySelector(".famous-pets__images-wrap");
-let isEnabled = true;
+// famous pets
+const slider = document.querySelector('.famous-pets__slider');
+const right = document.querySelector('.famous-pets__right');
+const left = document.querySelector(".famous-pets__left");
+const content = document.querySelector(".famous-pets__images-wrap")
+const space = 40;
+let counter = 0;
 
-function hideItem(direction) {
-  isEnabled = false;
-  items[0].classList.add("to-left");
-  setTimeout(hideLeft, 500)
-}
-function hideLeft() {
-  items[0].classList.remove("active", "to-left");
-  setItems();
-}
+let wrapWidth = slider.offsetWidth;
+let slideWidth = document.querySelector('.famous-pets__image-wrap').offsetWidth;
+window.addEventListener('resize', (e) => {
+  wrapWidth = slider.offsetWidth;
+  slideWidth = document.querySelector('.famous-pets__image-wrap').offsetWidth;
+});
 
-function setItems() {
-  items[0].classList.remove("active");
-  items[3].after(items[0]);
-  items = document.querySelectorAll(".famous-pets__col");
-}
+content.after(content.cloneNode(true));
 
-function hideItemRight(direction) {
-  isEnabled = false;
-  items[3].classList.add("to-right");
-  setTimeout(hideRight, 500)
-}
-function hideRight() {
-  items[3].classList.remove("active", "to-right");
-}
-
-function showItem(direction) {
-  items[2].classList.add("from-right");  
-  items[1].classList.add("from-right");
-  items[3].classList.add("next", "from-right");
-  parent.classList.add("moreWidth");
-  setTimeout(showLeft, 500)
-}
-function showLeft() {
-  isEnabled = true;  
-  items[2].classList.remove("from-right", "next");  
-  items[1].classList.remove("from-right", "next");
-  items[0].classList.remove("from-right", "next");  
-  items[3].classList.remove("from-right", "next");
-  items[3].classList.remove("next", "from-right");
-  parent.classList.remove("moreWidth");
-  items[2].classList.add("active");  
-}
-
-function showItemRight(direction) {
-  items[2].classList.add("from-left");
-  items[1].classList.add("from-left");
-  items[0].classList.add("next", "from-left");
-  parent.classList.add("moreWidth");
-  setTimeout(showRight, 500)   
-}
-
-function showRight () {
-  items[0].classList.remove("next", "from-left");
-  parent.classList.remove("moreWidth");
-  items[0].classList.add("active");
-  isEnabled = true;
-items[2].classList.remove("from-left", "next");  
-items[1].classList.remove("from-left", "next"); 
-items[0].classList.remove("from-left", "next"); 
-items[3].classList.remove("from-left", "next"); 
-}
-
-function previousItem() {
-  hideItemRight("to-right");  
-  showItemRight("from-left");
-}
-
-function nextItem() {
-  hideItem("to-left");
-  showItem("from-right");
-}
-
-document.querySelector(".famous-pets__right").addEventListener("click", function() {
-  if (isEnabled) {
-    items[0].before(items[3]);
-    items = document.querySelectorAll(".famous-pets__col");
-    previousItem();
+right.addEventListener('click', e => {
+  counter++;
+  if (counter > 5) {
+    counter = 0;
+    slider.scrollTo( {      
+      left: (slideWidth + space) * counter,
+      behavior: "instant"
+    })
+    moveIt(counter);
+    counter++;
   }
-})
-document.querySelector(".famous-pets__left").addEventListener("click", function() {
-  if (isEnabled) {
-    
-    nextItem();
+  moveIt(counter);
+
+});
+
+left.addEventListener('click', e => {
+  counter--;  
+  if (counter < 0) {
+    counter = 5;
+    slider.scrollTo( {
+      left: (slideWidth + space) * counter,
+      behavior: "instant"
+    })
+    setTimeout(moveIt(counter - 1), 1);
+    counter--;
+  } else {
+    moveIt(counter)
   }
-})
+});
 
 
+
+function moveIt(counter) {
+  slider.scrollTo({
+    left: (slideWidth + space) * counter,
+    behavior: "smooth"
+  })
+}
 
 // Форма
 const feedbackButton = document.querySelector(".testimonials__feedback-button");
@@ -216,15 +180,21 @@ alligatorMarker.addEventListener("click", () =>
 const carousel = document.querySelector('.testimonials__reviews');
 const next = document.querySelector('.testimonials__arrow-right');
 const prev = document.querySelector(".testimonials__arrow-left");
-const gap = 40;
+let gap = 40;
 let slideNumber = 0;
 let moveTimeout = null;
+
+const mediaQuery = window.matchMedia('(max-width: 1200px)');
+if (mediaQuery.matches) gap = 30;
 
 let width = carousel.offsetWidth;
 let imgWidth = document.querySelector('.testimonials__review').offsetWidth;
 window.addEventListener('resize', (e) => {
+  if (mediaQuery.matches) gap = 30;
+  carousel.scrollTo((imgWidth + gap) * slideNumber, 0);
   width = carousel.offsetWidth;
   imgWidth = document.querySelector('.testimonials__review').offsetWidth;
+
 });
 
 
@@ -249,8 +219,9 @@ prev.addEventListener('click', e => {
 
 const moveSlides = () => {
   slideNumber++;
-  if (slideNumber> 6) {    
-      slideNumber= 0;    
+  console.log(slideNumber);
+  if (slideNumber > 6) {    
+      slideNumber = 0;    
   }
   carousel.scrollTo((imgWidth + gap) * slideNumber, 0);
 }

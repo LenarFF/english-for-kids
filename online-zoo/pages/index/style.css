@@ -722,20 +722,17 @@
 .famous-pets__slider {
   width: 72%;
   overflow: hidden;
-  padding-left: 25px;
-  position: relative;
-  left: 36%;
-  transform: translateX(-50%);
+  display: flex;
 }
 .famous-pets__images-wrap {
-  display: flex;
-  width: 100%;
-  height: 733px;
-  justify-content: space-between;
-  overflow: hidden;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows: auto auto;
+  grid-gap: 40px;
+  grid-auto-flow: column;
+  margin: auto;
+  box-sizing: border-box;
+  margin-left: 40px;
 }
 .moreWidth {
   width: 1442px;
@@ -753,20 +750,6 @@
 }
 .next {
   position: relative;
-}
-.to-left {
-  animation-name: left;
-}
-.to-right {
-  animation-name: right;
-  animation-direction: reverse;
-}
-.from-left {
-  animation-name: left;
-  animation-direction: reverse;
-}
-.from-right {
-  animation-name: right;
 }
 
 .famous-pets__header {
@@ -815,22 +798,6 @@
   background-image: url("../../assets/icons/slide_right.svg");
 }
 
-@keyframes left {
-  from {
-    left: 13%;
-  }
-  to {
-    left: -13%
-  }
-}
-@keyframes right {
-  from {
-    left: 13%;
-  }
-  to {
-    left: -13%;
-  }
-}
 
 .famous-pets__image-wrap {
   margin: auto;
@@ -948,17 +915,8 @@
 }
 
 @media (max-width: 1919px) {
-  .famous-pets__image-wrap-3,
-  .famous-pets__image-wrap-6 {
-    display: none;
-  }
   .famous-pets__slider {
-    left: 33%;
-    width: 70%;
-  }
-  .famous-pets__images-wrap {
-    width: 100%;
-    left: 46%;
+    width: 696px;
   }
 
 }
@@ -980,7 +938,14 @@
     background-image: url(../../assets/icons/slide_right_1200.svg);
   }
   .famous-pets__wrapper {
-    padding-right: 14%;
+    padding-right: 10%;
+  }
+  .famous-pets__slider {
+    width: 546px;
+  }
+  .famous-pets__images-wrap {
+    grid-gap: 30px;
+    margin-left: 30px;
   }
   .famous-pets__image-wrap {    
     width: 258px;
@@ -994,10 +959,7 @@
   .famous-pets__header {
     letter-spacing: 1.2px;
   }
-  .famous-pets__images-wrap {
-    height: 573px;
-    width: 73%;
-  }
+ 
   .famous-pets__info { 
     font-size: 28px;
     line-height: 41px;
@@ -1700,7 +1662,7 @@
 .testimonials__reviews {
   overflow: hidden;  
   scroll-behavior: smooth;
-  scrollbar-width: none;
+  /* scrollbar-width: none; */
 }
 .testimonials__reviews-container {
   display: grid;
@@ -1782,6 +1744,12 @@
 .testimonials__arrow:hover {
   opacity: 0.5;
 }
+@media (max-width: 1919px) {
+  .testimonials__reviews-wrapper {
+    width: 526px;
+    overflow: hidden;
+  }
+}
 @media (max-width: 1480px) {
 
   .testimonials__wrapper {
@@ -1858,6 +1826,15 @@
     height: 56px;
   }
 
+}
+@media (max-width: 1200px) {
+  .testimonials__reviews-container {
+    grid-gap: 30px;
+  }
+  .testimonials__reviews {
+    width: 460px;
+
+  }
 }
 @media (max-width: 1199px) {
   .testimonials__wrapper {
@@ -2836,7 +2813,6 @@
 }
 .feedback-form__textarea {
   border-color: #D3D3D3;
-  width: 399px;
   height: 100px;  
   font-family: Rubik;
   font-size: 20px;
@@ -2846,4 +2822,28 @@
   letter-spacing: 0em;
   text-align: left;
   color:  black;
+}
+@media (max-width:1200px) {
+  .feedback-wrapper {
+    width: 394px;
+    height: 591px;
+  }
+  .feedback-form__header {
+    font-size: 28px;
+    line-height: 41px;
+  }
+  .feedback-form__label {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .feedback-form__input {
+    font-size: 16px;
+    line-height: 22px;
+  }
+  .feedback-form__button {
+    font-size: 16px;
+    line-height: 19px;
+    width: 324px;
+    height: 51px
+  }
 }
