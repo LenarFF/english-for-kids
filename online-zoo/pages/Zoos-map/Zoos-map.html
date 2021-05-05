@@ -156,7 +156,7 @@
               class="zoogeography__marker-img"
             />
           </div>
-          <div class="zoogeography__marker zoogeography__gorilla-marker">
+          <div class="zoogeography__marker zoogeography__gorilla-marker scale">
             <img
               src="../../assets/icons/noun_Gorilla_627896.svg"
               alt="gorilla marker"
@@ -170,7 +170,7 @@
               class="zoogeography__marker-img panda-cmn"
             />
           </div>
-          <div class="animal-card">
+          <div class="animal-card gorilla" id="gorilla-card">
             <picture>
               <source srcset="../../assets/images/map__gorilla_640.png" media="(max-width: 768px)"> 
               <source srcset="../../assets/images/map__gorilla_1200.png" media="(max-width: 1919px)">
@@ -190,6 +190,85 @@
             <div class="animal-card__button">
               <a
                 href="../Zoos-translation/zoos/gorilla.html"
+                class="animal-card__link"
+              >
+                <p class="animal-card__link-text">Watch now</p>
+                <img
+                  src="../../assets/icons/card-arrow-blue.svg"
+                  alt="right"
+                  class="animal-card__link-arrow"
+                />
+              </a>
+            </div>
+          </div>
+          <div class="animal-card eagle hidden" id="eagle-card">
+            <picture>
+              <source srcset="../../assets/images/landing__eagle_640px.png" media="(max-width: 768px)"> 
+              <source srcset="../../assets/images/card__eagle_1200px.png" media="(max-width: 1919px)">
+              <img
+              src="../../assets/images/eagle-card.png"
+              alt="eagle"
+              class="animal-card__img"
+            />
+            </picture>
+            
+            <h2 class="animal-card__title">Eagle</h2>
+            <p class="animal-card__text">The broadcast is from an island near Los Angeles.
+              Watch their real life.
+            </p>
+            <div class="animal-card__button">
+              <a
+                href="../Zoos-translation/zoos/eagle.html"
+                class="animal-card__link"
+              >
+                <p class="animal-card__link-text">Watch now</p>
+                <img
+                  src="../../assets/icons/card-arrow-blue.svg"
+                  alt="right"
+                  class="animal-card__link-arrow"
+                />
+              </a>
+            </div>
+          </div>
+          <div class="animal-card panda hidden" id="panda-card">
+            <picture>
+              <img src="../../assets/images/Landing__panda-card.png" alt="panda"
+              class="animal-card__img"
+            />
+            </picture>
+            
+            <h2 class="animal-card__title">Panda</h2>
+            <p class="animal-card__text">
+              The broadcast comes from the mountainous regions of central China: Sichuan and Tibet. See their real life together.
+            </p>
+            <div class="animal-card__button">
+              <a
+                href="../Zoos-translation/zoos/panda.html"
+                class="animal-card__link"
+              >
+                <p class="animal-card__link-text">Watch now</p>
+                <img
+                  src="../../assets/icons/card-arrow-blue.svg"
+                  alt="right"
+                  class="animal-card__link-arrow"
+                />
+              </a>
+            </div>
+          </div>
+          <div class="animal-card alligator hidden" id="alligator-card">
+            <picture>
+              <img src="../../assets/images/Landing__alligator-card.png" alt="alligator"
+              class="animal-card__img"
+            />
+            </picture>
+            
+            <h2 class="animal-card__title">Alligator</h2>
+            <p class="animal-card__text">
+              The broadcast is from Florida. See their real life.
+            </p>
+            <div class="animal-card__button">
+              <a
+                href="../Zoos-translation/zoos/alligator.html"
                 class="animal-card__link"
               >
                 <p class="animal-card__link-text">Watch now</p>
@@ -245,5 +324,6 @@
         </div>
       </main>
     </div>
+    <script src="map-script.js"></script>
   </body>
 </html>

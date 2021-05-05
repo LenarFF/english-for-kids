@@ -505,7 +505,7 @@
 
 .how-works {
   padding-top: 137px;  
-  padding-bottom: 111px;
+  padding-bottom: 122px;
   padding-left: 12.7%;
   padding-right: 12%;
 }
@@ -711,19 +711,45 @@
   padding-bottom: 82px;  
 }
 .famous-pets__wrapper {
-  padding-left: 8.5%;
-  padding-right: 11.8%;
+  padding-left: 8.3%;
+  padding-right: 11.5%;
 }
 .famous-pets__text {
   padding-top: 217px;
-  padding-left: 5.2%;
+  padding-left: 6%;
   width: 25%;
 }
-.famous-pets__images-wrap {
-  display: flex;
-  flex-wrap: wrap;
+.famous-pets__slider {
   width: 72%;
-  height: 733px;
+  overflow: hidden;
+  display: flex;
+}
+.famous-pets__images-wrap {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows: auto auto;
+  grid-gap: 40px;
+  grid-auto-flow: column;
+  margin: auto;
+  box-sizing: border-box;
+  margin-right: 40px;
+}
+.moreWidth {
+  width: 1442px;
+}
+.famous-pets__col {
+  position: relative;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  animation: 0.5s ease-in-out;
+}
+.active,
+.next {
+  display: flex;  
+}
+.next {
+  position: relative;
 }
 
 .famous-pets__header {
@@ -745,22 +771,42 @@
   margin-top: 50px;
   margin-bottom: 54px;
 }
-.famous-pets__arrow {
-  margin-right: 15px;
-}
-.famous-pets__arrow:hover {
-  opacity: 0.8;
+
+
+.famous-pets__buttons {
+  display: flex;
+  width: 146px;
+  justify-content: space-between;
 }
 .famous-pets__left,
 .famous-pets__right {
-  text-decoration: none;
+  width: 65px;
+  height: 65px;  
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
 }
+.famous-pets__left:hover,
+.famous-pets__right:hover {
+  opacity: 0.8;
+}
+.famous-pets__left {
+  background-image: url("../../assets/icons/slide_left.svg");
+
+}
+.famous-pets__right {
+  background-image: url("../../assets/icons/slide_right.svg");
+}
+
 
 .famous-pets__image-wrap {
   margin: auto;
   width: 328px;
   height: 328px;
   overflow: hidden;
+}
+.famous-pets__display_none {
+  display: none;
 }
 .famous-pets__image-inner-wrap {
   background-color: black;
@@ -869,16 +915,37 @@
 }
 
 @media (max-width: 1919px) {
-  .famous-pets__image-wrap-3,
-  .famous-pets__image-wrap-6 {
-    display: none;
+  .famous-pets__slider {
+    width: 696px;
   }
 
 }
 @media (max-width: 1200px) {
 
+  .famous-pets__buttons {
+    width: 132px;
+    height: 56px;   
+  }
+  .famous-pets__left,
+  .famous-pets__right {
+    width: 56px;
+    height: 56px;
+  }
+  .famous-pets__left {
+    background-image: url(../../assets/icons/slide_left_1200.svg);
+  }
+  .famous-pets__right {
+    background-image: url(../../assets/icons/slide_right_1200.svg);
+  }
   .famous-pets__wrapper {
-    padding-right: 14%;
+    padding-right: 10%;
+  }
+  .famous-pets__slider {
+    width: 546px;
+  }
+  .famous-pets__images-wrap {
+    grid-gap: 30px;
+    margin-right: 30px;
   }
   .famous-pets__image-wrap {    
     width: 258px;
@@ -892,10 +959,7 @@
   .famous-pets__header {
     letter-spacing: 1.2px;
   }
-  .famous-pets__images-wrap {
-    height: 573px;
-    width: 73%;
-  }
+ 
   .famous-pets__info { 
     font-size: 28px;
     line-height: 41px;
@@ -1505,7 +1569,7 @@
 .testimonials__wrapper {
   padding-left: 8.2%;
   padding-top: 84px;
-  padding-right: 3%;
+  padding-right: 2%;
   padding-bottom: 94px;
 }
 .testimonials__text {
@@ -1515,6 +1579,7 @@
 .testimonials__reviews-wrapper {
   padding-top: 21px;
   width: 66%;
+  margin-left: 71px;
 }
 .testimonials__header {
   font-family: Rubik;
@@ -1553,9 +1618,7 @@
 .testimonials__br_360 {
   display: none;
 }
-.testimonials__feedback-link {
-  text-decoration: none;
-}
+
 .testimonials__feedback-button {
   height: 61px;
   width: 286px;
@@ -1572,6 +1635,7 @@
   letter-spacing: 0em;
   text-align: center;
   color: #fcfcfc;
+  cursor: pointer;
 }
 .testimonials__feedback-button:hover {
   background: #0f0049;
@@ -1588,7 +1652,6 @@
   letter-spacing: 0em;
   text-decoration: none;
   color: #fcfcfc;
-  margin-left: 64px;
 }
 .testimonials__see-more-button:hover {
   text-decoration: underline;
@@ -1597,19 +1660,32 @@
   margin-left: 4px;
 }
 .testimonials__reviews {
+  overflow: hidden;  
+  scroll-behavior: smooth;
+  /* scrollbar-width: none; */
+}
+.testimonials__reviews-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  grid-template-rows: auto;
+  grid-gap: 40px;
+  grid-auto-flow: column;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+.testimonials__reviews {
   display: flex;
   margin-top: 25px;
+  justify-content: space-between;
+  width: 1064px;
 }
 .testimonials__review {
   height: 273px;
-  width: 534px;
+  width: 512px;
   border-radius: 15px;
   background-color: #fcfcfc;
 
-}
-.testimonials__review_margin {
-  margin-left: 62px;
-  margin-right: 38px;
 }
 .testimonials__review-heading {
   display: flex;
@@ -1645,12 +1721,34 @@
 .testimonials__arrows-wrapper {
   display: flex;
   justify-content: space-between;
-  margin-top: 28px;
-  margin-left: 63px;
   width: 149px;
+  margin-top: 18px;
 }
+.testimonials__arrow-left {
+  background-image: url(../../assets/icons/slide_left_testimonials.svg);
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-position: center;
+}
+.testimonials__arrow-right {
+  background-image: url(../../assets/icons/slide_right_testimonials.svg);
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-position: center;
+}
+
 .testimonials__arrow:hover {
   opacity: 0.5;
+}
+@media (max-width: 1919px) {
+  .testimonials__reviews-wrapper {
+    width: 526px;
+    overflow: hidden;
+  }
 }
 @media (max-width: 1480px) {
 
@@ -1658,6 +1756,7 @@
     padding-top: 91px;
     padding-left: 8%;
     padding-bottom: 80px;
+    text-align: center;
   }
   .testimonials__text {
     width: 53%;
@@ -1727,6 +1826,15 @@
     height: 56px;
   }
 
+}
+@media (max-width: 1200px) {
+  .testimonials__reviews-container {
+    grid-gap: 30px;
+  }
+  .testimonials__reviews {
+    width: 460px;
+
+  }
 }
 @media (max-width: 1199px) {
   .testimonials__wrapper {
@@ -1880,6 +1988,8 @@
 }
 .zoogeography__card-img {
   border-radius: 15px 15px 0 0;
+  width: 344px;
+  height: 218px;
 }
 .zoogeography__card-title {
   font-family: Merriweather;
@@ -1950,8 +2060,11 @@
 .zoogeography__eagle-marker {
   top: 25%;
   left: 11.5%;
+  transform: rotate(45deg);
+}
+.scale {
   transform: rotate(45deg) scale(1.4);
-  border: 1px solid #609fff;
+  border: 1px solid #609fff
 }
 
 .zoogeography__marker:hover {
@@ -2602,4 +2715,135 @@
   }
 
 
+}
+
+
+.cover {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 10;
+}
+
+.hidden {
+  display: none;
+}
+.notScrollable {
+  overflow: hidden;
+}
+
+.feedback-wrapper {
+  position: fixed;
+  top: calc(50vh - 299px);
+  left: calc(50vw - 240px);
+  width: 479px;
+  height: 598px;
+  border-radius: 15px;
+  z-index: 100;
+  background-color: white;
+  padding: 30px 40px 40px;
+}
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+.feedback-form__header {
+  font-family: Merriweather;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 52px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin: 0;
+}
+.feedback-form__label {
+  font-family: Rubik;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 23px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #7B7B7B;
+  margin-bottom: -24px;
+}
+.feedback-form__input {
+ border: none;
+ border-bottom: 2px solid #D3D3D3;
+ font-family: Rubik;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: black;
+}
+
+.feedback-form__input:focus,
+.feedback-form__textarea:focus {
+  outline: none;
+}
+.feedback-form__button {
+  width: 399px;
+  height: 66px;
+  border-radius: 5px;
+  background-color: #0F0049;
+  font-family: Rubik;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.invalid {
+  cursor: auto;
+  background-color: #D3D3D3;
+}
+.feedback-form__textarea {
+  border-color: #D3D3D3;
+  height: 100px;  
+  font-family: Rubik;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: 0em;
+  text-align: left;
+  color:  black;
+}
+@media (max-width:1200px) {
+  .feedback-wrapper {
+    width: 394px;
+    height: 591px;
+  }
+  .feedback-form__header {
+    font-size: 28px;
+    line-height: 41px;
+  }
+  .feedback-form__label {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .feedback-form__input {
+    font-size: 16px;
+    line-height: 22px;
+  }
+  .feedback-form__button {
+    font-size: 16px;
+    line-height: 19px;
+    width: 324px;
+    height: 51px
+  }
 }
