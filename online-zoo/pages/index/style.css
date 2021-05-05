@@ -732,7 +732,7 @@
   grid-auto-flow: column;
   margin: auto;
   box-sizing: border-box;
-  margin-left: 40px;
+  margin-right: 40px;
 }
 .moreWidth {
   width: 1442px;
@@ -945,7 +945,7 @@
   }
   .famous-pets__images-wrap {
     grid-gap: 30px;
-    margin-left: 30px;
+    margin-right: 30px;
   }
   .famous-pets__image-wrap {    
     width: 258px;

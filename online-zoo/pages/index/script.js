@@ -3,15 +3,23 @@ const slider = document.querySelector('.famous-pets__slider');
 const right = document.querySelector('.famous-pets__right');
 const left = document.querySelector(".famous-pets__left");
 const content = document.querySelector(".famous-pets__images-wrap")
-const space = 40;
+let space = 40;
 let counter = 0;
 
 let wrapWidth = slider.offsetWidth;
 let slideWidth = document.querySelector('.famous-pets__image-wrap').offsetWidth;
 window.addEventListener('resize', (e) => {
+  moveIt(counter);
   wrapWidth = slider.offsetWidth;
   slideWidth = document.querySelector('.famous-pets__image-wrap').offsetWidth;
 });
+
+const media = window.matchMedia('(max-width: 1200px)');
+if (media.matches){
+  space = 30;
+} else {
+  space = 40;
+}
 
 content.after(content.cloneNode(true));
 
@@ -19,7 +27,8 @@ right.addEventListener('click', e => {
   counter++;
   if (counter > 5) {
     counter = 0;
-    slider.scrollTo( {      
+    console.log(space);
+    slider.scrollTo( {           
       left: (slideWidth + space) * counter,
       behavior: "instant"
     })
@@ -190,7 +199,11 @@ if (mediaQuery.matches) gap = 30;
 let width = carousel.offsetWidth;
 let imgWidth = document.querySelector('.testimonials__review').offsetWidth;
 window.addEventListener('resize', (e) => {
-  if (mediaQuery.matches) gap = 30;
+  if (mediaQuery.matches) {
+    gap = 30;
+  } else {
+    gap = 40;
+  }
   carousel.scrollTo((imgWidth + gap) * slideNumber, 0);
   width = carousel.offsetWidth;
   imgWidth = document.querySelector('.testimonials__review').offsetWidth;
