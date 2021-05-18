@@ -1,0 +1,16 @@
+.timer {
+  width: 255px;
+  height: 65px;
+  box-shadow: 0px 4px 4px 0px #0000003d;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Roboto;
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 30px;
+  letter-spacing: 0.15000000596046448px;
+  color: #00000066;
+  margin-bottom: 60px;
+}
