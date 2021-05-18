@@ -1,0 +1,17 @@
+.nav__list {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  width: 300px;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+.nav {
+  height: 100%;
+}
+.nav__list-link {
+  text-decoration: none;
+  color: aliceblue;
+  font-size: 18px;
+}

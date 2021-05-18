@@ -3,6 +3,7 @@ import { BaseComponent } from '../base-component';
 import { Card } from '../card/card';
 import { CardsField } from '../game-field/cards-field';
 import { Timer } from '../timer/timer';
+import { Header } from '../header/header';
 import './game.css';
 import { settings } from '../../settings';
 
@@ -13,11 +14,12 @@ export class Game extends BaseComponent {
   private isAnimation = false;
 
   constructor() {
-    super("div", ['wrapper']);
+    super("main", ['wrapper']);
     this.cardsField = new CardsField();
     this.timer = new Timer();
     this.element.appendChild(this.timer.element);
     this.element.appendChild(this.cardsField.element);
+
   }
 
   newGame(images: string[]) {

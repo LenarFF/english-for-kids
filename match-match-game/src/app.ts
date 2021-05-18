@@ -1,11 +1,15 @@
 import { Game } from './components/game/game';
+import { Header } from './components/header/header';
 import { ImageCategoryModel } from './models/image-category-model';
 
 export class App {
+  private readonly header: Header;
   private readonly game: Game;
 
   constructor(private readonly rootElement: HTMLElement) {
+    this.header = new Header();
     this.game = new Game();
+    this.rootElement.appendChild(this.header.element);
     this.rootElement.appendChild(this.game.element);
   }
 

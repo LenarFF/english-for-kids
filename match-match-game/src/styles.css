@@ -7,16 +7,4 @@ html {
 }
 
 
-main {
-  min-height: calc(100vh - 2rem);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #E5E5E5;
-}
-footer {
-  height: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+
