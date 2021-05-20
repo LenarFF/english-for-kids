@@ -1,0 +1,55 @@
+
+.about-game {
+  background-color: #E5E5E5;
+  height: calc(100vh - 64px);
+  width: 100%;
+}
+
+.block-wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 780px;
+  max-height: 700px;
+  margin: 200px auto 0;
+}
+
+.top-blocks,
+.middle-blocks,
+.bottom-blocks {
+  display: flex;
+  justify-content: space-between;
+
+}
+.top-blocks {
+  height: 218px
+}
+.middle-blocks {
+  height: 132px;
+}
+.bottom-blocks {
+  height: 240px;
+}
+.block {
+  margin: auto 0;
+  width: 302px;
+}
+
+.register-img {
+  background-image: url('../../assets/register.png');
+  background-size: cover;
+  width: 302px;
+  height: 218px;;
+}
+.settings-img {
+  background-image: url('../../assets/settings.png');
+  background-size: cover;
+  width: 116px;
+  height: 73px;
+  margin-top: 30px;
+}
+.game-img {
+  background-image: url('../../assets/game.png');
+  background-size: cover;
+  width: 330px;
+  height: 240px;
+}
