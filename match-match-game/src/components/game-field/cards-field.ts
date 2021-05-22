@@ -1,7 +1,7 @@
 import './cards-field.css';
 import { BaseComponent } from '../base-component';
 import { Card } from '../card/card';
-import { settings } from '../../settings'
+import { settings } from '../../settings';
 
 export class CardsField extends BaseComponent {
   private cards: Card[] = [];

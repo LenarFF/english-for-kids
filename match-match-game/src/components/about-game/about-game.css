@@ -1,6 +1,5 @@
-
 .about-game {
-  background-color: #E5E5E5;
+  background-color: #e5e5e5;
   height: calc(100vh - 64px);
   width: 100%;
 }
@@ -18,10 +17,9 @@
 .bottom-blocks {
   display: flex;
   justify-content: space-between;
-
 }
 .top-blocks {
-  height: 218px
+  height: 218px;
 }
 .middle-blocks {
   height: 132px;
@@ -38,7 +36,7 @@
   background-image: url('../../assets/register.png');
   background-size: cover;
   width: 302px;
-  height: 218px;;
+  height: 218px;
 }
 .settings-img {
   background-image: url('../../assets/settings.png');

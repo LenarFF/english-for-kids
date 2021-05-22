@@ -18,7 +18,6 @@ export class Nav extends BaseComponent {
         </a>
       </li>
     </ul>
-    `
-
+    `;
   }
 }

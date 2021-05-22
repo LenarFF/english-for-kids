@@ -9,17 +9,19 @@ import { settings } from '../../settings';
 
 export class Game extends BaseComponent {
   private readonly cardsField: CardsField;
+
   private readonly timer: Timer;
+
   private activeCard?: Card;
+
   private isAnimation = false;
 
   constructor() {
-    super("main", ['wrapper']);
+    super('main', ['wrapper']);
     this.cardsField = new CardsField();
     this.timer = new Timer();
     this.element.appendChild(this.timer.element);
     this.element.appendChild(this.cardsField.element);
-
   }
 
   newGame(images: string[]) {
@@ -50,7 +52,7 @@ export class Game extends BaseComponent {
       return;
     }
 
-    if (this.activeCard.image != card.image) {
+    if (this.activeCard.image !== card.image) {
       await delay(settings.FLIP_DELAY);
       await Promise.all([this.activeCard.flipToBack(), card.flipToBack()]);
     }

@@ -1,7 +1,6 @@
 import { BaseComponent } from '../base-component';
 import './about-game.css';
 
-
 export class AboutGame extends BaseComponent {
   constructor() {
     super('div', ['about-game']);
@@ -33,6 +32,6 @@ export class AboutGame extends BaseComponent {
       </div>
     </div>
   </div>
-    `
+    `;
   }
 }

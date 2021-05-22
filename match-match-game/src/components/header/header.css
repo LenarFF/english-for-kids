@@ -1,7 +1,7 @@
 .header {
   max-width: 1920px;
   height: 64px;
-  background-color: #2196F3;
+  background-color: #2196f3;
   font-family: Roboto;
   font-size: 16px;
   font-style: normal;
@@ -11,6 +11,6 @@
   color: aliceblue;
   display: flex;
   justify-content: space-between;
-  align-items: center ;
+  align-items: center;
   padding: 0 50px;
 }

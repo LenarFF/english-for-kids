@@ -1,9 +1,10 @@
 import './timer.css';
 import { BaseComponent } from '../base-component';
-import { settings } from '../../settings'
+import { settings } from '../../settings';
 
 export class Timer extends BaseComponent {
-   timeCounter: number = 0;
+  timeCounter = 0;
+
   constructor() {
     super('div', ['timer']);
 
@@ -12,24 +13,23 @@ export class Timer extends BaseComponent {
     `;
   }
 
-   countSecond(time: number) {
-      this.timeCounter++;
-      const timerSpan = document.getElementById('timer');
-      if (!timerSpan) return;
-      timerSpan.innerHTML = `${this.timeCounter}`;
-      if (this.timeCounter >= time) {
-        this.timeCounter = 0;
-        return
-      }
+  countSecond(time: number) {
+    this.timeCounter++;
+    const timerSpan = document.getElementById('timer');
+    if (!timerSpan) return;
+    timerSpan.innerHTML = `${this.timeCounter}`;
+    if (this.timeCounter >= time) {
+      this.timeCounter = 0;
+    }
   }
 
   timerInterval(time: number) {
     console.log(this);
-    let setTimer = setInterval(() => {
-      this.countSecond(time)
+    const setTimer = setInterval(() => {
+      this.countSecond(time);
     }, 1000);
     if (this.timeCounter >= time) {
-    clearInterval(setTimer);
+      clearInterval(setTimer);
     }
   }
 }

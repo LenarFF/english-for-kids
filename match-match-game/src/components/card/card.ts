@@ -5,6 +5,7 @@ const FLIP_CLASS = 'flipped';
 
 export class Card extends BaseComponent {
   isFlipped = false;
+
   constructor(readonly image: string) {
     super('div', ['card-container']);
 
@@ -20,6 +21,7 @@ export class Card extends BaseComponent {
     this.isFlipped = true;
     return this.flip(true);
   }
+
   flipToFront() {
     this.isFlipped = false;
     return this.flip();
