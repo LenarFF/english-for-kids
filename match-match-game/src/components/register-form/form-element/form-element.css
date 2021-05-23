@@ -1,4 +1,25 @@
 .formWrap {
-  width: 328px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
+
+.input {
+  height: 24px;
+  width: 300px;
+}
+
+.form__header {
+  margin-bottom: 80px;
+  text-align: center;
+}
+
+.button-wrap {
+  display: flex;
+  justify-content: space-around;
+  width: 300px;
+  margin-top: 40px;
+}
+

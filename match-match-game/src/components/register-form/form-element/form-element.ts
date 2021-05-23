@@ -1,8 +1,8 @@
 import { BaseComponent } from '../../base-component';
-import { Label } from '../../input/input';
+import { AddButton } from '../../button/add-button/add-button';
+import { CancelButton } from '../../button/cancel-button/cancel-button';
+import { Input, Label } from '../../input/input';
 import './form-element.css'
-
-
 
 export class FormHeader extends BaseComponent {
 
@@ -18,16 +18,48 @@ export class FormWrap extends BaseComponent {
 
   labelName: Label;
   labelSurname: Label;
-  email: Label;
+  labelEmail: Label;
+
+  inputName: Input;
+  inputSurname: Input;
+  inputEmail: Input;
+
+  buttonWrap: BaseComponent;
+
+  addButton: AddButton;
+  cancelButton: CancelButton;
 
   constructor() {
     super('form', ['formWrap']);
+
     this.labelName = new Label('name', 'First Name');
     this.labelSurname = new Label('surname', 'Last Name');
-    this.email = new Label('email', 'Email');
+    this.labelEmail = new Label('email', 'Email');
+
+    this.inputName = new Input('text', '...');
+    this.inputSurname = new Input('text', '...');
+    this.inputEmail = new Input('email', '...');
+
+    this.buttonWrap = new BaseComponent('div', ['button-wrap']);
+
+
+
+    this.addButton = new AddButton();
+    this.cancelButton = new CancelButton();
+
     this.element.appendChild(this.labelName.element as HTMLLabelElement);
+    this.element.appendChild(this.inputName.element as HTMLInputElement);
+
     this.element.appendChild(this.labelSurname.element as HTMLLabelElement);
-    this.element.appendChild(this.email.element as HTMLLabelElement);
+    this.element.appendChild(this.inputSurname.element as HTMLInputElement);
+
+    this.element.appendChild(this.labelEmail.element as HTMLLabelElement);
+    this.element.appendChild(this.inputEmail.element as HTMLInputElement);
+
+    this.element.appendChild(this.buttonWrap.element as HTMLElement);
+
+    this.buttonWrap.element.appendChild(this.addButton.element as HTMLButtonElement);
+    this.buttonWrap.element.appendChild(this.cancelButton.element as HTMLButtonElement);
 
   }
 
