@@ -27,9 +27,9 @@ export class AddButton extends FormButton {
       this.hiddenForm();
       this.changeHeaderButton();
     } else {
-      if (!this.validateName(this.name.value)) this.name.classList.add('input_error');
-      if (!this.validateName(this.surname.value)) this.surname.classList.add('input_error');
-      if (!this.validateEmail(this.email.value)) this.email.classList.add('input_error');
+      if (!this.validateName(this.name.value))  this.validateReport(this.name, 'name');
+      if (!this.validateName(this.surname.value)) this.validateReport(this.surname, 'surname');
+      if (!this.validateEmail(this.email.value))  this.validateReport(this.email, 'email');
     }
   }
 
@@ -75,6 +75,7 @@ export class AddButton extends FormButton {
   addClass(inputName: HTMLInputElement, validateFunction: Function) {
     if (validateFunction(inputName.value)) {
       inputName.classList.add('input_success')
+      inputName.classList.remove('input_error');
     } else {
       inputName.classList.remove('input_success');
       inputName.classList.add('input_error')
@@ -85,6 +86,23 @@ export class AddButton extends FormButton {
     (document.querySelector('.register-button') as HTMLElement).classList.add('hidden');
     (document.querySelector('.start-button') as HTMLElement).classList.remove('hidden');
 
+  }
+
+  validateReport(inputElement: HTMLInputElement, inputName: string) {
+    inputElement.classList.add('input_error');
+
+    if (inputElement.value) {
+      if (inputName === 'email') {
+        inputElement.setCustomValidity(`Email address must contain @`);
+      } else {
+      inputElement.setCustomValidity(`The ${inputName} must be only letters and no longer than 30 characters`);
+      }
+    } else {
+      inputElement.setCustomValidity(`Enter your ${inputName}`);
+    }
+    setTimeout(() => {
+      inputElement.setCustomValidity('')
+    }, 3000);
   }
 
 }
