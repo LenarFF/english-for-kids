@@ -1,4 +1,4 @@
-export function indexdb() {
+export function indexdb(name: string, surname: string, email: string) {
 
   let request: IDBOpenDBRequest = window.indexedDB.open("lenarFF", 6);
   let db: IDBDatabase;
@@ -23,14 +23,12 @@ export function indexdb() {
     }
   };
 
-
-
-  const addStickyNote = (db: IDBDatabase, message: string) => {
+  const addStickyNote = (db: IDBDatabase, name: string, surname: string, email: string) => {
     // Запустим транзакцию базы данных и получите хранилище объектов Notes
     let tx: IDBTransaction = db.transaction(['notes'], 'readwrite');
     let store = tx.objectStore('notes');
     // Добаляем заметку в хранилище объектов
-    let note = {text: message, timestamp: Date.now()};
+    let note = {name: name, surname: surname, email};
     store.add(note);
     // Ожидаем завершения транзакции базы данных
     tx.oncomplete = () => {
@@ -43,9 +41,7 @@ export function indexdb() {
 
   request.onsuccess = (event) => {
     db = (event.target as IDBOpenDBRequest).result;
-    addStickyNote(db, 'Hello world first time!');
-    addStickyNote(db, 'Hello world second time!');
-    addStickyNote(db, 'Hello world third time!');
+    addStickyNote(db, name, surname, email);
   }
 
 }

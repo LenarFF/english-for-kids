@@ -36,15 +36,16 @@ export class FormWrap extends BaseComponent {
     this.labelSurname = new Label('surname', 'Last Name');
     this.labelEmail = new Label('email', 'Email');
 
-    this.inputName = new Input('text', '...');
-    this.inputSurname = new Input('text', '...');
-    this.inputEmail = new Input('email', '...');
+    this.inputName = new Input('text', '...', 'name');
+    this.inputSurname = new Input('text', '...', 'surname');
+    this.inputEmail = new Input('email', '...', 'email');
 
     this.buttonWrap = new BaseComponent('div', ['button-wrap']);
 
-
-
-    this.addButton = new AddButton();
+    this.addButton = new AddButton(this.inputName.element as HTMLInputElement,
+       this.inputSurname.element as HTMLInputElement,
+       this.inputEmail.element as HTMLInputElement);
+       
     this.cancelButton = new CancelButton();
 
     this.element.appendChild(this.labelName.element as HTMLLabelElement);
@@ -60,6 +61,8 @@ export class FormWrap extends BaseComponent {
 
     this.buttonWrap.element.appendChild(this.addButton.element as HTMLButtonElement);
     this.buttonWrap.element.appendChild(this.cancelButton.element as HTMLButtonElement);
+
+    this.addButton.element.classList.remove('box-shadow')
 
   }
 

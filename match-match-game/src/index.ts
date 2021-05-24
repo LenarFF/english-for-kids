@@ -3,8 +3,6 @@ import { App } from './app';
 import { AboutGame } from './components/about-game/about-game';
 import { BestScore } from './components/Best-score/best-score';
 import { GameSettings } from './components/game-settings/game-settings';
-import { indexdb } from './indexedDB'
-import { RegisterForm } from './components/register-form/register-form';
 
 
 const aboutGame = new AboutGame();
@@ -13,26 +11,7 @@ const gameSettings = new GameSettings();
 
 
 
-const locationResolver = (location: string) => {
-  console.log(window.location.hash);
-  const wrap = document.querySelector('.wrapper');
-  if (!wrap) throw Error('wrap root element not found');
-  wrap.innerHTML = '';
 
-  switch (location) {
-    case '#/about-game/':
-      wrap.append(aboutGame.element);
-      break;
-    case '#/best-score/':
-      wrap.append(bestSore.element);
-      break;
-    case '#/game-settings':
-      wrap.append(gameSettings.element);
-      break;
-    default:
-      console.log('index default');
-  }
-};
 
 window.addEventListener('load', () => {
   console.log(window.location.hash);
@@ -45,8 +24,29 @@ window.onload = () => {
 
   new App(appElement).start();
 
-  const location = window.location.hash;
-  console.log(location);
+  const locationResolver = (location: string) => {
+    console.log(window.location.hash);
+    const wrap = document.querySelector('.wrapper');
+    if (!wrap) throw Error('wrap root element not found');
+    wrap.innerHTML = '';
+
+    switch (location) {
+      case '#/about-game/':
+        wrap.append(aboutGame.element);
+        break;
+      case '#/best-score/':
+        wrap.append(bestSore.element);
+        break;
+      case '#/game-settings':
+        wrap.append(gameSettings.element);
+        break;
+      default:
+        console.log('index default');
+    }
+  };
+
+
+
   if (location) {
     const navEl = document.querySelectorAll('.nav__list-link');
     if (!navEl) throw Error('navEl element not found');
@@ -58,4 +58,4 @@ window.onload = () => {
   }
 };
 
-indexdb();
+

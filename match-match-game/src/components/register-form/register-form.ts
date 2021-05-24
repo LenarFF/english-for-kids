@@ -10,7 +10,7 @@ export class RegisterForm extends BaseComponent {
   photoWrap: BaseComponent;
 
   constructor() {
-    super('div', ['register-form', 'hide']);
+    super('div', ['register-form', 'hidden']);
 
     this.formHeader = new FormHeader();
     this.formWrap = new FormWrap();
@@ -19,7 +19,7 @@ export class RegisterForm extends BaseComponent {
 
     this.element.appendChild(this.formHeader.element);
     this.element.appendChild(this.userWrap.element);
-    
+
     this.userWrap.element.appendChild(this.formWrap.element);
     this.userWrap.element.appendChild(this.photoWrap.element as HTMLElement);
   }

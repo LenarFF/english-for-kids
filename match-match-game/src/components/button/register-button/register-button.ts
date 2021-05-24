@@ -11,5 +11,11 @@ export class RegisterButton extends Button {
 
   buttonHandler() {
     super.buttonHandler();
+
+    const cover = document.querySelector(".cover") as HTMLElement;
+    const form = document.querySelector(".register-form") as HTMLElement;
+
+    cover.classList.remove('hidden');
+    form.classList.remove('hidden');
   }
 }

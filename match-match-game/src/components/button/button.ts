@@ -3,7 +3,7 @@ import './button.css';
 
 export class Button extends BaseComponent {
   constructor(buttonText: string, styles: string[] = []) {
-    super('button', ['button']);
+    super('button', ['button', 'box-shadow']);
 
     this.element.innerHTML = `
   <p class='button__text'>${buttonText}</p>
