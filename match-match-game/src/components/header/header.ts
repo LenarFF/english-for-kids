@@ -9,8 +9,11 @@ import { StartButton } from '../button/start-button/start-button';
 
 export class Header extends BaseComponent {
   private readonly logo: Logo;
+
   private readonly nav: Nav;
+
   private readonly registerButton: RegisterButton;
+
   private readonly startButton: StartButton;
 
   constructor() {

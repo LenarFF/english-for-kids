@@ -1,19 +1,17 @@
-import { BaseComponent } from "../base-component"
-import './cover.css'
-
+import { BaseComponent } from '../base-component';
+import './cover.css';
 
 export class Cover extends BaseComponent {
   constructor() {
     super('div', ['cover', 'hidden']);
-    this.element.addEventListener('click', () => this.hide())
+    this.element.addEventListener('click', () => this.hide());
   }
 
-  hide() {
-    const cover = document.querySelector(".cover") as HTMLElement;
-    const form = document.querySelector(".register-form") as HTMLElement;
+  hide = () => {
+    const cover = document.querySelector('.cover') as HTMLElement;
+    const form = document.querySelector('.register-form') as HTMLElement;
 
     cover.classList.add('hidden');
     form.classList.add('hidden');
-  }
-
+  };
 }

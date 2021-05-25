@@ -8,13 +8,13 @@ import './game.css';
 import { settings } from '../../settings';
 
 export class Game extends BaseComponent {
-  private readonly cardsField: CardsField;
+  cardsField: CardsField;
 
-  private readonly timer: Timer;
+  timer: Timer;
 
-  private activeCard?: Card;
+  activeCard?: Card;
 
-  private isAnimation = false;
+  isAnimation = false;
 
   constructor() {
     super('main', ['wrapper']);
@@ -39,7 +39,7 @@ export class Game extends BaseComponent {
     this.timer.timerInterval(settings.SHOW_TIME);
   }
 
-  private async cardHandler(card: Card) {
+  async cardHandler(card: Card) {
     if (this.isAnimation) return;
     if (!card.isFlipped) return;
     this.isAnimation = true;

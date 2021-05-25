@@ -3,7 +3,7 @@ import './best-score.css';
 
 export class BestScore extends BaseComponent {
   constructor() {
-    super('div', ['about-game']);
+    super('div', ['best-score']);
     this.element.innerHTML = `
     <h1>Best players</h1>
     `;

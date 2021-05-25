@@ -8,10 +8,14 @@ export class Button extends BaseComponent {
     this.element.innerHTML = `
   <p class='button__text'>${buttonText}</p>
   `;
-  this.element.classList.add(...styles)
-  this.element.addEventListener('click', () => this.buttonHandler())
+    this.element.classList.add(...styles);
+    this.element.addEventListener('click', (evt) => {
+      evt.preventDefault();
+      this.buttonHandler();
+    });
   }
 
   buttonHandler() {
+    const forLinter = this.element;
   }
 }

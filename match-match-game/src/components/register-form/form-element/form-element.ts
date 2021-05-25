@@ -1,32 +1,27 @@
 import { BaseComponent } from '../../base-component';
 import { AddButton } from '../../button/add-button/add-button';
 import { CancelButton } from '../../button/cancel-button/cancel-button';
-import { Input, Label } from '../../input/input';
-import './form-element.css'
-
-export class FormHeader extends BaseComponent {
-
-  constructor() {
-    super('h1', ['form__header']);
-    this.element.innerHTML = 'Register new Player';
-
-  }
-
-}
+import { Input } from '../../input/input';
+import { Label } from '../../input/label/label';
+import './form-element.css';
 
 export class FormWrap extends BaseComponent {
-
   labelName: Label;
+
   labelSurname: Label;
+
   labelEmail: Label;
 
   inputName: Input;
+
   inputSurname: Input;
+
   inputEmail: Input;
 
   buttonWrap: BaseComponent;
 
   addButton: AddButton;
+
   cancelButton: CancelButton;
 
   constructor() {
@@ -42,10 +37,12 @@ export class FormWrap extends BaseComponent {
 
     this.buttonWrap = new BaseComponent('div', ['button-wrap']);
 
-    this.addButton = new AddButton(this.inputName.element as HTMLInputElement,
-       this.inputSurname.element as HTMLInputElement,
-       this.inputEmail.element as HTMLInputElement);
-       
+    this.addButton = new AddButton(
+      this.inputName.element as HTMLInputElement,
+      this.inputSurname.element as HTMLInputElement,
+      this.inputEmail.element as HTMLInputElement,
+    );
+
     this.cancelButton = new CancelButton();
 
     this.element.appendChild(this.labelName.element as HTMLLabelElement);
@@ -62,8 +59,6 @@ export class FormWrap extends BaseComponent {
     this.buttonWrap.element.appendChild(this.addButton.element as HTMLButtonElement);
     this.buttonWrap.element.appendChild(this.cancelButton.element as HTMLButtonElement);
 
-    this.addButton.element.classList.remove('box-shadow')
-
+    this.addButton.element.classList.remove('box-shadow');
   }
-
 }
