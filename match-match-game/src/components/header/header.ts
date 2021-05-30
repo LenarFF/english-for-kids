@@ -15,6 +15,8 @@ export class Header extends BaseComponent {
   private readonly registerButton: RegisterButton;
 
   private readonly startButton: StartButton;
+  private readonly stopButton: StopButton;
+
 
   constructor() {
     super('header', ['header']);
@@ -23,10 +25,13 @@ export class Header extends BaseComponent {
     this.nav = new Nav();
     this.registerButton = new RegisterButton();
     this.startButton = new StartButton();
+    this.startButton = new StartButton();
+    this.stopButton = new StopButton();
 
     this.element.appendChild(this.logo.element);
     this.element.appendChild(this.nav.element);
     this.element.appendChild(this.registerButton.element);
     this.element.appendChild(this.startButton.element);
+    this.element.appendChild(this.stopButton.element);
   }
 }

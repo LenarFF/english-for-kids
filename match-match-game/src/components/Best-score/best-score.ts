@@ -7,5 +7,6 @@ export class BestScore extends BaseComponent {
     this.element.innerHTML = `
     <h1>Best players</h1>
     `;
+    
   }
 }

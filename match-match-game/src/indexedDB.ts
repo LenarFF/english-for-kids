@@ -1,4 +1,7 @@
-export function indexdb(name: string, surname: string, email: string) {
+import { Game } from "./components/game/game";
+
+export function indexdb(name: string, surname: string, email: string, points: number = 0) {
+
   const request: IDBOpenDBRequest = window.indexedDB.open('lenarFF', 6);
   let db: IDBDatabase;
 
@@ -6,7 +9,8 @@ export function indexdb(name: string, surname: string, email: string) {
     db = event.target.result as IDBDatabase;
 
     // Создаём хранилище объектов для этой базы данных
-    const notes = db.createObjectStore('notes', { autoIncrement: true });
+    const notes = db.createObjectStore('notes', { keyPath: "points", autoIncrement: true });
+    console.log(notes.getAll())
   };
 
   request.onerror = function (event: any) {
@@ -22,24 +26,30 @@ export function indexdb(name: string, surname: string, email: string) {
     }
   };
 
-  const addStickyNote = (dBase: IDBDatabase, userName: string, userSurname: string, userEmail: string) => {
+  const addStickyNote = (dBase: IDBDatabase, userName: string, userSurname: string, userEmail: string, points: number) => {
     // Запустим транзакцию базы данных и получите хранилище объектов Notes
     const tx: IDBTransaction = dBase.transaction(['notes'], 'readwrite');
     const store = tx.objectStore('notes');
     // Добаляем заметку в хранилище объектов
-    const note = { userName, userSurname, userEmail };
+    const note = { userName, userSurname, userEmail, points };
+
     store.add(note);
+
+    console.log(store.getAll(1))
     // Ожидаем завершения транзакции базы данных
     tx.oncomplete = () => {
-      console.log('stored note!');
+      console.log('stored note!', request.result);
     };
     tx.onerror = () => {
       alert('error storing note ');
     };
+
   };
 
   request.onsuccess = (event) => {
     db = (event.target as IDBOpenDBRequest).result;
-    addStickyNote(db, name, surname, email);
+    addStickyNote(db, name, surname, email, points);
+
   };
+
 }

@@ -4,6 +4,7 @@ import { settings } from '../../settings';
 
 export class Timer extends BaseComponent {
   timeCounter = 0;
+  playTime: number = 0;
 
   constructor() {
     super('div', ['timer']);
@@ -18,18 +19,24 @@ export class Timer extends BaseComponent {
     const timerSpan = document.getElementById('timer');
     if (!timerSpan) return;
     timerSpan.innerHTML = `${this.timeCounter}`;
-    if (this.timeCounter >= time) {
-      this.timeCounter = 0;
-    }
   }
 
   timerInterval(time: number) {
-    console.log(this);
     const setTimer = setInterval(() => {
       this.countSecond(time);
-    }, 1000);
+
     if (this.timeCounter >= time) {
       clearInterval(setTimer);
+      this.timeCounter = 0;
+      this.playTimer()
+      return
     }
+  }, 1000);
   }
+  playTimer() {
+    setInterval(() => {
+      this.countSecond(300);
+      this.playTime++
+  }, 1000)
+}
 }

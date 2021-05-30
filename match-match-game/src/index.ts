@@ -3,67 +3,98 @@ import { App } from './app';
 import { AboutGame } from './components/about-game/about-game';
 import { BestScore } from './components/Best-score/best-score';
 import { GameSettings } from './components/game-settings/game-settings';
-import { Timer } from './components/timer/timer';
-import { CardsField } from './components/game-field/cards-field';
-import { Game } from './components/game/game';
-import { PreApp } from './preApp';
+import { Header } from './components/header/header';
+import { BaseComponent } from './components/base-component';
+import { Cover } from './components/cover/cover';
+import { RegisterForm } from './components/register-form/register-form';
 
 const aboutGame = new AboutGame();
 const bestSore = new BestScore();
 const gameSettings = new GameSettings();
-const timer = new Timer();
-const game = new Game();
 
 window.addEventListener('load', () => {
-  console.log(window.location.hash);
+  window.location.hash = "#"
 });
 
 window.onload = () => {
   const appElement = document.getElementById('app');
   if (!appElement) throw Error('App root element not found');
 
-  new App(appElement).start();
+  const header = new Header();
+  const wrap = new BaseComponent('main', ['wrapper']);
+  const cover = new Cover();
+  const form = new RegisterForm();
+  appElement.appendChild(header.element);
+  appElement.appendChild(wrap.element);
+  appElement.appendChild(cover.element);
+  appElement.appendChild(form.element);
+  wrap.element.append(aboutGame.element);
 
   const locationResolver = (location: string) => {
-    console.log(window.location.hash);
-    const wrap = document.querySelector('.wrapper');
-    if (!wrap) throw Error('wrap root element not found');
-    wrap.innerHTML = '';
+
+    wrap.element.innerHTML = '';
 
     switch (location) {
       case '#/about-game/':
-        wrap.append(aboutGame.element);
+        wrap.element.append(aboutGame.element);
+        hideStopButton();
+        addStartButton();
         break;
       case '#/best-score/':
-        wrap.append(bestSore.element);
+        wrap.element.append(bestSore.element);
+        hideStopButton();
+        addStartButton();
         break;
       case '#/game-settings':
-        wrap.append(gameSettings.element);
+        wrap.element.append(gameSettings.element);
+        hideStopButton();
+        window.onload = () => addStartButton();
         break;
-      case '#':
-        // wrap.append(game.element);
-        console.log('hello #');
-        // new App(appElement).start();
+      case '#/game/':
+        new App(wrap.element).start();
+        addStopButton();
+        hideStartButton();
         break;
       default:
-        wrap.append(game.timer.element);
-        wrap.append(game.cardsField.element);
-        console.log('hello #');
-        new PreApp(appElement).start();
+        // new App(wrap.element).start()
+        wrap.element.append(aboutGame.element);
     }
   };
 
   if (window.location) {
     const navEl = document.querySelectorAll('.nav__list-link');
-    document.querySelector('.start-button')?.addEventListener('click', () => {
-      if (window.location.hash !== '#') window.location.hash = '#';
+    const startButton = document.querySelector('.start-button');
+    const stopButton = document.querySelector('.stop-button');
+    startButton?.addEventListener('click', () => {
+      if (window.location.hash !== '#/game/') window.location.hash = '#/game/';
+
+    })
+    stopButton?.addEventListener('click', () => {
+      if (window.location.hash !== '#/best-score/') window.location.hash = '#/best-score/';
+
     });
 
     if (!navEl) throw Error('navEl element not found');
 
     window.addEventListener('hashchange', () => {
-      console.log(window.location.hash);
       locationResolver(window.location.hash);
     });
   }
 };
+
+function hideStartButton() {
+  const startButton = document.querySelector('.start-button');
+  startButton?.classList.add('hidden');
+}
+function hideStopButton() {
+  const stopButton = document.querySelector('.stop-button');
+  stopButton?.classList.add('hidden')
+}
+function addStopButton() {
+  const stopButton = document.querySelector('.stop-button');
+  stopButton?.classList.remove('hidden')
+}
+function addStartButton() {
+  const startButton = document.querySelector('.start-button');
+  startButton?.classList.remove('hidden')
+}

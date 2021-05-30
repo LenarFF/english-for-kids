@@ -6,25 +6,13 @@ import { ImageCategoryModel } from './models/image-category-model';
 import { Cover } from './components/cover/cover';
 
 export class App {
-  private readonly header: Header;
-
-  private readonly registerForm: RegisterForm;
 
   private readonly game: Game;
 
-  cover: BaseComponent;
-
   constructor(private readonly rootElement: HTMLElement) {
-    this.header = new Header();
-    this.registerForm = new RegisterForm();
     this.game = new Game();
-    this.cover = new Cover();
 
-    this.rootElement.appendChild(this.header.element);
-    this.rootElement.appendChild(this.game.element);
-    this.rootElement.appendChild(this.registerForm.element);
-    this.rootElement.appendChild(this.cover.element);
-  }
+    this.rootElement.appendChild(this.game.element);  }
 
   async start() {
     const res = await fetch('./images.json');

@@ -10,3 +10,10 @@ main {
   justify-content: center;
   background-color: #e5e5e5;
 }
+
+.red {
+  border: 2px solid red;
+}
+.green {
+  border: 2px solid green;
+}
