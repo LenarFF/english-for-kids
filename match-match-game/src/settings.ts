@@ -1,6 +1,6 @@
 export const settings = {
-  complexity: 14,
+  complexity: 36,
   FLIP_DELAY: 1000,
-  SHOW_TIME: 3,
+  SHOW_TIME: 30,
   startGame: false,
 };

@@ -1,6 +1,5 @@
 .card-container {
   margin: 1%;
-  flex: 1 0 20%;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -46,4 +45,9 @@
   background-color: grey;
   background-image: url('../../assets/back.png');
   transform: rotateY(180deg);
+}
+
+.card_small {
+  width: 120px;
+  height: 120px;
 }

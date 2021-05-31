@@ -1,5 +1,7 @@
 import { BaseComponent } from '../base-component';
 import { Button } from '../button/button';
+import { EasyButton } from '../button/easy-button/easy-button';
+import { HardButton } from '../button/hard-button/hard-button';
 import './game-settings.css';
 
 export class GameSettings extends BaseComponent {
@@ -15,9 +17,9 @@ export class GameSettings extends BaseComponent {
 
   gameCardsButtonGarden: BaseComponent;
 
-  difficultyEasyButton: BaseComponent;
+  difficultyEasyButton: EasyButton;
 
-  difficultyHardButton: BaseComponent;
+  difficultyHardButton: HardButton;
 
   gameCardsButtonsWrap: BaseComponent;
 
@@ -38,8 +40,8 @@ export class GameSettings extends BaseComponent {
     this.gameCardsButtonAnimals = new Button('Animals', ['game-cards__button']);
     this.gameCardsButtonGarden = new Button('Garden', ['game-cards__button']);
 
-    this.difficultyEasyButton = new Button('Easy', ['difficulty__button']);
-    this.difficultyHardButton = new Button('Hard', ['difficulty__button']);
+    this.difficultyEasyButton = new EasyButton();
+    this.difficultyHardButton = new HardButton();
 
     this.element.appendChild(this.gameCards.element);
     this.element.appendChild(this.difficulty.element);

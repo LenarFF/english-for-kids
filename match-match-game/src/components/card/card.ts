@@ -10,8 +10,9 @@ export class Card extends BaseComponent {
   constructor(readonly image: string) {
     super('div', ['card-container']);
 
-    this.element.innerHTML = `
-      <div class="card">
+
+      this.element.innerHTML = `
+      <div class="${settings.complexity === 16 ? "card" : "card card_small"}">
         <div class="card__front" style="background-image: url('./images/${image}')"></div>
         <div class="card__back"></div>
       </div>
