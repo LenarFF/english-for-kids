@@ -1,0 +1,395 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 20px;
+}
+
+.card-container {
+  margin: 1%;
+  flex: 1 0 20%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  perspective: 25rem;
+  cursor: pointer;
+}
+
+.card {
+  width: 168px;
+  height: 168px;
+  transform-style: preserve-3d;
+  transition: all 0.5s;
+  transform-origin: right;
+  position: relative;
+  box-shadow: 0 0 0.25rem black;
+  border-radius: 0.5rem;
+}
+
+.flipped > .card {
+  transform: rotateY(180deg) translateX(-100%);
+  transform-origin: left;
+}
+
+.card-container:hover .card {
+  box-shadow: 0 0.5rem 1rem rgb(0, 0, 0, 0.5);
+}
+.card__front,
+.card__back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background-position: center;
+  background-size: cover;
+}
+.card__front {
+  background-color: crimson;
+}
+.card__back {
+  background-color: grey;
+  background-image: url(assets/ca7c96e8f1f473da8b7f.png);
+  transform: rotateY(180deg);
+}
+
+.cards-field {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.timer {
+  width: 255px;
+  height: 65px;
+  box-shadow: 0px 4px 4px 0px #0000003d;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Roboto;
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 30px;
+  letter-spacing: 0.15000000596046448px;
+  color: #00000066;
+  margin-bottom: 60px;
+  margin-top: 10px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main {
+  min-height: calc(100vh - 64px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e5e5e5;
+}
+
+.red {
+  border: 2px solid red;
+}
+.green {
+  border: 2px solid green;
+}
+
+.about-game {
+  background-color: #e5e5e5;
+  height: calc(100vh - 64px);
+  width: 100%;
+}
+
+.block-wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 780px;
+  max-height: 700px;
+  margin: 0 auto;
+}
+
+.top-blocks,
+.middle-blocks,
+.bottom-blocks {
+  display: flex;
+  justify-content: space-between;
+}
+.top-blocks {
+  height: 418px;
+}
+.middle-blocks {
+  height: 132px;
+}
+.bottom-blocks {
+  height: 240px;
+}
+.block {
+  margin: auto 0;
+  width: 302px;
+}
+
+.register-img {
+  background-image: url(assets/c3d9e2c0b87151938bfb.png);
+  background-size: cover;
+  width: 410px;
+  height: 293px;
+}
+.settings-img {
+  background-image: url(assets/4e96bf057c6f8dab130b.png);
+  background-size: cover;
+  width: 116px;
+  height: 73px;
+  margin-top: 30px;
+}
+.game-img {
+  background-image: url(assets/32ba1d243411fca4cefb.png);
+  background-size: cover;
+  width: 330px;
+  height: 240px;
+}
+
+.best-score {
+  width: 100%;
+}
+
+.best-score__header {
+  text-align: center;
+}
+
+.records {
+  max-width: 1000px;
+  height: 800px;
+  margin: 0 auto;
+}
+
+.player {
+  max-width: 850px;
+  height: 40px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  border-bottom: 1px solid black;
+}
+
+.player__info {
+  height: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.player__name {
+  height: 60%;
+  width: 100%;
+  font-size: 18px;
+}
+
+.player__email {
+  height: 40%;
+  width: 100%;
+  font-size: 14px;
+}
+
+
+.header {
+  max-width: 1920px;
+  height: 64px;
+  background-color: #2196f3;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 1.25px;
+  text-align: center;
+  color: aliceblue;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+}
+
+.logo-wrap {
+  width: 80px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-link {
+  text-decoration: none;
+  color: aliceblue;
+}
+.logo__top,
+.logo__bottom {
+  width: 100%;
+  height: 50%;
+}
+.logo__bottom {
+  background-color: white;
+  color: #2196f3;
+}
+
+.nav__list {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  width: 300px;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+.nav {
+  height: 100%;
+}
+.nav__list-link {
+  text-decoration: none;
+  color: aliceblue;
+  font-size: 18px;
+}
+
+.button {
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: not-allowed;
+  color: #2196f3;
+  border: 2px solid white;
+  transition: 0.2s;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.box-shadow {
+  box-shadow: 5px 5px 5px rgb(0 0 0 / 50%);
+  cursor: pointer;
+}
+
+.button:active {
+  box-shadow: none;
+}
+
+.start-button {
+  width: 129px;
+  height: 36px;
+}
+
+.stop-button {
+  width: 122px;
+  height: 36px;
+}
+
+.register-button {
+  width: 207px;
+  height: 36px;
+}
+
+.cover {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+.hidden {
+  display: none;
+}
+
+.add-button {
+  width: 100px;
+  height: 50px;
+}
+
+.box-shadow {
+  box-shadow: 5px 5px 5px rgb(0 0 0 / 50%);
+  cursor: pointer;
+}
+
+.input_error {
+  border-color: red;
+}
+
+.input_success {
+  border: 2px solid seagreen;
+}
+
+.cancel-button {
+  width: 100px;
+  height: 50px;
+}
+
+.input {
+  font-size: 18px;
+  outline: none;
+}
+
+
+.formWrap {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.input {
+  height: 24px;
+  width: 300px;
+}
+
+.form__header {
+  margin-bottom: 80px;
+  text-align: center;
+}
+
+.button-wrap {
+  display: flex;
+  justify-content: space-around;
+  width: 300px;
+  margin-top: 40px;
+}
+
+.register-form {
+  width: 700px;
+  height: 500px;
+  background-color: aqua;
+  padding: 20px;
+  position: fixed;
+  top: calc(50vh - 299px);
+  left: calc(50vw - 350px);
+  border-radius: 15px;
+  z-index: 100;
+  background-color: white;
+}
+
+.user-wrap {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 350px;
+}
+
+.photo-wrap {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-image: url(assets/07a791f60fee48c41b0b.png);
+  background-position: center;
+  background-size: cover;
+}
+
+.notScrollable {
+  overflow: hidden;
+}
+
