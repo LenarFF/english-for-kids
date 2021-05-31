@@ -19,7 +19,7 @@ export class BestScore extends BaseComponent {
     <h1>Best players</h1>
     `;
 
-    this.indexedDBCursor();
+    this.getAllGames();
   }
 
   addHTML(results: any) {
@@ -43,48 +43,37 @@ export class BestScore extends BaseComponent {
     }
   }
 
-  indexedDBCursor() {
-    let db: any;
-
-    const openRequest = indexedDB.open('test', 1);
-
-    openRequest.onerror = function () {
-      console.log('open db request --- onerror');
-    };
-
-    openRequest.onsuccess = (event: any) => {
-      console.log('open db --- onsuccess');
-      db = event.target.result;
-      this.getAllGames();
-    };
-
-    openRequest.onupgradeneeded = function (event) {
-      console.log('open db --- onupgradeneeded');
-    };
-  }
-
   getAllGames() {
-    const openRequest = indexedDB.open('test', 1);
+    const openRequest = indexedDB.open('LenarFF', 1);
 
     openRequest.onerror = function () {
       console.log('open db request --- onerror');
     };
 
-    openRequest.onsuccess = (event: any) => {
+    openRequest.onsuccess = (ev: any) => {
       console.log('open db --- onsuccess');
 
-      const db = event.target.result;
+      const db = ev.target.result;
 
       const objectStore = db.transaction('games').objectStore('games');
 
-      objectStore.getAll().onsuccess = () => {
+      objectStore.getAll().onsuccess = (event: any) => {
+        console.log(event.target.result);
         const results = event.target.result;
         this.addHTML(results);
       };
     };
 
-    openRequest.onupgradeneeded = function () {
+    openRequest.onupgradeneeded = function (e: any) {
       console.log('open db --- onupgradeneeded');
+      const db = e.target.result;
+      if (!db.objectStoreNames.contains('games')) {
+        db.createObjectStore(
+          'games',
+          { keyPath: 'points', autoIncrement: true },
+          { unique: false },
+        );
+      }
     };
   }
 }
