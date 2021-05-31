@@ -1,9 +1,6 @@
-import { BaseComponent } from './components/base-component';
+
 import { Game } from './components/game/game';
-import { Header } from './components/header/header';
-import { RegisterForm } from './components/register-form/register-form';
 import { ImageCategoryModel } from './models/image-category-model';
-import { Cover } from './components/cover/cover';
 
 export class App {
   private readonly game: Game;

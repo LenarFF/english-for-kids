@@ -49,7 +49,6 @@ export class Game extends BaseComponent {
   }
 
   async cardHandler(card: Card) {
-    // if (!settings.startGame === false) return
     if (this.isAnimation) return;
     if (!card.isFlipped) return;
     this.isAnimation = true;
