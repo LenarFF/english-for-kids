@@ -1,38 +1,35 @@
 import { BaseComponent } from '../base-component';
 import './best-score.css';
 
-
-
 export class BestScore extends BaseComponent {
-
   header: BaseComponent;
+
   records: BaseComponent;
 
-   constructor() {
+  constructor() {
     super('div', ['best-score']);
 
-    this.header = new BaseComponent('h1', ['best-score__header'])
-    this.records = new BaseComponent('div', ['records'])
+    this.header = new BaseComponent('h1', ['best-score__header']);
+    this.records = new BaseComponent('div', ['records']);
 
-    this.element.appendChild(this.header.element)
+    this.element.appendChild(this.header.element);
     this.element.appendChild(this.records.element);
 
     this.header.element.innerHTML = `
     <h1>Best players</h1>
     `;
 
-    this.indexedDBCursor()
+    this.indexedDBCursor();
   }
 
-   addHTML(results: any) {
-
-    for (let i = results.length - 1; i > results.length - 11; i-- ) {
-      if (i < 0) return
-      let player = new BaseComponent('div', ['player']);
-      let playerInfo = new BaseComponent('div', ['player__info'])
-      let name = new BaseComponent('p', ['player__name']);
-      let email = new BaseComponent('p', ['player__email']);
-      let score = new BaseComponent('p', ['player__score'])
+  addHTML(results: any) {
+    for (let i = results.length - 1; i > results.length - 11; i--) {
+      if (i < 0) return;
+      const player = new BaseComponent('div', ['player']);
+      const playerInfo = new BaseComponent('div', ['player__info']);
+      const name = new BaseComponent('p', ['player__name']);
+      const email = new BaseComponent('p', ['player__email']);
+      const score = new BaseComponent('p', ['player__score']);
 
       this.records.element.appendChild(player.element);
       player.element.appendChild(playerInfo.element);
@@ -40,66 +37,54 @@ export class BestScore extends BaseComponent {
       playerInfo.element.appendChild(name.element);
       playerInfo.element.appendChild(email.element);
 
-
-
-      console.log(results[i])
-      console.log(i)
-      name.element.innerHTML = `${results[i].name} ${results[i].surname}`
-      email.element.innerHTML = `${results[i].email}`
-      score.element.innerHTML = `Score: ${results[i].points}`
-
+      name.element.innerHTML = `${results[i].name} ${results[i].surname}`;
+      email.element.innerHTML = `${results[i].email}`;
+      score.element.innerHTML = `Score: ${results[i].points}`;
     }
   }
 
   indexedDBCursor() {
-
-
     let db: any;
 
-    let openRequest = indexedDB.open('test', 1);
+    const openRequest = indexedDB.open('test', 1);
 
     openRequest.onerror = function () {
-        console.log('open db request --- onerror');
+      console.log('open db request --- onerror');
     };
 
     openRequest.onsuccess = (event: any) => {
-        console.log('open db --- onsuccess');
-        db = event.target.result;
-        this.getAllGames(db);
+      console.log('open db --- onsuccess');
+      db = event.target.result;
+      this.getAllGames();
     };
 
     openRequest.onupgradeneeded = function (event) {
-        console.log('open db --- onupgradeneeded');
+      console.log('open db --- onupgradeneeded');
     };
   }
 
-     getAllGames(db: any) {
+  getAllGames() {
+    const openRequest = indexedDB.open('test', 1);
 
-      let openRequest = indexedDB.open('test', 1);
+    openRequest.onerror = function () {
+      console.log('open db request --- onerror');
+    };
 
-      openRequest.onerror = function () {
-          console.log('open db request --- onerror');
+    openRequest.onsuccess = (event: any) => {
+      console.log('open db --- onsuccess');
+
+      const db = event.target.result;
+
+      const objectStore = db.transaction('games').objectStore('games');
+
+      objectStore.getAll().onsuccess = () => {
+        const results = event.target.result;
+        this.addHTML(results);
       };
+    };
 
-      openRequest.onsuccess = (event: any) => {
-          console.log('open db --- onsuccess');
-
-          db = event.target.result;
-
-          let objectStore = db.transaction('games').objectStore('games');
-
-
-          objectStore.getAll().onsuccess = (event: any) => {
-              console.log(event.target.result);
-              const results = event.target.result;
-              this.addHTML(results);
-          }
-      };
-
-      openRequest.onupgradeneeded = function () {
-          console.log('open db --- onupgradeneeded');
-      };
-
-    }
-
+    openRequest.onupgradeneeded = function () {
+      console.log('open db --- onupgradeneeded');
+    };
   }
+}

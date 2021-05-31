@@ -7,15 +7,31 @@ import { Header } from './components/header/header';
 import { BaseComponent } from './components/base-component';
 import { Cover } from './components/cover/cover';
 import { RegisterForm } from './components/register-form/register-form';
-import { getDB } from './indexedDB2';
 
 const aboutGame = new AboutGame();
 const bestSore = new BestScore();
 const gameSettings = new GameSettings();
 
 window.addEventListener('load', () => {
-  window.location.hash = "#"
+  window.location.hash = '#';
 });
+
+function hideStartButton() {
+  const startButton = document.querySelector('.start-button');
+  startButton?.classList.add('hidden');
+}
+function hideStopButton() {
+  const stopButton = document.querySelector('.stop-button');
+  stopButton?.classList.add('hidden');
+}
+function addStopButton() {
+  const stopButton = document.querySelector('.stop-button');
+  stopButton?.classList.remove('hidden');
+}
+function addStartButton() {
+  const startButton = document.querySelector('.start-button');
+  startButton?.classList.remove('hidden');
+}
 
 window.onload = () => {
   const appElement = document.getElementById('app');
@@ -32,7 +48,6 @@ window.onload = () => {
   wrap.element.append(aboutGame.element);
 
   const locationResolver = (location: string) => {
-
     wrap.element.innerHTML = '';
 
     switch (location) {
@@ -42,7 +57,7 @@ window.onload = () => {
         addStartButton();
         break;
       case '#/best-score/':
-        wrap.element.append(bestSore.element) ;
+        wrap.element.append(bestSore.element);
         hideStopButton();
         addStartButton();
         break;
@@ -68,11 +83,9 @@ window.onload = () => {
     const stopButton = document.querySelector('.stop-button');
     startButton?.addEventListener('click', () => {
       if (window.location.hash !== '#/game/') window.location.hash = '#/game/';
-
-    })
+    });
     stopButton?.addEventListener('click', () => {
       if (window.location.hash !== '#/best-score/') window.location.hash = '#/best-score/';
-
     });
 
     if (!navEl) throw Error('navEl element not found');
@@ -82,24 +95,3 @@ window.onload = () => {
     });
   }
 };
-
-function hideStartButton() {
-  const startButton = document.querySelector('.start-button');
-  startButton?.classList.add('hidden');
-}
-function hideStopButton() {
-  const stopButton = document.querySelector('.stop-button');
-  stopButton?.classList.add('hidden')
-}
-function addStopButton() {
-  const stopButton = document.querySelector('.stop-button');
-  stopButton?.classList.remove('hidden')
-}
-function addStartButton() {
-  const startButton = document.querySelector('.start-button');
-  startButton?.classList.remove('hidden')
-}
-
-
-getDB()
-

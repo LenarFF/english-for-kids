@@ -2,7 +2,6 @@ import './header.css';
 import { BaseComponent } from '../base-component';
 import { Logo } from '../logo/logo';
 import { Nav } from '../nav/nav';
-import { Button } from '../button/button';
 import { StopButton } from '../button/stop-button/stop-button';
 import { RegisterButton } from '../button/register-button/register-button';
 import { StartButton } from '../button/start-button/start-button';
@@ -15,8 +14,8 @@ export class Header extends BaseComponent {
   private readonly registerButton: RegisterButton;
 
   private readonly startButton: StartButton;
-  private readonly stopButton: StopButton;
 
+  private readonly stopButton: StopButton;
 
   constructor() {
     super('header', ['header']);

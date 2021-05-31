@@ -3,7 +3,6 @@ import { BaseComponent } from '../base-component';
 import { Card } from '../card/card';
 import { CardsField } from '../game-field/cards-field';
 import { Timer } from '../timer/timer';
-import { Header } from '../header/header';
 import './game.css';
 import { settings } from '../../settings';
 import { user } from '../../user';
@@ -16,7 +15,8 @@ export class Game extends BaseComponent {
   activeCard?: Card;
 
   isAnimation = false;
-  comparisonCounter: number
+
+  comparisonCounter: number;
 
   constructor() {
     super();
@@ -27,10 +27,10 @@ export class Game extends BaseComponent {
 
     this.element.appendChild(this.timer.element);
     this.element.appendChild(this.cardsField.element);
-    document.querySelector('.stop-button')?.addEventListener('click',  () => {
-      console.log(this.points)
-      user.point = this.points
-    })
+    document.querySelector('.stop-button')?.addEventListener('click', () => {
+      console.log(this.points);
+      user.point = this.points;
+    });
   }
 
   newGame(images: string[]) {
@@ -42,13 +42,11 @@ export class Game extends BaseComponent {
 
     cards.forEach((card) => {
       card.element.addEventListener('click', () => this.cardHandler(card));
-
     });
 
     this.cardsField.addCards(cards);
     this.timer.timerInterval(settings.SHOW_TIME);
   }
-
 
   async cardHandler(card: Card) {
     // if (!settings.startGame === false) return
@@ -75,15 +73,14 @@ export class Game extends BaseComponent {
     } else {
       this.activeCard.element.classList.add('green');
       card.element.classList.add('green');
-      this.comparisonCounter++
+      this.comparisonCounter++;
     }
 
     this.activeCard = undefined;
     this.isAnimation = false;
-
   }
 
   get points() {
-    return this.comparisonCounter * 100 - this.timer.timeCounter  * 10;
+    return this.comparisonCounter * 100 - this.timer.timeCounter * 10;
   }
 }

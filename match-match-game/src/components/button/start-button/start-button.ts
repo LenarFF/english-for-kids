@@ -13,8 +13,7 @@ export class StartButton extends Button {
     settings.startGame = true;
 
     document.querySelectorAll('.card').forEach((card) => {
-      card.classList.remove('.flipped')
+      card.classList.remove('.flipped');
     });
-
   }
 }

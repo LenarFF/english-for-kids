@@ -1,4 +1,3 @@
-
 import { user } from '../../../user';
 import { FormButton } from '../form-button/form-button';
 import './add-button.css';
@@ -23,16 +22,13 @@ export class AddButton extends FormButton {
     super.buttonHandler();
 
     if (this.validate(this.name.value, this.surname.value, this.email.value)) {
-
       user.name = this.name.value;
       user.surname = this.surname.value;
       user.email = this.email.value;
 
-
       this.clearInput();
       this.hiddenForm();
       this.changeHeaderButton();
-
     } else {
       if (!this.validateName(this.name.value)) this.validateReport(this.name, 'name');
       if (!this.validateName(this.surname.value)) this.validateReport(this.surname, 'surname');
@@ -40,7 +36,11 @@ export class AddButton extends FormButton {
     }
   }
 
-  changeInput = (inputName: HTMLInputElement, inputSurname: HTMLInputElement, inputEmail: HTMLInputElement) => {
+  changeInput = (
+    inputName: HTMLInputElement,
+    inputSurname: HTMLInputElement,
+    inputEmail: HTMLInputElement,
+  ) => {
     inputName.oninput = () => {
       this.validate(inputName.value, inputSurname.value, inputEmail.value);
       this.addClass(inputName, this.validateName);
@@ -56,7 +56,11 @@ export class AddButton extends FormButton {
   };
 
   validate = (inputNameValue: string, inputSurnameValue: string, inputEmailValue: string) => {
-    if (this.validateName(inputNameValue) && this.validateName(inputSurnameValue) && this.validateEmail(inputEmailValue)) {
+    if (
+      this.validateName(inputNameValue)
+      && this.validateName(inputSurnameValue)
+      && this.validateEmail(inputEmailValue)
+    ) {
       this.element.classList.add('box-shadow');
       return true;
     }
@@ -110,8 +114,4 @@ export class AddButton extends FormButton {
 
     inputElement.reportValidity();
   };
-
-
-
-
 }

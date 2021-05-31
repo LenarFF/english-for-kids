@@ -19,16 +19,9 @@ export class CardsField extends BaseComponent {
     this.cards = cards.slice(0, settings.complexity);
     this.cards.forEach((card) => this.element.appendChild(card.element));
 
-      this.cards.forEach((card) => card.flipToFront());
+    this.cards.forEach((card) => card.flipToFront());
     setTimeout(() => {
       this.cards.forEach((card) => card.flipToBack());
     }, settings.SHOW_TIME * 1000);
-
-  }
-
-  startGame() {
-    document.querySelector('.start-button')?.addEventListener('click', () => {
-
-    })
   }
 }
