@@ -7,6 +7,7 @@ import { Header } from './components/header/header';
 import { BaseComponent } from './components/base-component';
 import { Cover } from './components/cover/cover';
 import { RegisterForm } from './components/register-form/register-form';
+import { getDB } from './indexedDB2';
 
 const aboutGame = new AboutGame();
 const bestSore = new BestScore();
@@ -41,7 +42,7 @@ window.onload = () => {
         addStartButton();
         break;
       case '#/best-score/':
-        wrap.element.append(bestSore.element);
+        wrap.element.append(bestSore.element) ;
         hideStopButton();
         addStartButton();
         break;
@@ -98,3 +99,7 @@ function addStartButton() {
   const startButton = document.querySelector('.start-button');
   startButton?.classList.remove('hidden')
 }
+
+
+getDB()
+

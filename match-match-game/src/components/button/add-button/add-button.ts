@@ -1,4 +1,4 @@
-import { indexdb } from '../../../indexedDB';
+
 import { user } from '../../../user';
 import { FormButton } from '../form-button/form-button';
 import './add-button.css';

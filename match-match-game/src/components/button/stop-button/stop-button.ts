@@ -1,4 +1,5 @@
-import { indexdb } from '../../../indexedDB';
+
+import { indexDBAdd } from '../../../indexedDB2';
 import { settings } from '../../../settings';
 import { user } from '../../../user';
 import { Card } from '../../card/card';
@@ -16,7 +17,7 @@ export class StopButton extends Button {
 
   buttonHandler() {
     super.buttonHandler();
-    setTimeout( () => indexdb(user.name, user.surname, user.email, user.point), 10);
+     indexDBAdd(user.name, user.surname, user.email, user.point);
     (new StartButton).element.classList.remove('hidden');
 
   }

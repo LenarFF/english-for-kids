@@ -1,0 +1,44 @@
+
+
+.best-score {
+  width: 100%;
+}
+
+.best-score__header {
+  text-align: center;
+}
+
+.records {
+  max-width: 1000px;
+  height: 800px;
+  margin: 0 auto;
+}
+
+.player {
+  max-width: 850px;
+  height: 40px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  border-bottom: 1px solid black;
+}
+
+.player__info {
+  height: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.player__name {
+  height: 60%;
+  width: 100%;
+  font-size: 18px;
+}
+
+.player__email {
+  height: 40%;
+  width: 100%;
+  font-size: 14px;
+}
