@@ -1,13 +1,14 @@
 import { BaseComponent } from "../BaseComponent/BaseComponent";
-import { Buttons } from "../Buttons/Buttons";
+import { GarageButton } from "../Buttons/garage-button/garage-button";
+import { WinnersButton } from "../Buttons/winners-button/winners-button";
 
 export class  Header extends BaseComponent {
-garage: Buttons
-winners: Buttons
+garage: GarageButton
+winners: WinnersButton
   constructor() {
     super('header', ['header'])
-    this.garage = new Buttons('garage', ['garage-button'])
-    this.winners = new Buttons('winners', ['winners-button'])
+    this.garage = new GarageButton()
+    this.winners = new WinnersButton()
 
     this.element.appendChild(this.garage.element)
     this.element.appendChild(this.winners.element)
