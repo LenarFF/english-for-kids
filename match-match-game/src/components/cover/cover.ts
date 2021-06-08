@@ -7,7 +7,7 @@ export class Cover extends BaseComponent {
     this.element.addEventListener('click', () => this.hide());
   }
 
-  hide = () => {
+  hide = (): void => {
     const cover = document.querySelector('.cover') as HTMLElement;
     const form = document.querySelector('.register-form') as HTMLElement;
 

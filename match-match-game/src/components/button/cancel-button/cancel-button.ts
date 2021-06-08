@@ -6,7 +6,7 @@ export class CancelButton extends FormButton {
     super('cancel', ['cancel-button']);
   }
 
-  buttonHandler() {
+  buttonHandler(): void {
     super.buttonHandler();
     this.hiddenForm();
     this.clearInput();

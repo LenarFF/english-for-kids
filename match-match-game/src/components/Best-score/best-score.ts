@@ -22,7 +22,7 @@ export class BestScore extends BaseComponent {
     this.getAllGames();
   }
 
-  addHTML(results: any) {
+  addHTML(results: [ { name: string, surname: string, email: string, points: number } ]): void {
     for (let i = results.length - 1; i > results.length - 11; i--) {
       if (i < 0) return;
       const player = new BaseComponent('div', ['player']);
@@ -37,35 +37,31 @@ export class BestScore extends BaseComponent {
       playerInfo.element.appendChild(name.element);
       playerInfo.element.appendChild(email.element);
 
-      name.element.innerHTML = `${results[i].name} ${results[i].surname}`;
+      if (results) name.element.innerHTML = `${results[i].name} ${results[i].surname}`;
       email.element.innerHTML = `${results[i].email}`;
       score.element.innerHTML = `Score: ${results[i].points}`;
     }
   }
 
-  getAllGames() {
+  getAllGames(): void {
     const openRequest = indexedDB.open('LenarFF', 1);
 
-    openRequest.onerror = function () {
-      console.log('open db request --- onerror');
+    openRequest.onerror = () => {
+      throw Error('open db request --- onerror');
     };
 
     openRequest.onsuccess = (ev: any) => {
-      console.log('open db --- onsuccess');
-
       const db = ev.target.result;
 
       const objectStore = db.transaction('games').objectStore('games');
 
       objectStore.getAll().onsuccess = (event: any) => {
-        console.log(event.target.result);
         const results = event.target.result;
         this.addHTML(results);
       };
     };
 
-    openRequest.onupgradeneeded = function (e: any) {
-      console.log('open db --- onupgradeneeded');
+    openRequest.onupgradeneeded = (e: any) => {
       const db = e.target.result;
       if (!db.objectStoreNames.contains('games')) {
         db.createObjectStore(

@@ -6,9 +6,8 @@ export class HardButton extends Button {
     super('Hard', ['difficulty__button']);
   }
 
-  buttonHandler() {
+  buttonHandler(): void {
     super.buttonHandler();
     settings.complexity = 36;
-    console.log(settings.complexity);
   }
 }

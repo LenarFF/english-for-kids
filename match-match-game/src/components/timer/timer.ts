@@ -1,6 +1,5 @@
 import './timer.css';
 import { BaseComponent } from '../base-component';
-import { settings } from '../../settings';
 
 export class Timer extends BaseComponent {
   timeCounter = 0;
@@ -15,16 +14,16 @@ export class Timer extends BaseComponent {
     `;
   }
 
-  countSecond(time: number) {
+  countSecond(): void {
     this.timeCounter++;
     const timerSpan = document.getElementById('timer');
     if (!timerSpan) return;
     timerSpan.innerHTML = `${this.timeCounter}`;
   }
 
-  timerInterval(time: number) {
+  timerInterval(time: number): void {
     const setTimer = setInterval(() => {
-      this.countSecond(time);
+      this.countSecond();
 
       if (this.timeCounter >= time) {
         clearInterval(setTimer);
@@ -34,9 +33,9 @@ export class Timer extends BaseComponent {
     }, 1000);
   }
 
-  playTimer() {
+  playTimer(): void {
     setInterval(() => {
-      this.countSecond(300);
+      this.countSecond();
       this.playTime++;
     }, 1000);
   }

@@ -28,12 +28,11 @@ export class Game extends BaseComponent {
     this.element.appendChild(this.timer.element);
     this.element.appendChild(this.cardsField.element);
     document.querySelector('.stop-button')?.addEventListener('click', () => {
-      console.log(this.points);
       user.point = this.points;
     });
   }
 
-  newGame(images: string[]) {
+  newGame(images: string[]): void {
     this.cardsField.clear();
     const cards = images
       .concat(images)
@@ -48,7 +47,7 @@ export class Game extends BaseComponent {
     this.timer.timerInterval(settings.SHOW_TIME);
   }
 
-  async cardHandler(card: Card) {
+  async cardHandler(card: Card): Promise<void> {
     if (this.isAnimation) return;
     if (!card.isFlipped) return;
     this.isAnimation = true;
@@ -79,7 +78,7 @@ export class Game extends BaseComponent {
     this.isAnimation = false;
   }
 
-  get points() {
+  get points(): number {
     return this.comparisonCounter * 100 - this.timer.timeCounter * 10;
   }
 }

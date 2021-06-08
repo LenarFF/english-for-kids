@@ -1,4 +1,3 @@
-import { RegisterForm } from '../../register-form/register-form';
 import { Button } from '../button';
 import './register-button.css';
 
@@ -7,7 +6,7 @@ export class RegisterButton extends Button {
     super('register new player', ['register-button']);
   }
 
-  buttonHandler() {
+  buttonHandler(): void {
     super.buttonHandler();
 
     const cover = document.querySelector('.cover') as HTMLElement;

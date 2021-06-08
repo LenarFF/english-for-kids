@@ -10,35 +10,31 @@ function addGame(name: string, surname: string, email: string, points: number, d
   };
 
   const request = games.add(game);
-  console.dir(request);
 
-  request.onsuccess = function () {
-    console.log('Партия записана в БД');
+  request.onsuccess = () => {
   };
 
-  request.onerror = function (event: any) {
-    console.log('Ошибка при записи в БД', event.target.error);
+  request.onerror = () => {
+    throw Error('Ошибка при записи в БД');
   };
 }
 
-export function indexDBAdd(name: string, surname: string, email: string, points: number) {
+export function indexDBAdd(name: string, surname: string, email: string, points: number): void {
   let db: any;
 
   const openRequest = indexedDB.open('LenarFF', 1);
 
-  openRequest.onerror = function () {
+  openRequest.onerror = () => {
     throw new Error('indexDB error');
   };
 
-  openRequest.onsuccess = function (event: any) {
-    console.log('open db --- onsuccess');
+  openRequest.onsuccess = (event: any) => {
     db = event.target.result;
 
     addGame(name, surname, email, points, db);
   };
 
-  openRequest.onupgradeneeded = function (event: any) {
-    console.log('open db --- onupgradeneeded');
+  openRequest.onupgradeneeded = (event: any) => {
     db = event.target.result;
     if (!db.objectStoreNames.contains('games')) {
       db.createObjectStore('games', { keyPath: 'points', autoIncrement: true }, { unique: false });

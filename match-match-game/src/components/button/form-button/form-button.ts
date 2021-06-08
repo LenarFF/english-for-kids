@@ -1,7 +1,7 @@
 import { Button } from '../button';
 
 export class FormButton extends Button {
-  clearInput = () => {
+  clearInput = (): void => {
     (document.getElementById('name') as HTMLInputElement).value = '';
     (document.getElementById('name') as HTMLInputElement).classList.remove(
       'input_success',
@@ -21,7 +21,7 @@ export class FormButton extends Button {
     );
   };
 
-  hiddenForm = () => {
+  hiddenForm = (): void => {
     const cover = document.querySelector('.cover') as HTMLElement;
     const form = document.querySelector('.register-form') as HTMLElement;
 

@@ -9,7 +9,7 @@ export class StopButton extends Button {
     super('stop game', ['stop-button', 'hidden']);
   }
 
-  buttonHandler() {
+  buttonHandler(): void {
     super.buttonHandler();
     indexDBAdd(user.name, user.surname, user.email, user.point);
     new StartButton().element.classList.remove('hidden');

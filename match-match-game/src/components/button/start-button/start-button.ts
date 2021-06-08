@@ -7,7 +7,7 @@ export class StartButton extends Button {
     super('start game', ['start-button', 'hidden']);
   }
 
-  buttonHandler() {
+  buttonHandler():void {
     super.buttonHandler();
 
     settings.startGame = true;

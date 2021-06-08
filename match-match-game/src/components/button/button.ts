@@ -15,7 +15,7 @@ export class Button extends BaseComponent {
     });
   }
 
-  buttonHandler() {
+  buttonHandler(): void {
     const forLinter = this.element;
   }
 }

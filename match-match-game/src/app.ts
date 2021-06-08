@@ -10,7 +10,7 @@ export class App {
     this.rootElement.appendChild(this.game.element);
   }
 
-  async start() {
+  async start(): Promise<void> {
     const res = await fetch('./images.json');
     const categories: ImageCategoryModel[] = await res.json();
     const cat = categories[0];

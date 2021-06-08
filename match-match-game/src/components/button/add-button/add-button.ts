@@ -18,7 +18,7 @@ export class AddButton extends FormButton {
     this.changeInput(name, surname, email);
   }
 
-  buttonHandler() {
+  buttonHandler(): void {
     super.buttonHandler();
 
     if (this.validate(this.name.value, this.surname.value, this.email.value)) {
@@ -40,7 +40,7 @@ export class AddButton extends FormButton {
     inputName: HTMLInputElement,
     inputSurname: HTMLInputElement,
     inputEmail: HTMLInputElement,
-  ) => {
+  ): void => {
     inputName.oninput = () => {
       this.validate(inputName.value, inputSurname.value, inputEmail.value);
       this.addClass(inputName, this.validateName);
@@ -55,7 +55,7 @@ export class AddButton extends FormButton {
     };
   };
 
-  validate = (inputNameValue: string, inputSurnameValue: string, inputEmailValue: string) => {
+  validate = (inputNameValue: string, inputSurnameValue: string, inputEmailValue: string): boolean => {
     if (
       this.validateName(inputNameValue)
       && this.validateName(inputSurnameValue)
@@ -69,17 +69,17 @@ export class AddButton extends FormButton {
     return false;
   };
 
-  validateName = (stringForValidate: string) => {
+  validateName = (stringForValidate: string): boolean => {
     const regexpName = /^([a-zа-яё]+)$/i;
     return regexpName.test(stringForValidate) && stringForValidate.length < 30;
   };
 
-  validateEmail = (emailForValidate: string) => {
+  validateEmail = (emailForValidate: string): boolean => {
     const regexpEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/gim;
     return regexpEmail.test(emailForValidate) && emailForValidate.length < 30;
   };
 
-  addClass = (inputName: HTMLInputElement, validateFunction: any) => {
+  addClass = (inputName: HTMLInputElement, validateFunction: any): void => {
     if (validateFunction(inputName.value)) {
       inputName.classList.add('input_success');
       inputName.classList.remove('input_error');
@@ -89,12 +89,12 @@ export class AddButton extends FormButton {
     }
   };
 
-  changeHeaderButton = () => {
+  changeHeaderButton = (): void => {
     (document.querySelector('.register-button') as HTMLElement).classList.add('hidden');
     (document.querySelector('.start-button') as HTMLElement).classList.remove('hidden');
   };
 
-  validateReport = (inputElement: HTMLInputElement, inputName: string) => {
+  validateReport = (inputElement: HTMLInputElement, inputName: string): void => {
     inputElement.classList.add('input_error');
 
     if (inputElement.value) {
