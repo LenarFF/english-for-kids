@@ -2,6 +2,7 @@ import { BaseComponent } from "../../BaseComponent/BaseComponent";
 import { GenerateButton } from "../../Buttons/generate-button/generate-button";
 import { RaceButton } from "../../Buttons/race-button/race-button";
 import { ResetButton } from "../../Buttons/reset-button/reset-button";
+import './control-buttons.css'
 
 export class ControlButtons extends BaseComponent {
 

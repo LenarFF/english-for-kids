@@ -11,5 +11,13 @@ export class  RacingWrap extends BaseComponent {
     this.track = new Track()
 
     this.element.appendChild(this.track.element)
+    this.tracksRender()
+  }
+
+  tracksRender():void {
+    for (let i = 0; i < 6; i++) {
+      const track = new Track()
+      this.element.appendChild(track.element)
+    }
   }
 }

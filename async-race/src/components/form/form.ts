@@ -2,6 +2,7 @@ import { BaseComponent } from "../BaseComponent/BaseComponent";
 import { CreateButton } from "../Buttons/create-button/create-button";
 import { UpdateButton } from "../Buttons/update-button/update-button";
 import { Input } from "../input/input";
+import './form.css'
 
 export class Form extends BaseComponent {
 
@@ -11,7 +12,7 @@ export class Form extends BaseComponent {
   updateButton: UpdateButton
 
   constructor(assignment: string) {
-    super('form', ['.form'])
+    super('form', ['form'])
     this.textInput = new Input('text', `${assignment}-text`)
     this.colorInput = new Input('color', `${assignment}-color`)
 

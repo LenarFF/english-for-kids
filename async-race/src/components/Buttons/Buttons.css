@@ -8,6 +8,10 @@
   text-transform: uppercase;
   font-weight: bold;
   background-color: #c0c0c0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
 }
 
 .box-shadow {
@@ -19,3 +23,4 @@
 .button:active {
   box-shadow: none;
 }
+

@@ -1,10 +1,24 @@
+.track {
+  margin-top: 10px;
+}
+
 .track__selection-wrap {
   display: flex;
   justify-content: start;
 }
 
 .track__control-wrap {
-  border-bottom: 2px dashed grey;
   display: flex;
   justify-content: space-between;
+}
+
+.track__control-buttons {
+  width: 150px;
+  display: flex;
+}
+
+.track__race {
+  width: 100%;
+  position: relative;
+  border-bottom: 2px dashed grey;
 }

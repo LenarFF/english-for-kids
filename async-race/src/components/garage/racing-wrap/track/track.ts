@@ -18,6 +18,7 @@ export class Track extends BaseComponent {
   carSelectionWrap: BaseComponent
   carControlWrap: BaseComponent
   trackControlButtons: BaseComponent
+  trackRace: BaseComponent
   car: Car
   flag: Flag
 
@@ -35,15 +36,17 @@ export class Track extends BaseComponent {
     this.trackControlButtons = new BaseComponent('div', ['track__control-buttons'])
     this.carSelectionWrap = new BaseComponent('div', ['track__selection-wrap'])
     this.carControlWrap = new BaseComponent('p', ['track__control-wrap'])
+    this.trackRace = new BaseComponent('div', ['track__race'])
 
     this.carSelectionWrap.element.appendChild(this.selectButton.element)
     this.carSelectionWrap.element.appendChild(this.removeButton.element)
     this.carSelectionWrap.element.appendChild(this.carName.element)
 
     this.carControlWrap.element.appendChild(this.trackControlButtons.element)
-    this.carControlWrap.element.appendChild(this.car.element)
-    this.carControlWrap.element.appendChild(this.flag.element)
+    this.carControlWrap.element.appendChild(this.trackRace.element)
 
+    this.trackRace.element.appendChild(this.car.element)
+    this.trackRace.element.appendChild(this.flag.element)
 
     this.trackControlButtons.element.appendChild(this.startButton.element)
     this.trackControlButtons.element.appendChild(this.stopButton.element)
