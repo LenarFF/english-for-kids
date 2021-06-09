@@ -1,0 +1,10 @@
+.track__selection-wrap {
+  display: flex;
+  justify-content: start;
+}
+
+.track__control-wrap {
+  border-bottom: 2px dashed grey;
+  display: flex;
+  justify-content: space-between;
+}

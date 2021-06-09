@@ -1,8 +1,7 @@
 import { Buttons } from "../buttons";
 
-export class RaceButton extends Buttons {
+export class StartButton extends Buttons {
   constructor() {
-    super('race')
-
+    super('start')
   }
 }

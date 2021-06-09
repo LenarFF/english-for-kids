@@ -1,4 +1,4 @@
-import { Buttons } from "../Buttons";
+import { Buttons } from "../buttons";
 
 export class WinnersButton extends Buttons {
 
