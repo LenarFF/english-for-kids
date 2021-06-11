@@ -28,7 +28,6 @@ export class CreateButton extends Buttons {
 
   createGarage() {
     if (this.tracksCount() >= 7) {
-    data.pageCounter += 1;
     const newRacingWrap = new BaseComponent('div', ['racing-wrap', 'hidden']);
     const garageContainer = document.querySelector('.garage-container');
     if(garageContainer) {

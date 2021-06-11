@@ -16,8 +16,8 @@ export class GenerateButton extends Buttons {
     super.buttonHandler();
     data.carCounter += 100;
     this.createButton.titleCountChange();
-    for (let i = 0; i < 99; i++) {
 
+    for (let i = 0; i < 99; i++) {
     this.createButton.createGarage();
       const racingWrap = this.createButton.findLastRacingWrap();
       if (racingWrap) {

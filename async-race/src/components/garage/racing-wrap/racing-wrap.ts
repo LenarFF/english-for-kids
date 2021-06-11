@@ -5,11 +5,12 @@ export class  RacingWrap extends BaseComponent {
 
   track: Track
 
-  constructor() {
+  constructor(styles: string[] = []) {
     super('div', ['racing-wrap'])
 
     this.track = new Track()
 
+    this.element.classList.add(...styles);
     this.element.appendChild(this.track.element)
     this.tracksRender()
   }

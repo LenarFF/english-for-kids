@@ -1,4 +1,5 @@
 import { BaseComponent } from "../../../../BaseComponent/BaseComponent";
+import './car-name.css'
 
 export class CarName extends BaseComponent {
 
