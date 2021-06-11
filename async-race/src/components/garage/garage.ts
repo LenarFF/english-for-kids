@@ -1,3 +1,4 @@
+import { data } from "../../data"
 import { BaseComponent } from "../BaseComponent/BaseComponent"
 import { Form } from "../form/form"
 import { Title } from "../title/title"
@@ -22,8 +23,8 @@ export class Garage extends BaseComponent {
 
     this.controlButtons = new ControlButtons()
 
-    this.title = new Title('Garage')
-    this.subtitle = new Title('Page')
+    this.title = new Title('Garage', 'garage', 6)
+    this.subtitle = new Title('Page', 'page', 1)
 
     this.garageContainer = new BaseComponent('div', ['garage-container'])
     this.racingWrap = new RacingWrap()
