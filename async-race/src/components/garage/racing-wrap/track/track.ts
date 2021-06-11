@@ -22,15 +22,15 @@ export class Track extends BaseComponent {
   car: Car
   flag: Flag
 
-  constructor() {
+  constructor(brand: string = '', model: string = '', color: string = 'black') {
     super('div', ['track'])
 
     this.selectButton = new SelectButton()
     this.removeButton = new RemoveButton()
     this.stopButton = new StopButton()
     this.startButton = new StartButton()
-    this.carName = new CarName()
-    this.car = new Car()
+    this.carName = new CarName(brand, model)
+    this.car = new Car(color)
     this.flag = new Flag()
 
     this.trackControlButtons = new BaseComponent('div', ['track__control-buttons'])

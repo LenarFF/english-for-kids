@@ -2,11 +2,11 @@ import { BaseComponent } from "../../../../BaseComponent/BaseComponent";
 import './car.css'
 
 export class Car extends BaseComponent {
-  constructor() {
+  constructor(color: string = 'black') {
     super('div', ['track__car-wrap'])
     this.element.innerHTML = `
     <svg class='track__car' version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 511.99 511.99" style="enable-background:new 0 0 511.99 511.99;" xml:space="preserve">
+	 viewBox="0 0 511.99 511.99" style="fill: ${color}; enable-background:new 0 0 511.99 511.99;" xml:space="preserve">
 <g>
 	<g>
 		<g>
