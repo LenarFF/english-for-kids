@@ -22,7 +22,7 @@ export class Track extends BaseComponent {
   car: Car
   flag: Flag
 
-  constructor(brand: string = '', model: string = '', color: string = 'black') {
+  constructor(brand: string = '', model: string = '', color: string = '') {
     super('div', ['track'])
 
     this.selectButton = new SelectButton()
@@ -30,7 +30,7 @@ export class Track extends BaseComponent {
     this.stopButton = new StopButton()
     this.startButton = new StartButton()
     this.carName = new CarName(brand, model)
-    this.car = new Car(color)
+    this.car = new Car(color ? color : this.paintCar())
     this.flag = new Flag()
 
     this.trackControlButtons = new BaseComponent('div', ['track__control-buttons'])
@@ -54,6 +54,13 @@ export class Track extends BaseComponent {
     this.element.appendChild(this.carSelectionWrap.element)
     this.element.appendChild(this.carControlWrap.element)
 
+}
+
+paintCar(): string {
+  const r = Math.round(255.0*Math.random()).toString(16);
+  const g=Math.round(255.0*Math.random()).toString(16);
+  const d=Math.round(255.0*Math.random()).toString(16);
+  return `#${r+g+d}`;
 }
 
 }

@@ -2,7 +2,7 @@ import { BaseComponent } from "../../../../BaseComponent/BaseComponent";
 import './car.css'
 
 export class Car extends BaseComponent {
-  constructor(color: string = 'black') {
+  constructor(color: string = '') {
     super('div', ['track__car-wrap'])
     this.element.innerHTML = `
     <svg class='track__car' version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -72,4 +72,6 @@ export class Car extends BaseComponent {
 
     `
   }
+
+
 }
