@@ -53,6 +53,7 @@ export class Track extends BaseComponent {
 
     this.element.appendChild(this.carSelectionWrap.element)
     this.element.appendChild(this.carControlWrap.element)
+
 }
 
 }

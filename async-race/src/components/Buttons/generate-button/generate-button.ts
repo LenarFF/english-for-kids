@@ -15,7 +15,7 @@ export class GenerateButton extends Buttons {
   buttonHandler() {
     super.buttonHandler();
     data.carCounter += 100;
-    this.createButton.titleCountChange()
+    this.createButton.titleCountChange();
     for (let i = 0; i < 99; i++) {
 
     this.createButton.createGarage();

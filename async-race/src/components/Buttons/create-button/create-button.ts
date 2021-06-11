@@ -1,6 +1,5 @@
 import { data } from "../../../data";
 import { BaseComponent } from "../../BaseComponent/BaseComponent";
-import { Garage } from "../../garage/garage";
 import { Track } from "../../garage/racing-wrap/track/track";
 import { Buttons } from "../buttons";
 
@@ -16,7 +15,7 @@ export class CreateButton extends Buttons {
   buttonHandler() {
     super.buttonHandler();
     data.carCounter += 1;
-    this.titleCountChange()
+    this.titleCountChange();
     this.createGarage();
     const name = document.getElementById('create-text') as HTMLInputElement;
     const color = document.getElementById('create-color') as HTMLInputElement;
@@ -29,6 +28,7 @@ export class CreateButton extends Buttons {
 
   createGarage() {
     if (this.tracksCount() >= 7) {
+    data.pageCounter += 1;
     const newRacingWrap = new BaseComponent('div', ['racing-wrap', 'hidden']);
     const garageContainer = document.querySelector('.garage-container');
     if(garageContainer) {
@@ -57,4 +57,6 @@ export class CreateButton extends Buttons {
     const garageCounter = document.getElementById('garage');
     if (garageCounter) garageCounter.innerHTML = `${data.carCounter}`
   }
+
+
 }

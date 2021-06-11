@@ -11,6 +11,7 @@ export class Buttons extends BaseComponent {
     this.element.classList.add(...styles);
     this.element.addEventListener('click', (evt) => {
       evt.preventDefault();
+
       this.buttonHandler();
     });
   }
