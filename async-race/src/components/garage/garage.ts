@@ -12,6 +12,7 @@ export class Garage extends BaseComponent {
   title: Title
   subtitle: Title
   racingWrap: RacingWrap
+  garageContainer: BaseComponent
 
   constructor() {
     super('div', ['garage-wrapper'])
@@ -24,6 +25,7 @@ export class Garage extends BaseComponent {
     this.title = new Title('Garage')
     this.subtitle = new Title('Page')
 
+    this.garageContainer = new BaseComponent('div', ['garage-container'])
     this.racingWrap = new RacingWrap()
 
     this.element.appendChild(this.createForm.element)
@@ -31,7 +33,8 @@ export class Garage extends BaseComponent {
     this.element.appendChild(this.controlButtons.element)
     this.element.appendChild(this.title.element)
     this.element.appendChild(this.subtitle.element)
-    this.element.appendChild(this.racingWrap.element)
+    this.element.appendChild(this.garageContainer.element)
+    this.garageContainer.element.appendChild(this.racingWrap.element)
 
   }
 }
