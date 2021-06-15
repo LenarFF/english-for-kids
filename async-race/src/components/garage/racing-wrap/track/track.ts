@@ -30,12 +30,12 @@ export class Track extends BaseComponent {
     this.stopButton = new StopButton()
     this.startButton = new StartButton()
     this.carName = new CarName(brand, model)
-    this.car = new Car(color ? color : this.paintCar())
+    this.car = new Car(color)
     this.flag = new Flag()
 
     this.trackControlButtons = new BaseComponent('div', ['track__control-buttons'])
     this.carSelectionWrap = new BaseComponent('div', ['track__selection-wrap'])
-    this.carControlWrap = new BaseComponent('p', ['track__control-wrap'])
+    this.carControlWrap = new BaseComponent('div', ['track__control-wrap'])
     this.trackRace = new BaseComponent('div', ['track__race'])
 
     this.carSelectionWrap.element.appendChild(this.selectButton.element)
@@ -54,13 +54,9 @@ export class Track extends BaseComponent {
     this.element.appendChild(this.carSelectionWrap.element)
     this.element.appendChild(this.carControlWrap.element)
 
+
 }
 
-paintCar(): string {
-  const r = Math.round(255.0*Math.random()).toString(16);
-  const g=Math.round(255.0*Math.random()).toString(16);
-  const d=Math.round(255.0*Math.random()).toString(16);
-  return `#${r+g+d}`;
-}
+
 
 }

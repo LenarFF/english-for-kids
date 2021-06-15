@@ -1,3 +1,4 @@
+import { updateCar } from "../../../server";
 import { Buttons } from "../buttons";
 
 export class UpdateButton extends Buttons {
@@ -14,6 +15,18 @@ export class UpdateButton extends Buttons {
     const car = selectedTrack?.querySelector('.track__car') as HTMLElement;
     if (carName && inputText.value) carName.innerHTML = `${inputText.value}`;
     if (car && inputColor.value) car.style.fill = inputColor.value;
+    const id = selectedTrack?.getAttribute('id');
+    if(id) {
+     if (inputText.value) {
+       updateCar(+id, {
+        "name": `${inputText.value}`,
+        "color": `${inputColor.value}`
+    }) } else {
+      updateCar(+id, {
+        "color": `${inputColor.value}`
+      })
+  }
+    }
     selectedTrack?.classList.remove('selected');
     inputText.value = "";
     inputColor.value = "#000000"

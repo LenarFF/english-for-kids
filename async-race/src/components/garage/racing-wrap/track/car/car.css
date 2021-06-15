@@ -4,6 +4,9 @@
   position: absolute;
   top: -5px;
   left: 0;
+  transition: 0s;
+  transition-timing-function: ease-in;
+
 }
 
 .track__car {
@@ -12,3 +15,13 @@
   height: 100%;
 }
 
+/* .move {
+  animation-duration: 0ms;
+  animation-name: move_car;
+  animation-timing-function: ease-in;
+}
+
+@keyframes move_car {
+  from {left: 0;}
+  to {left: 1000px}
+} */

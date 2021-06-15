@@ -1,4 +1,8 @@
+import { getCars } from "./server";
+
+
 export const data = {
-  carCounter: 6,
   pageCounter: 1,
+  carCounter: 4,
+  id: 0
 }
