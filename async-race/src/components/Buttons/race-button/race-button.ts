@@ -1,3 +1,4 @@
+import { createWinner, saveWinner } from "../../../server";
 import { Buttons } from "../buttons";
 import { StartButton } from "../start-button/start-button";
 
@@ -13,7 +14,7 @@ export class RaceButton extends Buttons {
   buttonHandler() {
     super.buttonHandler();
     let recordTime = 1000000;
-    let recordID = '';
+    let recordID = 0;
     const activePage = document.querySelector('.active');
     if (activePage) {
       const cars:NodeListOf<HTMLElement> = activePage.querySelectorAll('.track__car-wrap');
@@ -23,12 +24,14 @@ export class RaceButton extends Buttons {
         const main = async () => {
           const result: any = await this.startButton.startCar(car, id);
           const resultTime = result.time;
-          console.log(result.carName)
           if(result.response === true && resultTime < recordTime) {
-            recordTime = resultTime;
-            recordID = id;
-            console.log(recordTime, console.log(recordTime, recordID));
-            this.showWinner(result.carName, recordTime)
+            recordTime = resultTime / 1000;
+            recordID = +id;
+            console.log(recordTime, recordTime, recordID);
+
+            saveWinner({id: recordID, time: recordTime});
+            this.showWinner(result.carName, recordTime);
+
           }
         }
         main()
@@ -47,6 +50,7 @@ export class RaceButton extends Buttons {
     if(winner && winnerTime) {
       winner.innerHTML = `${name}`;
       winnerTime.innerHTML = `${Math.ceil(time)}`
+
     }
 
   }

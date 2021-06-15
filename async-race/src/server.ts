@@ -55,3 +55,65 @@ export const driveEngine = async (id:number) => {
   return response.status !== 200 ? {success: false} : { ...(await response.json())}
 }
 
+export const createWinner = async (body: any) => {
+  return (await fetch(winners, {
+    method: 'POST',
+    body: JSON.stringify(body),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })).json()
+}
+
+export const getWinner = async (id: number) => {
+  return (await fetch(`${winners}/${id}`)).json()
+}
+
+export const getWinnerStatus = async (id: number) => {
+  return (await fetch(`${winners}/${id}`)).status
+}
+
+export const saveWinner = async ({ id, time }: any) => {
+  const winnerStatus = await getWinnerStatus(id);
+  if(winnerStatus === 404) {
+    await createWinner( {
+      id,
+      wins: 1,
+      time
+    })
+  } else {
+    const winner = await getWinner(id);
+    await updateWinner(id, {
+      id,
+      wins: winner.wins + 1,
+      time: time < winner.time ? time: winner.time,
+    })
+  }
+}
+
+export const updateWinner = async (id: number, body: any) => {
+  return (await fetch(`$${winners}/${id}`, {
+    method: 'PUT',
+    body: JSON.stringify(body),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })).json()
+}
+
+export const deleteWinner = async (id: number) => {
+  return (await fetch(`${winners}/${id}`, { method: 'DELETE'})).json()
+}
+
+
+
+export const getWinners = async ({ sort, order, page = 1, limit = 10 }: any) => {
+  const response = await fetch(`${winners}?_page=${page}&_limit=${limit}&_sort=${sort}&_order=${order}`);
+
+  const items = await response.json();
+
+  return {
+    items: await Promise.all(items.map(async (winner: { id: number; }) => ({ ...winner, car: await getCar(winner.id)}))),
+    count: response.headers.get('X-Total-Count')
+  }
+}

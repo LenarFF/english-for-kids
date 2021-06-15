@@ -4,6 +4,7 @@ import './buttons.css';
 export class Buttons extends BaseComponent {
   constructor(buttonText: string, styles: string[] = []) {
     super('button', ['button', 'box-shadow']);
+    
 
     this.element.innerHTML = `
   <p class='button__text'>${buttonText}</p>

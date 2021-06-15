@@ -1,4 +1,4 @@
-import { updateCar } from "../../../server";
+import { getWinnerStatus, updateCar } from "../../../server";
 import { Buttons } from "../buttons";
 
 export class UpdateButton extends Buttons {
@@ -8,6 +8,14 @@ export class UpdateButton extends Buttons {
 
   buttonHandler() {
     super.buttonHandler();
+
+    console.log('update')
+    const main:any = async () => {
+      const res = await getWinnerStatus(10);
+      console.log(res, 123)
+    }
+    main()
+
     const inputText = document.getElementById('update-text') as HTMLInputElement;
     const inputColor = document.getElementById('update-color') as HTMLInputElement;
     const selectedTrack = document.querySelector('.selected');

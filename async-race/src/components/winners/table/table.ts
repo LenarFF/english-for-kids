@@ -1,12 +1,24 @@
+import { getCars, getWinners } from "../../../server";
 import { BaseComponent } from "../../BaseComponent/BaseComponent";
+import { Car } from "../../garage/racing-wrap/track/car/car";
 import './table.css'
 
 export class Table extends BaseComponent {
+
+  tblBody: HTMLElement
+
+  timeSortOrder: string
+  winsSortOrder: string
+
   constructor() {
     super('table', ['table_sort']);
+
+    this.timeSortOrder = 'ASC';
+    this.winsSortOrder = 'ASC';
     this.createTHead();
-    this.createTBody();
-  }
+    this.tblBody = document.createElement("tbody");
+    this.sortWins(this.winsSortOrder)
+   }
 
   createTHead() {
     const thead = document.createElement("thead");
@@ -26,9 +38,21 @@ export class Table extends BaseComponent {
             break;
           case 3:
             th.innerHTML = 'Wins';
+            th.setAttribute('id', 'wins');
+            th.addEventListener('click', () => {
+              this.sortWins(this.winsSortOrder);
+              this.winsSortOrder = (this.winsSortOrder === 'ASC') ? 'DESC' : 'ASC';
+
+            })
             break;
           case 4:
             th.innerHTML = 'Best time';
+            th.setAttribute('id', 'best-time')
+            th.addEventListener('click', () => {
+              this.sortTime(this.timeSortOrder);
+              this.timeSortOrder = (this.timeSortOrder === 'ASC') ? 'DESC' : 'ASC';
+            });
+
             break;
         }
         row.appendChild(th);
@@ -36,24 +60,63 @@ export class Table extends BaseComponent {
 
     }
     this.element.appendChild(thead)
-    thead.addEventListener('click', (evt) => this.getSort(evt));
+
   }
 
-  createTBody () {
-    const tblBody = document.createElement("tbody");
+  createTBody(items: any) {
+
+    this.tblBody.innerHTML = ``;
     for (let j = 0; j <= 9; j++) {
+      if(!items[j]) {
+        const winnersCount = document.getElementById('winners');
+        if (winnersCount) winnersCount.innerHTML = `${j}`
+        break;
+      }
       const row = document.createElement("tr");
       for (let i = 0; i < 5; i++) {
         const cell = document.createElement("td");
-        cell.innerHTML = `${j + 1}`;
-        row.appendChild(cell)
+        switch(i) {
+          case 0:
+            cell.innerHTML = `${j + 1}`;
+           break;
+          case 1:
+            const car = new Car(items[j].car.color);
+            cell.appendChild(car.element);
+            car.element.classList.add('table__car')
+            break;
+          case 2:
+            cell.innerHTML = `${items[j].car.name}`;
+            break;
+          case 3:
+            cell.innerHTML = `${items[j].wins}`;
+            break;
+          case 4:
+            cell.innerHTML = `${items[j].time.toFixed(3)}`;
+            break;
         }
-        tblBody.appendChild(row);
+
+        row.appendChild(cell);
+        }
+        this.tblBody.appendChild(row);
       }
-      this.element.appendChild(tblBody)
+      this.element.appendChild(this.tblBody)
     }
 
-    getSort({ target } : Event) {
- 
+  sortWins(order: string) {
+    const main = async () => {
+      const winners = await getWinners({sort : 'wins', order : order});
+      this.createTBody(winners.items)
     }
+    main()
+ }
+
+  sortTime(order: string) {
+    const main = async () => {
+      const winners = await getWinners({sort : 'time', order : order});
+      this.createTBody(winners.items)
+    }
+    main()
+ }
+
+
 }
