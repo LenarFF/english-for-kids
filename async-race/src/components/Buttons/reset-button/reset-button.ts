@@ -13,6 +13,7 @@ export class ResetButton extends Buttons {
     super.buttonHandler();
 
     const activePage = document.querySelector('.active');
+    const winnerWindow = document.querySelector('.winner-window');
 
     if (activePage) {
       const cars:NodeListOf<HTMLElement> = activePage.querySelectorAll('.track__car-wrap');
@@ -22,6 +23,7 @@ export class ResetButton extends Buttons {
       })
     }
 
+    if(winnerWindow) winnerWindow.classList.add('hidden')
 
   }
 }

@@ -9,6 +9,7 @@ import { RacingWrap } from "./racing-wrap/racing-wrap"
 import './garage.css'
 import { getCars } from "../../server"
 import { GarageContainer } from "./create-cars/garage-container/garage-container"
+import { WinnerWindow } from "./winner-window/winner-window"
 
 export class Garage extends BaseComponent {
 
@@ -22,6 +23,7 @@ export class Garage extends BaseComponent {
   prevButton: PrevButton
   nextButton: NextButton
   carsQuantity: number
+  winnerWindow: WinnerWindow
 
   constructor() {
     super('div', ['garage-wrapper']);
@@ -29,6 +31,7 @@ export class Garage extends BaseComponent {
     this.createForm = new Form('create');
     this.updateForm = new Form('update');
     this.carsQuantity = data.carCounter;
+    this.winnerWindow = new WinnerWindow();
 
     this.controlButtons = new ControlButtons();
 
@@ -50,7 +53,8 @@ export class Garage extends BaseComponent {
     this.element.appendChild(this.title.element);
     this.element.appendChild(this.subtitle.element);
     this.element.appendChild(this.garageContainer.element);
-    this.element.appendChild(this.paginationWrap.element)
+    this.element.appendChild(this.paginationWrap.element);
+    this.element.appendChild(this.winnerWindow.element)
 
     this.paginationWrap.element.appendChild(this.prevButton.element);
     this.paginationWrap.element.appendChild(this.nextButton.element);

@@ -1,4 +1,4 @@
-import { driveEngine, startEngine } from "../../../server";
+import { driveEngine, getCar, startEngine } from "../../../server";
 import { Buttons } from "../buttons";
 
 export class StartButton extends Buttons {
@@ -15,9 +15,12 @@ export class StartButton extends Buttons {
   async startCar(car: HTMLElement, id:string) {
     let response = true;
     let time = 0;
+    let carName = '';
     if (car) {
       const main = async () => {
           const result = await startEngine(+id);
+          const carData = await getCar(+id);
+          carName = carData.name;
           const startTime = new Date();
           const distance = result.distance;
           const velocity = result.velocity;
@@ -33,11 +36,10 @@ export class StartButton extends Buttons {
             car.style.left = `${newTrackLength - 50}px`
            }
            response = driveResponse.success
-           console.log(driveResponse, 'res')
       }
      await main();
     }
-    return [response, time]
+    return {response, time, carName}
   }
 
 }
