@@ -1,3 +1,5 @@
+// ignore_for_file: @typescript-eslint/no-loop-func (WORKS)
+
 import { data } from '../../../data';
 import { getCars } from '../../../server';
 import { BaseComponent } from '../../BaseComponent/BaseComponent';
