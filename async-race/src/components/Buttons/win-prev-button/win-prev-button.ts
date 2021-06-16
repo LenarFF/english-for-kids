@@ -1,25 +1,25 @@
-import { data } from "../../../data";
-import { Table } from "../../winners/table/table";
-import { Buttons } from "../buttons";
+import { data } from '../../../data';
+import { Table } from '../../winners/table/table';
+import { Buttons } from '../buttons';
 
 export class WinPrevButton extends Buttons {
+  table: Table;
 
-  table: Table
   constructor() {
-    super('prev')
+    super('prev');
     this.table = new Table();
   }
 
   buttonHandler() {
     super.buttonHandler();
-    if(data.winnersPage === 1) return;
-    data.winnersPage--
+    if (data.winnersPage === 1) return;
+    data.winnersPage--;
     this.table.sortWins('ASC', data.winnersPage);
     const tbl = document.querySelector('.winners__table');
     const winnersPageCounter = document.getElementById('winners_page');
-    if(tbl && winnersPageCounter) {
+    if (tbl && winnersPageCounter) {
       tbl.replaceWith(this.table.element);
-      winnersPageCounter.innerHTML= `${data.winnersPage}`
+      winnersPageCounter.innerHTML = `${data.winnersPage}`;
     }
   }
 }

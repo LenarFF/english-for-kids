@@ -1,19 +1,17 @@
-import { data } from "../../../data";
-import { createCar } from "../../../server";
-import { BaseComponent } from "../../BaseComponent/BaseComponent";
-import { GarageContainer } from "../../garage/garage-container/garage-container";
-import { CarName } from "../../garage/racing-wrap/track/car-name/car-name";
-import { Track } from "../../garage/racing-wrap/track/track";
-import { Buttons } from "../buttons";
+import { data } from '../../../data';
+import { createCar } from '../../../server';
+import { BaseComponent } from '../../BaseComponent/BaseComponent';
+import { GarageContainer } from '../../garage/garage-container/garage-container';
+import { CarName } from '../../garage/racing-wrap/track/car-name/car-name';
+import { Track } from '../../garage/racing-wrap/track/track';
+import { Buttons } from '../buttons';
 
 export class CreateButton extends Buttons {
-
-  carName: CarName
+  carName: CarName;
 
   constructor() {
     super('create');
     this.carName = new CarName();
-
   }
 
   buttonHandler() {
@@ -22,25 +20,28 @@ export class CreateButton extends Buttons {
     this.titleCountChange();
     this.createGarage();
     this.createTrack();
-    }
+  }
 
-    createTrack() {
-      const name = document.getElementById('create-text') as HTMLInputElement;
-      const color = document.getElementById('create-color') as HTMLInputElement;
-      const racingWrap = this.findLastRacingWrap();
+  createTrack() {
+    const name = document.getElementById('create-text') as HTMLInputElement;
+    const color = document.getElementById('create-color') as HTMLInputElement;
+    const racingWrap = this.findLastRacingWrap();
 
-      if (racingWrap && name && color) {
-        const carBrandModel = name.value ? name.value
-        : this.carName.getRandomValue(this.carName.brands) + ' ' + this.carName.getRandomValue(this.carName.models)
-        const track = new Track(carBrandModel, '', color.value);
-        data.id++
-        track.element.setAttribute('id', `${data.id}`);
+    if (racingWrap && name && color) {
+      const carBrandModel = name.value
+        ? name.value
+        : `${this.carName.getRandomValue(this.carName.brands)} ${this.carName.getRandomValue(
+          this.carName.models,
+        )}`;
+      const track = new Track(carBrandModel, '', color.value);
+      data.id++;
+      track.element.setAttribute('id', `${data.id}`);
 
-        racingWrap.appendChild(track.element)
-        createCar( {
-          "name": `${carBrandModel}`,
-          "color": `${color.value}`
-      } )
+      racingWrap.appendChild(track.element);
+      createCar({
+        name: `${carBrandModel}`,
+        color: `${color.value}`,
+      });
 
       // const garageContainer = document.querySelector('.garage-container');
       // console.log(garageContainer)
@@ -48,17 +49,16 @@ export class CreateButton extends Buttons {
       //   const newGarageContainer = new  GarageContainer()
       //   garageContainer.replaceWith(newGarageContainer.element)
       // }
-      }
     }
-
+  }
 
   createGarage() {
     if (this.tracksCount() >= 7) {
-    const newRacingWrap = new BaseComponent('div', ['racing-wrap', 'hidden']);
-    const garageContainer = document.querySelector('.garage-container');
-    if(garageContainer) {
-      garageContainer.appendChild(newRacingWrap.element)
-    }
+      const newRacingWrap = new BaseComponent('div', ['racing-wrap', 'hidden']);
+      const garageContainer = document.querySelector('.garage-container');
+      if (garageContainer) {
+        garageContainer.appendChild(newRacingWrap.element);
+      }
     }
   }
 
@@ -66,11 +66,10 @@ export class CreateButton extends Buttons {
     const racingWraps: NodeListOf<Element> = document.querySelectorAll('.racing-wrap');
     const lastRacingWrap = racingWraps[racingWraps.length - 1];
     const tracks: NodeListOf<Element> = lastRacingWrap.querySelectorAll('.track');
-    if(tracks) {
-      return tracks.length
-    } else {
-      return 0
+    if (tracks) {
+      return tracks.length;
     }
+    return 0;
   }
 
   findLastRacingWrap(): Element {
@@ -80,10 +79,8 @@ export class CreateButton extends Buttons {
 
   titleCountChange() {
     const garageCounter = document.getElementById('garage');
-    if (garageCounter) {garageCounter.innerHTML = `${data.carCounter}`}
+    if (garageCounter) {
+      garageCounter.innerHTML = `${data.carCounter}`;
+    }
   }
-
-
-
-
 }

@@ -1,5 +1,5 @@
-import { data } from "../../../data";
-import { Buttons } from "../buttons";
+import { data } from '../../../data';
+import { Buttons } from '../buttons';
 
 export class NextButton extends Buttons {
   constructor() {
@@ -22,6 +22,6 @@ export class NextButton extends Buttons {
 
   changePageCount() {
     const page = document.getElementById('page');
-    if(page) page.innerHTML = `${data.pageCounter}`
+    if (page) page.innerHTML = `${data.pageCounter}`;
   }
 }

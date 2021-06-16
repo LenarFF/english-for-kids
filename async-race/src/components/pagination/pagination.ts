@@ -1,12 +1,13 @@
-import { BaseComponent } from "../BaseComponent/BaseComponent";
-import { NextButton } from "../Buttons/next-button/next-button";
-import { PrevButton } from "../Buttons/prev-button/prev-button";
-import './pagination.css'
+import { BaseComponent } from '../BaseComponent/BaseComponent';
+import { NextButton } from '../Buttons/next-button/next-button';
+import { PrevButton } from '../Buttons/prev-button/prev-button';
+import './pagination.css';
 
 export class Pagination extends BaseComponent {
+  prevButton: PrevButton;
 
-  prevButton: PrevButton
-  nextButton: NextButton
+  nextButton: NextButton;
+
   constructor() {
     super('div', ['pagination-wrap']);
 
@@ -15,6 +16,5 @@ export class Pagination extends BaseComponent {
 
     this.element.appendChild(this.prevButton.element);
     this.element.appendChild(this.nextButton.element);
-
   }
 }

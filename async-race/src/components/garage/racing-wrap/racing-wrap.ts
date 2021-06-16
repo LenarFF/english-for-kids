@@ -1,15 +1,9 @@
+import { BaseComponent } from '../../BaseComponent/BaseComponent';
 
-import { BaseComponent } from "../../BaseComponent/BaseComponent";
-
-export class  RacingWrap extends BaseComponent {
-
-
+export class RacingWrap extends BaseComponent {
   constructor(styles: string[] = []) {
-    super('div', ['racing-wrap'])
+    super('div', ['racing-wrap']);
 
     this.element.classList.add(...styles);
-
   }
-
-
- }
+}

@@ -20,17 +20,16 @@
   background: #e3e3e3;
 }
 
-th.sorted[data-order="1"],
-th.sorted[data-order="-1"] {
+th.sorted[data-order='1'],
+th.sorted[data-order='-1'] {
   position: relative;
 }
 
-th.sorted[data-order="1"]::after,
-th.sorted[data-order="-1"]::after {
+th.sorted[data-order='1']::after,
+th.sorted[data-order='-1']::after {
   right: 8px;
   position: absolute;
 }
-
 
 .table__car {
   position: static;

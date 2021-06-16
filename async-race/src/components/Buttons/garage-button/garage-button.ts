@@ -1,11 +1,9 @@
-import { data } from "../../../data";
-import { Buttons } from "../buttons";
+import { data } from '../../../data';
+import { Buttons } from '../buttons';
 
 export class GarageButton extends Buttons {
-
   constructor() {
-    super('garage', ['garage-button'])
-
+    super('garage', ['garage-button']);
   }
 
   buttonHandler() {

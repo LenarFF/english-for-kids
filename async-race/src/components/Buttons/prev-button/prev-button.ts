@@ -1,14 +1,13 @@
-import { data } from "../../../data";
-import { Buttons } from "../buttons";
-import { NextButton } from "../next-button/next-button";
+import { data } from '../../../data';
+import { Buttons } from '../buttons';
+import { NextButton } from '../next-button/next-button';
 
 export class PrevButton extends Buttons {
+  nextButton: NextButton;
 
-  nextButton: NextButton
   constructor() {
     super('prev');
-    this.nextButton = new NextButton()
-
+    this.nextButton = new NextButton();
   }
 
   buttonHandler() {

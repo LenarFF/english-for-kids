@@ -1,20 +1,20 @@
-import { getWinnerStatus, updateCar } from "../../../server";
-import { Buttons } from "../buttons";
+import { getWinnerStatus, updateCar } from '../../../server';
+import { Buttons } from '../buttons';
 
 export class UpdateButton extends Buttons {
   constructor() {
-    super('update')
+    super('update');
   }
 
   buttonHandler() {
     super.buttonHandler();
 
-    console.log('update')
-    const main:any = async () => {
+    console.log('update');
+    const main: any = async () => {
       const res = await getWinnerStatus(10);
-      console.log(res, 123)
-    }
-    main()
+      console.log(res, 123);
+    };
+    main();
 
     const inputText = document.getElementById('update-text') as HTMLInputElement;
     const inputColor = document.getElementById('update-color') as HTMLInputElement;
@@ -24,19 +24,20 @@ export class UpdateButton extends Buttons {
     if (carName && inputText.value) carName.innerHTML = `${inputText.value}`;
     if (car && inputColor.value) car.style.fill = inputColor.value;
     const id = selectedTrack?.getAttribute('id');
-    if(id) {
-     if (inputText.value) {
-       updateCar(+id, {
-        "name": `${inputText.value}`,
-        "color": `${inputColor.value}`
-    }) } else {
-      updateCar(+id, {
-        "color": `${inputColor.value}`
-      })
-  }
+    if (id) {
+      if (inputText.value) {
+        updateCar(+id, {
+          name: `${inputText.value}`,
+          color: `${inputColor.value}`,
+        });
+      } else {
+        updateCar(+id, {
+          color: `${inputColor.value}`,
+        });
+      }
     }
     selectedTrack?.classList.remove('selected');
-    inputText.value = "";
-    inputColor.value = "#000000"
+    inputText.value = '';
+    inputColor.value = '#000000';
   }
 }

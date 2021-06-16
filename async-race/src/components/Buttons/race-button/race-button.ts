@@ -1,14 +1,14 @@
-import { createWinner, saveWinner } from "../../../server";
-import { Buttons } from "../buttons";
-import { StartButton } from "../start-button/start-button";
+import { createWinner, saveWinner } from '../../../server';
+import { Buttons } from '../buttons';
+import { StartButton } from '../start-button/start-button';
 
 export class RaceButton extends Buttons {
   startButton: StartButton;
+
   constructor() {
-    super('race')
+    super('race');
 
     this.startButton = new StartButton();
-
   }
 
   buttonHandler() {
@@ -17,41 +17,35 @@ export class RaceButton extends Buttons {
     let recordID = 0;
     const activePage = document.querySelector('.racing-wrap_active');
     if (activePage) {
-      const cars:NodeListOf<HTMLElement> = activePage.querySelectorAll('.track__car-wrap');
-      cars.forEach(car => {
+      const cars: NodeListOf<HTMLElement> = activePage.querySelectorAll('.track__car-wrap');
+      cars.forEach((car) => {
         const id = car.parentElement?.parentElement?.parentElement?.getAttribute('id');
         if (id) {
-        const main = async () => {
-          const result: any = await this.startButton.startCar(car, id);
-          const resultTime = result.time;
-          if(result.response === true && resultTime < recordTime) {
-            recordTime = resultTime / 1000;
-            recordID = +id;
-            console.log(recordTime, recordTime, recordID);
+          const main = async () => {
+            const result: any = await this.startButton.startCar(car, id);
+            const resultTime = result.time;
+            if (result.response === true && resultTime < recordTime) {
+              recordTime = resultTime / 1000;
+              recordID = +id;
+              console.log(recordTime, recordTime, recordID);
 
-            saveWinner({id: recordID, time: recordTime});
-            this.showWinner(result.carName, recordTime);
-
-          }
+              saveWinner({ id: recordID, time: recordTime });
+              this.showWinner(result.carName, recordTime);
+            }
+          };
+          main();
         }
-        main()
-      }
-
-      })
+      });
     }
-
-
-
   }
-  showWinner(name:string, time: number) {
+
+  showWinner(name: string, time: number) {
     document.querySelector('.winner-window')?.classList.remove('hidden');
     const winner = document.getElementById('winner');
     const winnerTime = document.getElementById('time');
-    if(winner && winnerTime) {
+    if (winner && winnerTime) {
       winner.innerHTML = `${name}`;
-      winnerTime.innerHTML = `${Math.ceil(time)}`
-
+      winnerTime.innerHTML = `${Math.ceil(time)}`;
     }
-
   }
 }
