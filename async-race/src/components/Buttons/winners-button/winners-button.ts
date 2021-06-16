@@ -1,7 +1,7 @@
 import { data } from '../../../data';
 import { getWinners } from '../../../server';
 import { Table } from '../../winners/table/table';
-import { Buttons } from '../buttons';
+import { Buttons } from '../Buttons';
 
 export class WinnersButton extends Buttons {
   table: Table;

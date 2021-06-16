@@ -1,5 +1,5 @@
 import { data } from '../../../data';
-import { Buttons } from '../buttons';
+import { Buttons } from '../Buttons';
 import { NextButton } from '../next-button/next-button';
 
 export class PrevButton extends Buttons {

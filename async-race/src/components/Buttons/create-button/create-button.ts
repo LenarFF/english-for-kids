@@ -3,7 +3,7 @@ import { createCar } from '../../../server';
 import { BaseComponent } from '../../BaseComponent/BaseComponent';
 import { CarName } from '../../garage/racing-wrap/track/car-name/car-name';
 import { Track } from '../../garage/racing-wrap/track/track';
-import { Buttons } from '../buttons';
+import { Buttons } from '../Buttons';
 
 export class CreateButton extends Buttons {
   carName: CarName;

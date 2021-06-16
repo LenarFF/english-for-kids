@@ -1,4 +1,4 @@
-import { Buttons } from '../buttons';
+import { Buttons } from '../Buttons';
 import './select-button.css';
 
 export class SelectButton extends Buttons {
