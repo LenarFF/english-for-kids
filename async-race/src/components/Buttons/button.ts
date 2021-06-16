@@ -19,4 +19,14 @@ export class Buttons extends BaseComponent {
   buttonHandler() {
     const forLinter = this.element;
   }
+
+  deactivateButton = (button: HTMLButtonElement) => {
+    button.classList.add('button_inactive');
+    button.disabled = true;
+  };
+
+  activateButton = (button: HTMLButtonElement) => {
+    button.classList.remove('button_inactive');
+    button.disabled = false;
+  };
 }

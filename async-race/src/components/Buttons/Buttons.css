@@ -12,13 +12,18 @@
   align-items: center;
   justify-content: center;
   height: 30px;
-}
-
-.box-shadow {
   box-shadow: 5px 5px 5px rgb(0 0 0 / 50%);
   cursor: pointer;
+  margin: 5px;
 }
+
+
 
 .button:active {
   box-shadow: none;
+}
+
+.button_inactive {
+  box-shadow: none;
+  cursor: not-allowed
 }

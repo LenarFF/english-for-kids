@@ -5,7 +5,7 @@ export class ResetButton extends Buttons {
   stopButton: StopButton;
 
   constructor() {
-    super('reset');
+    super('reset', ['reset-button']);
 
     this.stopButton = new StopButton();
   }
@@ -15,6 +15,7 @@ export class ResetButton extends Buttons {
 
     const activePage = document.querySelector('.racing-wrap_active');
     const winnerWindow = document.querySelector('.winner-window');
+    const raceButton = document.querySelector('.race-button') as HTMLButtonElement;
 
     if (activePage) {
       const cars: NodeListOf<HTMLElement> = activePage.querySelectorAll('.track__car-wrap');
@@ -25,5 +26,11 @@ export class ResetButton extends Buttons {
     }
 
     if (winnerWindow) winnerWindow.classList.add('hidden');
+    this.deactivateButton(this.element as HTMLButtonElement);
+    if (raceButton) this.activateButton(raceButton);
+    if (activePage) {
+      const startButtons = activePage.querySelectorAll('.start-button');
+      startButtons.forEach((startButton) => this.activateButton(startButton as HTMLButtonElement));
+    }
   }
 }

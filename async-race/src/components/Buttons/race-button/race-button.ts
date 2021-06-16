@@ -6,7 +6,7 @@ export class RaceButton extends Buttons {
   startButton: StartButton;
 
   constructor() {
-    super('race');
+    super('race', ['race-button']);
 
     this.startButton = new StartButton();
   }
@@ -16,6 +16,8 @@ export class RaceButton extends Buttons {
     let recordTime = 1000000;
     let recordID = 0;
     const activePage = document.querySelector('.racing-wrap_active');
+    const resetButton = document.querySelector('.reset-button') as HTMLButtonElement;
+
     if (activePage) {
       const cars: NodeListOf<HTMLElement> = activePage.querySelectorAll('.track__car-wrap');
       cars.forEach((car) => {
@@ -36,6 +38,12 @@ export class RaceButton extends Buttons {
           main();
         }
       });
+    }
+    this.deactivateButton(this.element as HTMLButtonElement);
+    if (resetButton) this.activateButton(resetButton);
+    if (activePage) {
+      const startButtons = activePage.querySelectorAll('.start-button');
+      startButtons.forEach((startButton) => this.deactivateButton(startButton as HTMLButtonElement));
     }
   }
 

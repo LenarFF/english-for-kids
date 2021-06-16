@@ -3,16 +3,24 @@ import { Buttons } from '../button';
 
 export class StartButton extends Buttons {
   constructor() {
-    super('start');
+    super('start', ['start-button']);
   }
 
   buttonHandler() {
     super.buttonHandler();
+
+    const stopButton = this.element.nextSibling as HTMLButtonElement;
+    const raceButton = document.querySelector('.race-button') as HTMLButtonElement;
+    const resetButton = document.querySelector('.reset-button') as HTMLButtonElement;
     const car = this.element.parentElement?.nextElementSibling?.querySelector(
       '.track__car-wrap',
     ) as HTMLElement;
     const id = this.element.parentElement?.parentElement?.parentElement?.getAttribute('id');
     if (id) console.log(this.startCar(car, id), 'finish');
+    this.deactivateButton(this.element as HTMLButtonElement);
+    this.activateButton(stopButton);
+    this.deactivateButton(raceButton);
+    this.activateButton(resetButton);
   }
 
   startCar = async (car: HTMLElement, id: string) => {
@@ -42,6 +50,7 @@ export class StartButton extends Buttons {
       };
       await main();
     }
+
     return { response, time, carName };
   };
 }
