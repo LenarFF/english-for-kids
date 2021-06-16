@@ -1,5 +1,5 @@
 import { saveWinner } from '../../../server';
-import { Buttons } from '../buttons';
+import { Buttons } from '../Buttons';
 import { StartButton } from '../start-button/start-button';
 
 export class RaceButton extends Buttons {

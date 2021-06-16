@@ -1,6 +1,6 @@
 import { data } from '../../../data';
 import { deleteCar, deleteWinner } from '../../../server';
-import { Buttons } from '../buttons';
+import { Buttons } from '../Buttons';
 
 export class RemoveButton extends Buttons {
   constructor() {

@@ -1,5 +1,5 @@
 import { getWinnerStatus, updateCar } from '../../../server';
-import { Buttons } from '../buttons';
+import { Buttons } from '../Buttons';
 
 export class UpdateButton extends Buttons {
   constructor() {
