@@ -67,11 +67,7 @@ export class Table extends BaseComponent {
   createTBody(items: any) {
     this.tblBody.innerHTML = ``;
     for (let j = 0; j <= 10; j++) {
-      if(!items[j]) {
-        const winnersCount = document.getElementById('winners');
-        if (winnersCount) winnersCount.innerHTML = `${j}`
-        break;
-      }
+      if(!items[j]) break;
       const row = document.createElement("tr");
       for (let i = 0; i < 5; i++) {
         const cell = document.createElement("td");

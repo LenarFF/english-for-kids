@@ -14,8 +14,8 @@ export class Winners extends BaseComponent {
   constructor() {
     super('div', ['winners-wrapper', 'hidden']);
 
-    this.title = new Title('Winners', 'winners', 6);
-    this.subtitle = new Title('Page', 'page', 1);
+    this.title = new Title('Winners', 'winners', data.winnersCount);
+    this.subtitle = new Title('Page', 'winners_page', data.winnersPage);
     this.table = new Table();
     this.pagination = new WinPagination()
 

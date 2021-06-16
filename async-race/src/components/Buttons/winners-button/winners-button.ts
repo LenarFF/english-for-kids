@@ -21,14 +21,15 @@ export class WinnersButton extends Buttons {
     document.querySelector('.garage-wrapper')?.classList.add('hidden');
     document.querySelector('.winners-wrapper')?.classList.remove('hidden');
     this.getWinnersCount();
+    this.renderPageCount(data.winnersPage);
   }
 
   getWinnersCount() {
     const main = async () => {
       const response = await getWinners({sort: 'wins', order: 'ASC', limit: 1000} );
       if (response.count) {
-        data.winnersCount = +response.count
-        this.renderWinnerCount(data.winnersCount)
+        data.winnersCount = +response.count;
+        this.renderWinnerCount(data.winnersCount);
       }
 
     }
@@ -41,4 +42,11 @@ export class WinnersButton extends Buttons {
     winnersCount.innerHTML = `${count}`
    }
   }
+
+  renderPageCount(count: number) {
+    const pageCount = document.getElementById('winners_page');
+    if(pageCount) {
+      pageCount.innerHTML = `${count}`
+    }
+}
 }

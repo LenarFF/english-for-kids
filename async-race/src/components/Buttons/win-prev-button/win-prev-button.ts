@@ -16,8 +16,10 @@ export class WinPrevButton extends Buttons {
     data.winnersPage--
     this.table.sortWins('ASC', data.winnersPage);
     const tbl = document.querySelector('.winners__table');
-    if(tbl) {
-      tbl.replaceWith(this.table.element)
+    const winnersPageCounter = document.getElementById('winners_page');
+    if(tbl && winnersPageCounter) {
+      tbl.replaceWith(this.table.element);
+      winnersPageCounter.innerHTML= `${data.winnersPage}`
     }
   }
 }

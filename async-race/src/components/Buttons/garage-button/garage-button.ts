@@ -1,3 +1,4 @@
+import { data } from "../../../data";
 import { Buttons } from "../buttons";
 
 export class GarageButton extends Buttons {
@@ -9,7 +10,8 @@ export class GarageButton extends Buttons {
 
   buttonHandler() {
     super.buttonHandler();
-    document.querySelector('.garage-wrapper')?.classList.remove('hidden')
-    document.querySelector('.winners-wrapper')?.classList.add('hidden')
+    document.querySelector('.garage-wrapper')?.classList.remove('hidden');
+    document.querySelector('.winners-wrapper')?.classList.add('hidden');
+    data.winnersPage = 1;
   }
 }
