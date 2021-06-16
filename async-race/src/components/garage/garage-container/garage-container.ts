@@ -33,7 +33,7 @@ export class GarageContainer extends BaseComponent {
         track.element.setAttribute('id', result.items[i].id);
         data.id = result.items[i].id;
         racingWrapEL.appendChild(track.element);
-        if ((i + 1) % 7 === 0) {
+        if ((i + 1) % data.carsQuantityOnPage === 0) {
           const newRacingWrap = new RacingWrap(['hidden']);
           this.element.appendChild(newRacingWrap.element);
           racingWrapEL = newRacingWrap.element;

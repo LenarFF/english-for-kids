@@ -4,4 +4,5 @@ export const data = {
   id: 0,
   winnersPage: 1,
   winnersCount: 1,
+  carsQuantityOnPage: 7
 };

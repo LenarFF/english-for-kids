@@ -1,4 +1,4 @@
-import { Buttons } from '../Buttons';
+import { Buttons } from '../button';
 import { StopButton } from '../stop-button/stop-button';
 
 export class ResetButton extends Buttons {

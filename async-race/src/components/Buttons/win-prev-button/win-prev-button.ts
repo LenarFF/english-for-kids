@@ -1,6 +1,6 @@
 import { data } from '../../../data';
 import { Table } from '../../winners/table/table';
-import { Buttons } from '../Buttons';
+import { Buttons } from '../button';
 
 export class WinPrevButton extends Buttons {
   table: Table;

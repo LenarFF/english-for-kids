@@ -1,5 +1,5 @@
 import { data } from '../../../data';
-import { Buttons } from '../Buttons';
+import { Buttons } from '../button';
 
 export class GarageButton extends Buttons {
   constructor() {
