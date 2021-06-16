@@ -1,5 +1,5 @@
 import { stopEngine } from '../../../server';
-import { Buttons } from '../Buttons';
+import { Buttons } from '../buttons';
 
 export class StopButton extends Buttons {
   constructor() {

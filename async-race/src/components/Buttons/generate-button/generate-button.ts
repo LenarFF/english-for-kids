@@ -2,7 +2,7 @@ import { data } from '../../../data';
 import { createCar } from '../../../server';
 import { CarName } from '../../garage/racing-wrap/track/car-name/car-name';
 import { Track } from '../../garage/racing-wrap/track/track';
-import { Buttons } from '../Buttons';
+import { Buttons } from '../buttons';
 import { CreateButton } from '../create-button/create-button';
 
 export class GenerateButton extends Buttons {
