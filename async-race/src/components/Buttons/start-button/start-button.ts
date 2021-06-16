@@ -1,5 +1,5 @@
 import { driveEngine, getCar, startEngine } from '../../../server';
-import { Buttons } from '../buttons';
+import { Buttons } from '../Buttons';
 
 export class StartButton extends Buttons {
   constructor() {

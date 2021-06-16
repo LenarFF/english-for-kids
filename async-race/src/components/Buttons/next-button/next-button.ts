@@ -1,5 +1,5 @@
 import { data } from '../../../data';
-import { Buttons } from '../buttons';
+import { Buttons } from '../Buttons';
 
 export class NextButton extends Buttons {
   constructor() {
