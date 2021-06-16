@@ -60,7 +60,5 @@ export class CarName extends BaseComponent {
     }`;
   }
 
-  getRandomValue(arr: string[]): string {
-    return arr[Math.floor(Math.random() * arr.length)];
-  }
+  getRandomValue = (arr: string[]): string => arr[Math.floor(Math.random() * arr.length)];
 }

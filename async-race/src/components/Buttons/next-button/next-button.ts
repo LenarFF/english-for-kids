@@ -20,8 +20,8 @@ export class NextButton extends Buttons {
     }
   }
 
-  changePageCount() {
+  changePageCount = () => {
     const page = document.getElementById('page');
     if (page) page.innerHTML = `${data.pageCounter}`;
-  }
+  };
 }

@@ -1,4 +1,4 @@
-import { getCars, getWinners } from '../../../server';
+import { getWinners } from '../../../server';
 import { BaseComponent } from '../../BaseComponent/BaseComponent';
 import { Car } from '../../garage/racing-wrap/track/car/car';
 import './table.css';
@@ -44,6 +44,7 @@ export class Table extends BaseComponent {
             this.sortWins(this.winsSortOrder, 1);
             this.winsSortOrder = this.winsSortOrder === 'ASC' ? 'DESC' : 'ASC';
           });
+
           break;
         case 4:
           th.innerHTML = 'Best time';

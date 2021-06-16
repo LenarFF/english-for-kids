@@ -1,4 +1,4 @@
-import { createWinner, saveWinner } from '../../../server';
+import { saveWinner } from '../../../server';
 import { Buttons } from '../buttons';
 import { StartButton } from '../start-button/start-button';
 
@@ -39,7 +39,7 @@ export class RaceButton extends Buttons {
     }
   }
 
-  showWinner(name: string, time: number) {
+  showWinner = (name: string, time: number) => {
     document.querySelector('.winner-window')?.classList.remove('hidden');
     const winner = document.getElementById('winner');
     const winnerTime = document.getElementById('time');
@@ -47,5 +47,5 @@ export class RaceButton extends Buttons {
       winner.innerHTML = `${name}`;
       winnerTime.innerHTML = `${Math.ceil(time)}`;
     }
-  }
+  };
 }

@@ -1,11 +1,8 @@
 import { data } from '../../data';
 import { BaseComponent } from '../BaseComponent/BaseComponent';
-import { NextButton } from '../Buttons/next-button/next-button';
-import { PrevButton } from '../Buttons/prev-button/prev-button';
 import { Form } from '../form/form';
 import { Title } from '../title/title';
 import { ControlButtons } from './control-buttons/control-buttons';
-import { RacingWrap } from './racing-wrap/racing-wrap';
 import './garage.css';
 import { getCars } from '../../server';
 import { GarageContainer } from './garage-container/garage-container';

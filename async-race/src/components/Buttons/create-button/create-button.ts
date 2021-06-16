@@ -1,7 +1,6 @@
 import { data } from '../../../data';
 import { createCar } from '../../../server';
 import { BaseComponent } from '../../BaseComponent/BaseComponent';
-import { GarageContainer } from '../../garage/garage-container/garage-container';
 import { CarName } from '../../garage/racing-wrap/track/car-name/car-name';
 import { Track } from '../../garage/racing-wrap/track/track';
 import { Buttons } from '../buttons';
@@ -14,13 +13,13 @@ export class CreateButton extends Buttons {
     this.carName = new CarName();
   }
 
-  buttonHandler() {
+  buttonHandler = () => {
     super.buttonHandler();
     data.carCounter += 1;
     this.titleCountChange();
     this.createGarage();
     this.createTrack();
-  }
+  };
 
   createTrack() {
     const name = document.getElementById('create-text') as HTMLInputElement;
@@ -42,13 +41,6 @@ export class CreateButton extends Buttons {
         name: `${carBrandModel}`,
         color: `${color.value}`,
       });
-
-      // const garageContainer = document.querySelector('.garage-container');
-      // console.log(garageContainer)
-      // if (garageContainer) {
-      //   const newGarageContainer = new  GarageContainer()
-      //   garageContainer.replaceWith(newGarageContainer.element)
-      // }
     }
   }
 
@@ -62,7 +54,7 @@ export class CreateButton extends Buttons {
     }
   }
 
-  tracksCount(): number {
+  tracksCount = (): number => {
     const racingWraps: NodeListOf<Element> = document.querySelectorAll('.racing-wrap');
     const lastRacingWrap = racingWraps[racingWraps.length - 1];
     const tracks: NodeListOf<Element> = lastRacingWrap.querySelectorAll('.track');
@@ -70,17 +62,17 @@ export class CreateButton extends Buttons {
       return tracks.length;
     }
     return 0;
-  }
+  };
 
-  findLastRacingWrap(): Element {
+  findLastRacingWrap = (): Element => {
     const racingWraps: NodeListOf<Element> = document.querySelectorAll('.racing-wrap');
     return racingWraps[racingWraps.length - 1];
-  }
+  };
 
-  titleCountChange() {
+  titleCountChange = () => {
     const garageCounter = document.getElementById('garage');
     if (garageCounter) {
       garageCounter.innerHTML = `${data.carCounter}`;
     }
-  }
+  };
 }

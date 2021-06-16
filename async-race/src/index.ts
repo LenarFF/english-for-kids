@@ -1,7 +1,6 @@
 import { App } from './App';
 import { Garage } from './components/garage/garage';
 import { Winners } from './components/winners/winners';
-import { deleteCar } from './server';
 import './styles.css';
 
 const garage = new Garage();

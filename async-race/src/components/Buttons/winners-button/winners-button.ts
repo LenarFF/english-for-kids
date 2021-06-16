@@ -35,17 +35,17 @@ export class WinnersButton extends Buttons {
     main();
   }
 
-  renderWinnerCount(count: number) {
+  renderWinnerCount = (count: number) => {
     const winnersCount = document.getElementById('winners');
     if (winnersCount) {
       winnersCount.innerHTML = `${count}`;
     }
-  }
+  };
 
-  renderPageCount(count: number) {
+  renderPageCount = (count: number) => {
     const pageCount = document.getElementById('winners_page');
     if (pageCount) {
       pageCount.innerHTML = `${count}`;
     }
-  }
+  };
 }

@@ -1,4 +1,4 @@
-import { getCar, getCars, stopEngine } from '../../../server';
+import { stopEngine } from '../../../server';
 import { Buttons } from '../buttons';
 
 export class StopButton extends Buttons {
@@ -15,9 +15,9 @@ export class StopButton extends Buttons {
     if (id) this.stopCar(car, id);
   }
 
-  stopCar(car: HTMLElement, id: string) {
+  stopCar = (car: HTMLElement, id: string) => {
     car.style.transitionDuration = '0ms';
     car.style.left = '0';
     if (id) stopEngine(+id);
-  }
+  };
 }

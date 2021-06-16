@@ -45,10 +45,10 @@ export class GenerateButton extends Buttons {
     }
   }
 
-  paintCar(): string {
+  paintCar = (): string => {
     const r = Math.round(255.0 * Math.random()).toString(16);
     const g = Math.round(255.0 * Math.random()).toString(16);
     const d = Math.round(255.0 * Math.random()).toString(16);
     return `#${r + g + d}`;
-  }
+  };
 }

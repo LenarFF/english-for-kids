@@ -25,18 +25,18 @@ export class GarageContainer extends BaseComponent {
 
   async tracksRender(): Promise<void> {
     await this.getCarsQuantity();
-    let racingWrap = this.racingWrap.element;
+    let racingWrapEL = this.racingWrap.element;
     for (let i = 0; i < this.carsQuantity; i++) {
       const main = async () => {
         const result = await getCars();
         const track = new Track(result.items[i].name, '', result.items[i].color);
         track.element.setAttribute('id', result.items[i].id);
         data.id = result.items[i].id;
-        racingWrap.appendChild(track.element);
+        racingWrapEL.appendChild(track.element);
         if ((i + 1) % 7 === 0) {
           const newRacingWrap = new RacingWrap(['hidden']);
           this.element.appendChild(newRacingWrap.element);
-          racingWrap = newRacingWrap.element;
+          racingWrapEL = newRacingWrap.element;
         }
       };
       main();

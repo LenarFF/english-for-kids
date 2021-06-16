@@ -15,7 +15,7 @@ export class StartButton extends Buttons {
     if (id) console.log(this.startCar(car, id), 'finish');
   }
 
-  async startCar(car: HTMLElement, id: string) {
+  startCar = async (car: HTMLElement, id: string) => {
     let response = true;
     let time = 0;
     let carName = '';
@@ -43,5 +43,5 @@ export class StartButton extends Buttons {
       await main();
     }
     return { response, time, carName };
-  }
+  };
 }

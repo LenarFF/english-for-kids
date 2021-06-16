@@ -1,14 +1,10 @@
 import { data } from '../../../data';
 import { deleteCar, deleteWinner } from '../../../server';
 import { Buttons } from '../buttons';
-import { CreateButton } from '../create-button/create-button';
 
 export class RemoveButton extends Buttons {
-  createButton: CreateButton;
-
   constructor() {
     super('remove', ['selection-button']);
-    this.createButton = new CreateButton();
   }
 
   buttonHandler() {
@@ -17,10 +13,17 @@ export class RemoveButton extends Buttons {
 
     this.element.parentElement?.parentElement?.remove();
     data.carCounter -= 1;
-    this.createButton.titleCountChange();
+    this.titleCountChange();
     if (id) {
       deleteCar(+id);
       deleteWinner(+id);
     }
   }
+
+  titleCountChange = () => {
+    const garageCounter = document.getElementById('garage');
+    if (garageCounter) {
+      garageCounter.innerHTML = `${data.carCounter}`;
+    }
+  };
 }
