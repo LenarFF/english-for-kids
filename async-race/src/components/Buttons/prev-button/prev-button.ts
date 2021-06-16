@@ -13,14 +13,14 @@ export class PrevButton extends Buttons {
 
   buttonHandler() {
     super.buttonHandler();
-    const activePage = document.querySelector('.active');
+    const activePage = document.querySelector('.racing-wrap_active');
     const prevSibling = activePage?.previousElementSibling;
     if (prevSibling) {
       data.pageCounter -= 1;
-      activePage?.classList.remove('active');
+      activePage?.classList.remove('racing-wrap_active');
       activePage?.classList.add('hidden');
       activePage?.previousElementSibling?.classList.remove('hidden');
-      activePage?.previousElementSibling?.classList.add('active');
+      activePage?.previousElementSibling?.classList.add('racing-wrap_active');
       this.nextButton.changePageCount();
     }
   }

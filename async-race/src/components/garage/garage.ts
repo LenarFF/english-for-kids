@@ -8,8 +8,9 @@ import { ControlButtons } from "./control-buttons/control-buttons"
 import { RacingWrap } from "./racing-wrap/racing-wrap"
 import './garage.css'
 import { getCars } from "../../server"
-import { GarageContainer } from "./create-cars/garage-container/garage-container"
+import { GarageContainer } from "./garage-container/garage-container"
 import { WinnerWindow } from "./winner-window/winner-window"
+import { Pagination } from "../pagination/pagination"
 
 export class Garage extends BaseComponent {
 
@@ -19,9 +20,7 @@ export class Garage extends BaseComponent {
   title: Title
   subtitle: Title
   garageContainer: GarageContainer
-  paginationWrap: BaseComponent
-  prevButton: PrevButton
-  nextButton: NextButton
+  paginationWrap: Pagination
   carsQuantity: number
   winnerWindow: WinnerWindow
 
@@ -39,10 +38,7 @@ export class Garage extends BaseComponent {
 
     this.garageContainer = new GarageContainer();
 
-    this.paginationWrap = new BaseComponent('div', ['pagination-wrap']);
-
-    this.prevButton = new PrevButton();
-    this.nextButton = new NextButton();
+    this.paginationWrap = new Pagination();
 
     this.title = new Title('Garage', 'garage', this.garageContainer.carsQuantity);
 
@@ -56,8 +52,7 @@ export class Garage extends BaseComponent {
     this.element.appendChild(this.paginationWrap.element);
     this.element.appendChild(this.winnerWindow.element)
 
-    this.paginationWrap.element.appendChild(this.prevButton.element);
-    this.paginationWrap.element.appendChild(this.nextButton.element);
+
     this.titleNumberRender()
   }
 

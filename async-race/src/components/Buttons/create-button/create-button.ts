@@ -1,7 +1,7 @@
 import { data } from "../../../data";
 import { createCar } from "../../../server";
 import { BaseComponent } from "../../BaseComponent/BaseComponent";
-import { GarageContainer } from "../../garage/create-cars/garage-container/garage-container";
+import { GarageContainer } from "../../garage/garage-container/garage-container";
 import { CarName } from "../../garage/racing-wrap/track/car-name/car-name";
 import { Track } from "../../garage/racing-wrap/track/track";
 import { Buttons } from "../buttons";

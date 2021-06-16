@@ -8,14 +8,14 @@ export class NextButton extends Buttons {
 
   buttonHandler() {
     super.buttonHandler();
-    const activePage = document.querySelector('.active');
+    const activePage = document.querySelector('.racing-wrap_active');
     const nextSibling = activePage?.nextElementSibling;
     if (nextSibling) {
       data.pageCounter += 1;
-      activePage?.classList.remove('active');
+      activePage?.classList.remove('racing-wrap_active');
       activePage?.classList.add('hidden');
       activePage?.nextElementSibling?.classList.remove('hidden');
-      activePage?.nextElementSibling?.classList.add('active');
+      activePage?.nextElementSibling?.classList.add('racing-wrap_active');
       this.changePageCount();
     }
   }

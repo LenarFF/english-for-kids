@@ -11,13 +11,14 @@ export class Table extends BaseComponent {
   winsSortOrder: string
 
   constructor() {
-    super('table', ['table_sort']);
+    super('table', ['winners__table']);
 
     this.timeSortOrder = 'ASC';
     this.winsSortOrder = 'ASC';
     this.createTHead();
     this.tblBody = document.createElement("tbody");
-    this.sortWins(this.winsSortOrder)
+    this.tblBody.classList.add('winners__tblbody')
+    this.sortWins(this.winsSortOrder, 1)
    }
 
   createTHead() {
@@ -40,7 +41,7 @@ export class Table extends BaseComponent {
             th.innerHTML = 'Wins';
             th.setAttribute('id', 'wins');
             th.addEventListener('click', () => {
-              this.sortWins(this.winsSortOrder);
+              this.sortWins(this.winsSortOrder, 1);
               this.winsSortOrder = (this.winsSortOrder === 'ASC') ? 'DESC' : 'ASC';
 
             })
@@ -64,9 +65,8 @@ export class Table extends BaseComponent {
   }
 
   createTBody(items: any) {
-
     this.tblBody.innerHTML = ``;
-    for (let j = 0; j <= 9; j++) {
+    for (let j = 0; j <= 10; j++) {
       if(!items[j]) {
         const winnersCount = document.getElementById('winners');
         if (winnersCount) winnersCount.innerHTML = `${j}`
@@ -97,14 +97,16 @@ export class Table extends BaseComponent {
 
         row.appendChild(cell);
         }
+
         this.tblBody.appendChild(row);
       }
+
       this.element.appendChild(this.tblBody)
     }
 
-  sortWins(order: string) {
+  sortWins(order: string, page: number) {
     const main = async () => {
-      const winners = await getWinners({sort : 'wins', order : order});
+      const winners = await getWinners({sort : 'wins', order : order, page: page});
       this.createTBody(winners.items)
     }
     main()

@@ -15,7 +15,7 @@ export class RaceButton extends Buttons {
     super.buttonHandler();
     let recordTime = 1000000;
     let recordID = 0;
-    const activePage = document.querySelector('.active');
+    const activePage = document.querySelector('.racing-wrap_active');
     if (activePage) {
       const cars:NodeListOf<HTMLElement> = activePage.querySelectorAll('.track__car-wrap');
       cars.forEach(car => {

@@ -1,9 +1,9 @@
-import { data } from "../../../../data";
-import { getCars } from "../../../../server";
-import { BaseComponent } from "../../../BaseComponent/BaseComponent";
-import { CreateButton } from "../../../Buttons/create-button/create-button";
-import { RacingWrap } from "../../racing-wrap/racing-wrap";
-import { Track } from "../../racing-wrap/track/track";
+import { data } from "../../../data";
+import { getCars } from "../../../server";
+import { BaseComponent } from "../../BaseComponent/BaseComponent";
+import { CreateButton } from "../../Buttons/create-button/create-button";
+import { RacingWrap } from "../racing-wrap/racing-wrap";
+import { Track } from "../racing-wrap/track/track";
 
 
 export class GarageContainer extends BaseComponent {
@@ -14,7 +14,7 @@ export class GarageContainer extends BaseComponent {
 
   constructor() {
     super('div', ['garage-container']);
-    this.racingWrap = new RacingWrap(['active']);
+    this.racingWrap = new RacingWrap(['racing-wrap_active']);
 
     this.createButton = new CreateButton();
     this.carsQuantity = 4;

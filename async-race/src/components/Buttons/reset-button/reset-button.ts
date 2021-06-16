@@ -12,7 +12,7 @@ export class ResetButton extends Buttons {
   buttonHandler() {
     super.buttonHandler();
 
-    const activePage = document.querySelector('.active');
+    const activePage = document.querySelector('.racing-wrap_active');
     const winnerWindow = document.querySelector('.winner-window');
 
     if (activePage) {
