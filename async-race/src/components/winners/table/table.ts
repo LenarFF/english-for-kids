@@ -69,13 +69,13 @@ export class Table extends BaseComponent {
       if (!items[j]) break;
       const row = document.createElement('tr');
       for (let i = 0; i < 5; i++) {
+        const car = new Car(items[j].car.color);
         const cell = document.createElement('td');
         switch (i) {
           case 0:
             cell.innerHTML = `${j + 1}`;
             break;
           case 1:
-            const car = new Car(items[j].car.color);
             cell.appendChild(car.element);
             car.element.classList.add('table__car');
             break;
