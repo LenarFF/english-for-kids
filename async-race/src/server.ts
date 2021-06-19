@@ -16,7 +16,7 @@ export const getCars = async (page = 1, limit = 100) => {
 
 export const getCar = async (id: number) => (await fetch(`${garage}/${id}`)).json();
 
-export const createCar = async (body: any) => (
+export const createCar = async (body: {name: string, color: string}) => (
   await fetch(garage, {
     method: 'POST',
     body: JSON.stringify(body),
@@ -28,7 +28,7 @@ export const createCar = async (body: any) => (
 
 export const deleteCar = async (id: number) => (await fetch(`${garage}/${id}`, { method: 'DELETE' })).json();
 
-export const updateCar = async (id: number, body: any) => fetch(`${garage}/${id}`, {
+export const updateCar = async (id: number, body: { name?: string, color: string}) => fetch(`${garage}/${id}`, {
   method: 'PATCH',
   body: JSON.stringify(body),
   headers: {
@@ -45,7 +45,7 @@ export const driveEngine = async (id: number) => {
   return response.status !== 200 ? { success: false } : { ...(await response.json()) };
 };
 
-export const createWinner = async (body: any) => (
+export const createWinner = async (body: { id:number, wins: number, time: number}) => (
   await fetch(winners, {
     method: 'POST',
     body: JSON.stringify(body),
@@ -59,7 +59,7 @@ export const getWinner = async (id: number) => (await fetch(`${winners}/${id}`))
 
 export const getWinnerStatus = async (id: number) => (await fetch(`${winners}/${id}`)).status;
 
-export const updateWinner = async (id: number, body: any) => (
+export const updateWinner = async (id: number, body: {id: number, wins: number, time: number}) => (
   await fetch(`$${winners}/${id}`, {
     method: 'PUT',
     body: JSON.stringify(body),
@@ -69,7 +69,7 @@ export const updateWinner = async (id: number, body: any) => (
   })
 ).json();
 
-export const saveWinner = async ({ id, time }: any) => {
+export const saveWinner = async ({ id = 0, time = 0 }) => {
   const winnerStatus = await getWinnerStatus(id);
   if (winnerStatus === 404) {
     await createWinner({
@@ -90,8 +90,8 @@ export const saveWinner = async ({ id, time }: any) => {
 export const deleteWinner = async (id: number) => (await fetch(`${winners}/${id}`, { method: 'DELETE' })).json();
 
 export const getWinners = async ({
-  sort, order, page = 1, limit = 10,
-}: any) => {
+  sort = '', order = '', page = 1, limit = 10,
+}) => {
   const response = await fetch(
     `${winners}?_page=${page}&_limit=${limit}&_sort=${sort}&_order=${order}`,
   );

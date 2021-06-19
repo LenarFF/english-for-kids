@@ -18,7 +18,6 @@ export class StopButton extends Buttons {
     this.deactivateButton(this.element as HTMLButtonElement);
     this.activateButton(startButton);
     this.activateButton(raceButton);
-
   }
 
   stopCar = (car: HTMLElement, id: string) => {

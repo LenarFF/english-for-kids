@@ -68,7 +68,7 @@ export class Garage extends BaseComponent {
     main();
   }
 
-  async getCarsQuantity(): Promise<any> {
+  async getCarsQuantity(): Promise<void> {
     const result = await getCars();
     if (result.count) this.carsQuantity = +result.count;
     data.carCounter = this.carsQuantity;

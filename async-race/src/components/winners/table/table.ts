@@ -64,6 +64,7 @@ export class Table extends BaseComponent {
   }
 
   createTBody(items: any) {
+    console.log(items)
     this.tblBody.innerHTML = '';
     for (let j = 0; j <= 10; j++) {
       if (!items[j]) break;
@@ -113,6 +114,7 @@ export class Table extends BaseComponent {
     const main = async () => {
       const winners = await getWinners({ sort: 'time', order });
       this.createTBody(winners.items);
+      console.log(winners)
     };
     main();
   }

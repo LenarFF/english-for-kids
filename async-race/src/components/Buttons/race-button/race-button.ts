@@ -24,7 +24,7 @@ export class RaceButton extends Buttons {
         const id = car.parentElement?.parentElement?.parentElement?.getAttribute('id');
         if (id) {
           const main = async () => {
-            const result: any = await this.startButton.startCar(car, id);
+            const result = await this.startButton.startCar(car, id);
             const resultTime = result.time;
             if (result.response === true && resultTime < recordTime) {
               recordTime = resultTime / 1000;

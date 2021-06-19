@@ -45,7 +45,7 @@ export class GarageContainer extends BaseComponent {
     }
   }
 
-  async getCarsQuantity(): Promise<any> {
+  async getCarsQuantity(): Promise<void> {
     const result = await getCars();
     if (result.count) this.carsQuantity = +result.count;
   }
