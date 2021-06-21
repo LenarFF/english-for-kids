@@ -1,4 +1,4 @@
-import { getWinnerStatus, updateCar } from '../../../server';
+import { updateCar } from '../../../server';
 import { Buttons } from '../button';
 
 export class UpdateButton extends Buttons {
@@ -6,9 +6,8 @@ export class UpdateButton extends Buttons {
     super('update');
   }
 
-  buttonHandler() {
+  buttonHandler(): void {
     super.buttonHandler();
-
 
     const inputText = document.getElementById('update-text') as HTMLInputElement;
     const inputColor = document.getElementById('update-color') as HTMLInputElement;

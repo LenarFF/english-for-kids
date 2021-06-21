@@ -1,3 +1,5 @@
+import { ItemsType } from './types';
+
 const baseURL = 'http://127.0.0.1:3000';
 
 const garage = `${baseURL}/garage`;
@@ -16,7 +18,7 @@ export const getCars = async (page = 1, limit = 100) => {
 
 export const getCar = async (id: number) => (await fetch(`${garage}/${id}`)).json();
 
-export const createCar = async (body: {name: string, color: string}) => (
+export const createCar = async (body: { name: string, color: string }): Promise<void> => (
   await fetch(garage, {
     method: 'POST',
     body: JSON.stringify(body),
@@ -26,9 +28,9 @@ export const createCar = async (body: {name: string, color: string}) => (
   })
 ).json();
 
-export const deleteCar = async (id: number) => (await fetch(`${garage}/${id}`, { method: 'DELETE' })).json();
+export const deleteCar = async (id: number): Promise<void> => (await fetch(`${garage}/${id}`, { method: 'DELETE' })).json();
 
-export const updateCar = async (id: number, body: { name?: string, color: string}) => fetch(`${garage}/${id}`, {
+export const updateCar = async (id: number, body: { name?: string, color: string }) => fetch(`${garage}/${id}`, {
   method: 'PATCH',
   body: JSON.stringify(body),
   headers: {
@@ -38,14 +40,14 @@ export const updateCar = async (id: number, body: { name?: string, color: string
 
 export const startEngine = async (id: number) => (await fetch(`${engine}?id=${id}&status=started`)).json();
 
-export const stopEngine = async (id: number) => (await fetch(`${engine}?id=${id}&status=stopped`)).json();
+export const stopEngine = async (id: number): Promise<void> => (await fetch(`${engine}?id=${id}&status=stopped`)).json();
 
 export const driveEngine = async (id: number) => {
   const response = await fetch(`${engine}?id=${id}&status=drive`).catch();
   return response.status !== 200 ? { success: false } : { ...(await response.json()) };
 };
 
-export const createWinner = async (body: { id:number, wins: number, time: number}) => (
+export const createWinner = async (body: { id:number, wins: number, time: number }): Promise<void> => (
   await fetch(winners, {
     method: 'POST',
     body: JSON.stringify(body),
@@ -59,7 +61,7 @@ export const getWinner = async (id: number) => (await fetch(`${winners}/${id}`))
 
 export const getWinnerStatus = async (id: number) => (await fetch(`${winners}/${id}`)).status;
 
-export const updateWinner = async (id: number, body: {id: number, wins: number, time: number}) => (
+export const updateWinner = async (id: number, body: { id: number, wins: number, time: number }): Promise<void> => (
   await fetch(`$${winners}/${id}`, {
     method: 'PUT',
     body: JSON.stringify(body),
@@ -91,7 +93,10 @@ export const deleteWinner = async (id: number) => (await fetch(`${winners}/${id}
 
 export const getWinners = async ({
   sort = '', order = '', page = 1, limit = 10,
-}) => {
+}): Promise<{
+  items: ItemsType[];
+  count: string | null;
+}> => {
   const response = await fetch(
     `${winners}?_page=${page}&_limit=${limit}&_sort=${sort}&_order=${order}`,
   );

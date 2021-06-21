@@ -6,7 +6,7 @@ export class NextButton extends Buttons {
     super('next');
   }
 
-  buttonHandler() {
+  buttonHandler(): void {
     super.buttonHandler();
     const activePage = document.querySelector('.racing-wrap_active');
     const nextSibling = activePage?.nextElementSibling;
@@ -20,7 +20,7 @@ export class NextButton extends Buttons {
     }
   }
 
-  changePageCount = () => {
+  changePageCount = (): void => {
     const page = document.getElementById('page');
     if (page) page.innerHTML = `${data.pageCounter}`;
   };

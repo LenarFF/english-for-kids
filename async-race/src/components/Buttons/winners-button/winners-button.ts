@@ -11,7 +11,7 @@ export class WinnersButton extends Buttons {
     this.table = new Table();
   }
 
-  buttonHandler() {
+  buttonHandler(): void {
     super.buttonHandler();
     this.table.sortWins('ASC', 1);
     const tbl = document.querySelector('.winners__table');
@@ -24,7 +24,7 @@ export class WinnersButton extends Buttons {
     this.renderPageCount(data.winnersPage);
   }
 
-  getWinnersCount() {
+  getWinnersCount(): void {
     const main = async () => {
       const response = await getWinners({ sort: 'wins', order: 'ASC', limit: 1000 });
       if (response.count) {
@@ -35,14 +35,14 @@ export class WinnersButton extends Buttons {
     main();
   }
 
-  renderWinnerCount = (count: number) => {
+  renderWinnerCount = (count: number): void => {
     const winnersCount = document.getElementById('winners');
     if (winnersCount) {
       winnersCount.innerHTML = `${count}`;
     }
   };
 
-  renderPageCount = (count: number) => {
+  renderPageCount = (count: number): void => {
     const pageCount = document.getElementById('winners_page');
     if (pageCount) {
       pageCount.innerHTML = `${count}`;

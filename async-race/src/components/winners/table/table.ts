@@ -2,6 +2,7 @@ import { getWinners } from '../../../server';
 import { BaseComponent } from '../../BaseComponent/BaseComponent';
 import { Car } from '../../garage/racing-wrap/track/car/car';
 import './table.css';
+import { ItemsType } from '../../../types';
 
 export class Table extends BaseComponent {
   tblBody: HTMLElement;
@@ -21,7 +22,7 @@ export class Table extends BaseComponent {
     this.sortWins(this.winsSortOrder, 1);
   }
 
-  createTHead() {
+  createTHead(): void {
     const thead = document.createElement('thead');
     thead.classList.add('.thead');
     const row = document.createElement('tr');
@@ -63,8 +64,7 @@ export class Table extends BaseComponent {
     this.element.appendChild(thead);
   }
 
-  createTBody(items: any) {
-    console.log(items)
+  createTBody(items: ItemsType[]): void {
     this.tblBody.innerHTML = '';
     for (let j = 0; j <= 10; j++) {
       if (!items[j]) break;
@@ -102,7 +102,7 @@ export class Table extends BaseComponent {
     this.element.appendChild(this.tblBody);
   }
 
-  sortWins(order: string, page: number) {
+  sortWins(order: string, page: number): void {
     const main = async () => {
       const winners = await getWinners({ sort: 'wins', order, page });
       this.createTBody(winners.items);
@@ -110,11 +110,10 @@ export class Table extends BaseComponent {
     main();
   }
 
-  sortTime(order: string) {
+  sortTime(order: string): void {
     const main = async () => {
       const winners = await getWinners({ sort: 'time', order });
       this.createTBody(winners.items);
-      console.log(winners)
     };
     main();
   }

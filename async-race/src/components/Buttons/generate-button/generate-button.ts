@@ -20,7 +20,7 @@ export class GenerateButton extends Buttons {
     this.carName = new CarName();
   }
 
-  buttonHandler() {
+  buttonHandler(): void {
     super.buttonHandler();
     data.carCounter += 100;
     this.createButton.titleCountChange();

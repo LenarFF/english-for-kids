@@ -6,7 +6,7 @@ export class StopButton extends Buttons {
     super('stop', ['stop-button']);
   }
 
-  buttonHandler() {
+  buttonHandler(): void {
     super.buttonHandler();
     const startButton = this.element.previousSibling as HTMLButtonElement;
     const raceButton = document.querySelector('.race-button') as HTMLButtonElement;
@@ -20,7 +20,7 @@ export class StopButton extends Buttons {
     this.activateButton(raceButton);
   }
 
-  stopCar = (car: HTMLElement, id: string) => {
+  stopCar = (car: HTMLElement, id: string): void => {
     car.style.transitionDuration = '0ms';
     car.style.left = '0';
     if (id) stopEngine(+id);

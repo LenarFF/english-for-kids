@@ -10,7 +10,7 @@ export class WinPrevButton extends Buttons {
     this.table = new Table();
   }
 
-  buttonHandler() {
+  buttonHandler(): void {
     super.buttonHandler();
     if (data.winnersPage === 1) return;
     data.winnersPage--;

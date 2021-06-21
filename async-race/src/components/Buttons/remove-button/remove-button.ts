@@ -7,7 +7,7 @@ export class RemoveButton extends Buttons {
     super('remove', ['selection-button']);
   }
 
-  buttonHandler() {
+  buttonHandler(): void {
     super.buttonHandler();
     const id = this.element.parentElement?.parentElement?.getAttribute('id');
 
@@ -20,7 +20,7 @@ export class RemoveButton extends Buttons {
     }
   }
 
-  titleCountChange = () => {
+  titleCountChange = (): void => {
     const garageCounter = document.getElementById('garage');
     if (garageCounter) {
       garageCounter.innerHTML = `${data.carCounter}`;

@@ -10,7 +10,7 @@ export class ResetButton extends Buttons {
     this.stopButton = new StopButton();
   }
 
-  buttonHandler() {
+  buttonHandler(): void {
     super.buttonHandler();
 
     const activePage = document.querySelector('.racing-wrap_active');

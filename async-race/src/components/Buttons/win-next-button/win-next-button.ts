@@ -10,10 +10,9 @@ export class WinNextButton extends Buttons {
     this.table = new Table();
   }
 
-  buttonHandler() {
+  buttonHandler(): void {
     super.buttonHandler();
     if (data.winnersCount <= data.winnersPage * 10) return;
-    console.log(data.winnersCount, data.winnersPage * 10);
     data.winnersPage++;
     this.table.sortWins('ASC', data.winnersPage);
     const tbl = document.querySelector('.winners__table');

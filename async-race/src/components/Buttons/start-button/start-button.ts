@@ -6,7 +6,7 @@ export class StartButton extends Buttons {
     super('start', ['start-button']);
   }
 
-  buttonHandler() {
+  buttonHandler(): void {
     super.buttonHandler();
 
     const stopButton = this.element.nextSibling as HTMLButtonElement;
@@ -16,14 +16,14 @@ export class StartButton extends Buttons {
       '.track__car-wrap',
     ) as HTMLElement;
     const id = this.element.parentElement?.parentElement?.parentElement?.getAttribute('id');
-    if (id) console.log(this.startCar(car, id), 'finish');
+    if (id) this.startCar(car, id);
     this.deactivateButton(this.element as HTMLButtonElement);
     this.activateButton(stopButton);
     this.deactivateButton(raceButton);
     this.activateButton(resetButton);
   }
 
-  startCar = async (car: HTMLElement, id: string) => {
+  startCar = async (car: HTMLElement, id: string): Promise<{ response: boolean; time: number; carName: string; }> => {
     let response = true;
     let time = 0;
     let carName = '';

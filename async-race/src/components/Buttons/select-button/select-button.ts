@@ -6,7 +6,7 @@ export class SelectButton extends Buttons {
     super('select', ['selection-button']);
   }
 
-  buttonHandler() {
+  buttonHandler(): void {
     super.buttonHandler();
     const parent = this.element.parentElement as HTMLElement;
     if (parent !== null) {

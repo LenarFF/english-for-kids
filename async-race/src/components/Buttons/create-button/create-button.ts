@@ -13,7 +13,7 @@ export class CreateButton extends Buttons {
     this.carName = new CarName();
   }
 
-  buttonHandler = () => {
+  buttonHandler = (): void => {
     super.buttonHandler();
     data.carCounter += 1;
     this.titleCountChange();
@@ -21,7 +21,7 @@ export class CreateButton extends Buttons {
     this.createTrack();
   };
 
-  createTrack() {
+  createTrack(): void {
     const name = document.getElementById('create-text') as HTMLInputElement;
     const color = document.getElementById('create-color') as HTMLInputElement;
     const racingWrap = this.findLastRacingWrap();
@@ -44,7 +44,7 @@ export class CreateButton extends Buttons {
     }
   }
 
-  createGarage() {
+  createGarage(): void {
     if (this.tracksCount() >= 7) {
       const newRacingWrap = new BaseComponent('div', ['racing-wrap', 'hidden']);
       const garageContainer = document.querySelector('.garage-container');
@@ -69,7 +69,7 @@ export class CreateButton extends Buttons {
     return racingWraps[racingWraps.length - 1];
   };
 
-  titleCountChange = () => {
+  titleCountChange = (): void => {
     const garageCounter = document.getElementById('garage');
     if (garageCounter) {
       garageCounter.innerHTML = `${data.carCounter}`;

@@ -6,7 +6,7 @@ export class GarageButton extends Buttons {
     super('garage', ['garage-button']);
   }
 
-  buttonHandler() {
+  buttonHandler(): void {
     super.buttonHandler();
     document.querySelector('.garage-wrapper')?.classList.remove('hidden');
     document.querySelector('.winners-wrapper')?.classList.add('hidden');

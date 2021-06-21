@@ -10,7 +10,7 @@ export class PrevButton extends Buttons {
     this.nextButton = new NextButton();
   }
 
-  buttonHandler() {
+  buttonHandler(): void {
     super.buttonHandler();
     const activePage = document.querySelector('.racing-wrap_active');
     const prevSibling = activePage?.previousElementSibling;

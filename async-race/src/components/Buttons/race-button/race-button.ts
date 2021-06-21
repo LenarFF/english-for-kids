@@ -11,7 +11,7 @@ export class RaceButton extends Buttons {
     this.startButton = new StartButton();
   }
 
-  buttonHandler() {
+  buttonHandler(): void {
     super.buttonHandler();
     let recordTime = 1000000;
     let recordID = 0;
@@ -29,7 +29,6 @@ export class RaceButton extends Buttons {
             if (result.response === true && resultTime < recordTime) {
               recordTime = resultTime / 1000;
               recordID = +id;
-              console.log(recordTime, recordTime, recordID);
 
               saveWinner({ id: recordID, time: recordTime });
               this.showWinner(result.carName, recordTime);
@@ -47,7 +46,7 @@ export class RaceButton extends Buttons {
     }
   }
 
-  showWinner = (name: string, time: number) => {
+  showWinner = (name: string, time: number): void => {
     document.querySelector('.winner-window')?.classList.remove('hidden');
     const winner = document.getElementById('winner');
     const winnerTime = document.getElementById('time');
