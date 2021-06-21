@@ -6,7 +6,7 @@ const garage = `${baseURL}/garage`;
 const engine = `${baseURL}/engine`;
 const winners = `${baseURL}/winners`;
 
-export const getCars = async (page = 1, limit = 100): Promise<{ items: CarType[], count: string | null }> => {
+export const getCars = async (page = 1, limit = 7): Promise<{ items: CarType[], count: string | null }> => {
   const response = await fetch(`${garage}?_page=${page}&_limit=${limit}`);
   const data = await response.json();
   const count = response.headers.get('X-Total-Count');

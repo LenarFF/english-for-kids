@@ -1,26 +1,24 @@
 import { data } from '../../../data';
+import { GarageContainer } from '../../garage/garage-container/garage-container';
 import { Buttons } from '../button';
 import { NextButton } from '../next-button/next-button';
 
 export class PrevButton extends Buttons {
   nextButton: NextButton;
 
+  garageContainer: GarageContainer;
+
   constructor() {
     super('prev');
     this.nextButton = new NextButton();
+    this.garageContainer = new GarageContainer();
   }
 
   buttonHandler(): void {
     super.buttonHandler();
-    const activePage = document.querySelector('.racing-wrap_active');
-    const prevSibling = activePage?.previousElementSibling;
-    if (prevSibling) {
-      data.pageCounter -= 1;
-      activePage?.classList.remove('racing-wrap_active');
-      activePage?.classList.add('hidden');
-      activePage?.previousElementSibling?.classList.remove('hidden');
-      activePage?.previousElementSibling?.classList.add('racing-wrap_active');
-      this.nextButton.changePageCount();
-    }
+    if (data.pageCounter === 1) return;
+    data.pageCounter--;
+    this.garageContainer.garageRender();
+    this.nextButton.changePageCount();
   }
 }

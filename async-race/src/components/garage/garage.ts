@@ -57,6 +57,7 @@ export class Garage extends BaseComponent {
     this.element.appendChild(this.winnerWindow.element);
 
     this.titleNumberRender();
+    this.garageContainer.garageRender();
   }
 
   async titleNumberRender(): Promise<void> {

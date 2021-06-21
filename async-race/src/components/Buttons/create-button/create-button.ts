@@ -1,6 +1,5 @@
 import { data } from '../../../data';
 import { createCar } from '../../../server';
-import { BaseComponent } from '../../BaseComponent/BaseComponent';
 import { CarName } from '../../garage/racing-wrap/track/car-name/car-name';
 import { Track } from '../../garage/racing-wrap/track/track';
 import { Buttons } from '../button';
@@ -17,40 +16,32 @@ export class CreateButton extends Buttons {
     super.buttonHandler();
     data.carCounter += 1;
     this.titleCountChange();
-    this.createGarage();
     this.createTrack();
   };
 
   createTrack(): void {
     const name = document.getElementById('create-text') as HTMLInputElement;
     const color = document.getElementById('create-color') as HTMLInputElement;
-    const racingWrap = this.findLastRacingWrap();
+    const racingWrap = document.querySelector('.racing-wrap') as HTMLElement;
 
-    if (racingWrap && name && color) {
+    if (name && color) {
       const carBrandModel = name.value
         ? name.value
         : `${this.carName.getRandomValue(this.carName.brands)} ${this.carName.getRandomValue(
           this.carName.models,
         )}`;
+
+      createCar({
+        name: `${carBrandModel}`,
+        color: `${color.value}`,
+      });
+
+      if (data.carCounter > 7) return;
       const track = new Track(carBrandModel, '', color.value);
       data.id++;
       track.element.setAttribute('id', `${data.id}`);
 
       racingWrap.appendChild(track.element);
-      createCar({
-        name: `${carBrandModel}`,
-        color: `${color.value}`,
-      });
-    }
-  }
-
-  createGarage(): void {
-    if (this.tracksCount() >= 7) {
-      const newRacingWrap = new BaseComponent('div', ['racing-wrap', 'hidden']);
-      const garageContainer = document.querySelector('.garage-container');
-      if (garageContainer) {
-        garageContainer.appendChild(newRacingWrap.element);
-      }
     }
   }
 
@@ -62,11 +53,6 @@ export class CreateButton extends Buttons {
       return tracks.length;
     }
     return 0;
-  };
-
-  findLastRacingWrap = (): Element => {
-    const racingWraps: NodeListOf<Element> = document.querySelectorAll('.racing-wrap');
-    return racingWraps[racingWraps.length - 1];
   };
 
   titleCountChange = (): void => {

@@ -13,7 +13,7 @@ export class ResetButton extends Buttons {
   buttonHandler(): void {
     super.buttonHandler();
 
-    const activePage = document.querySelector('.racing-wrap_active');
+    const activePage = document.querySelector('.racing-wrap');
     const winnerWindow = document.querySelector('.winner-window');
     const raceButton = document.querySelector('.race-button') as HTMLButtonElement;
 

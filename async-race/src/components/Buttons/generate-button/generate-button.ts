@@ -1,5 +1,6 @@
 import { data } from '../../../data';
 import { createCar } from '../../../server';
+import { GarageContainer } from '../../garage/garage-container/garage-container';
 import { CarName } from '../../garage/racing-wrap/track/car-name/car-name';
 import { Track } from '../../garage/racing-wrap/track/track';
 import { Buttons } from '../button';
@@ -12,12 +13,15 @@ export class GenerateButton extends Buttons {
 
   createButton: CreateButton;
 
+  garageContainer: GarageContainer;
+
   constructor() {
     super('generate cars');
 
     this.createButton = new CreateButton();
     this.track = new Track();
     this.carName = new CarName();
+    this.garageContainer = new GarageContainer();
   }
 
   buttonHandler(): void {
@@ -26,23 +30,15 @@ export class GenerateButton extends Buttons {
     this.createButton.titleCountChange();
 
     for (let i = 0; i < 99; i++) {
-      this.createButton.createGarage();
-      const racingWrap = this.createButton.findLastRacingWrap();
       const color = this.paintCar();
-      const name = `${this.carName.getRandomValue(
-        this.carName.brands,
-      )} ${this.carName.getRandomValue(this.carName.models)}`;
-      if (racingWrap) {
-        const track = new Track(name, '', color);
-        data.id++;
-        track.element.setAttribute('id', `${data.id}`);
-        racingWrap.appendChild(track.element);
-        createCar({
-          name: `${name}`,
-          color: `${color}`,
-        });
-      }
+      const name = `${this.carName.getRandomValue(this.carName.brands)}
+      ${this.carName.getRandomValue(this.carName.models)}`;
+      createCar({
+        name: `${name}`,
+        color: `${color}`,
+      });
     }
+    this.garageContainer.garageRender();
   }
 
   paintCar = (): string => {

@@ -4,17 +4,17 @@ import { PrevButton } from '../Buttons/prev-button/prev-button';
 import './pagination.css';
 
 export class Pagination extends BaseComponent {
-  prevButton: PrevButton;
+  winPrevButton: PrevButton;
 
-  nextButton: NextButton;
+  winNextButton: NextButton;
 
   constructor() {
     super('div', ['pagination-wrap']);
 
-    this.prevButton = new PrevButton();
-    this.nextButton = new NextButton();
+    this.winPrevButton = new PrevButton();
+    this.winNextButton = new NextButton();
 
-    this.element.appendChild(this.prevButton.element);
-    this.element.appendChild(this.nextButton.element);
+    this.element.appendChild(this.winPrevButton.element);
+    this.element.appendChild(this.winNextButton.element);
   }
 }

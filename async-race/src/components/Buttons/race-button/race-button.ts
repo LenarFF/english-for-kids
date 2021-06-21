@@ -15,7 +15,7 @@ export class RaceButton extends Buttons {
     super.buttonHandler();
     let recordTime = 1000000;
     let recordID = 0;
-    const activePage = document.querySelector('.racing-wrap_active');
+    const activePage = document.querySelector('.racing-wrap');
     const resetButton = document.querySelector('.reset-button') as HTMLButtonElement;
 
     if (activePage) {
