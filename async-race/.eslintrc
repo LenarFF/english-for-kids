@@ -15,7 +15,6 @@
   "plugins": [
     "@typescript-eslint"
   ],
-  "ignorePatterns": ["temp.js", "**/vendor/*.js"],
   "rules": {
     "no-plusplus": "off",
     "no-console": "warn",
