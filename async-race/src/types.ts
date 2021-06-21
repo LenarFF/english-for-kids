@@ -4,8 +4,13 @@ export type ItemsType = {
   time: number,
   car: CarType
 };
-type CarType = {
+export type CarType = {
   name: string,
   id: number,
   color: string
+};
+export type WinnerType = {
+  id: number,
+  wins: number,
+  time: number
 };

@@ -32,7 +32,7 @@ export class GarageContainer extends BaseComponent {
       const main = async () => {
         const result = await getCars();
         const track = new Track(result.items[i].name, '', result.items[i].color);
-        track.element.setAttribute('id', result.items[i].id);
+        track.element.setAttribute('id', `${result.items[i].id}`);
         data.id = result.items[i].id;
         racingWrapEL.appendChild(track.element);
         if ((i + 1) % data.carsQuantityOnPage === 0) {
