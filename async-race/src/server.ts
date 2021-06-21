@@ -94,7 +94,7 @@ export const deleteWinner = async (id: number): Promise<void> => (await fetch(`$
 export const getWinners = async ({
   sort, order, page = 1, limit = 10,
 }: {
-  sort : string, order: string, page: number, limit: number
+  sort : string, order: string, page?: number, limit?: number
 }): Promise<{
   items: ItemsType[];
   count: string | null;
