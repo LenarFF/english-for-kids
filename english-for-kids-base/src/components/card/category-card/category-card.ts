@@ -7,7 +7,7 @@ export class CategoryCard extends BaseComponent {
     this.element.innerHTML = `
       <div class="category-card__top"></div>
       <div class="category-card__bot"></div>
-      <div class="category-card__image" style="background-image: url('./images/unsorted/${img}')"></div>
+      <div class="category-card__image" style="background-image: url('./${img}')"></div>
       <p class="category-card__text">${categoryText}</p>
     `;
   }

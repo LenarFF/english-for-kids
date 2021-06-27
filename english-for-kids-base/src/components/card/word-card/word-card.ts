@@ -58,7 +58,7 @@ export class WordCard extends BaseComponent {
     this.wordCardBackImg.element.style.backgroundImage = `url('./images/unsorted/${image}')`;
 
     this.rotate.element.addEventListener('click', () => this.flipToBack());
-    this.element.addEventListener('mouseleave', (e: Event) => this.flipToFront(e))
+    this.element.addEventListener('mouseleave', () => this.flipToFront());
   }
 
   flipToBack(): Promise<void> {
@@ -66,13 +66,9 @@ export class WordCard extends BaseComponent {
     return this.flip(true);
   }
 
-  flipToFront(e: Event): Promise<void> | undefined {
-    if(e.target === this.element) {
+  flipToFront(): Promise<void> {
     this.isFlipped = false;
     return this.flip();
-    } else {
-      return
-    }
   }
 
   private flip(isFront = false): Promise<void> {
