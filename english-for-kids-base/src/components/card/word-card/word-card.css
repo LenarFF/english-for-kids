@@ -1,9 +1,11 @@
 .word-card-container {
+  width: 300px;
+  height: 300px;
   margin: 1%;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  perspective: 25rem;
+  perspective: 44rem;
   cursor: pointer;
 }
 
