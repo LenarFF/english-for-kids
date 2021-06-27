@@ -54,8 +54,8 @@ export class WordCard extends BaseComponent {
     this.wordCardBack.element.append(this.wordCardBackWordWrap.element);
     this.wordCardBackWordWrap.element.append(this.translate.element);
 
-    this.wordCardFrontImg.element.style.backgroundImage = `url('./images/unsorted/${image}')`;
-    this.wordCardBackImg.element.style.backgroundImage = `url('./images/unsorted/${image}')`;
+    this.wordCardFrontImg.element.style.backgroundImage = `url('./${image}')`;
+    this.wordCardBackImg.element.style.backgroundImage = `url('./${image}')`;
 
     this.rotate.element.addEventListener('click', () => this.flipToBack());
     this.element.addEventListener('mouseleave', () => this.flipToFront());

@@ -3,7 +3,7 @@ export const categoryCardsInfo = [
   ['img/cry.jpg', 'img/open.jpg', 'img/cat.jpg', 'img/bird.jpg', 'img/skirt.jpg', 'img/sad.jpg', 'img/flower.jpg', 'img/apple.jpg'],
 ];
 
-export const cards = [
+export const wordCardsInfo = [
   [
     {
       word: 'cry',

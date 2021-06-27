@@ -7,7 +7,7 @@ export class MainPage extends BaseComponent {
   categoryInfo: string[][];
 
   constructor() {
-    super('div', ['main-page']);
+    super('div', ['page']);
     this.categoryInfo = categoryCardsInfo;
   }
 
