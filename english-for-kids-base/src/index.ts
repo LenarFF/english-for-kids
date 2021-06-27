@@ -1,10 +1,10 @@
 import { CategoryCard } from './components/card/category-card/category-card';
 import { WordCard } from './components/card/word-card/word-card';
+import { MainPage } from './pages/main-page/main-page';
 import './style.css';
 
-const card = new WordCard('cardFront.jpg', 'back.jpg', 'ghj');
 
-document.querySelector('.body')?.appendChild(card.element);
 
-const categoryCard = new CategoryCard('back.jpg', 'hall');
-document.querySelector('.body')?.append(categoryCard.element);
+const mainPage = new MainPage()
+mainPage.renderCards()
+document.querySelector('.body')?.append(mainPage.element);
