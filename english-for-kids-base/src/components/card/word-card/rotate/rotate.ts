@@ -1,5 +1,5 @@
-import { BaseComponent } from "../../../base-component";
-import './rotate.css'; 
+import { BaseComponent } from '../../../base-component';
+import './rotate.css';
 
 export class Rotate extends BaseComponent {
   constructor() {
@@ -52,6 +52,6 @@ export class Rotate extends BaseComponent {
  <g>
  </g>
  </svg>
- `
+ `;
   }
 }

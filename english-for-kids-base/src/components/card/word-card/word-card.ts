@@ -7,16 +7,26 @@ const FLIP_CLASS = 'flipped';
 
 export class WordCard extends BaseComponent {
   isFlipped = false;
-  wordCard: BaseComponent
-  wordCardFront: BaseComponent
-  wordCardBack: BaseComponent
-  wordCardFrontImg: BaseComponent
-  wordCardBackImg: BaseComponent
-  wordCardFrontWordWrap: BaseComponent
-  wordCardBackWordWrap: BaseComponent
-  englishWord: Word
-  translate: Word
-  rotate: Rotate
+
+  wordCard: BaseComponent;
+
+  wordCardFront: BaseComponent;
+
+  wordCardBack: BaseComponent;
+
+  wordCardFrontImg: BaseComponent;
+
+  wordCardBackImg: BaseComponent;
+
+  wordCardFrontWordWrap: BaseComponent;
+
+  wordCardBackWordWrap: BaseComponent;
+
+  englishWord: Word;
+
+  translate: Word;
+
+  rotate: Rotate;
 
   constructor(image: string, englishWord: string, translate: string) {
     super('div', ['word-card-container']);
@@ -44,9 +54,8 @@ export class WordCard extends BaseComponent {
     this.wordCardBack.element.append(this.wordCardBackWordWrap.element);
     this.wordCardBackWordWrap.element.append(this.translate.element);
 
-    this.wordCardFrontImg.element.style.backgroundImage = `url('./images/unsorted/${image}')`
-    this.wordCardBackImg.element.style.backgroundImage = `url('./images/unsorted/${image}')`
-
+    this.wordCardFrontImg.element.style.backgroundImage = `url('./images/unsorted/${image}')`;
+    this.wordCardBackImg.element.style.backgroundImage = `url('./images/unsorted/${image}')`;
   }
 
   flipToBack(): Promise<void> {
