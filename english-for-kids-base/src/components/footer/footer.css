@@ -9,6 +9,7 @@
   font-size: 22px;
   color: aliceblue;
   padding: 0 20px;
+  z-index: 100;
 }
 
 .school__logo {

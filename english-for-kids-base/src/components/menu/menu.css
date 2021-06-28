@@ -1,0 +1,30 @@
+.menu {
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 300px;
+  background: linear-gradient(green, rgb(37, 180, 8));
+  padding-top: 120px;
+  transition: 1s;
+  margin-left: -100%;
+}
+
+.menu_show {
+  margin: 0;
+}
+
+.menu__list {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  min-height: 400px;
+  justify-content: space-between;
+  list-style-type: none;
+}
+
+.list__el {
+  font-size: 24px;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
