@@ -59,6 +59,17 @@ export class WordCard extends BaseComponent {
 
     this.rotate.element.addEventListener('click', () => this.flipToBack());
     this.element.addEventListener('mouseleave', () => this.flipToFront());
+    this.wordCardFront.element.addEventListener('click', (event) => this.createAudio(event));
+  }
+
+  createAudio(event: Event): void {
+    const eventTarget = event.target as HTMLElement;
+    if (eventTarget.classList.contains('word-card__rotate-img')) {
+      return;
+    }
+    const word = this.wordCardFront.element.getAttribute('data-word') as string;
+    const audio = new Audio(`./audio/${word}.mp3`);
+    audio.play();
   }
 
   flipToBack(): Promise<void> {

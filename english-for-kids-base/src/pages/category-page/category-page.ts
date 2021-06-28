@@ -1,7 +1,7 @@
-import { wordCardsInfo } from "../../cards";
-import { BaseComponent } from "../../components/base-component";
-import { WordCard } from "../../components/card/word-card/word-card";
-import '../main-page/main-page.css'
+import { wordCardsInfo } from '../../cards';
+import { BaseComponent } from '../../components/base-component';
+import { WordCard } from '../../components/card/word-card/word-card';
+import '../main-page/main-page.css';
 
 export class CategoryPage extends BaseComponent {
   wordInfo: {
@@ -9,7 +9,7 @@ export class CategoryPage extends BaseComponent {
     translation: string,
     image: string,
     audioSrc: string
-    }[][];
+  }[][];
 
   constructor() {
     super('div', ['page']);
@@ -18,8 +18,10 @@ export class CategoryPage extends BaseComponent {
 
   renderCards(): void {
     for (let i = 0; i < wordCardsInfo[0].length; i++) {
-      const wordCard = new WordCard(this.wordInfo[0][i].image, this.wordInfo[0][i].word, this.wordInfo[0][i].translation);
-      this.element.append(wordCard.element)
+      const wordCard = new WordCard(this.wordInfo[0][i].image, this.wordInfo[0][i]
+        .word, this.wordInfo[0][i].translation);
+      wordCard.wordCardFront.element.setAttribute('data-word', `${this.wordInfo[0][i].word}`);
+      this.element.append(wordCard.element);
+    }
   }
-}
 }
