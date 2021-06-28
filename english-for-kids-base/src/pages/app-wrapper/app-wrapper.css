@@ -1,11 +1,10 @@
 .app {
 display: flex;
-flex-direction: column;}
-
-.burger {
-  width: 100px;
-  height: 50px;
-  background-color: rgb(226, 27, 27);
+flex-direction: column;
+height: 100%;
+justify-content: space-between;
+margin: 0 auto;
+max-width: 1920px;
 }
 
 .toggle {
@@ -17,7 +16,7 @@ flex-direction: column;}
 .app__control {
   display: flex;
   justify-content: space-between;
-  height: 180px;
+  height: 150px;
   align-items: center;
-  padding: 100px;
+  padding: 0 10%;
 }

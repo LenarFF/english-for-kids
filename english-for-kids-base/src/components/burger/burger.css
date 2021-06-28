@@ -1,0 +1,42 @@
+.burger {
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+  position: relative;
+}
+
+.burger__top,
+.burger__mid,
+.burger__bot {
+  width: 100%;
+  height: 3px;
+  background-color: rgb(105, 99, 99);
+  margin: 5px 0;
+  transition: .5s;
+  position: absolute;
+}
+
+.burger__mid {
+  top: 8px
+}
+
+.burger__bot {
+  top: 16px
+}
+
+.burger__mid_open {
+  transform: translate(20px);
+  background-color:inherit;
+}
+
+.burger__top_open {
+  transform-origin: right;
+  transform: rotate(-45deg);
+  width: 24px;
+}
+
+.burger__bot_open {
+  transform-origin: right;
+  transform: rotate(45deg);
+  width: 24px;
+}

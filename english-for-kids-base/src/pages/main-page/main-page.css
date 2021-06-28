@@ -2,7 +2,6 @@
   display: flex;
   flex-wrap: wrap;
   width: 80%;
-  min-height: 677px;
   max-width: 1320px;
   margin: 0 auto;
   justify-content: space-between;

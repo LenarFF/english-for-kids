@@ -1,4 +1,5 @@
 import { BaseComponent } from '../../components/base-component';
+import { Burger } from '../../components/burger/burger';
 import { Footer } from '../../components/footer/footer';
 import { MainPage } from '../main-page/main-page';
 import './app-wrapper.css';
@@ -18,7 +19,7 @@ export class AppWrapper extends BaseComponent {
     super('div', ['app']);
 
     this.control = new BaseComponent('div', ['app__control']);
-    this.burger = new BaseComponent('div', ['burger']);
+    this.burger = new Burger();
     this.toggle = new BaseComponent('div', ['toggle']);
     this.mainPage = new MainPage();
     this.mainPage.renderCards();
