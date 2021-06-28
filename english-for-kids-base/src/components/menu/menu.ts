@@ -1,4 +1,5 @@
 import { BaseComponent } from '../base-component';
+import { Burger } from '../burger/burger';
 import './menu.css';
 
 export class Menu extends BaseComponent {
@@ -6,14 +7,17 @@ export class Menu extends BaseComponent {
 
   firstLI: BaseComponent;
 
-  BURGER_CLASS: string;
+  burger: Burger;
+
+  isMenuShow: boolean;
 
   constructor(menuElements: string[]) {
     super('nav', ['menu']);
 
-    this.BURGER_CLASS = 'burger';
     this.list = new BaseComponent('ul', ['menu__list']);
     this.firstLI = new BaseComponent('li', ['list__el']);
+    this.burger = new Burger();
+    this.isMenuShow = false;
 
     this.firstLI.element.innerHTML = 'Main Page';
 
@@ -21,8 +25,11 @@ export class Menu extends BaseComponent {
     this.list.element.append(this.firstLI.element);
 
     document.addEventListener('DOMContentLoaded', () => {
-      document.querySelector('.burger')?.addEventListener('click', () => this.showMenu());
+      document.querySelector('.app')?.append(this.burger.element);
     });
+
+    this.burger.element.addEventListener('click', () => this.showMenu());
+    document.addEventListener('click', (event) => this.hideMenu(event));
 
     this.renderList(menuElements);
   }
@@ -36,6 +43,20 @@ export class Menu extends BaseComponent {
   }
 
   showMenu(): void {
-    this.element.classList.toggle('menu_show');
+    if (this.isMenuShow) {
+      this.element.classList.remove('menu_show');
+      this.isMenuShow = false;
+    } else {
+      this.element.classList.add('menu_show');
+      setTimeout(() => { this.isMenuShow = true; }, 1000);
+    }
+  }
+
+  hideMenu(event: Event): void {
+    if (this.isMenuShow && event.target !== this.element) {
+      this.element.classList.remove('menu_show');
+      this.burger.redrawBurger();
+      this.isMenuShow = false;
+    }
   }
 }
