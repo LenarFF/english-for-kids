@@ -13,10 +13,10 @@ export class CategoryPage extends BaseComponent {
 
   categoryNumber: number;
 
-  constructor(categoryNumber: string) {
+  constructor(categoryNumber: number) {
     super('div', ['page']);
 
-    this.categoryNumber = +categoryNumber;
+    this.categoryNumber = categoryNumber;
     this.wordInfo = wordCardsInfo;
   }
 

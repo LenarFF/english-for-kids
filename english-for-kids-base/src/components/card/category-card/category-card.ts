@@ -17,7 +17,7 @@ export class CategoryCard extends BaseComponent {
   goToCategory(): void {
     const mainPage = document.querySelector('.page');
     const dataNumber = this.element.getAttribute('data-number') as string;
-    const categoryPage = new CategoryPage(dataNumber);
+    const categoryPage = new CategoryPage(+dataNumber);
     categoryPage.renderCards();
     mainPage?.replaceWith(categoryPage.element);
   }

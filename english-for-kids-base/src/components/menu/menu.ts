@@ -1,3 +1,5 @@
+import { CategoryPage } from '../../pages/category-page/category-page';
+import { MainPage } from '../../pages/main-page/main-page';
 import { BaseComponent } from '../base-component';
 import { Burger } from '../burger/burger';
 import './menu.css';
@@ -30,17 +32,34 @@ export class Menu extends BaseComponent {
 
     this.burger.element.addEventListener('click', () => this.showMenu());
     document.addEventListener('click', (event) => this.hideMenu(event));
+    this.firstLI.element.addEventListener('click', () => this.goToMainPage());
 
     this.renderList(menuElements);
   }
 
   renderList(menuElements: string[]): void {
-    menuElements.forEach((element) => {
+    for (let i = 0; i < menuElements.length; i++) {
       const listItem = new BaseComponent('li', ['list__el']);
-      listItem.element.innerHTML = `${element}`;
+      listItem.element.innerHTML = `${menuElements[i]}`;
+      listItem.element.setAttribute('data-number', `${i}`);
+      listItem.element.addEventListener('click', () => this.goToCategory(i));
       this.list.element.append(listItem.element);
-    });
+    }
   }
+
+  goToCategory = (categoryNumber: number): void => {
+    const mainPage = document.querySelector('.page');
+    const categoryPage = new CategoryPage(categoryNumber);
+    categoryPage.renderCards();
+    mainPage?.replaceWith(categoryPage.element);
+  };
+
+  goToMainPage = (): void => {
+    const categoryPage = document.querySelector('.page');
+    const mainPage = new MainPage();
+    mainPage.renderCards();
+    categoryPage?.replaceWith(mainPage.element);
+  };
 
   showMenu(): void {
     if (this.isMenuShow) {
