@@ -1,0 +1,23 @@
+.app {
+display: flex;
+flex-direction: column;}
+
+.burger {
+  width: 100px;
+  height: 50px;
+  background-color: rgb(226, 27, 27);
+}
+
+.toggle {
+  width: 150px;
+  height: 50px;
+  background-color: chartreuse;
+}
+
+.app__control {
+  display: flex;
+  justify-content: space-between;
+  height: 180px;
+  align-items: center;
+  padding: 100px;
+}

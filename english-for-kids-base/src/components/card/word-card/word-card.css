@@ -20,6 +20,7 @@
 }
 .word-card:hover {
   transform: translateZ(2rem);
+  box-shadow: 0 10px 20px rgb(0 0 0 / 40%);
 }
 
 .flipped > .word-card {
