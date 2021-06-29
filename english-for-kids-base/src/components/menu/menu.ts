@@ -54,7 +54,7 @@ export class Menu extends BaseComponent {
   };
 
   goToMainPage = (): void => {
-    const categoryPage = document.querySelector('.page');
+    const categoryPage = document.querySelector('.category');
     const mainPage = new MainPage();
     mainPage.renderCards();
     categoryPage?.replaceWith(mainPage.element);

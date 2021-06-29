@@ -1,7 +1,8 @@
 import { wordCardsInfo } from '../../cardsInfo';
 import { BaseComponent } from '../../components/base-component';
 import { WordCard } from '../../components/card/word-card/word-card';
-import '../main-page/main-page.css';
+import { StartButton } from '../../components/start-button/start-button';
+import './category-page.css';
 
 export class CategoryPage extends BaseComponent {
   wordInfo: {
@@ -13,11 +14,20 @@ export class CategoryPage extends BaseComponent {
 
   categoryNumber: number;
 
+  startButton: StartButton;
+
+  cardField: BaseComponent;
+
   constructor(categoryNumber: number) {
-    super('div', ['page']);
+    super('div', ['category']);
+
+    this.startButton = new StartButton();
+    this.cardField = new BaseComponent('div', ['card-field']);
 
     this.categoryNumber = categoryNumber;
     this.wordInfo = wordCardsInfo;
+    this.element.append(this.cardField.element);
+    this.element.append(this.startButton.element);
   }
 
   renderCards(): void {
@@ -29,7 +39,7 @@ export class CategoryPage extends BaseComponent {
       wordCard.wordCardFront.element.setAttribute('data-word',
         `${this.wordInfo[this.categoryNumber][i].word}`);
 
-      this.element.append(wordCard.element);
+      this.cardField.element.append(wordCard.element);
     }
   }
 }

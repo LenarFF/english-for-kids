@@ -1,0 +1,15 @@
+.category {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-height: 750px;
+}
+
+.card-field {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  max-width: 1320px;
+  margin: 0 auto;
+  justify-content: space-between;
+}
