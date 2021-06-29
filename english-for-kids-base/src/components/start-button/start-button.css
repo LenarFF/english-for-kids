@@ -25,3 +25,8 @@
   background-repeat: no-repeat;
   background-color: orange;
 }
+
+.start-button_hide {
+  height: 0;
+  background: white;
+}

@@ -64,7 +64,13 @@ export class WordCard extends BaseComponent {
 
     this.rotate.element.addEventListener('click', () => this.flipToBack());
     this.element.addEventListener('mouseleave', () => this.flipToFront());
-    this.wordCardFront.element.addEventListener('click', (event) => this.createAudio(event));
+    this.wordCardFront.element.addEventListener('click', (event) => {
+      if (!data.gameMode) {
+        this.createAudio(event);
+      } else {
+        this.playResultSound();
+      }
+    });
   }
 
   createAudio(event: Event): void {
@@ -77,6 +83,11 @@ export class WordCard extends BaseComponent {
     const audio = new Audio(`./audio/${word}.mp3`);
     audio.play();
   }
+
+  playResultSound = (): void => {
+    const audio = new Audio('./audio/success.mp3');
+    audio.play();
+  };
 
   flipToBack(): Promise<void> {
     this.isFlipped = true;
