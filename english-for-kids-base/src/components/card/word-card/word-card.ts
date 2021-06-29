@@ -64,7 +64,8 @@ export class WordCard extends BaseComponent {
 
   createAudio(event: Event): void {
     const eventTarget = event.target as HTMLElement;
-    if (eventTarget.classList.contains('word-card__rotate-img')) {
+    if (eventTarget.classList.contains('word-card__rotate-img')
+     || eventTarget.classList.contains('path')) {
       return;
     }
     const word = this.wordCardFront.element.getAttribute('data-word') as string;

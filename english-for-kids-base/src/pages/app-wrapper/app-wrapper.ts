@@ -2,11 +2,12 @@ import { categoryCardsInfo } from '../../cardsInfo';
 import { BaseComponent } from '../../components/base-component';
 import { Footer } from '../../components/footer/footer';
 import { Menu } from '../../components/menu/menu';
+import { Toggle } from '../../components/toggle/toggle';
 import { MainPage } from '../main-page/main-page';
 import './app-wrapper.css';
 
 export class AppWrapper extends BaseComponent {
-  toggle: BaseComponent;
+  toggle: Toggle;
 
   control: BaseComponent;
 
@@ -25,7 +26,7 @@ export class AppWrapper extends BaseComponent {
 
     this.categoryNameIndex = 0;
     this.control = new BaseComponent('div', ['app__control']);
-    this.toggle = new BaseComponent('div', ['toggle']);
+    this.toggle = new Toggle();
     this.mainPage = new MainPage();
     this.mainPage.renderCards();
     this.menuElements = categoryCardsInfo[this.categoryNameIndex];

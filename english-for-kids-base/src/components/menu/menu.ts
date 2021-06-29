@@ -1,7 +1,7 @@
 import { CategoryPage } from '../../pages/category-page/category-page';
 import { MainPage } from '../../pages/main-page/main-page';
 import { BaseComponent } from '../base-component';
-import { Burger } from '../burger/burger';
+import { Burger } from './burger/burger';
 import './menu.css';
 
 export class Menu extends BaseComponent {
@@ -41,7 +41,6 @@ export class Menu extends BaseComponent {
     for (let i = 0; i < menuElements.length; i++) {
       const listItem = new BaseComponent('li', ['list__el']);
       listItem.element.innerHTML = `${menuElements[i]}`;
-      listItem.element.setAttribute('data-number', `${i}`);
       listItem.element.addEventListener('click', () => this.goToCategory(i));
       this.list.element.append(listItem.element);
     }
