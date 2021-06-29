@@ -30,10 +30,11 @@
 .switch::before {
   content: "train";
   position: absolute;
-  top: 4px;
-  left: 69px;
-  font-size: 36px;
+  top: 10px;
+  left: 59px;
+  font-size: 28px;
   color: white;
+  text-transform: uppercase;
   }
   .switch:checked::before {
     content: "play";

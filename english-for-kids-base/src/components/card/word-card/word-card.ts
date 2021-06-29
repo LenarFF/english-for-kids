@@ -2,6 +2,7 @@ import './word-card.css';
 import { BaseComponent } from '../../base-component';
 import { Word } from './word/word';
 import { Rotate } from './rotate/rotate';
+import { data } from '../../../data';
 
 const FLIP_CLASS = 'flipped';
 
@@ -34,9 +35,13 @@ export class WordCard extends BaseComponent {
     this.wordCard = new BaseComponent('div', ['word-card']);
     this.wordCardFront = new BaseComponent('div', ['word-card__front']);
     this.wordCardBack = new BaseComponent('div', ['word-card__back']);
-    this.wordCardFrontImg = new BaseComponent('div', ['word-card__img']);
+    this.wordCardFrontImg = new BaseComponent('div',
+      data.gameMode === false ? ['word-card__img']
+        : ['word-card__img', 'word-card__img_bigger']);
     this.wordCardBackImg = new BaseComponent('div', ['word-card__img']);
-    this.wordCardFrontWordWrap = new BaseComponent('div', ['word-card__word-wrap']);
+    this.wordCardFrontWordWrap = new BaseComponent('div',
+      data.gameMode === false ? ['word-card__word-wrap']
+        : ['word-card__word-wrap', 'hidden']);
     this.wordCardBackWordWrap = new BaseComponent('div', ['word-card__word-wrap']);
     this.englishWord = new Word(englishWord);
     this.translate = new Word(translate);
