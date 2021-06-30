@@ -4,7 +4,8 @@ type DataType = {
   arrayOfIndexes: number[],
   lastIndex: number,
   numberOfMistakes: number,
-  GameEndTime: number
+  gameEndTime: number,
+  lastAnswer: boolean
 };
 
 export const data: DataType = {
@@ -13,5 +14,6 @@ export const data: DataType = {
   arrayOfIndexes: [],
   lastIndex: -1,
   numberOfMistakes: 0,
-  GameEndTime: 3000
+  gameEndTime: 3000,
+  lastAnswer: false,
 };

@@ -32,6 +32,8 @@ export class WordCard extends BaseComponent {
 
   game: Game;
 
+  cardShield: BaseComponent;
+
   constructor(image: string, englishWord: string, translate: string) {
     super('div', ['word-card-container']);
 
@@ -50,15 +52,17 @@ export class WordCard extends BaseComponent {
     this.translate = new Word(translate);
     this.rotate = new Rotate();
     this.game = new Game();
+    this.cardShield = new BaseComponent('div', ['card-shield', 'hidden']);
 
     this.element.append(this.wordCard.element);
     this.wordCard.element.append(this.wordCardFront.element);
     this.wordCard.element.append(this.wordCardBack.element);
+
+    this.wordCardFront.element.append(this.cardShield.element);
     this.wordCardFront.element.append(this.wordCardFrontImg.element);
     this.wordCardFront.element.append(this.wordCardFrontWordWrap.element);
     this.wordCardFrontWordWrap.element.append(this.englishWord.element);
     this.wordCardFrontWordWrap.element.append(this.rotate.element);
-    this.wordCardBack.element.append(this.wordCardBackImg.element);
     this.wordCardBack.element.append(this.wordCardBackImg.element);
     this.wordCardBack.element.append(this.wordCardBackWordWrap.element);
     this.wordCardBackWordWrap.element.append(this.translate.element);
@@ -66,6 +70,7 @@ export class WordCard extends BaseComponent {
     this.wordCardFrontImg.element.style.backgroundImage = `url('./${image}')`;
     this.wordCardBackImg.element.style.backgroundImage = `url('./${image}')`;
 
+    this.cardShield.element.addEventListener('click', (e) => e.stopPropagation());
     this.rotate.element.addEventListener('click', () => this.flipToBack());
     this.element.addEventListener('mouseleave', () => this.flipToFront());
     this.wordCardFront.element.addEventListener('click', (event) => {
@@ -74,6 +79,7 @@ export class WordCard extends BaseComponent {
       } else {
         const attribute = this.wordCardFront.element.getAttribute('data-number') as string;
         this.game.playGuessResultSound(attribute);
+        if (this.game.identifyMatch(attribute)) this.showCardShield();
       }
     });
   }
@@ -106,5 +112,9 @@ export class WordCard extends BaseComponent {
         once: true,
       });
     });
+  }
+
+  showCardShield() :void {
+    this.cardShield.element.classList.remove('hidden');
   }
 }

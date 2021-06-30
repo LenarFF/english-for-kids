@@ -20,6 +20,7 @@ export class Toggle extends BaseComponent {
     data.gameMode = (data.gameMode === false);
     this.game.transformCard();
     this.toggleStartButton();
+    this.changeCardColor();
   }
 
   toggleStartButton = ():void => {
@@ -29,5 +30,10 @@ export class Toggle extends BaseComponent {
       startButton.classList.remove('start-button_repeat');
       startButton.innerHTML = 'start game';
     }
+  };
+
+  changeCardColor = (): void => {
+    const cards = document.querySelectorAll('.category-card__top');
+    if (cards) cards.forEach((card) => card.classList.toggle('category-card__top_orange'));
   };
 }

@@ -22,7 +22,7 @@ export class Burger extends BaseComponent {
   }
 
   redrawBurger(): void {
-    this.element.classList.toggle('burger_open')
+    this.element.classList.toggle('burger_open');
     this.burgerMid.element.classList.toggle('burger__mid_open');
     this.burgerBot.element.classList.toggle('burger__bot_open');
     this.burgerTop.element.classList.toggle('burger__top_open');

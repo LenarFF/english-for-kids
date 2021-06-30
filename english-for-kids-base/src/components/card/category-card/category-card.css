@@ -12,7 +12,7 @@
 .category-card:hover {
   box-shadow: 0 10px 20px rgb(0 0 0 / 40%);
 }
- 
+
 .category-card__top,
 .category-card__bot {
   width: 100%;
@@ -22,7 +22,7 @@
 .category-card__top {
   background: linear-gradient(
 180deg
-,#0099ae,#00bf82 100%,#fff 0,#fff)
+,#0099ae,#00bf82 100%,#fff 0,#fff);
 }
 
 
@@ -42,4 +42,8 @@
 .category-card__text {
   font-size: 24px;
   text-align: center;
+}
+
+.category-card__top_orange {
+  background: linear-gradient(rgb(250, 102, 56), rgb(217, 221, 15));
 }

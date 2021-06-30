@@ -7,10 +7,6 @@
   justify-content: space-around;
 }
 
-.game-end__smile {
-  height: 500px;
-  width: 500px;
-}
 
 .game-end__errors {
   height: 50px;
