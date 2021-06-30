@@ -1,0 +1,21 @@
+.game-end {
+  width: 100%;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.game-end__smile {
+  height: 500px;
+  width: 500px;
+}
+
+.game-end__errors {
+  height: 50px;
+  width: 100%;
+  text-align: center;
+  font-size: 30px;
+  color: red;
+}

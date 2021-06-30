@@ -1,4 +1,5 @@
 import { wordCardsInfo } from './cardsInfo';
+import { GameEnd } from './components/game-end/game-end';
 import { data } from './data';
 
 export class Game {
@@ -18,6 +19,8 @@ export class Game {
     if (index !== undefined) {
       data.lastIndex = index;
       this.playSound(index);
+    } else {
+      this.renderGameEnd()
     }
   };
 
@@ -33,7 +36,14 @@ export class Game {
     audio.play();
   };
 
-  identifyMatch = (attribute:string): boolean => Number(attribute) === data.lastIndex;
+  identifyMatch = (attribute:string): boolean => {
+    if (Number(attribute) !== data.lastIndex) {
+      data.numberOfMistakes++
+      return false
+    } else {
+      return true
+    }
+  };
 
   playGuessResultSound = (attribute:string): void => {
     if (this.identifyMatch(attribute)) {
@@ -51,7 +61,15 @@ export class Game {
   appendStars = (result: boolean): void => {
     const star = document.createElement('img') as HTMLImageElement;
     star.src = `./img/star${result ? '-win' : ''}.svg`;
+    star.classList.add('star')
     const starsField = document.querySelector('.stars-field');
     if (starsField) starsField.append(star);
   };
+
+  renderGameEnd = ():void => {
+    const gameEnd = new GameEnd(data.numberOfMistakes === 0,
+      data.numberOfMistakes);
+    const currentPage = document.querySelector('.page');
+    currentPage?.replaceWith(gameEnd.element)
+  }
 }

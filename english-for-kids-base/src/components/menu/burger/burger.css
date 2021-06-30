@@ -6,6 +6,11 @@
   z-index: 10;
   top: 2%;
   left: 10%;
+  transition: all 0.5s;
+}
+
+.burger_open {
+  left: 250px;
 }
 
 .burger__top,
@@ -36,7 +41,7 @@
 .burger__bot_open {
   transform-origin: right;
   width: 24px;
-  background-color:rgb(124, 27, 27)
+  background-color:rgba(238, 138, 6, 0.972)
 }
 
 .burger__top_open {
