@@ -9,8 +9,6 @@ import './app-wrapper.css';
 export class AppWrapper extends BaseComponent {
   toggle: Toggle;
 
-  control: BaseComponent;
-
   mainPage: MainPage;
 
   footer: Footer;
@@ -25,7 +23,6 @@ export class AppWrapper extends BaseComponent {
     super('div', ['app']);
 
     this.categoryNameIndex = 0;
-    this.control = new BaseComponent('div', ['app__control']);
     this.toggle = new Toggle();
     this.mainPage = new MainPage();
     this.mainPage.renderCards();
@@ -33,8 +30,8 @@ export class AppWrapper extends BaseComponent {
     this.menu = new Menu(this.menuElements);
     this.footer = new Footer();
 
-    this.control.element.append(this.toggle.element);
-    this.element.append(this.control.element, this.mainPage.element,
+    this.element.append(this.toggle.element);
+    this.element.append(this.mainPage.element,
       this.menu.element, this.footer.element);
   }
 }

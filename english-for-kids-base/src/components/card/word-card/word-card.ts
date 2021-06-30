@@ -3,6 +3,7 @@ import { BaseComponent } from '../../base-component';
 import { Word } from './word/word';
 import { Rotate } from './rotate/rotate';
 import { data } from '../../../data';
+import { Game } from '../../../game';
 
 const FLIP_CLASS = 'flipped';
 
@@ -29,6 +30,8 @@ export class WordCard extends BaseComponent {
 
   rotate: Rotate;
 
+  game: Game;
+
   constructor(image: string, englishWord: string, translate: string) {
     super('div', ['word-card-container']);
 
@@ -46,6 +49,7 @@ export class WordCard extends BaseComponent {
     this.englishWord = new Word(englishWord);
     this.translate = new Word(translate);
     this.rotate = new Rotate();
+    this.game = new Game();
 
     this.element.append(this.wordCard.element);
     this.wordCard.element.append(this.wordCardFront.element);
@@ -68,7 +72,8 @@ export class WordCard extends BaseComponent {
       if (!data.gameMode) {
         this.createAudio(event);
       } else {
-        this.playResultSound();
+        const attribute = this.wordCardFront.element.getAttribute('data-number') as string;
+        this.game.playGuessResultSound(attribute);
       }
     });
   }
@@ -83,11 +88,6 @@ export class WordCard extends BaseComponent {
     const audio = new Audio(`./audio/${word}.mp3`);
     audio.play();
   }
-
-  playResultSound = (): void => {
-    const audio = new Audio('./audio/success.mp3');
-    audio.play();
-  };
 
   flipToBack(): Promise<void> {
     this.isFlipped = true;

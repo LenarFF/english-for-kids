@@ -18,14 +18,19 @@ export class CategoryPage extends BaseComponent {
 
   cardField: BaseComponent;
 
+  starsField: BaseComponent;
+
   constructor(categoryNumber: number) {
-    super('div', ['category']);
+    super('div', ['category', 'page']);
 
     this.startButton = new StartButton();
+    this.starsField = new BaseComponent('div', ['stars-field']);
     this.cardField = new BaseComponent('div', ['card-field']);
 
     this.categoryNumber = categoryNumber;
     this.wordInfo = wordCardsInfo;
+
+    this.element.append(this.starsField.element);
     this.element.append(this.cardField.element);
     this.element.append(this.startButton.element);
   }
@@ -38,6 +43,8 @@ export class CategoryPage extends BaseComponent {
 
       wordCard.wordCardFront.element.setAttribute('data-word',
         `${this.wordInfo[this.categoryNumber][i].word}`);
+
+      wordCard.wordCardFront.element.setAttribute('data-number', `${i}`);
 
       this.cardField.element.append(wordCard.element);
     }

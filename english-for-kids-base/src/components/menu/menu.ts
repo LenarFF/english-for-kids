@@ -49,10 +49,10 @@ export class Menu extends BaseComponent {
 
   goToCategory = (categoryNumber: number): void => {
     data.categoryIndex = categoryNumber;
-    const mainPage = document.querySelector('.page');
+    const currentPage = document.querySelector('.page');
     const categoryPage = new CategoryPage(categoryNumber);
     categoryPage.renderCards();
-    mainPage?.replaceWith(categoryPage.element);
+    currentPage?.replaceWith(categoryPage.element);
     const startButton = document.querySelector('.start-button');
     if (data.gameMode && startButton) startButton.classList.remove('start-button_hide');
   };

@@ -13,3 +13,16 @@
   margin: 0 auto;
   justify-content: space-between;
 }
+
+.stars-field {
+  width: 70%;
+  height: 150px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  overflow: hidden;
+  align-items: flex-end;
+}
+.star {
+  height: 50px;
+}

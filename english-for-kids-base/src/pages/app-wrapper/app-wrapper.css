@@ -1,11 +1,10 @@
 .app {
   display: flex;
   flex-direction: column;
-  height: 100vh;
   justify-content: space-between;
   margin: 0 auto;
   max-width: 1920px;
-  padding-top: 100px;
   width: 100%;
+  min-height: 100vh;
 }
 
