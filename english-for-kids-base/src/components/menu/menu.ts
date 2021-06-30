@@ -1,6 +1,4 @@
 import { data } from '../../data';
-import { CategoryPage } from '../../pages/category-page/category-page';
-import { MainPage } from '../../pages/main-page/main-page';
 import { BaseComponent } from '../base-component';
 import { Burger } from './burger/burger';
 import './menu.css';
@@ -49,19 +47,13 @@ export class Menu extends BaseComponent {
 
   goToCategory = (categoryNumber: number): void => {
     data.categoryIndex = categoryNumber;
-    const currentPage = document.querySelector('.page');
-    const categoryPage = new CategoryPage(categoryNumber);
-    categoryPage.renderCards();
-    currentPage?.replaceWith(categoryPage.element);
+    window.location.hash = `#/category-page/${categoryNumber}`;
     const startButton = document.querySelector('.start-button');
     if (data.gameMode && startButton) startButton.classList.remove('start-button_hide');
   };
 
   goToMainPage = (): void => {
-    const categoryPage = document.querySelector('.category');
-    const mainPage = new MainPage();
-    mainPage.renderCards();
-    categoryPage?.replaceWith(mainPage.element);
+    window.location.hash = '#/main-page/';
   };
 
   showMenu(): void {

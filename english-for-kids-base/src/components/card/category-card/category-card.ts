@@ -1,5 +1,4 @@
 import { data } from '../../../data';
-import { CategoryPage } from '../../../pages/category-page/category-page';
 import { BaseComponent } from '../../base-component';
 import './category-card.css';
 
@@ -17,12 +16,9 @@ export class CategoryCard extends BaseComponent {
   }
 
   goToCategory(): void {
-    const mainPage = document.querySelector('.page');
     const dataNumber = this.element.getAttribute('data-number') as string;
     data.categoryIndex = Number(dataNumber);
-    const categoryPage = new CategoryPage(+dataNumber);
-    categoryPage.renderCards();
-    mainPage?.replaceWith(categoryPage.element);
+    window.location.hash = `#/category-page/${dataNumber}`;
     const startButton = document.querySelector('.start-button');
     if (data.gameMode && startButton) startButton.classList.remove('start-button_hide');
   }

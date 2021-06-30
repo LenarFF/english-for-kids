@@ -1,5 +1,4 @@
 import { wordCardsInfo } from './cardsInfo';
-import { GameEnd } from './pages/game-end/game-end';
 import { data } from './data';
 
 export class Game {
@@ -66,9 +65,11 @@ export class Game {
   };
 
   renderGameEnd = ():void => {
-    const gameEnd = new GameEnd(data.numberOfMistakes === 0,
-      data.numberOfMistakes);
-    const currentPage = document.querySelector('.page');
-    currentPage?.replaceWith(gameEnd.element);
+    window.location.hash = '#/end-game/';
+    setTimeout(this.goToMain, data.gameEndTime);
+  };
+
+  goToMain = ():void => {
+    window.location.hash = '#/main-page/';
   };
 }

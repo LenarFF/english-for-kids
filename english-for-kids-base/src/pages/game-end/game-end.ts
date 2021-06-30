@@ -1,5 +1,4 @@
 import { data } from '../../data';
-import { MainPage } from '../main-page/main-page';
 import { BaseComponent } from '../../components/base-component';
 import './game-end.css';
 
@@ -10,7 +9,6 @@ export class GameEnd extends BaseComponent {
     this.playMusic(result);
     if (!result) this.renderNumberOfMistakes(mistakes);
     this.renderSmile(result);
-    setTimeout(this.goToMain, data.gameEndTime);
     data.numberOfMistakes = 0;
   }
 
@@ -19,12 +17,6 @@ export class GameEnd extends BaseComponent {
     img.classList.add('game-end__smile');
     img.src = `./img/${result ? 'success' : 'failure'}.jpg`;
     this.element.append(img);
-  };
-
-  goToMain = (): void => {
-    const mainPage = new MainPage();
-    mainPage.renderCards();
-    this.element.replaceWith(mainPage.element);
   };
 
   playMusic = (result: boolean): void => {

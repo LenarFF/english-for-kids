@@ -19,6 +19,8 @@ export class AppWrapper extends BaseComponent {
 
   categoryNameIndex: number;
 
+  pageWrap: BaseComponent;
+
   constructor() {
     super('div', ['app']);
 
@@ -29,9 +31,11 @@ export class AppWrapper extends BaseComponent {
     this.menuElements = categoryCardsInfo[this.categoryNameIndex];
     this.menu = new Menu(this.menuElements);
     this.footer = new Footer();
+    this.pageWrap = new BaseComponent('div', ['page-wrap']);
 
     this.element.append(this.toggle.element);
-    this.element.append(this.mainPage.element,
-      this.menu.element, this.footer.element);
+    this.element.append(this.pageWrap.element);
+    this.pageWrap.element.append(this.mainPage.element);
+    this.element.append(this.menu.element, this.footer.element);
   }
 }
