@@ -36,6 +36,7 @@ export class CategoryPage extends BaseComponent {
   }
 
   renderCards(): void {
+    if (Number.isNaN(this.categoryNumber)) return;
     for (let i = 0; i < wordCardsInfo[this.categoryNumber].length; i++) {
       const wordCard = new WordCard(this.wordInfo[this.categoryNumber][i].image,
         this.wordInfo[this.categoryNumber][i].word,

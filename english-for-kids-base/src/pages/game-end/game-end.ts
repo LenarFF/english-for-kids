@@ -3,7 +3,8 @@ import { BaseComponent } from '../../components/base-component';
 import './game-end.css';
 
 export class GameEnd extends BaseComponent {
-  result: boolean
+  result: boolean;
+
   constructor(result: boolean, mistakes: number) {
     super('div', ['game-end']);
 

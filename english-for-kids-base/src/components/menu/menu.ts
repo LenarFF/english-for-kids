@@ -8,19 +8,26 @@ export class Menu extends BaseComponent {
 
   firstLI: BaseComponent;
 
+  lastLI: BaseComponent;
+
   burger: Burger;
 
   isMenuShow: boolean;
+
+  liItems: HTMLElement[];
 
   constructor(menuElements: string[]) {
     super('nav', ['menu']);
 
     this.list = new BaseComponent('ul', ['menu__list']);
-    this.firstLI = new BaseComponent('li', ['list__el']);
+    this.firstLI = new BaseComponent('li', ['list__el', 'list__el_selected']);
+    this.lastLI = new BaseComponent('li', ['list__el']);
     this.burger = new Burger();
     this.isMenuShow = false;
+    this.liItems = [];
 
     this.firstLI.element.innerHTML = 'Main Page';
+    this.lastLI.element.innerHTML = 'Statistics';
 
     this.element.append(this.list.element);
     this.list.element.append(this.firstLI.element);
@@ -32,8 +39,13 @@ export class Menu extends BaseComponent {
     this.burger.element.addEventListener('click', () => this.showMenu());
     document.addEventListener('click', (event) => this.hideMenu(event));
     this.firstLI.element.addEventListener('click', () => this.goToMainPage());
+    this.lastLI.element.addEventListener('click', () => this.goToStatisticsPage());
 
+    this.liItems.push(this.firstLI.element);
     this.renderList(menuElements);
+    this.liItems.push(this.lastLI.element);
+    this.list.element.append(this.lastLI.element);
+    window.addEventListener('hashchange', () => this.addSelectedClass(window.location.hash));
   }
 
   renderList(menuElements: string[]): void {
@@ -41,6 +53,7 @@ export class Menu extends BaseComponent {
       const listItem = new BaseComponent('li', ['list__el']);
       listItem.element.innerHTML = `${menuElements[i]}`;
       listItem.element.addEventListener('click', () => this.goToCategory(i));
+      this.liItems.push(listItem.element);
       this.list.element.append(listItem.element);
     }
   }
@@ -48,6 +61,10 @@ export class Menu extends BaseComponent {
   goToCategory = (categoryNumber: number): void => {
     data.categoryIndex = categoryNumber;
     window.location.hash = `#/category-page/${categoryNumber}`;
+  };
+
+  goToStatisticsPage = (): void => {
+    window.location.hash = '#/statistics-page/';
   };
 
   goToMainPage = (): void => {
@@ -70,5 +87,25 @@ export class Menu extends BaseComponent {
       this.burger.redrawBurger();
       this.isMenuShow = false;
     }
+  }
+
+  addSelectedClass(location: string): void {
+    switch (location) {
+      case '#/main-page/':
+        this.removeSelectedClass();
+        this.liItems[0].classList.add('list__el_selected');
+        break;
+      case '#/statistics-page/':
+        this.removeSelectedClass();
+        this.liItems[this.liItems.length - 1].classList.add('list__el_selected');
+        break;
+      default:
+        this.removeSelectedClass();
+        this.liItems[Number(location.slice(-1)) + 1].classList.add('list__el_selected');
+    }
+  }
+
+  removeSelectedClass():void {
+    this.liItems.forEach((item) => item.classList.remove('list__el_selected'));
   }
 }
