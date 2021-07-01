@@ -20,8 +20,9 @@ export class Menu extends BaseComponent {
     super('nav', ['menu']);
 
     this.list = new BaseComponent('ul', ['menu__list']);
-    this.firstLI = new BaseComponent('li', ['list__el', 'list__el_selected', 'li__el_large']);
-    this.lastLI = new BaseComponent('li', ['list__el', 'li__el_large']);
+    this.firstLI = new BaseComponent('li', ['list__el', 'list__el_selected',
+      'list__el_large', 'list__el_main']);
+    this.lastLI = new BaseComponent('li', ['list__el', 'list__el_large', 'list__el_stat']);
     this.burger = new Burger();
     this.isMenuShow = false;
     this.liItems = [];
@@ -52,6 +53,7 @@ export class Menu extends BaseComponent {
     for (let i = 0; i < menuElements.length; i++) {
       const listItem = new BaseComponent('li', ['list__el']);
       listItem.element.innerHTML = `${menuElements[i]}`;
+      listItem.element.classList.add(`list__el_${menuElements[i].split(' ')[0]}`);
       listItem.element.addEventListener('click', () => this.goToCategory(i));
       this.liItems.push(listItem.element);
       this.list.element.append(listItem.element);

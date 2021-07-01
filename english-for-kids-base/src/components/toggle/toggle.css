@@ -30,7 +30,7 @@
 .switch::before {
   content: "train";
   position: absolute;
-  top: 10px;
+  top: 4px;
   left: 59px;
   font-size: 28px;
   color: white;
@@ -39,6 +39,7 @@
   .switch:checked::before {
     content: "play";
     left: 15px;
+    top: 4px
   }
 
 .switch:focus {

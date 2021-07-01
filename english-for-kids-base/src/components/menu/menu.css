@@ -15,7 +15,7 @@
 }
 
 .menu__list {
-  width: 200px;
+  width: 250px;
   display: flex;
   flex-direction: column;
   min-height: 400px;
@@ -30,7 +30,8 @@
   transition: all .5s;
   border-radius: 10px;
   text-align: left;
-  padding: 5px;
+  padding-left: 45px;
+  position: relative;
 }
 
 .list__el:hover {
@@ -38,10 +39,54 @@
 }
 
 .list__el_selected {
-  text-decoration: underline;
+  color: rgb(20, 55, 255);
 }
 
-.li__el_large {
+.list__el_large {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.list__el::before {
+  font-family: 'Font Awesome 5 Free', 'Font Awesome 5 Brands';
+  margin-right: 5px;
   font-size: 32px;
   font-weight: bold;
+  position: absolute;
+  left: 2px;
+}
+.list__el_main::before {
+  content: '\f015';
+  color: rgb(227, 250, 22);
+}
+
+.list__el_stat::before {
+  content: '\f012';
+  color: darkgrey;
+}
+
+.list__el_Animal::before {
+  content: '\f1b0';
+  color: black;
+}
+
+.list__el_Action::before {
+  content: '\f70c';
+  color: greenyellow;
+}
+.list__el_Clothes::before {
+  content: '\f696';
+  color: rgb(246, 12, 12);
+}
+.list__el_Emotions::before {
+  content: '\f4da';
+  color: yellow;
+}
+.list__el_Plants::before {
+  content: '\f18c';
+  color: rgb(35, 223, 2);
+}
+.list__el_Fruits::before {
+  content: '\f094';
+  color: rgb(231, 231, 13);
 }

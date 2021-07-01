@@ -44,17 +44,16 @@ export class Game {
 
   increaseNumberOfErrors = (): void => {
     data.numberOfMistakes++;
-  }
+  };
 
   playGuessResultSound = (attribute:string): void => {
     if (this.identifyMatch(attribute)) {
-
       const audio = new Audio('./audio/correct.mp3');
       audio.play();
       this.appendStars(true);
       setTimeout(this.playRandomSound, 600);
     } else {
-      this.increaseNumberOfErrors()
+      this.increaseNumberOfErrors();
       const audio = new Audio('./audio/error.mp3');
       audio.play();
       this.appendStars(false);

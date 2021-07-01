@@ -1,4 +1,3 @@
-
 import { BaseComponent } from './components/base-component';
 
 type Card = {
