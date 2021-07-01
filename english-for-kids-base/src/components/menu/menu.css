@@ -40,3 +40,8 @@
 .list__el_selected {
   text-decoration: underline;
 }
+
+.li__el_large {
+  font-size: 32px;
+  font-weight: bold;
+}

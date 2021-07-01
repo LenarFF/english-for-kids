@@ -21,6 +21,12 @@ export class Toggle extends BaseComponent {
     this.game.transformCard();
     this.toggleStartButton();
     this.changeCardColor();
+    data.arrayOfIndexes = [];
+    data.numberOfMistakes = 0;
+    if (!data.gameMode) {
+      this.hideCarsShield();
+      this.hideStars();
+    }
   }
 
   toggleStartButton = ():void => {
@@ -35,5 +41,16 @@ export class Toggle extends BaseComponent {
   changeCardColor = (): void => {
     const cards = document.querySelectorAll('.category-card__top');
     if (cards) cards.forEach((card) => card.classList.toggle('category-card__top_orange'));
+  };
+
+  hideCarsShield = (): void => {
+    data.cardsArray.forEach((wordCard) => {
+      wordCard.cardShield.element.classList.add('hidden');
+    });
+  };
+
+  hideStars = (): void => {
+    const starsField = document.querySelector('.stars-field');
+    if (starsField) starsField.innerHTML = '';
   };
 }

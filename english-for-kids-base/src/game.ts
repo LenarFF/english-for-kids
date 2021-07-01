@@ -37,19 +37,24 @@ export class Game {
 
   identifyMatch = (attribute:string): boolean => {
     if (Number(attribute) !== data.lastIndex) {
-      data.numberOfMistakes++;
       return false;
     }
     return true;
   };
 
+  increaseNumberOfErrors = (): void => {
+    data.numberOfMistakes++;
+  }
+
   playGuessResultSound = (attribute:string): void => {
     if (this.identifyMatch(attribute)) {
+
       const audio = new Audio('./audio/correct.mp3');
       audio.play();
       this.appendStars(true);
       setTimeout(this.playRandomSound, 600);
     } else {
+      this.increaseNumberOfErrors()
       const audio = new Audio('./audio/error.mp3');
       audio.play();
       this.appendStars(false);

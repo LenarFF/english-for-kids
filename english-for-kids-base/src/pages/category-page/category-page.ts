@@ -2,6 +2,7 @@ import { wordCardsInfo } from '../../cardsInfo';
 import { BaseComponent } from '../../components/base-component';
 import { WordCard } from '../../components/card/word-card/word-card';
 import { StartButton } from '../../components/start-button/start-button';
+import { data } from '../../data';
 import './category-page.css';
 
 export class CategoryPage extends BaseComponent {
@@ -47,6 +48,7 @@ export class CategoryPage extends BaseComponent {
 
       wordCard.wordCardFront.element.setAttribute('data-number', `${i}`);
 
+      data.cardsArray.push(wordCard);
       this.cardField.element.append(wordCard.element);
     }
   }

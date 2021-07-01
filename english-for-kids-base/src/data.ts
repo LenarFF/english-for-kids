@@ -1,3 +1,10 @@
+
+import { BaseComponent } from './components/base-component';
+
+type Card = {
+  cardShield: BaseComponent
+};
+
 type DataType = {
   gameMode: boolean,
   categoryIndex: number,
@@ -6,7 +13,8 @@ type DataType = {
   numberOfMistakes: number,
   gameEndTime: number,
   lastAnswer: boolean,
-  startGame: boolean
+  startGame: boolean,
+  cardsArray: Card[]
 };
 
 export const data: DataType = {
@@ -18,4 +26,5 @@ export const data: DataType = {
   gameEndTime: 3000,
   lastAnswer: false,
   startGame: false,
+  cardsArray: [],
 };

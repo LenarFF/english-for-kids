@@ -20,8 +20,8 @@ export class Menu extends BaseComponent {
     super('nav', ['menu']);
 
     this.list = new BaseComponent('ul', ['menu__list']);
-    this.firstLI = new BaseComponent('li', ['list__el', 'list__el_selected']);
-    this.lastLI = new BaseComponent('li', ['list__el']);
+    this.firstLI = new BaseComponent('li', ['list__el', 'list__el_selected', 'li__el_large']);
+    this.lastLI = new BaseComponent('li', ['list__el', 'li__el_large']);
     this.burger = new Burger();
     this.isMenuShow = false;
     this.liItems = [];
@@ -101,6 +101,7 @@ export class Menu extends BaseComponent {
         break;
       default:
         this.removeSelectedClass();
+        if (Number.isNaN(Number(location.slice(-1)))) return;
         this.liItems[Number(location.slice(-1)) + 1].classList.add('list__el_selected');
     }
   }
