@@ -24,6 +24,7 @@ export class StartButton extends BaseComponent {
     this.transformButton();
     this.game.fillArrayOfIndexes(wordCardsInfo[data.categoryIndex]);
     this.game.playRandomSound();
+    data.startGame = true;
   }
 
   transformButton(): void {

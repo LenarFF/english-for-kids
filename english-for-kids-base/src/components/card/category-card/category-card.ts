@@ -19,7 +19,5 @@ export class CategoryCard extends BaseComponent {
     const dataNumber = this.element.getAttribute('data-number') as string;
     data.categoryIndex = Number(dataNumber);
     window.location.hash = `#/category-page/${dataNumber}`;
-    const startButton = document.querySelector('.start-button');
-    if (data.gameMode && startButton) startButton.classList.remove('start-button_hide');
   }
 }

@@ -77,6 +77,7 @@ export class WordCard extends BaseComponent {
       if (!data.gameMode) {
         this.createAudio(event);
       } else {
+        if (!data.startGame) return
         const attribute = this.wordCardFront.element.getAttribute('data-number') as string;
         this.game.playGuessResultSound(attribute);
         if (this.game.identifyMatch(attribute)) this.showCardShield();

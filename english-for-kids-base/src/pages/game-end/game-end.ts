@@ -3,10 +3,11 @@ import { BaseComponent } from '../../components/base-component';
 import './game-end.css';
 
 export class GameEnd extends BaseComponent {
+  result: boolean
   constructor(result: boolean, mistakes: number) {
     super('div', ['game-end']);
 
-    this.playMusic(result);
+    this.result = result;
     if (!result) this.renderNumberOfMistakes(mistakes);
     this.renderSmile(result);
     data.numberOfMistakes = 0;
@@ -19,8 +20,8 @@ export class GameEnd extends BaseComponent {
     this.element.append(img);
   };
 
-  playMusic = (result: boolean): void => {
-    const audio = new Audio(`./audio/${result ? 'success' : 'failure'}.mp3`);
+  playMusic = (): void => {
+    const audio = new Audio(`./audio/${this.result ? 'success' : 'failure'}.mp3`);
     audio.play();
   };
 

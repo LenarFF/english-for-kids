@@ -48,8 +48,6 @@ export class Menu extends BaseComponent {
   goToCategory = (categoryNumber: number): void => {
     data.categoryIndex = categoryNumber;
     window.location.hash = `#/category-page/${categoryNumber}`;
-    const startButton = document.querySelector('.start-button');
-    if (data.gameMode && startButton) startButton.classList.remove('start-button_hide');
   };
 
   goToMainPage = (): void => {

@@ -5,7 +5,8 @@ type DataType = {
   lastIndex: number,
   numberOfMistakes: number,
   gameEndTime: number,
-  lastAnswer: boolean
+  lastAnswer: boolean,
+  startGame: boolean
 };
 
 export const data: DataType = {
@@ -16,4 +17,5 @@ export const data: DataType = {
   numberOfMistakes: 0,
   gameEndTime: 3000,
   lastAnswer: false,
+  startGame: false,
 };
