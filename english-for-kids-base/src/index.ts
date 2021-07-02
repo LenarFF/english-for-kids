@@ -9,3 +9,4 @@ document.querySelector('.body')?.append(appWrapper.element);
 const router = new Router();
 router.addListener();
 const storage = new LocalStorage();
+storage.createStorage();

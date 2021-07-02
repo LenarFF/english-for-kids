@@ -58,11 +58,13 @@
 .list__el_main::before {
   content: '\f015';
   color: rgb(227, 250, 22);
+  top: 6px;
 }
 
 .list__el_stat::before {
   content: '\f012';
   color: darkgrey;
+  top: 3px;
 }
 
 .list__el_Animal::before {

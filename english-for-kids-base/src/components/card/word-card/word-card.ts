@@ -4,6 +4,7 @@ import { Word } from './word/word';
 import { Rotate } from './rotate/rotate';
 import { data } from '../../../data';
 import { Game } from '../../../game';
+import { LocalStorage } from '../../../localStorageClass';
 
 const FLIP_CLASS = 'flipped';
 
@@ -34,6 +35,8 @@ export class WordCard extends BaseComponent {
 
   cardShield: BaseComponent;
 
+  localStorageClass: LocalStorage;
+
   constructor(image: string, englishWord: string, translate: string) {
     super('div', ['word-card-container']);
 
@@ -52,6 +55,7 @@ export class WordCard extends BaseComponent {
     this.translate = new Word(translate);
     this.rotate = new Rotate();
     this.game = new Game();
+    this.localStorageClass = new LocalStorage();
     this.cardShield = new BaseComponent('div', ['card-shield', 'hidden']);
 
     this.element.append(this.wordCard.element);
@@ -73,16 +77,25 @@ export class WordCard extends BaseComponent {
     this.cardShield.element.addEventListener('click', (e) => e.stopPropagation());
     this.rotate.element.addEventListener('click', () => this.flipToBack());
     this.element.addEventListener('mouseleave', () => this.flipToFront());
-    this.wordCardFront.element.addEventListener('click', (event) => {
-      if (!data.gameMode) {
-        this.createAudio(event);
+    this.wordCardFront.element.addEventListener('click', (event) => this.clickHandler(event));
+  }
+
+  clickHandler(event: Event): void {
+    const cardNumber = this.wordCardFront.element.getAttribute('data-number') as string;
+    if (!data.gameMode) {
+      this.createAudio(event);
+      this.localStorageClass.updateStorage(+cardNumber, 'train');
+    } else {
+      if (!data.startGame) return;
+      this.localStorageClass.updateStorage(data.lastIndex, 'game');
+      this.game.playGuessResultSound(cardNumber);
+      if (this.game.identifyMatch(cardNumber)) {
+        this.showCardShield();
+        this.localStorageClass.updateStorage(data.lastIndex, 'right');
       } else {
-        if (!data.startGame) return;
-        const attribute = this.wordCardFront.element.getAttribute('data-number') as string;
-        this.game.playGuessResultSound(attribute);
-        if (this.game.identifyMatch(attribute)) this.showCardShield();
+        this.localStorageClass.updateStorage(data.lastIndex, 'wrong');
       }
-    });
+    }
   }
 
   createAudio(event: Event): void {
