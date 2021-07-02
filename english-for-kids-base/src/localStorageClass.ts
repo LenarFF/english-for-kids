@@ -12,11 +12,11 @@ type CardInfo = {
 
 export class LocalStorage {
   createStorage = (): void => {
+    if (localStorage.getItem(wordCardsInfo[0][0].word)) return;
     for (let i = 0; i < wordCardsInfo.length; i++) {
       const category = categoryCardsInfo[0][i];
       for (let j = 0; j < wordCardsInfo[i].length; j++) {
         const { word } = wordCardsInfo[i][j];
-        if (localStorage.getItem(word)) return;
         const { translation } = wordCardsInfo[i][j];
         const cardInfo: CardInfo = {
           category,

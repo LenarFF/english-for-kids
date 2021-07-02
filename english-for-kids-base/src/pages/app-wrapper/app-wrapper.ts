@@ -34,8 +34,16 @@ export class AppWrapper extends BaseComponent {
     this.pageWrap = new BaseComponent('div', ['page-wrap']);
 
     this.element.append(this.toggle.element);
+    window.addEventListener('hashchange',
+      (event) => this.toggleToggle(event.oldURL, event.newURL));
+
     this.element.append(this.pageWrap.element);
     this.pageWrap.element.append(this.mainPage.element);
     this.element.append(this.menu.element, this.footer.element);
+  }
+
+  toggleToggle(oldURL: string, newURL: string): void {
+    if (newURL.includes('#/statistics-page/')) this.toggle.element.classList.add('hidden');
+    if (oldURL.includes('#/statistics-page/')) this.toggle.element.classList.remove('hidden');
   }
 }

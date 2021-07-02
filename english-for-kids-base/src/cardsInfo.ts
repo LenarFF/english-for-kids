@@ -32,8 +32,8 @@ export const wordCardsInfo = [
       audioSrc: 'audio/draw.mp3',
     },
     {
-      word: 'fish',
-      translation: 'ловить рыбу',
+      word: 'fishing',
+      translation: 'рыбачить',
       image: 'img/fish.jpg',
       audioSrc: 'audio/fish.mp3',
     },
