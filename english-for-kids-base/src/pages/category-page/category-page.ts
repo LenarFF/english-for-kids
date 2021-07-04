@@ -21,7 +21,7 @@ export class CategoryPage extends BaseComponent {
 
   starsField: BaseComponent;
 
-  constructor(categoryNumber: number) {
+  constructor(categoryNumber: number, wordInfo = wordCardsInfo) {
     super('div', ['category', 'page']);
 
     this.startButton = new StartButton();
@@ -29,7 +29,7 @@ export class CategoryPage extends BaseComponent {
     this.cardField = new BaseComponent('div', ['card-field']);
 
     this.categoryNumber = categoryNumber;
-    this.wordInfo = wordCardsInfo;
+    this.wordInfo = wordInfo;
 
     this.element.append(this.starsField.element);
     this.element.append(this.cardField.element);

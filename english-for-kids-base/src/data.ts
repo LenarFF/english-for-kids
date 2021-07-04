@@ -13,7 +13,18 @@ type DataType = {
   gameEndTime: number,
   lastAnswer: boolean,
   startGame: boolean,
-  cardsArray: Card[]
+  cardsArray: Card[],
+  DIFFICULT_WORD_QUANTITY: number,
+  wrongWordCardsInfo: StorageCardInfo[],
+  isDifficultWords: boolean
+};
+
+export type StorageCardInfo = {
+  word: string;
+  translation: string;
+  image: string;
+  audioSrc: string;
+  wrong: number
 };
 
 export const data: DataType = {
@@ -26,4 +37,7 @@ export const data: DataType = {
   lastAnswer: false,
   startGame: false,
   cardsArray: [],
+  DIFFICULT_WORD_QUANTITY: 8,
+  wrongWordCardsInfo: [],
+  isDifficultWords: false,
 };

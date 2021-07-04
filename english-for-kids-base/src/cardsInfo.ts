@@ -1,6 +1,6 @@
 export const categoryCardsInfo = [
   ['Action (set A)', 'Action (set B)', 'Animal (set A)', 'Animal (set B)',
-    'Clothes', 'Emotions', 'Plants', 'Fruits'],
+    'Clothes', 'Emotions', 'Plants', 'Fruits', 'difficult words'],
   ['img/cry.jpg', 'img/open.jpg', 'img/cat.jpg', 'img/bird.jpg', 'img/skirt.jpg',
     'img/sad.jpg', 'img/flower.jpg', 'img/apple.jpg'],
 ];
@@ -35,7 +35,7 @@ export const wordCardsInfo = [
       word: 'fishing',
       translation: 'рыбачить',
       image: 'img/fish.jpg',
-      audioSrc: 'audio/fish.mp3',
+      audioSrc: 'audio/fishing.mp3',
     },
     {
       word: 'fly',

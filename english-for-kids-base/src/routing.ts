@@ -1,3 +1,4 @@
+import { categoryCardsInfo, wordCardsInfo } from './cardsInfo';
 import { data } from './data';
 import { CategoryPage } from './pages/category-page/category-page';
 import { GameEnd } from './pages/game-end/game-end';
@@ -24,6 +25,9 @@ export class Router {
       data.numberOfMistakes);
     const statisticsPage = new StatisticsPage();
     const categoryPage = new CategoryPage(Number(location.slice(-1)));
+
+    const difficultWordsPage = new CategoryPage(categoryCardsInfo[0].length - 1);
+
     const startButton = categoryPage.startButton.element;
     switch (location) {
       case '#/main-page/':
@@ -37,6 +41,11 @@ export class Router {
         break;
       case '#/statistics-page/':
         pageWrap.append(statisticsPage.element);
+        break;
+      case '#/difficult-words/':
+        difficultWordsPage.renderCards();
+        pageWrap.append(difficultWordsPage.element);
+        wordCardsInfo.pop();
         break;
       default:
         categoryPage.renderCards();

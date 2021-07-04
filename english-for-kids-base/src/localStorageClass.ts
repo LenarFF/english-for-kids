@@ -8,6 +8,8 @@ type CardInfo = {
   'game': number,
   'right': number,
   'wrong': number,
+  'audioSrc' : string,
+  'image' : string
 };
 
 export class LocalStorage {
@@ -18,6 +20,8 @@ export class LocalStorage {
       for (let j = 0; j < wordCardsInfo[i].length; j++) {
         const { word } = wordCardsInfo[i][j];
         const { translation } = wordCardsInfo[i][j];
+        const { audioSrc } = wordCardsInfo[i][j];
+        const { image } = wordCardsInfo[i][j];
         const cardInfo: CardInfo = {
           category,
           translation,
@@ -25,6 +29,8 @@ export class LocalStorage {
           game: 0,
           right: 0,
           wrong: 0,
+          audioSrc,
+          image,
         };
         localStorage.setItem(word, JSON.stringify(cardInfo));
       }

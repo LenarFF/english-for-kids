@@ -1,5 +1,8 @@
+import { wordCardsInfo } from '../../cardsInfo';
 import { BaseComponent } from '../../components/base-component';
+import { RepeatButton } from '../../components/repeat-button/repeat-button';
 import { ResetButton } from '../../components/reset-button/reset-button';
+import { data, StorageCardInfo } from '../../data';
 import { LocalStorage } from '../../localStorageClass';
 import './statistics-page.css';
 
@@ -20,6 +23,8 @@ export class StatisticsPage extends BaseComponent {
 
   sortDirection: string;
 
+  repeatButton: RepeatButton;
+
   constructor() {
     super('div', ['statistics']);
     this.ths = [];
@@ -27,9 +32,11 @@ export class StatisticsPage extends BaseComponent {
     this.table = new BaseComponent('table', ['table']);
     this.COLUMNS_QUANTITY = 9;
     this.resetButton = new ResetButton();
+    this.repeatButton = new RepeatButton();
     this.appLocalStorage = new LocalStorage();
     this.sortDirection = 'ASC';
 
+    this.element.append(this.repeatButton.element);
     this.element.append(this.resetButton.element);
     this.element.append(this.table.element);
     this.createTHead();
@@ -42,6 +49,12 @@ export class StatisticsPage extends BaseComponent {
       localStorage.clear();
       this.appLocalStorage.createStorage();
       this.createTBody();
+    });
+
+    this.repeatButton.element.addEventListener('click', () => {
+      this.sortWrongWordCardsInfo();
+      wordCardsInfo.push(data.wrongWordCardsInfo.slice(0, 8));
+      window.location.hash = '#/difficult-words/';
     });
   }
 
@@ -94,6 +107,7 @@ export class StatisticsPage extends BaseComponent {
 
   createTBody(): void {
     this.tblBody.innerHTML = '';
+    data.wrongWordCardsInfo = [];
     for (let j = 0; j < localStorage.length; j++) {
       const row = document.createElement('tr');
       const word = localStorage.key(j) as string;
@@ -136,12 +150,37 @@ export class StatisticsPage extends BaseComponent {
 
           row.append(cell);
         }
+
+        this.fillWrongWordCardsInfo(wordStat, word);
       }
       this.rows.push(row);
       this.tblBody.append(row);
     }
     this.table.element.append(this.tblBody);
   }
+
+  fillWrongWordCardsInfo = (wordStat: StorageCardInfo, word: string):void => {
+    if (wordStat.wrong !== 0) {
+      data.wrongWordCardsInfo.push({
+        word,
+        translation: wordStat.translation,
+        image: wordStat.image,
+        audioSrc: wordStat.audioSrc,
+        wrong: wordStat.wrong,
+      });
+    }
+  };
+
+  sortWrongWordCardsInfo = (): void => {
+    data.wrongWordCardsInfo.sort((a: StorageCardInfo, b: StorageCardInfo) => {
+      if (a.wrong < b.wrong) {
+        return 1;
+      } if (a.wrong > b.wrong) {
+        return -1;
+      }
+      return 0;
+    });
+  };
 
   // CodePen  "Js sort table"
   sortTable = (event: Event):void => {
@@ -180,5 +219,9 @@ export class StatisticsPage extends BaseComponent {
 
     this.tblBody.appendChild(docF);
     this.sortDirection = (this.sortDirection === 'ASC') ? 'DESC' : 'ASC';
+  };
+
+  getDifficultWords = (): void => {
+
   };
 }

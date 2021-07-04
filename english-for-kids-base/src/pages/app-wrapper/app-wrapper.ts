@@ -3,6 +3,7 @@ import { BaseComponent } from '../../components/base-component';
 import { Footer } from '../../components/footer/footer';
 import { Menu } from '../../components/menu/menu';
 import { Toggle } from '../../components/toggle/toggle';
+import { data } from '../../data';
 import { MainPage } from '../main-page/main-page';
 import './app-wrapper.css';
 
@@ -43,7 +44,15 @@ export class AppWrapper extends BaseComponent {
   }
 
   toggleToggle(oldURL: string, newURL: string): void {
-    if (newURL.includes('#/statistics-page/')) this.toggle.element.classList.add('hidden');
-    if (oldURL.includes('#/statistics-page/')) this.toggle.element.classList.remove('hidden');
+    if (newURL.includes('#/statistics-page/')) {
+      this.toggle.element.classList.add('hidden');
+      data.gameMode = false;
+      data.startGame = false;
+      (this.toggle.element as HTMLInputElement).checked = false;
+    }
+    if (oldURL.includes('#/difficult-words/')
+    && !newURL.includes('#/statistics-page/')) {
+      this.toggle.element.classList.remove('hidden');
+    }
   }
 }

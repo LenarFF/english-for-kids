@@ -50,7 +50,7 @@ export class Menu extends BaseComponent {
   }
 
   renderList(menuElements: string[]): void {
-    for (let i = 0; i < menuElements.length; i++) {
+    for (let i = 0; i < menuElements.length - 1; i++) {
       const listItem = new BaseComponent('li', ['list__el']);
       listItem.element.innerHTML = `${menuElements[i]}`;
       listItem.element.classList.add(`list__el_${menuElements[i].split(' ')[0]}`);

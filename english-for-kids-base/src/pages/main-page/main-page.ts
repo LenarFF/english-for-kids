@@ -12,7 +12,7 @@ export class MainPage extends BaseComponent {
   }
 
   renderCards(): void {
-    for (let i = 0; i < categoryCardsInfo[0].length; i++) {
+    for (let i = 0; i < categoryCardsInfo[0].length - 1; i++) {
       const categoryCard = new CategoryCard(categoryCardsInfo[1][i], categoryCardsInfo[0][i]);
       categoryCard.element.setAttribute('data-number', `${i}`);
       this.element.append(categoryCard.element);
