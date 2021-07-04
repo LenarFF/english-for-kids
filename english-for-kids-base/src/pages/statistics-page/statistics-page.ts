@@ -14,12 +14,21 @@ export class StatisticsPage extends BaseComponent {
 
   appLocalStorage: LocalStorage;
 
+  ths: HTMLElement[];
+
+  rows: HTMLElement[];
+
+  sortDirection: string;
+
   constructor() {
     super('div', ['statistics']);
+    this.ths = [];
+    this.rows = [];
     this.table = new BaseComponent('table', ['table']);
     this.COLUMNS_QUANTITY = 9;
     this.resetButton = new ResetButton();
     this.appLocalStorage = new LocalStorage();
+    this.sortDirection = 'ASC';
 
     this.element.append(this.resetButton.element);
     this.element.append(this.table.element);
@@ -58,19 +67,10 @@ export class StatisticsPage extends BaseComponent {
         case 4:
           th.innerHTML = 'train';
           th.setAttribute('id', 'wins');
-          th.addEventListener('click', () => {
-            // this.sortWins(this.winsSortOrder, 1);
-            // this.winsSortOrder = this.winsSortOrder === 'ASC' ? 'DESC' : 'ASC';
-          });
-
           break;
         case 5:
           th.innerHTML = 'game';
           th.setAttribute('id', 'best-time');
-          th.addEventListener('click', () => {
-            // this.sortTime(this.timeSortOrder);
-            // this.timeSortOrder = this.timeSortOrder === 'ASC' ? 'DESC' : 'ASC';
-          });
           break;
         case 6:
           th.innerHTML = 'right';
@@ -84,6 +84,8 @@ export class StatisticsPage extends BaseComponent {
         default:
           break;
       }
+      th.addEventListener('click', this.sortTable, false);
+      this.ths.push(th);
       row.append(th);
       thead.append(row);
     }
@@ -126,7 +128,7 @@ export class StatisticsPage extends BaseComponent {
               cell.innerHTML = `${wordStat.wrong}`;
               break;
             case 8:
-              if (wordStat.game !== 0)cell.innerHTML = `${Math.round((wordStat.right / wordStat.game) * 100)}%`;
+              if (wordStat.game !== 0)cell.innerHTML = `${Math.round((wordStat.right / wordStat.game) * 100)}`;
               break;
             default:
               break;
@@ -135,8 +137,48 @@ export class StatisticsPage extends BaseComponent {
           row.append(cell);
         }
       }
+      this.rows.push(row);
       this.tblBody.append(row);
     }
     this.table.element.append(this.tblBody);
   }
+
+  // CodePen  "Js sort table"
+  sortTable = (event: Event):void => {
+    const thsArray: HTMLElement[] = [].slice.call(this.ths);
+    const rowArray: HTMLElement[] = [].slice.call(this.rows);
+    const target = event.target as HTMLElement;
+    const thsIndex = thsArray.indexOf(target);
+    const docF = document.createDocumentFragment();
+
+    rowArray.sort((b, a) => {
+      let tdA: string | number = '';
+      let tdB: string | number = '';
+
+      const tdAContent = a.children[thsIndex].textContent;
+      const tdBContent = b.children[thsIndex].textContent;
+
+      if (tdAContent && tdBContent && Number.isNaN(Number(tdAContent))) {
+        tdA = tdAContent;
+        tdB = tdBContent;
+      } else {
+        tdA = Number(tdAContent);
+        tdB = Number(tdBContent);
+      }
+
+      if (tdA > tdB) {
+        return (this.sortDirection === 'ASC') ? 1 : -1;
+      } if (tdA < tdB) {
+        return (this.sortDirection === 'ASC') ? -1 : 1;
+      }
+      return 0;
+    });
+
+    rowArray.forEach((row) => {
+      docF.appendChild(row);
+    });
+
+    this.tblBody.appendChild(docF);
+    this.sortDirection = (this.sortDirection === 'ASC') ? 'DESC' : 'ASC';
+  };
 }
