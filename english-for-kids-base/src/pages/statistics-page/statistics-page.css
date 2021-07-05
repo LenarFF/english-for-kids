@@ -41,3 +41,26 @@ th.sorted[data-order='-1']::after {
   position: static;
   margin: auto;
 }
+
+.statistics__buttons-wrap {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 450px;
+}
+
+@media (max-width: 600px) {
+  .statistics__buttons-wrap {
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 70%;
+  }
+}
+
+@media (max-width: 370px) {
+  .statistics {
+    padding-top: 120px;
+  }
+}

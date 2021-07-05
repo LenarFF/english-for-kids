@@ -25,19 +25,23 @@ export class StatisticsPage extends BaseComponent {
 
   repeatButton: RepeatButton;
 
+  buttonsWrap: BaseComponent;
+
   constructor() {
     super('div', ['statistics']);
     this.ths = [];
     this.rows = [];
     this.table = new BaseComponent('table', ['table']);
+    this.buttonsWrap = new BaseComponent('div', ['statistics__buttons-wrap']);
     this.COLUMNS_QUANTITY = 9;
     this.resetButton = new ResetButton();
     this.repeatButton = new RepeatButton();
     this.appLocalStorage = new LocalStorage();
     this.sortDirection = 'ASC';
 
-    this.element.append(this.repeatButton.element);
-    this.element.append(this.resetButton.element);
+    this.buttonsWrap.element.append(this.repeatButton.element);
+    this.buttonsWrap.element.append(this.resetButton.element);
+    this.element.append(this.buttonsWrap.element);
     this.element.append(this.table.element);
     this.createTHead();
 

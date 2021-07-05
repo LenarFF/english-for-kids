@@ -10,6 +10,7 @@
   width: 150px;
   border-radius: 5px;
 }
+
 .switch::after {
   top: 2px;
   left: 2px;

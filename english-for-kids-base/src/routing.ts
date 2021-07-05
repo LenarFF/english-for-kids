@@ -26,7 +26,8 @@ export class Router {
     const statisticsPage = new StatisticsPage();
     const categoryPage = new CategoryPage(Number(location.slice(-1)));
 
-    const difficultWordsPage = new CategoryPage(categoryCardsInfo[0].length - 1);
+    const difficultWordsPage = new CategoryPage(categoryCardsInfo[0]
+      .length - 1);
 
     const startButton = categoryPage.startButton.element;
     switch (location) {

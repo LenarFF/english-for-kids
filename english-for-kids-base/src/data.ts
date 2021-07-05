@@ -33,7 +33,7 @@ export const data: DataType = {
   arrayOfIndexes: [],
   lastIndex: -1,
   numberOfMistakes: 0,
-  gameEndTime: 3000,
+  gameEndTime: 300000,
   lastAnswer: false,
   startGame: false,
   cardsArray: [],

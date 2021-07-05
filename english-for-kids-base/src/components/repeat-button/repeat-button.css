@@ -1,3 +1,14 @@
+.statistics__button {
+  cursor: pointer;
+  border: none;
+  transition: .3s;
+  font-size: 24px;
+  color: white;
+  height: 50px;
+  text-transform: uppercase;
+  border-radius: 10px;
+}
+
 .statistics__repeat-button {
   width: 300px;
   right: 20%;
@@ -7,4 +18,21 @@
 
 .statistics__repeat-button:active {
   box-shadow: none
+}
+
+@media (max-width: 600px) {
+  .statistics__button {
+    height: 40px;
+    margin-bottom: 5px;
+  }
+  .statistics__repeat-button {
+    width: 100%;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 370px) {
+  .statistics__repeat-button {
+    height: 60px;
+  }
 }
