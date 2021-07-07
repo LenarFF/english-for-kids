@@ -11,7 +11,7 @@ export class StatisticsPage extends BaseComponent {
 
   tblBody: HTMLElement;
 
-  COLUMNS_QUANTITY: number;
+  columnsQuantity: number;
 
   resetButton: ResetButton;
 
@@ -33,7 +33,7 @@ export class StatisticsPage extends BaseComponent {
     this.rows = [];
     this.table = new BaseComponent('table', ['table']);
     this.buttonsWrap = new BaseComponent('div', ['statistics__buttons-wrap']);
-    this.COLUMNS_QUANTITY = 9;
+    this.columnsQuantity = 9;
     this.resetButton = new ResetButton();
     this.repeatButton = new RepeatButton();
     this.appLocalStorage = new LocalStorage();
@@ -66,7 +66,7 @@ export class StatisticsPage extends BaseComponent {
     const thead = document.createElement('thead');
     thead.classList.add('.thead');
     const row = document.createElement('tr');
-    for (let i = 0; i < this.COLUMNS_QUANTITY; i++) {
+    for (let i = 0; i < this.columnsQuantity; i++) {
       const th = document.createElement('th');
       switch (i) {
         case 0:
@@ -118,7 +118,7 @@ export class StatisticsPage extends BaseComponent {
       const wordStatStringify = localStorage.getItem(word);
       if (wordStatStringify) {
         const wordStat = JSON.parse(wordStatStringify);
-        for (let i = 0; i < 9; i++) {
+        for (let i = 0; i < this.columnsQuantity; i++) {
           const cell = document.createElement('td');
           switch (i) {
             case 0:
