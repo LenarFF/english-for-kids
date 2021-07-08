@@ -5,6 +5,7 @@ import { ResetButton } from '../../components/reset-button/reset-button';
 import { data, StorageCardInfo } from '../../data';
 import { LocalStorage } from '../../localStorageClass';
 import './statistics-page.css';
+import { WordStatsType } from '../../types';
 
 export class StatisticsPage extends BaseComponent {
   table: BaseComponent;
@@ -27,6 +28,8 @@ export class StatisticsPage extends BaseComponent {
 
   buttonsWrap: BaseComponent;
 
+  localStorageModule: LocalStorage;
+
   constructor() {
     super('div', ['statistics']);
     this.ths = [];
@@ -38,6 +41,7 @@ export class StatisticsPage extends BaseComponent {
     this.repeatButton = new RepeatButton();
     this.appLocalStorage = new LocalStorage();
     this.sortDirection = 'ASC';
+    this.localStorageModule = new LocalStorage();
 
     this.buttonsWrap.element.append(this.repeatButton.element);
     this.buttonsWrap.element.append(this.resetButton.element);
@@ -112,51 +116,49 @@ export class StatisticsPage extends BaseComponent {
   createTBody(): void {
     this.tblBody.innerHTML = '';
     data.wrongWordCardsInfo = [];
-    for (let j = 0; j < localStorage.length; j++) {
+    const { words } = this.localStorageModule.getItems();
+    const wordStats: WordStatsType[] = this.localStorageModule.getItems().items;
+    for (let j = 0; j < words.length; j++) {
       const row = document.createElement('tr');
-      const word = localStorage.key(j) as string;
-      const wordStatStringify = localStorage.getItem(word);
-      if (wordStatStringify) {
-        const wordStat = JSON.parse(wordStatStringify);
-        for (let i = 0; i < this.columnsQuantity; i++) {
-          const cell = document.createElement('td');
-          switch (i) {
-            case 0:
-              cell.innerHTML = `${j + 1}`;
-              break;
-            case 1:
-              cell.innerHTML = `${wordStat.category}`;
-              break;
-            case 2:
-              cell.innerHTML = `${word}`;
-              break;
-            case 3:
-              cell.innerHTML = `${wordStat.translation}`;
-              break;
-            case 4:
-              cell.innerHTML = `${wordStat.train}`;
-              break;
-            case 5:
-              cell.innerHTML = `${wordStat.game}`;
-              break;
-            case 6:
-              cell.innerHTML = `${wordStat.right}`;
-              break;
-            case 7:
-              cell.innerHTML = `${wordStat.wrong}`;
-              break;
-            case 8:
-              if (wordStat.game !== 0)cell.innerHTML = `${Math.round((wordStat.right / wordStat.game) * 100)}`;
-              break;
-            default:
-              break;
-          }
-
-          row.append(cell);
+      for (let i = 0; i < this.columnsQuantity; i++) {
+        const cell = document.createElement('td');
+        switch (i) {
+          case 0:
+            cell.innerHTML = `${j + 1}`;
+            break;
+          case 1:
+            cell.innerHTML = `${wordStats[j].category}`;
+            break;
+          case 2:
+            cell.innerHTML = `${words[j].slice(4)}`;
+            break;
+          case 3:
+            cell.innerHTML = `${wordStats[j].translation}`;
+            break;
+          case 4:
+            cell.innerHTML = `${wordStats[j].train}`;
+            break;
+          case 5:
+            cell.innerHTML = `${wordStats[j].game}`;
+            break;
+          case 6:
+            cell.innerHTML = `${wordStats[j].right}`;
+            break;
+          case 7:
+            cell.innerHTML = `${wordStats[j].wrong}`;
+            break;
+          case 8:
+            if (wordStats[j].game !== 0)cell.innerHTML = `${Math.round((wordStats[j].right / wordStats[j].game) * 100)}`;
+            break;
+          default:
+            break;
         }
 
-        this.fillWrongWordCardsInfo(wordStat, word);
+        row.append(cell);
       }
+
+      this.fillWrongWordCardsInfo(wordStats[j], words[j].slice(4));
+
       this.rows.push(row);
       this.tblBody.append(row);
     }
@@ -223,9 +225,5 @@ export class StatisticsPage extends BaseComponent {
 
     this.tblBody.appendChild(docF);
     this.sortDirection = (this.sortDirection === 'ASC') ? 'DESC' : 'ASC';
-  };
-
-  getDifficultWords = (): void => {
-
   };
 }

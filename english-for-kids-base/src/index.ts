@@ -11,3 +11,4 @@ const router = new Router();
 router.addListener();
 const storage = new LocalStorage();
 storage.createStorage();
+storage.getItems();

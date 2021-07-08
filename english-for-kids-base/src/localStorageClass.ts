@@ -1,5 +1,6 @@
 import { categoryCardsInfo, wordCardsInfo } from './cardsInfo';
 import { data } from './data';
+import { WordStatsType } from './types';
 
 type CardInfo = {
   'category': string,
@@ -18,7 +19,7 @@ export class LocalStorage {
     for (let i = 0; i < wordCardsInfo.length; i++) {
       const category = categoryCardsInfo[0][i];
       for (let j = 0; j < wordCardsInfo[i].length; j++) {
-        const { word } = wordCardsInfo[i][j];
+        const word = `efk-${wordCardsInfo[i][j].word}`;
         const { translation } = wordCardsInfo[i][j];
         const { audioSrc } = wordCardsInfo[i][j];
         const { image } = wordCardsInfo[i][j];
@@ -40,12 +41,30 @@ export class LocalStorage {
   updateStorage = (cardNumber: number, propertyToUpdate: string): void => {
     if (cardNumber) {
       const cardInfo = wordCardsInfo[data.categoryIndex][cardNumber];
-      const wordStat = localStorage.getItem(cardInfo.word);
+      const wordStat = localStorage.getItem(`efk-${cardInfo.word}`);
       if (wordStat) {
         const wordStatObj = JSON.parse(wordStat);
         wordStatObj[`${propertyToUpdate}`]++;
-        localStorage.setItem(cardInfo.word, JSON.stringify(wordStatObj));
+        localStorage.setItem(`efk-${cardInfo.word}`, JSON.stringify(wordStatObj));
       }
     }
+  };
+
+  getItems = (): { words: string[], items: WordStatsType[] } => {
+    const items = [];
+    const words = [];
+    for (let i = 0; i < localStorage.length; i++) {
+      const word = localStorage.key(i) as string;
+      if (word.slice(0, 4) === 'efk-') {
+        const wordStatStringify = localStorage.getItem(word);
+        if (wordStatStringify) {
+          const wordStat = JSON.parse(wordStatStringify);
+          items.push(wordStat);
+          words.push(word);
+        }
+      }
+    }
+
+    return { words, items };
   };
 }
