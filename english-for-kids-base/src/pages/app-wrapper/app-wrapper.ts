@@ -1,6 +1,8 @@
 import { categoryCardsInfo } from '../../cardsInfo';
 import { BaseComponent } from '../../components/base-component';
+import { Cover } from '../../components/cover/cover';
 import { Footer } from '../../components/footer/footer';
+import { Form } from '../../components/form/form';
 import { Menu } from '../../components/menu/menu';
 import { Toggle } from '../../components/toggle/toggle';
 import { data } from '../../data';
@@ -21,6 +23,8 @@ export class AppWrapper extends BaseComponent {
   categoryNameIndex: number;
 
   pageWrap: BaseComponent;
+  cover: Cover;
+  form: Form
 
   constructor() {
     super('div', ['app']);
@@ -32,6 +36,8 @@ export class AppWrapper extends BaseComponent {
     this.menuElements = categoryCardsInfo[this.categoryNameIndex];
     this.menu = new Menu(this.menuElements);
     this.footer = new Footer();
+    this.cover = new Cover();
+    this.form = new Form();
     this.pageWrap = new BaseComponent('div', ['page-wrap']);
 
     this.element.append(this.toggle.element);
@@ -40,7 +46,10 @@ export class AppWrapper extends BaseComponent {
 
     this.element.append(this.pageWrap.element);
     this.pageWrap.element.append(this.mainPage.element);
+    this.element.append(this.cover.element);
+    this.element.append(this.form.element)
     this.element.append(this.menu.element, this.footer.element);
+
   }
 
   toggleToggle(oldURL: string, newURL: string): void {
@@ -50,8 +59,11 @@ export class AppWrapper extends BaseComponent {
       data.startGame = false;
       (this.toggle.element as HTMLInputElement).checked = false;
     }
-    if (oldURL.includes('#/difficult-words/')
-    && !newURL.includes('#/statistics-page/')) {
+    if ((oldURL.includes('#/difficult-words/')
+      && !newURL.includes('#/statistics-page/'))
+      || (oldURL.includes('#/statistics-page/')
+      && !newURL.includes('#/difficult-words/'))
+    ) {
       this.toggle.element.classList.remove('hidden');
     }
   }

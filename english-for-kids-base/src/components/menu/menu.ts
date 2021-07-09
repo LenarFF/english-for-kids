@@ -1,5 +1,6 @@
 import { data } from '../../data';
 import { BaseComponent } from '../base-component';
+import { LoginButton } from '../login-button/login-button';
 import { Burger } from './burger/burger';
 import './menu.css';
 
@@ -15,6 +16,7 @@ export class Menu extends BaseComponent {
   isMenuShow: boolean;
 
   liItems: HTMLElement[];
+  loginButton: LoginButton;
 
   constructor(menuElements: string[]) {
     super('nav', ['menu']);
@@ -24,6 +26,7 @@ export class Menu extends BaseComponent {
       'list__el_large', 'list__el_main']);
     this.lastLI = new BaseComponent('li', ['list__el', 'list__el_large', 'list__el_stat']);
     this.burger = new Burger();
+    this.loginButton = new LoginButton();
     this.isMenuShow = false;
     this.liItems = [];
 
@@ -32,6 +35,7 @@ export class Menu extends BaseComponent {
 
     this.element.append(this.list.element);
     this.list.element.append(this.firstLI.element);
+    this.element.append(this.loginButton.element)
 
     document.addEventListener('DOMContentLoaded', () => {
       document.querySelector('.app')?.append(this.burger.element);
