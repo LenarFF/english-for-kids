@@ -1,0 +1,16 @@
+.admin-header {
+  height: 97px;
+  background-color: #00BF82;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logout-button {
+  cursor: pointer;
+  transition: all 1s;
+}
+
+.logout-button:hover {
+  letter-spacing: 8px;
+}

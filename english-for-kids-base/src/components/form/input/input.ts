@@ -1,4 +1,3 @@
-
 import { BaseComponent } from '../../base-component';
 import './input.css';
 

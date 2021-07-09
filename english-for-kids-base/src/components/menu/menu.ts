@@ -1,7 +1,6 @@
 import { data } from '../../data';
 import { BaseComponent } from '../base-component';
 import { LoginButton } from '../login-button/login-button';
-import { Burger } from './burger/burger';
 import './menu.css';
 
 export class Menu extends BaseComponent {
@@ -11,11 +10,10 @@ export class Menu extends BaseComponent {
 
   lastLI: BaseComponent;
 
-  burger: Burger;
-
   isMenuShow: boolean;
 
   liItems: HTMLElement[];
+
   loginButton: LoginButton;
 
   constructor(menuElements: string[]) {
@@ -25,7 +23,6 @@ export class Menu extends BaseComponent {
     this.firstLI = new BaseComponent('li', ['list__el', 'list__el_selected',
       'list__el_large', 'list__el_main']);
     this.lastLI = new BaseComponent('li', ['list__el', 'list__el_large', 'list__el_stat']);
-    this.burger = new Burger();
     this.loginButton = new LoginButton();
     this.isMenuShow = false;
     this.liItems = [];
@@ -35,14 +32,8 @@ export class Menu extends BaseComponent {
 
     this.element.append(this.list.element);
     this.list.element.append(this.firstLI.element);
-    this.element.append(this.loginButton.element)
+    this.element.append(this.loginButton.element);
 
-    document.addEventListener('DOMContentLoaded', () => {
-      document.querySelector('.app')?.append(this.burger.element);
-    });
-
-    this.burger.element.addEventListener('click', () => this.showMenu());
-    document.addEventListener('click', (event) => this.hideMenu(event));
     this.firstLI.element.addEventListener('click', () => this.goToMainPage());
     this.lastLI.element.addEventListener('click', () => this.goToStatisticsPage());
 
@@ -77,23 +68,24 @@ export class Menu extends BaseComponent {
     window.location.hash = '#/main-page/';
   };
 
-  showMenu(): void {
-    if (this.isMenuShow) {
+  showMenu = (): void => {
+    if (data.isMenuShow) {
       this.element.classList.remove('menu_show');
-      this.isMenuShow = false;
+      data.isMenuShow = false;
     } else {
       this.element.classList.add('menu_show');
-      setTimeout(() => { this.isMenuShow = true; }, 1000);
-    }
-  }
 
-  hideMenu(event: Event): void {
-    if (this.isMenuShow && event.target !== this.element) {
-      this.element.classList.remove('menu_show');
-      this.burger.redrawBurger();
-      this.isMenuShow = false;
+      setTimeout(() => { data.isMenuShow = true; }, 1000);
     }
-  }
+  };
+
+  hideMenu = (event: Event, burgerFunction: () => void): void => {
+    if (data.isMenuShow && event.target !== this.element) {
+      this.element.classList.remove('menu_show');
+      burgerFunction();
+      data.isMenuShow = false;
+    }
+  };
 
   addSelectedClass(location: string): void {
     switch (location) {

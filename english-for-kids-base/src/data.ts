@@ -16,7 +16,8 @@ type DataType = {
   cardsArray: Card[],
   difficultWordQuantity: number,
   wrongWordCardsInfo: StorageCardInfo[],
-  isDifficultWords: boolean
+  isDifficultWords: boolean,
+  isMenuShow: boolean
 };
 
 export type StorageCardInfo = {
@@ -40,4 +41,5 @@ export const data: DataType = {
   difficultWordQuantity: 8,
   wrongWordCardsInfo: [],
   isDifficultWords: false,
+  isMenuShow: false,
 };

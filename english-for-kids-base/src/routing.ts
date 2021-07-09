@@ -1,5 +1,6 @@
 import { categoryCardsInfo, wordCardsInfo } from './cardsInfo';
 import { data } from './data';
+import { AdminPage } from './pages/admin-page/admin-page';
 import { CategoryPage } from './pages/category-page/category-page';
 import { GameEnd } from './pages/game-end/game-end';
 import { MainPage } from './pages/main-page/main-page';
@@ -20,15 +21,15 @@ export class Router {
 
   locationResolver = (location: string, pageWrap: Element): void => {
     pageWrap.innerHTML = '';
+    const app = document.querySelector('.app');
     const mainPage = new MainPage();
+    const adminPage = new AdminPage();
     const gameEnd = new GameEnd(data.numberOfMistakes === 0,
       data.numberOfMistakes);
     const statisticsPage = new StatisticsPage();
     const categoryPage = new CategoryPage(Number(location.slice(-1)));
-
     const difficultWordsPage = new CategoryPage(categoryCardsInfo[0]
       .length - 1);
-
     const startButton = categoryPage.startButton.element;
     switch (location) {
       case '#/main-page/':
@@ -47,6 +48,10 @@ export class Router {
         difficultWordsPage.renderCards();
         pageWrap.append(difficultWordsPage.element);
         wordCardsInfo.pop();
+        break;
+      case '#/admin-page/':
+        if (app) app.innerHTML = '';
+        app?.append(adminPage.element);
         break;
       default:
         categoryPage.renderCards();

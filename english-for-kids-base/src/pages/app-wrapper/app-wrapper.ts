@@ -2,7 +2,7 @@ import { categoryCardsInfo } from '../../cardsInfo';
 import { BaseComponent } from '../../components/base-component';
 import { Cover } from '../../components/cover/cover';
 import { Footer } from '../../components/footer/footer';
-import { Form } from '../../components/form/form';
+import { Burger } from '../../components/menu/burger/burger';
 import { Menu } from '../../components/menu/menu';
 import { Toggle } from '../../components/toggle/toggle';
 import { data } from '../../data';
@@ -23,8 +23,10 @@ export class AppWrapper extends BaseComponent {
   categoryNameIndex: number;
 
   pageWrap: BaseComponent;
+
   cover: Cover;
-  form: Form
+
+  burger: Burger;
 
   constructor() {
     super('div', ['app']);
@@ -37,19 +39,21 @@ export class AppWrapper extends BaseComponent {
     this.menu = new Menu(this.menuElements);
     this.footer = new Footer();
     this.cover = new Cover();
-    this.form = new Form();
+    this.burger = new Burger();
     this.pageWrap = new BaseComponent('div', ['page-wrap']);
 
     this.element.append(this.toggle.element);
     window.addEventListener('hashchange',
       (event) => this.toggleToggle(event.oldURL, event.newURL));
 
+    this.burger.element.addEventListener('click', () => this.menu.showMenu());
+    document.addEventListener('click', (event) => this.menu.hideMenu(event,
+      this.burger.redrawBurger));
+
     this.element.append(this.pageWrap.element);
     this.pageWrap.element.append(this.mainPage.element);
-    this.element.append(this.cover.element);
-    this.element.append(this.form.element)
+    this.element.append(this.cover.element, this.burger.element);
     this.element.append(this.menu.element, this.footer.element);
-
   }
 
   toggleToggle(oldURL: string, newURL: string): void {
