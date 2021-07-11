@@ -43,13 +43,15 @@ export class WordCard extends BaseComponent {
     this.wordCard = new BaseComponent('div', ['word-card']);
     this.wordCardFront = new BaseComponent('div', ['word-card__front']);
     this.wordCardBack = new BaseComponent('div', ['word-card__back']);
-    this.wordCardFrontImg = new BaseComponent('div',
-      (data.gameMode === false) ? ['word-card__img']
-        : ['word-card__img', 'word-card__img_bigger']);
+    this.wordCardFrontImg = new BaseComponent(
+      'div',
+      data.gameMode === false ? ['word-card__img'] : ['word-card__img', 'word-card__img_bigger'],
+    );
     this.wordCardBackImg = new BaseComponent('div', ['word-card__img']);
-    this.wordCardFrontWordWrap = new BaseComponent('div',
-      (data.gameMode === false) ? ['word-card__word-wrap']
-        : ['word-card__word-wrap', 'hidden']);
+    this.wordCardFrontWordWrap = new BaseComponent(
+      'div',
+      data.gameMode === false ? ['word-card__word-wrap'] : ['word-card__word-wrap', 'hidden'],
+    );
     this.wordCardBackWordWrap = new BaseComponent('div', ['word-card__word-wrap']);
     this.englishWord = new Word(englishWord);
     this.translate = new Word(translate);
@@ -100,8 +102,10 @@ export class WordCard extends BaseComponent {
 
   createAudio(event: Event): void {
     const eventTarget = event.target as HTMLElement;
-    if (eventTarget.classList.contains('word-card__rotate-img')
-     || eventTarget.classList.contains('path')) {
+    if (
+      eventTarget.classList.contains('word-card__rotate-img')
+      || eventTarget.classList.contains('path')
+    ) {
       return;
     }
     const word = this.wordCardFront.element.getAttribute('data-word') as string;
@@ -128,7 +132,7 @@ export class WordCard extends BaseComponent {
     });
   }
 
-  showCardShield() :void {
+  showCardShield(): void {
     this.cardShield.element.classList.remove('hidden');
   }
 }

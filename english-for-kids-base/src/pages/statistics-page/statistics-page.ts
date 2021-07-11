@@ -148,7 +148,9 @@ export class StatisticsPage extends BaseComponent {
             cell.innerHTML = `${wordStats[j].wrong}`;
             break;
           case 8:
-            if (wordStats[j].game !== 0)cell.innerHTML = `${Math.round((wordStats[j].right / wordStats[j].game) * 100)}`;
+            if (wordStats[j].game !== 0) {
+              cell.innerHTML = `${Math.round((wordStats[j].right / wordStats[j].game) * 100)}`;
+            }
             break;
           default:
             break;
@@ -165,7 +167,7 @@ export class StatisticsPage extends BaseComponent {
     this.table.element.append(this.tblBody);
   }
 
-  fillWrongWordCardsInfo = (wordStat: StorageCardInfo, word: string):void => {
+  fillWrongWordCardsInfo = (wordStat: StorageCardInfo, word: string): void => {
     if (wordStat.wrong !== 0) {
       data.wrongWordCardsInfo.push({
         word,
@@ -181,7 +183,8 @@ export class StatisticsPage extends BaseComponent {
     data.wrongWordCardsInfo.sort((a: StorageCardInfo, b: StorageCardInfo) => {
       if (a.wrong < b.wrong) {
         return 1;
-      } if (a.wrong > b.wrong) {
+      }
+      if (a.wrong > b.wrong) {
         return -1;
       }
       return 0;
@@ -189,7 +192,7 @@ export class StatisticsPage extends BaseComponent {
   };
 
   // CodePen  "Js sort table"
-  sortTable = (event: Event):void => {
+  sortTable = (event: Event): void => {
     const thsArray: HTMLElement[] = [].slice.call(this.ths);
     const rowArray: HTMLElement[] = [].slice.call(this.rows);
     const target = event.target as HTMLElement;
@@ -212,9 +215,10 @@ export class StatisticsPage extends BaseComponent {
       }
 
       if (tdA > tdB) {
-        return (this.sortDirection === 'ASC') ? 1 : -1;
-      } if (tdA < tdB) {
-        return (this.sortDirection === 'ASC') ? -1 : 1;
+        return this.sortDirection === 'ASC' ? 1 : -1;
+      }
+      if (tdA < tdB) {
+        return this.sortDirection === 'ASC' ? -1 : 1;
       }
       return 0;
     });
@@ -224,6 +228,6 @@ export class StatisticsPage extends BaseComponent {
     });
 
     this.tblBody.appendChild(docF);
-    this.sortDirection = (this.sortDirection === 'ASC') ? 'DESC' : 'ASC';
+    this.sortDirection = this.sortDirection === 'ASC' ? 'DESC' : 'ASC';
   };
 }

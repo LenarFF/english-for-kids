@@ -1,0 +1,18 @@
+.admin__category-input {
+  font-size: 22px;
+}
+
+.create-card__buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.create-card__button {
+  height: 54px;
+}
+
+.create-card__button_red {
+  color: #e53935;
+  border: 1px solid #e53935;
+}

@@ -1,8 +1,25 @@
 export const categoryCardsInfo = [
-  ['Action (set A)', 'Action (set B)', 'Animal (set A)', 'Animal (set B)',
-    'Clothes', 'Emotions', 'Plants', 'Fruits', 'difficult words'],
-  ['img/cry.jpg', 'img/open.jpg', 'img/cat.jpg', 'img/bird.jpg', 'img/skirt.jpg',
-    'img/sad.jpg', 'img/flower.jpg', 'img/apple.jpg'],
+  [
+    'Action (set A)',
+    'Action (set B)',
+    'Animal (set A)',
+    'Animal (set B)',
+    'Clothes',
+    'Emotions',
+    'Plants',
+    'Fruits',
+    'difficult words',
+  ],
+  [
+    'img/cry.jpg',
+    'img/open.jpg',
+    'img/cat.jpg',
+    'img/bird.jpg',
+    'img/skirt.jpg',
+    'img/sad.jpg',
+    'img/flower.jpg',
+    'img/apple.jpg',
+  ],
 ];
 
 export const wordCardsInfo = [

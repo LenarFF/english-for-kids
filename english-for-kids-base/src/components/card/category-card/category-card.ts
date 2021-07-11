@@ -6,8 +6,7 @@ export class CategoryCard extends BaseComponent {
   constructor(img: string, categoryText: string) {
     super('div', ['category-card']);
     this.element.innerHTML = `
-      <div class="category-card__top ${data.gameMode
-    ? 'category-card__top_orange' : ''}"></div>
+      <div class="category-card__top ${data.gameMode ? 'category-card__top_orange' : ''}"></div>
       <div class="category-card__bot"></div>
       <div class="category-card__image" style="background-image: url('./${img}')"></div>
       <p class="category-card__text">${categoryText}</p>

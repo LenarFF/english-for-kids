@@ -1,6 +1,7 @@
 import { categoryCardsInfo, wordCardsInfo } from './cardsInfo';
 import { data } from './data';
 import { AdminPage } from './pages/admin-page/admin-page';
+import { AdminWordPage } from './pages/admin-page/admin-word-page/admin-word-page';
 import { CategoryPage } from './pages/category-page/category-page';
 import { GameEnd } from './pages/game-end/game-end';
 import { MainPage } from './pages/main-page/main-page';
@@ -24,13 +25,12 @@ export class Router {
     const app = document.querySelector('.app');
     const mainPage = new MainPage();
     const adminPage = new AdminPage();
-    const gameEnd = new GameEnd(data.numberOfMistakes === 0,
-      data.numberOfMistakes);
+    const gameEnd = new GameEnd(data.numberOfMistakes === 0, data.numberOfMistakes);
     const statisticsPage = new StatisticsPage();
     const categoryPage = new CategoryPage(Number(location.slice(-1)));
-    const difficultWordsPage = new CategoryPage(categoryCardsInfo[0]
-      .length - 1);
+    const difficultWordsPage = new CategoryPage(categoryCardsInfo[0].length - 1);
     const startButton = categoryPage.startButton.element;
+    const adminCardsWrap = document.querySelector('.admin__cards-wrap');
     switch (location) {
       case '#/main-page/':
         mainPage.renderCards();
@@ -52,6 +52,12 @@ export class Router {
       case '#/admin-page/':
         if (app) app.innerHTML = '';
         app?.append(adminPage.element);
+        break;
+      case '#/admin-words/':
+        if (adminCardsWrap) {
+          adminCardsWrap.innerHTML = '';
+          adminCardsWrap.append(new AdminWordPage().element);
+        }
         break;
       default:
         categoryPage.renderCards();

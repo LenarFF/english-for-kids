@@ -3,14 +3,14 @@ import { data } from './data';
 import { WordStatsType } from './types';
 
 type CardInfo = {
-  'category': string,
-  'translation': string,
-  'train': number,
-  'game': number,
-  'right': number,
-  'wrong': number,
-  'audioSrc' : string,
-  'image' : string
+  category: string;
+  translation: string;
+  train: number;
+  game: number;
+  right: number;
+  wrong: number;
+  audioSrc: string;
+  image: string;
 };
 
 export class LocalStorage {
@@ -50,7 +50,7 @@ export class LocalStorage {
     }
   };
 
-  getItems = (): { words: string[], items: WordStatsType[] } => {
+  getItems = (): { words: string[]; items: WordStatsType[] } => {
     const items = [];
     const words = [];
     for (let i = 0; i < localStorage.length; i++) {

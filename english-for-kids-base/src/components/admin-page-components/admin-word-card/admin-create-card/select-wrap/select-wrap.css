@@ -1,0 +1,36 @@
+.admin-word-card__select-wrap {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.admin-word__select-label {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 143px;
+  height: 34px;
+  border: 1px solid #00bf82;
+  border-radius: 5px;
+  font-size: 22px;
+  color: #00bf82;
+}
+
+.admin-word__select-input {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.admin-word-card__subtitle {
+  font-size: 22px;
+  font-weight: 700;
+}

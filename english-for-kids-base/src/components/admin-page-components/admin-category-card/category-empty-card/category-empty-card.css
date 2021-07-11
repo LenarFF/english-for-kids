@@ -1,0 +1,9 @@
+.big-cross {
+  background-image: url('../../../../assets/images/big-cross.svg');
+  background-position: center;
+  width: 85px;
+  height: 85px;
+  position: absolute;
+  top: 40%;
+  cursor: pointer;
+}

@@ -1,23 +1,23 @@
 import { BaseComponent } from './components/base-component';
 
 type Card = {
-  cardShield: BaseComponent
+  cardShield: BaseComponent;
 };
 
 type DataType = {
-  gameMode: boolean,
-  categoryIndex: number,
-  arrayOfIndexes: number[],
-  lastIndex: number,
-  numberOfMistakes: number,
-  gameEndTime: number,
-  lastAnswer: boolean,
-  startGame: boolean,
-  cardsArray: Card[],
-  difficultWordQuantity: number,
-  wrongWordCardsInfo: StorageCardInfo[],
-  isDifficultWords: boolean,
-  isMenuShow: boolean
+  gameMode: boolean;
+  categoryIndex: number;
+  arrayOfIndexes: number[];
+  lastIndex: number;
+  numberOfMistakes: number;
+  gameEndTime: number;
+  lastAnswer: boolean;
+  startGame: boolean;
+  cardsArray: Card[];
+  difficultWordQuantity: number;
+  wrongWordCardsInfo: StorageCardInfo[];
+  isDifficultWords: boolean;
+  isMenuShow: boolean;
 };
 
 export type StorageCardInfo = {
@@ -25,7 +25,7 @@ export type StorageCardInfo = {
   translation: string;
   image: string;
   audioSrc: string;
-  wrong: number
+  wrong: number;
 };
 
 export const data: DataType = {

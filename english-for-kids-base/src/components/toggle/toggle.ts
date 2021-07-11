@@ -17,7 +17,7 @@ export class Toggle extends BaseComponent {
   }
 
   switchToGame(): void {
-    data.gameMode = (data.gameMode === false);
+    data.gameMode = data.gameMode === false;
     this.game.transformCard();
     this.toggleStartButton();
     this.changeCardColor();
@@ -29,7 +29,7 @@ export class Toggle extends BaseComponent {
     }
   }
 
-  toggleStartButton = ():void => {
+  toggleStartButton = (): void => {
     const startButton = document.querySelector('.start-button');
     if (startButton) {
       startButton.classList.toggle('start-button_hide');

@@ -43,12 +43,10 @@ export class AppWrapper extends BaseComponent {
     this.pageWrap = new BaseComponent('div', ['page-wrap']);
 
     this.element.append(this.toggle.element);
-    window.addEventListener('hashchange',
-      (event) => this.toggleToggle(event.oldURL, event.newURL));
+    window.addEventListener('hashchange', (event) => this.toggleToggle(event.oldURL, event.newURL));
 
     this.burger.element.addEventListener('click', () => this.menu.showMenu());
-    document.addEventListener('click', (event) => this.menu.hideMenu(event,
-      this.burger.redrawBurger));
+    document.addEventListener('click', (event) => this.menu.hideMenu(event, this.burger.redrawBurger));
 
     this.element.append(this.pageWrap.element);
     this.pageWrap.element.append(this.mainPage.element);
@@ -63,10 +61,9 @@ export class AppWrapper extends BaseComponent {
       data.startGame = false;
       (this.toggle.element as HTMLInputElement).checked = false;
     }
-    if ((oldURL.includes('#/difficult-words/')
-      && !newURL.includes('#/statistics-page/'))
-      || (oldURL.includes('#/statistics-page/')
-      && !newURL.includes('#/difficult-words/'))
+    if (
+      (oldURL.includes('#/difficult-words/') && !newURL.includes('#/statistics-page/'))
+      || (oldURL.includes('#/statistics-page/') && !newURL.includes('#/difficult-words/'))
     ) {
       this.toggle.element.classList.remove('hidden');
     }

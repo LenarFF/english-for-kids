@@ -1,0 +1,12 @@
+.admin__word-card-input {
+  width: 293px;
+  font-size: 22px;
+}
+.admin-word-card__selects-wrap,
+.admin-word-card__inputs-wrap {
+  width: 293px;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

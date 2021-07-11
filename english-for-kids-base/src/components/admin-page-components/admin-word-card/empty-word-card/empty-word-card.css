@@ -1,0 +1,16 @@
+.word-card__cross {
+  background-image: url('../../../../assets/images/big-cross.svg');
+  background-position: center;
+  width: 150px;
+  height: 150px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 58px auto;
+  cursor: pointer;
+}
+
+.admin__word-card-title {
+  font-weight: 700;
+  font-size: 36px;
+  text-align: center;
+}

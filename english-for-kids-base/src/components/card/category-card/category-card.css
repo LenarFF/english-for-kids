@@ -21,11 +21,8 @@
 }
 
 .category-card__top {
-  background: linear-gradient(
-180deg
-,#0099ae,#00bf82 100%,#fff 0,#fff);
+  background: linear-gradient(180deg, #0099ae, #00bf82 100%, #fff 0, #fff);
 }
-
 
 .category-card__image {
   width: 50%;
@@ -48,8 +45,3 @@
 .category-card__top_orange {
   background: linear-gradient(rgb(250, 102, 56), rgb(217, 221, 15));
 }
-
-
-
-
-

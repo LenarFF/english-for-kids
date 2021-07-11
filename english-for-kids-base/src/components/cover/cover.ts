@@ -7,13 +7,14 @@ export class Cover extends BaseComponent {
 
   constructor() {
     super('div', ['cover', 'hidden']);
-    this.element.addEventListener('click', () => this.hide());
+    this.element.addEventListener('click', (event) => this.hide(event));
     this.form = new Form();
     this.element.append(this.form.element);
   }
 
-  hide = (): void => {
-    const cover = document.querySelector('.cover') as HTMLElement;
-    cover.classList.add('hidden');
+  hide = (event: Event): void => {
+    if (event.target === this.element || event.target === this.form.formCancelButton.element) {
+      this.element.classList.add('hidden');
+    }
   };
 }

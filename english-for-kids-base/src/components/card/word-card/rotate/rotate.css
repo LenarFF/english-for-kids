@@ -1,13 +1,13 @@
 .word-card__rotate-img {
   width: 100%;
   height: 100%;
-  transition: .3s;
-  fill:rgb(136, 105, 18);
+  transition: 0.3s;
+  fill: rgb(136, 105, 18);
 }
 
 .word-card__rotate-img:hover {
-  fill:rgb(53, 134, 134);
+  fill: rgb(53, 134, 134);
 }
- .word-card__rotate {
+.word-card__rotate {
   width: 33px;
- }
+}

@@ -15,8 +15,7 @@ export class Burger extends BaseComponent {
     this.burgerMid = new BaseComponent('span', ['burger__mid']);
     this.burgerBot = new BaseComponent('span', ['burger__bot']);
 
-    this.element.append(this.burgerTop.element,
-      this.burgerMid.element, this.burgerBot.element);
+    this.element.append(this.burgerTop.element, this.burgerMid.element, this.burgerBot.element);
 
     this.element.addEventListener('click', () => this.redrawBurger());
   }

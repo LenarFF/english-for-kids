@@ -23,7 +23,7 @@ export class Game {
     }
   };
 
-  fillArrayOfIndexes = (array: Record<string, unknown>[]):void => {
+  fillArrayOfIndexes = (array: Record<string, unknown>[]): void => {
     for (let i = 0; i < array.length; i++) {
       data.arrayOfIndexes.push(i);
     }
@@ -35,7 +35,7 @@ export class Game {
     audio.play();
   };
 
-  identifyMatch = (attribute:string): boolean => {
+  identifyMatch = (attribute: string): boolean => {
     if (Number(attribute) !== data.lastIndex) {
       return false;
     }
@@ -46,7 +46,7 @@ export class Game {
     data.numberOfMistakes++;
   };
 
-  playGuessResultSound = (attribute:string): void => {
+  playGuessResultSound = (attribute: string): void => {
     if (this.identifyMatch(attribute)) {
       const audio = new Audio('./audio/correct.mp3');
       audio.play();
@@ -68,12 +68,12 @@ export class Game {
     if (starsField) starsField.append(star);
   };
 
-  renderGameEnd = ():void => {
+  renderGameEnd = (): void => {
     window.location.hash = '#/end-game/';
     setTimeout(this.goToMain, data.gameEndTime);
   };
 
-  goToMain = ():void => {
+  goToMain = (): void => {
     window.location.hash = '#/main-page/';
   };
 }

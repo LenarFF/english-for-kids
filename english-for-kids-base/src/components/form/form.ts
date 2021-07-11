@@ -36,24 +36,19 @@ export class Form extends BaseComponent {
     this.buttonsWrap = new BaseComponent('div', ['buttons-wrap']);
     this.formLoginWrap = new BaseComponent('div', ['input-wrap']);
     this.formPasswordWrap = new BaseComponent('div', ['input-wrap']);
-    this.loginInput = new Input('text', 'login', 'login');
-    this.passwordInput = new Input('text', 'password', 'password');
+    this.loginInput = new Input('text', 'login', 'login', 'form-input');
+    this.passwordInput = new Input('text', 'password', 'password', 'form-input');
     this.loginLabel = new Label('login', 'login');
     this.passwordLabel = new Label('password', 'password');
     this.formLoginButton = new FormLoginButton();
     this.formCancelButton = new FormCancelButton();
 
-    this.formLoginWrap.element.append(this.loginLabel.element,
-      this.loginInput.element);
-    this.formPasswordWrap.element.append(this.passwordLabel.element,
-      this.passwordInput.element);
+    this.formLoginWrap.element.append(this.loginLabel.element, this.loginInput.element);
+    this.formPasswordWrap.element.append(this.passwordLabel.element, this.passwordInput.element);
 
-    this.buttonsWrap.element.append(this.formCancelButton.element,
-      this.formLoginButton.element);
+    this.buttonsWrap.element.append(this.formCancelButton.element, this.formLoginButton.element);
 
-    this.inputsWrap.element.append(this.formLoginWrap.element,
-      this.formPasswordWrap.element);
-    this.element.append(this.formHeader.element,
-      this.inputsWrap.element, this.buttonsWrap.element);
+    this.inputsWrap.element.append(this.formLoginWrap.element, this.formPasswordWrap.element);
+    this.element.append(this.formHeader.element, this.inputsWrap.element, this.buttonsWrap.element);
   }
 }

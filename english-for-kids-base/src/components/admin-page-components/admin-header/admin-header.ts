@@ -26,11 +26,11 @@ export class AdminHeader extends BaseComponent {
     this.logoutButton.element.addEventListener('click', () => this.goMainPage());
   }
 
-  changeHash = (newHash:string):void => {
+  changeHash = (newHash: string): void => {
     window.location.hash = newHash;
   };
 
-  goMainPage = ():void => {
+  goMainPage = (): void => {
     window.location.reload();
   };
 }

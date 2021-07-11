@@ -1,0 +1,13 @@
+.admin__category-card {
+  width: 361px;
+  height: 244px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 25px 19px;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 22px;
+  position: relative;
+}

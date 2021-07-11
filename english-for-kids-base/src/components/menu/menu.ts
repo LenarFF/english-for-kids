@@ -20,8 +20,12 @@ export class Menu extends BaseComponent {
     super('nav', ['menu']);
 
     this.list = new BaseComponent('ul', ['menu__list']);
-    this.firstLI = new BaseComponent('li', ['list__el', 'list__el_selected',
-      'list__el_large', 'list__el_main']);
+    this.firstLI = new BaseComponent('li', [
+      'list__el',
+      'list__el_selected',
+      'list__el_large',
+      'list__el_main',
+    ]);
     this.lastLI = new BaseComponent('li', ['list__el', 'list__el_large', 'list__el_stat']);
     this.loginButton = new LoginButton();
     this.isMenuShow = false;
@@ -75,7 +79,9 @@ export class Menu extends BaseComponent {
     } else {
       this.element.classList.add('menu_show');
 
-      setTimeout(() => { data.isMenuShow = true; }, 1000);
+      setTimeout(() => {
+        data.isMenuShow = true;
+      }, 1000);
     }
   };
 
@@ -104,7 +110,7 @@ export class Menu extends BaseComponent {
     }
   }
 
-  removeSelectedClass():void {
+  removeSelectedClass(): void {
     this.liItems.forEach((item) => item.classList.remove('list__el_selected'));
   }
 }

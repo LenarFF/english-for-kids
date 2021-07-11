@@ -23,28 +23,27 @@
   height: 3px;
   background-color: rgb(105, 99, 99);
   margin: 5px 0;
-  transition: .5s;
+  transition: 0.5s;
   position: absolute;
 }
 
 .burger__mid {
-  top: 8px
+  top: 8px;
 }
 
 .burger__bot {
-  top: 16px
+  top: 16px;
 }
-
 
 .burger__mid_open {
   transform: translate(20px);
-  background-color:inherit;
+  background-color: inherit;
 }
 .burger__top_open,
 .burger__bot_open {
   transform-origin: right;
   width: 24px;
-  background-color:rgba(238, 138, 6, 0.972)
+  background-color: rgba(238, 138, 6, 0.972);
 }
 
 .burger__top_open {

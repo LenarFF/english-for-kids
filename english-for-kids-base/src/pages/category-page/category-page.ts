@@ -7,10 +7,10 @@ import './category-page.css';
 
 export class CategoryPage extends BaseComponent {
   wordInfo: {
-    word: string,
-    translation: string,
-    image: string,
-    audioSrc: string
+    word: string;
+    translation: string;
+    image: string;
+    audioSrc: string;
   }[][];
 
   categoryNumber: number;
@@ -39,12 +39,16 @@ export class CategoryPage extends BaseComponent {
   renderCards(): void {
     if (Number.isNaN(this.categoryNumber)) return;
     for (let i = 0; i < wordCardsInfo[this.categoryNumber].length; i++) {
-      const wordCard = new WordCard(this.wordInfo[this.categoryNumber][i].image,
+      const wordCard = new WordCard(
+        this.wordInfo[this.categoryNumber][i].image,
         this.wordInfo[this.categoryNumber][i].word,
-        this.wordInfo[this.categoryNumber][i].translation);
+        this.wordInfo[this.categoryNumber][i].translation,
+      );
 
-      wordCard.wordCardFront.element.setAttribute('data-word',
-        `${this.wordInfo[this.categoryNumber][i].word}`);
+      wordCard.wordCardFront.element.setAttribute(
+        'data-word',
+        `${this.wordInfo[this.categoryNumber][i].word}`,
+      );
 
       wordCard.wordCardFront.element.setAttribute('data-number', `${i}`);
 

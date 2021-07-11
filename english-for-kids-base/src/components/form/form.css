@@ -13,7 +13,7 @@
 }
 
 .buttons-wrap {
-  background-color: #4FBE79;
+  background-color: #4fbe79;
   width: 100%;
   height: 105px;
   display: flex;
@@ -53,4 +53,8 @@
 }
 .form__button:hover {
   letter-spacing: 8px;
+}
+
+.form-input {
+  font-size: 48px;
 }

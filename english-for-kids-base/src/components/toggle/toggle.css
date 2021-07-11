@@ -1,5 +1,4 @@
-
-.switch{
+.switch {
   position: absolute;
   top: 50px;
   right: 100px;
@@ -20,28 +19,28 @@
   background-color: aliceblue;
   position: absolute;
   border-radius: 5px;
-  transition: .3s;
-  }
+  transition: 0.3s;
+}
 .switch:checked {
   background: linear-gradient(rgb(250, 102, 56), rgb(217, 221, 15));
-  }
+}
 .switch:checked::after {
   transform: translateX(100px);
-  }
+}
 .switch::before {
-  content: "train";
+  content: 'train';
   position: absolute;
   top: 4px;
   left: 59px;
   font-size: 28px;
   color: white;
   text-transform: uppercase;
-  }
-  .switch:checked::before {
-    content: "play";
-    left: 15px;
-    top: 4px
-  }
+}
+.switch:checked::before {
+  content: 'play';
+  left: 15px;
+  top: 4px;
+}
 
 .switch:focus {
   outline-color: transparent;
