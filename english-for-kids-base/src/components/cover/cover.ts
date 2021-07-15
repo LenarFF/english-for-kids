@@ -15,6 +15,13 @@ export class Cover extends BaseComponent {
   hide = (event: Event): void => {
     if (event.target === this.element || event.target === this.form.formCancelButton.element) {
       this.element.classList.add('hidden');
+      this.clearInput(this.form.loginInput.element as HTMLInputElement);
+      this.clearInput(this.form.passwordInput.element as HTMLInputElement);
     }
+  };
+
+  clearInput = (input: HTMLInputElement): void => {
+    input.value = '';
+    input.classList.remove('input_green');
   };
 }
