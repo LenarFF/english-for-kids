@@ -1,4 +1,3 @@
-
 import { BaseComponent } from '../../base-component';
 import { AdminHeaderButtons } from './admin-header-buttons/admin-header-buttons';
 import './admin-header.css';
@@ -25,6 +24,7 @@ export class AdminHeader extends BaseComponent {
       this.wordsButton.element);
     this.element.append(this.routButtons.element, this.logoutButton.element);
     this.logoutButton.element.addEventListener('click', () => this.goMainPage());
+    this.categoriesButton.element.addEventListener('click', () => this.changeHash('#/admin-page/'));
   }
 
   changeHash = (newHash: string): void => {

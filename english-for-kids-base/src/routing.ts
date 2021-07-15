@@ -51,10 +51,11 @@ export class Router {
         break;
       case '#/admin-page/':
         if (!data.authorized) {
-          window.location.hash = '#/main-page/'
+          window.location.hash = '#/main-page/';
         } else {
-        if (app) app.innerHTML = '';
-        app?.append(adminPage.element)};
+          if (app) app.innerHTML = '';
+          app?.append(adminPage.element);
+        }
         break;
       case '#/admin-words/':
         if (!data.authorized) window.location.hash = '#/main-page/';

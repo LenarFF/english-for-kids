@@ -5,6 +5,7 @@ import { CategoryEmptyCard } from
 import { CategoryReadyCards } from
   '../../../components/admin-page-components/admin-category-card/category-ready-card/category-ready-card';
 import { BaseComponent } from '../../../components/base-component';
+import './admin-category-page.css';
 
 export class AdminCategoryPage extends BaseComponent {
   categoryCard: CategoryReadyCards;

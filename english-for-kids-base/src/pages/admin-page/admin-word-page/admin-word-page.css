@@ -1,0 +1,7 @@
+.admin__word-page {
+  display: flex;
+  justify-content: space-around;
+  padding: 96px;
+  flex-wrap: wrap;
+}
+
