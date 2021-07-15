@@ -1,3 +1,4 @@
+import { data } from '../../data';
 import { BaseComponent } from '../base-component';
 import { Form } from '../form/form';
 import './cover.css';
@@ -17,6 +18,8 @@ export class Cover extends BaseComponent {
       this.element.classList.add('hidden');
       this.clearInput(this.form.loginInput.element as HTMLInputElement);
       this.clearInput(this.form.passwordInput.element as HTMLInputElement);
+      data.loginValidateResult = 'enter login';
+      data.passwordValidateResult = 'enter password';
     }
   };
 

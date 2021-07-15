@@ -50,10 +50,14 @@ export class Router {
         wordCardsInfo.pop();
         break;
       case '#/admin-page/':
+        if (!data.authorized) {
+          window.location.hash = '#/main-page/'
+        } else {
         if (app) app.innerHTML = '';
-        app?.append(adminPage.element);
+        app?.append(adminPage.element)};
         break;
       case '#/admin-words/':
+        if (!data.authorized) window.location.hash = '#/main-page/';
         if (adminCardsWrap) {
           adminCardsWrap.innerHTML = '';
           adminCardsWrap.append(new AdminWordPage().element);

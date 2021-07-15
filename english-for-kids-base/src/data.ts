@@ -18,6 +18,9 @@ type DataType = {
   wrongWordCardsInfo: StorageCardInfo[];
   isDifficultWords: boolean;
   isMenuShow: boolean;
+  passwordValidateResult: string;
+  loginValidateResult: string;
+  authorized: boolean
 };
 
 export type StorageCardInfo = {
@@ -42,4 +45,7 @@ export const data: DataType = {
   wrongWordCardsInfo: [],
   isDifficultWords: false,
   isMenuShow: false,
+  passwordValidateResult: 'enter password',
+  loginValidateResult: 'enter login',
+  authorized: false,
 };

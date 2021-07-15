@@ -1,3 +1,4 @@
+import { data } from '../../data';
 import { BaseComponent } from '../base-component';
 import { FormCancelButton } from './button/form-cancel-button/form-cancel-button';
 import { FormLoginButton } from './button/form-login-button/form-login-button';
@@ -32,14 +33,8 @@ export class Form extends BaseComponent {
 
   password: string;
 
-  passwordValidateResult: string;
-
-  loginValidateResult: string;
-
   constructor() {
     super('form', ['form']);
-    this.passwordValidateResult = 'enter password';
-    this.loginValidateResult = 'enter login';
     this.login = 'admin';
     this.password = 'admin';
     this.formHeader = new BaseComponent('h3', ['form__header']);
@@ -88,9 +83,9 @@ export class Form extends BaseComponent {
       this.hideLabel(label);
     }
     if (inputName === 'login') {
-      this.loginValidateResult = validateResult;
+      data.loginValidateResult = validateResult;
     } else if (inputName === 'password') {
-      this.passwordValidateResult = validateResult;
+      data.passwordValidateResult = validateResult;
     } else {
       throw Error('incorrect input name');
     }
@@ -119,10 +114,11 @@ export class Form extends BaseComponent {
   };
 
   loginButtonHandler = (): void => {
-    if (this.loginValidateResult === '' && this.passwordValidateResult === '') {
+    if (data.loginValidateResult === '' && data.passwordValidateResult === '') {
+      data.authorized = true;
       this.changeHash();
     } else {
-      this.changeReport(this.loginValidateResult, this.passwordValidateResult);
+      this.changeReport(data.loginValidateResult, data.passwordValidateResult);
     }
   };
 
