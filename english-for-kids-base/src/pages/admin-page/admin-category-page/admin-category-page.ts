@@ -5,7 +5,7 @@ import { CategoryEmptyCard } from
 import { CategoryReadyCards } from
   '../../../components/admin-page-components/admin-category-card/category-ready-card/category-ready-card';
 import { BaseComponent } from '../../../components/base-component';
-import { deleteCategory, getCategories } from '../../../server';
+import { createCategory, deleteCategory, getCategories } from '../../../server';
 import { Category } from '../../../types';
 import './admin-category-page.css';
 
@@ -29,6 +29,8 @@ export class AdminCategoryPage extends BaseComponent {
       this.categoryCreateCard.element,
     );
     this.element.addEventListener('click', (e) => this.deleteCategory(e));
+    this.categoryCreateCard.createButton.element
+    .addEventListener('click', () => this.createNewCategory())
   }
 
   async createAllCategories(): Promise<void> {
@@ -49,4 +51,16 @@ export class AdminCategoryPage extends BaseComponent {
       deleteCategory(id);
     }
   };
+
+  createNewCategory = (): void => {
+    let input = this.categoryCreateCard.input.element as HTMLInputElement;
+    createCategory({
+      id: 0,
+      name: input.value,
+      wordsQuantity: 0
+    })
+    const categoryCard = new CategoryReadyCards(input.value, 0);
+    this.element.prepend(categoryCard.element);
+    input.value = '';
+  }
 }

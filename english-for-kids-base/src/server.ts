@@ -7,3 +7,15 @@ export const getCategories = (): Promise<Category[]> => fetch(`${baseURL}categor
 
 export const deleteCategory = async (id: number)
 : Promise<void> => (await fetch(`${baseURL}categories/${id}`, { method: 'DELETE' })).json();
+
+export const createCategory = async (item: Category): Promise<void> => {
+  (
+    await fetch(`${baseURL}categories/`, {
+      method: 'POST',
+      body: JSON.stringify(item),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+  ).json();
+}
