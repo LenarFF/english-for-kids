@@ -5,7 +5,7 @@ import { CategoryEmptyCard } from
 import { CategoryReadyCards } from
   '../../../components/admin-page-components/admin-category-card/category-ready-card/category-ready-card';
 import { BaseComponent } from '../../../components/base-component';
-import { getCategories } from '../../../server';
+import { deleteCategory, getCategories } from '../../../server';
 import { Category } from '../../../types';
 import './admin-category-page.css';
 
@@ -23,21 +23,30 @@ export class AdminCategoryPage extends BaseComponent {
     this.categoryEmptyCard = new CategoryEmptyCard();
     this.categoryCreateCard = new CategoryCreateCard();
 
-    this.createAllCategories()
+    this.createAllCategories();
     this.element.append(
       this.categoryEmptyCard.element,
       this.categoryCreateCard.element,
     );
-
+    this.element.addEventListener('click', (e) => this.deleteCategory(e));
   }
 
-  async createAllCategories() {
-    await getCategories().then(data => {
-      data.forEach((item: Category )=> {
+  async createAllCategories(): Promise<void> {
+    await getCategories().then((data) => {
+      data.forEach((item: Category) => {
         const categoryCard = new CategoryReadyCards(item.name, item.wordsQuantity);
-        this.element.prepend(categoryCard.element)
+        categoryCard.element.id = String(item.id);
+        this.element.prepend(categoryCard.element);
       });
-    })
-
+    });
   }
+
+  deleteCategory = (e: Event): void => {
+    const smallCross = e.target as HTMLElement;
+    if (smallCross.classList.contains('small-cross')) {
+      const id = Number(smallCross.parentElement?.id);
+      smallCross.parentElement?.remove();
+      deleteCategory(id);
+    }
+  };
 }
