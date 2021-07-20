@@ -9,3 +9,9 @@ export type WordStatsType = {
   audioSrc: string;
   word: string;
 };
+
+export type Category = {
+  id: number;
+  name: string;
+  wordsQuantity: number;
+}

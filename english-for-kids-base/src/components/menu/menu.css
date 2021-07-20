@@ -53,7 +53,7 @@
   font-weight: 600;
 }
 
-.list__el::before {
+/* .list__el::before {
   font-family: 'Font Awesome 5 Free', 'Font Awesome 5 Brands';
   margin-right: 5px;
   font-size: 32px;
@@ -97,4 +97,4 @@
 .list__el_Fruits::before {
   content: '\f094';
   color: rgb(231, 231, 13);
-}
+} */

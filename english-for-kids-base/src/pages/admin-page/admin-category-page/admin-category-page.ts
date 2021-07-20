@@ -5,6 +5,8 @@ import { CategoryEmptyCard } from
 import { CategoryReadyCards } from
   '../../../components/admin-page-components/admin-category-card/category-ready-card/category-ready-card';
 import { BaseComponent } from '../../../components/base-component';
+import { getCategories } from '../../../server';
+import { Category } from '../../../types';
 import './admin-category-page.css';
 
 export class AdminCategoryPage extends BaseComponent {
@@ -16,14 +18,26 @@ export class AdminCategoryPage extends BaseComponent {
 
   constructor() {
     super('div', ['admin__category-page']);
+
     this.categoryCard = new CategoryReadyCards('cats', 8);
     this.categoryEmptyCard = new CategoryEmptyCard();
     this.categoryCreateCard = new CategoryCreateCard();
 
+    this.createAllCategories()
     this.element.append(
-      this.categoryCard.element,
       this.categoryEmptyCard.element,
       this.categoryCreateCard.element,
     );
+
+  }
+
+  async createAllCategories() {
+    await getCategories().then(data => {
+      data.forEach((item: Category )=> {
+        const categoryCard = new CategoryReadyCards(item.name, item.wordsQuantity);
+        this.element.prepend(categoryCard.element)
+      });
+    })
+
   }
 }
