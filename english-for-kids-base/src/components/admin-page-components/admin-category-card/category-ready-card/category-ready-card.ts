@@ -3,7 +3,7 @@ import { AdminCardButton } from '../admin-card-button/admin-card-button';
 import { AdminCategoryCard } from '../admin-category-card';
 import './category-ready-card.css';
 
-export class CategoryReadyCards extends AdminCategoryCard {
+export class CategoryReadyCard extends AdminCategoryCard {
   wordsCount: BaseComponent;
 
   buttonWrap: BaseComponent;
@@ -22,7 +22,7 @@ export class CategoryReadyCards extends AdminCategoryCard {
     this.cardTitle = new BaseComponent('h4', ['admin__card-title']);
     this.wordsCount = new BaseComponent('div', ['admin__words-count']);
     this.buttonWrap = new BaseComponent('div', ['admin__card-buttons']);
-    this.updateButton = new AdminCardButton('Update');
+    this.updateButton = new AdminCardButton('Update', ['admin__update-card-button']);
     this.addButton = new AdminCardButton('Add word');
     this.cross = new BaseComponent('div', ['small-cross']);
 
