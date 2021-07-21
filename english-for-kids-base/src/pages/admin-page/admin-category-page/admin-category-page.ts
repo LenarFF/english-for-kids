@@ -22,13 +22,13 @@ export class AdminCategoryPage extends BaseComponent {
     super('div', ['admin__category-page']);
 
     this.categoryCard = new CategoryReadyCard('cats', 8);
-    this.categoryEmptyCard = new CategoryEmptyCard();
     this.categoryCreateCard = new CategoryCreateCard();
+    this.categoryEmptyCard = new CategoryEmptyCard();
 
-    this.createAllCategories();
+    this.renderAllCategories();
     this.element.append(
-      this.categoryEmptyCard.element,
       this.categoryCreateCard.element,
+      this.categoryEmptyCard.element
     );
     this.element.addEventListener('click', (e) => {
       this.deleteCategory(e);
@@ -36,9 +36,11 @@ export class AdminCategoryPage extends BaseComponent {
     });
     this.categoryCreateCard.createButton.element
       .addEventListener('click', () => this.createNewCategory());
+
+    this.categoryEmptyCard.bigCross.element.addEventListener('click' , () => this.showCreateCard())
   }
 
-  async createAllCategories(): Promise<void> {
+  async renderAllCategories(): Promise<void> {
     await getCategories().then((data) => {
       data.forEach((item: Category) => {
         const categoryCard = new CategoryReadyCard(item.name, item.wordsQuantity);
@@ -63,14 +65,18 @@ export class AdminCategoryPage extends BaseComponent {
       input.setCustomValidity('enter category name');
       return;
     }
+    const id = (new Date).getTime();
     createCategory({
-      id: 0,
+      id: id,
       name: input.value,
       wordsQuantity: 0,
     });
     const categoryCard = new CategoryReadyCard(input.value, 0);
+
+    categoryCard.element.id = String(id);
     this.element.prepend(categoryCard.element);
     input.value = '';
+    this.categoryCreateCard.element.classList.add('hidden');
   };
 
   updateOldCategory = (e: Event): void => {
@@ -83,6 +89,7 @@ export class AdminCategoryPage extends BaseComponent {
     const wordsQuantity = Number(categoryCard.querySelector('.admin__words-counter')?.textContent);
     const categoryCreateCard = new CategoryCreateCard();
     const createCardElement = categoryCreateCard.element;
+    createCardElement.classList.remove('hidden');
     categoryCard.replaceWith(createCardElement);
 
     categoryCreateCard.cancelButton.element.addEventListener('click',
@@ -106,4 +113,8 @@ export class AdminCategoryPage extends BaseComponent {
     card.element.id = id;
     createCardElement.replaceWith(card.element);
   };
+
+  showCreateCard(): void {
+    this.categoryCreateCard.element.classList.remove('hidden');
+  }
 }

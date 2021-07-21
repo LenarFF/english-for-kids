@@ -19,7 +19,7 @@ export class CategoryCreateCard extends AdminCategoryCard {
   createButton: AdminCardButton;
 
   constructor() {
-    super();
+    super(['hidden']);
 
     this.label = new Label('category-name', 'Category Name:');
     this.input = new Input('text', 'Category Name:', 'category-name', 'admin__category-input');
