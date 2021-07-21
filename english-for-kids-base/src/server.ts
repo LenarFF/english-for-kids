@@ -1,4 +1,5 @@
-import { Category } from './types';
+
+import { Category, Word } from './types';
 
 const baseURL = 'http://localhost:8000/api/';
 
@@ -31,3 +32,6 @@ export const updateCategory = async (item: Category): Promise<void> => {
     })
   ).json();
 };
+
+export const getWordsByCategory = (categoryId: number): Promise<Word[]> =>
+fetch(`${baseURL}words/${categoryId}`).then((response) => response.json());

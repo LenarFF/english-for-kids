@@ -45,6 +45,7 @@ export class CategoryReadyCard extends AdminCategoryCard {
   }
 
   hashChange = (): void => {
-    window.location.hash = '#/admin-words/';
+    const categoryId = this.element.id;
+    window.location.hash = `#/admin-words/!${categoryId}`;
   };
 }

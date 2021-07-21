@@ -15,3 +15,11 @@ export type Category = {
   name: string;
   wordsQuantity: number;
 };
+
+export type Word = {
+  wordValue: string;
+  translation: string;
+  audioSrc: string;
+  image: string;
+  categoryId: number;
+}

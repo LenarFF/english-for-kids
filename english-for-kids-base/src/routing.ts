@@ -31,7 +31,7 @@ export class Router {
     const difficultWordsPage = new CategoryPage(categoryCardsInfo[0].length - 1);
     const startButton = categoryPage.startButton.element;
     const adminCardsWrap = document.querySelector('.admin__cards-wrap');
-    switch (location) {
+    switch (location.split('!')[0]) {
       case '#/main-page/':
         mainPage.renderCards();
         pageWrap.append(mainPage.element);
@@ -61,7 +61,7 @@ export class Router {
         if (!data.authorized) window.location.hash = '#/main-page/';
         if (adminCardsWrap) {
           adminCardsWrap.innerHTML = '';
-          adminCardsWrap.append(new AdminWordPage().element);
+          adminCardsWrap.append(new AdminWordPage(Number(location.split('!')[1])).element);
         }
         break;
       default:
