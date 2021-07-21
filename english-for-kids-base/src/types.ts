@@ -22,4 +22,5 @@ export type Word = {
   audioSrc?: string;
   image?: string;
   categoryId: number;
+  wordId: number;
 }

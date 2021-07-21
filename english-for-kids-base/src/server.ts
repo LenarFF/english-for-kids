@@ -36,13 +36,26 @@ export const updateCategory = async (item: Category): Promise<void> => {
 export const getWordsByCategory = (categoryId: number): Promise<Word[]> =>
 fetch(`${baseURL}words/${categoryId}`).then((response) => response.json());
 
-export const deleteWord = async (word: string)
-: Promise<void> => (await fetch(`${baseURL}words/${word}`, { method: 'DELETE' })).json();
+export const deleteWord = async (wordId: string)
+: Promise<void> => (await fetch(`${baseURL}words/${wordId}`, { method: 'DELETE' })).json();
 
 export const createWord = async (item: Word): Promise<void> => {
   (
     await fetch(`${baseURL}words/`, {
       method: 'POST',
+      body: JSON.stringify(item),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+  ).json();
+};
+
+export const updateWord = async (item: Word): Promise<void> => {
+
+  (
+    await fetch(`${baseURL}words/`, {
+      method: 'PATCH',
       body: JSON.stringify(item),
       headers: {
         'Content-Type': 'application/json',

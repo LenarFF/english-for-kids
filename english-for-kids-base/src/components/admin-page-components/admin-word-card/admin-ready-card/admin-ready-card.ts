@@ -13,10 +13,10 @@ export class AdminReadyCard extends AdminWordCard {
     super();
     this.element.innerHTML = `
     <p class="admin__ready-card-text">Word:
-      <span class="admin__ready-card-info">${word}</span>
+      <span class="admin__ready-card-info word-text">${word}</span>
     </p>
     <p class="admin__ready-card-text">Translation:
-      <span class="admin__ready-card-info">${translation}</span>
+      <span class="admin__ready-card-info translation-text">${translation}</span>
     </p>
     <p class="admin__ready-card-text">Sound File:
       <span class="admin__ready-card-info">${soundPath}</span>
