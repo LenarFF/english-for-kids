@@ -35,3 +35,6 @@ export const updateCategory = async (item: Category): Promise<void> => {
 
 export const getWordsByCategory = (categoryId: number): Promise<Word[]> =>
 fetch(`${baseURL}words/${categoryId}`).then((response) => response.json());
+
+export const deleteWord = async (word: string)
+: Promise<void> => (await fetch(`${baseURL}words/${word}`, { method: 'DELETE' })).json();
