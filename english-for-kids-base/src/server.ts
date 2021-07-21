@@ -38,3 +38,15 @@ fetch(`${baseURL}words/${categoryId}`).then((response) => response.json());
 
 export const deleteWord = async (word: string)
 : Promise<void> => (await fetch(`${baseURL}words/${word}`, { method: 'DELETE' })).json();
+
+export const createWord = async (item: Word): Promise<void> => {
+  (
+    await fetch(`${baseURL}words/`, {
+      method: 'POST',
+      body: JSON.stringify(item),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+  ).json();
+};

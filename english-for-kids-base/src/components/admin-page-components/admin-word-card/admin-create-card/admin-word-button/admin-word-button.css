@@ -1,0 +1,17 @@
+.admin__word-button {
+  width: 100px;
+  height: 54px;
+  border-radius: 5px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.admin__word-cancel-button {
+  border: 1px solid #e53935;
+  color: #e53935;
+}
+
+.admin__word-add-button {
+  border: 1px solid #00bf82;
+  color: #00bf82;
+}

@@ -19,7 +19,7 @@ export type Category = {
 export type Word = {
   wordValue: string;
   translation: string;
-  audioSrc: string;
-  image: string;
+  audioSrc?: string;
+  image?: string;
   categoryId: number;
 }

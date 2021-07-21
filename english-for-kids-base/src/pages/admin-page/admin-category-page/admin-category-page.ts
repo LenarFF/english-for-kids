@@ -37,7 +37,8 @@ export class AdminCategoryPage extends BaseComponent {
     this.categoryCreateCard.createButton.element
       .addEventListener('click', () => this.createNewCategory());
 
-    this.categoryEmptyCard.bigCross.element.addEventListener('click' , () => this.showCreateCard())
+    this.categoryEmptyCard.bigCross.element.addEventListener('click' , () => this.showCreateCard());
+
   }
 
   async renderAllCategories(): Promise<void> {
