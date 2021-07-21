@@ -9,7 +9,7 @@ export class AdminReadyCard extends AdminWordCard {
 
   changeButton: BaseComponent;
 
-  constructor(word: string, translation: string, soundPath: string='asd', imagePath: string='aaa') {
+  constructor(word: string, translation: string, soundPath = 'asd', imagePath = 'aaa') {
     super();
     this.element.innerHTML = `
     <p class="admin__ready-card-text">Word:

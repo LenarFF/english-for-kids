@@ -28,7 +28,7 @@ export class AdminCategoryPage extends BaseComponent {
     this.renderAllCategories();
     this.element.append(
       this.categoryCreateCard.element,
-      this.categoryEmptyCard.element
+      this.categoryEmptyCard.element,
     );
     this.element.addEventListener('click', (e) => {
       this.deleteCategory(e);
@@ -37,8 +37,7 @@ export class AdminCategoryPage extends BaseComponent {
     this.categoryCreateCard.createButton.element
       .addEventListener('click', () => this.createNewCategory());
 
-    this.categoryEmptyCard.bigCross.element.addEventListener('click' , () => this.showCreateCard());
-
+    this.categoryEmptyCard.bigCross.element.addEventListener('click', () => this.showCreateCard());
   }
 
   async renderAllCategories(): Promise<void> {
@@ -66,9 +65,9 @@ export class AdminCategoryPage extends BaseComponent {
       input.setCustomValidity('enter category name');
       return;
     }
-    const id = (new Date).getTime();
+    const id = (new Date()).getTime();
     createCategory({
-      id: id,
+      id,
       name: input.value,
       wordsQuantity: 0,
     });

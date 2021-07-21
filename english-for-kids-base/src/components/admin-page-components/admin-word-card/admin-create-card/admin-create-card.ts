@@ -28,8 +28,10 @@ export class AdminCreateCard extends AdminWordCard {
   selectsWrap: BaseComponent;
 
   cancelButton: AdminWordButton;
+
   addButton: AdminWordButton;
-  buttonWrap: BaseComponent
+
+  buttonWrap: BaseComponent;
 
   constructor() {
     super(['hidden']);
@@ -53,7 +55,7 @@ export class AdminCreateCard extends AdminWordCard {
     this.cancelButton = new AdminWordButton('Cancel', ['admin__word-cancel-button']);
     this.addButton = new AdminWordButton('Add', ['admin__word-add-button']);
 
-    this.buttonWrap.element.append(this.addButton.element, this.cancelButton.element)
+    this.buttonWrap.element.append(this.addButton.element, this.cancelButton.element);
     this.wordInputWrap.element.append(this.wordLabel.element, this.wordInput.element);
     this.translationInputWrap.element.append(
       this.translationLabel.element,
@@ -65,7 +67,7 @@ export class AdminCreateCard extends AdminWordCard {
     this.element.append(
       this.inputsWrap.element,
       this.selectsWrap.element,
-      this.buttonWrap.element
+      this.buttonWrap.element,
     );
   }
 }

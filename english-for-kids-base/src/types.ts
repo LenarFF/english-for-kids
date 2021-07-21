@@ -23,4 +23,4 @@ export type Word = {
   image?: string;
   categoryId: number;
   wordId: number;
-}
+};
