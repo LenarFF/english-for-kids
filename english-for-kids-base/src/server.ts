@@ -1,6 +1,6 @@
 import { Category, Word } from './types';
 
-const baseURL = 'http://localhost:8000/api/';
+const baseURL = 'https://arcane-wildwood-23023.herokuapp.com/api/';
 
 export const getCategories = (): Promise<Category[]> => fetch(`${baseURL}categories`)
   .then((response) => response.json());
