@@ -20,7 +20,7 @@ type DataType = {
   isMenuShow: boolean;
   passwordValidateResult: string;
   loginValidateResult: string;
-  authorized: boolean
+  authorized: boolean;
 };
 
 export type StorageCardInfo = {
