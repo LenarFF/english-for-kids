@@ -6,3 +6,4 @@ export class BaseComponent {
     this.element.classList.add(...styles);
   }
 }
+s
